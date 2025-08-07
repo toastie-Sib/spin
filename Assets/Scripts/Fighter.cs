@@ -8,7 +8,14 @@ public class Fighter : MonoBehaviour
     private int direction = 1;
     private float lastNudgeTime = -Mathf.Infinity;
 
+    public float hp = 100;
+    public HPFollow hpUI;
     public float spinMult = 10f;
+
+    public bool isInvincible = false;
+    private float invincibleUntil = 0f;
+    public float invincibilityDuration = 0.1f;
+
     public float velocityThreshold = 1f;
     public float nudgeForce = 5f;
     public float nudgeCooldown = 3f; 
@@ -20,8 +27,7 @@ public class Fighter : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //Vector3 velocityBoost = new Vector3(Random.Range(5f, 8f), Random.Range(4f, 6f), 0f);
-        Vector3 velocityBoost = new Vector3(Random.Range(100f, 100f), Random.Range(100f, 100f), 0f);
+        Vector3 velocityBoost = new Vector3(Random.Range(5f, 8f), Random.Range(4f, 6f), 0f);
         rb.velocity += velocityBoost;
 
     }
@@ -35,10 +41,14 @@ public class Fighter : MonoBehaviour
 
         Vector3 velocity = rb.velocity;
 
+        if (isInvincible && Time.time >= invincibleUntil)
+        {
+            isInvincible = false;
+        }
+
+        //Nudge
         bool isMovingSlow = velocity.magnitude < velocityThreshold && velocity.magnitude >= 0.0f;
         bool cooldownPassed = Time.time - lastNudgeTime >= nudgeCooldown;
-
-
         if (isMovingSlow && cooldownPassed && (transform.position.x < -4.3f || transform.position.x > 4.3f))
         {
             float xNudge = 0f;
@@ -64,13 +74,41 @@ public class Fighter : MonoBehaviour
         Vector3 velocityBoost = new Vector3(Random.Range(1f, 3f), Random.Range(2f, 4f), 0f);
         rb.velocity += velocityBoost;
         direction *= -1;
+
+        isInvincible = true;
+        invincibleUntil = Time.time + invincibilityDuration;
+
         AudioSource.PlayClipAtPoint(parry, transform.position);
+
+        // Trigger impact frames
+        ImpactPause.Instance.PauseForImpact(0.1f);
     }
 
     //Ouchy
-    public void HitDetect()
+    public void HitDetect(float amount)
     {
+        if (isInvincible) return; // Don't get hurt
+
         AudioSource.PlayClipAtPoint(hit, transform.position);
+        hp -= amount;
+        hp = Mathf.Max(hp, 0);
+        hpUI.hpText.text = hp.ToString();
+
+        // Trigger impact frames
+        ImpactPause.Instance.PauseForImpact(0.1f);
+    }
+
+    //Dagger
+    public void IncreaseSpeed()
+    {
+        if (spinMult < 0)
+        {
+            spinMult -= 250f;
+        }
+        if (spinMult > 0)
+        {
+            spinMult += 250f;
+        }
     }
 
     //Keep bounce going

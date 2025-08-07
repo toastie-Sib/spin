@@ -6,6 +6,11 @@ public class Weapon : MonoBehaviour
 {
     private HashSet<Collider> currentContacts = new HashSet<Collider>();
 
+    public float damage = 1.0f;
+
+    public bool sword = false;
+    public bool dagger = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,25 +38,23 @@ public class Weapon : MonoBehaviour
                 Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
                 if (otherFighter != null)
                     otherFighter.ReverseDirection();
-
-                // Trigger impact frames
-                ImpactPause.Instance.PauseForImpact(0.1f); // 0.05s = 3 frames at 60fps
             }
         }
 
         if (other.gameObject.CompareTag("Fighter"))
         {
-            // Prevent both sides from triggering — only do it on the one with lower ID
-            if (gameObject.GetInstanceID() < other.gameObject.GetInstanceID())
-            {
-
-                Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
-                if (otherFighter != null)
-                    otherFighter.HitDetect();
-
-                // Trigger impact frames
-                ImpactPause.Instance.PauseForImpact(0.1f); // 0.05s = 3 frames at 60fps
-            }
+            Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
+            if (otherFighter.isInvincible) return;
+                otherFighter.HitDetect(damage);
+                if (sword == true)
+                {
+                    damage += 1;
+                }
+                if (dagger == true)
+                {
+                    Fighter myFighter = GetComponentInParent<Fighter>();
+                    myFighter.IncreaseSpeed();
+                }
         }
     }
 
