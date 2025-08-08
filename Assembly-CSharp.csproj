@@ -58,8 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\Fighter.cs" />
-    <Compile Include="Assets\Scripts\ImpactPause.cs" />
     <Compile Include="Assets\Scripts\HPFollow.cs" />
+    <Compile Include="Assets\Scripts\ImpactPause.cs" />
+    <Compile Include="Assets\Scripts\Unarmed.cs" />
+    <Compile Include="Assets\Scripts\Bow.cs" />
+    <Compile Include="Assets\Scripts\Arrow.cs" />
+    <Compile Include="Assets\Scripts\Launcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

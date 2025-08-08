@@ -4,38 +4,49 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
-    private Rigidbody rb;
-    private int direction = 1;
-    private float lastNudgeTime = -Mathf.Infinity;
+    //unmodifyable or Dynamic
+    public Rigidbody rb;
+    public float lastNudgeTime = -Mathf.Infinity;
+    public bool isInvincible = false;
+    public float invincibleUntil = 0f;
 
-    public float hp = 100;
+    //Set then Static
+    public int direction = 1;
+    public AudioClip parry;
+    public AudioClip hit;
     public HPFollow hpUI;
+    public float hp = 100;
     public float spinMult = 10f;
 
-    public bool isInvincible = false;
-    private float invincibleUntil = 0f;
+    //Modifyable
     public float invincibilityDuration = 0.1f;
-
     public float velocityThreshold = 1f;
     public float nudgeForce = 5f;
     public float nudgeCooldown = 3f; 
 
-    public AudioClip parry;
-    public AudioClip hit;
+
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Vector3 velocityBoost = new Vector3(Random.Range(5f, 8f), Random.Range(4f, 6f), 0f);
-        rb.velocity += velocityBoost;
+        //Vector3 velocityBoost = new Vector3(Random.Range(5f, 8f), Random.Range(4f, 6f), 0f);
+        //rb.velocity += velocityBoost;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         float speed = rb.velocity.magnitude;
+
 
         transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime);
 
@@ -47,9 +58,9 @@ public class Fighter : MonoBehaviour
         }
 
         //Nudge
-        bool isMovingSlow = velocity.magnitude < velocityThreshold && velocity.magnitude >= 0.0f;
+        bool isMovingSlow = Mathf.Abs(velocity.magnitude) < velocityThreshold;
         bool cooldownPassed = Time.time - lastNudgeTime >= nudgeCooldown;
-        if (isMovingSlow && cooldownPassed && (transform.position.x < -4.3f || transform.position.x > 4.3f))
+        if (isMovingSlow && cooldownPassed && (transform.position.x < -5.1f || transform.position.x > 5.1f))
         {
             float xNudge = 0f;
 
@@ -71,7 +82,7 @@ public class Fighter : MonoBehaviour
     //Parry
     public void ReverseDirection()
     {
-        Vector3 velocityBoost = new Vector3(Random.Range(1f, 3f), Random.Range(2f, 4f), 0f);
+        Vector3 velocityBoost = new Vector3(Random.Range(0.5f, 1.5f), Random.Range(1f, 2f), 0f);
         rb.velocity += velocityBoost;
         direction *= -1;
 
@@ -94,8 +105,11 @@ public class Fighter : MonoBehaviour
         hp = Mathf.Max(hp, 0);
         hpUI.hpText.text = hp.ToString();
 
+        //How tf do you get this change to go
+        GetComponentInChildren<Renderer>().material.color = Color.white;
         // Trigger impact frames
-        ImpactPause.Instance.PauseForImpact(0.1f);
+        ImpactPause.Instance.PauseForImpact(0.2f);
+        GetComponentInChildren<Renderer>().material.color = Color.cyan;
     }
 
     //Dagger
@@ -122,7 +136,7 @@ public class Fighter : MonoBehaviour
         {
 
             // If moving toward the wall (x is negative) and slow
-            if (rb.velocity.x < -1 && horizontalSpeed < 15f)
+            if (horizontalSpeed < 1f)
             {
                 Vector3 wallBoost = new Vector3(Random.Range(4f, 7f), Random.Range(-2f, 2f), 0f);
                 rb.velocity += wallBoost;
@@ -134,7 +148,7 @@ public class Fighter : MonoBehaviour
         {
 
             // If moving toward the wall (x is positive) and slow
-            if (rb.velocity.x > -1 && horizontalSpeed < 15f)
+            if (horizontalSpeed < 1f)
             {
                 Vector3 wallBoost = new Vector3(Random.Range(4f, 7f), Random.Range(-2f, 2f), 0f);
                 rb.velocity -= wallBoost;
@@ -145,13 +159,7 @@ public class Fighter : MonoBehaviour
         if (collision.gameObject.CompareTag("BottomWall"))
         {
 
-            // If moving toward the wall (x is positive) and slow
-            if (rb.velocity.y < -1 && horizontalSpeed < 10f)
-            {
-                Vector3 wallBoost = new Vector3(Random.Range(-2f, 2f), Random.Range(3f, 5f), 0f);
-                rb.velocity += wallBoost;
-                Debug.Log("Bot help");
-            }
+            
         }
     }
 

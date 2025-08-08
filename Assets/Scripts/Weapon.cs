@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
 
     public bool sword = false;
     public bool dagger = false;
+    public bool ranged = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,16 +44,18 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Fighter"))
         {
-            Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
-            if (otherFighter.isInvincible) return;
+            Fighter otherFighter = other.GetComponent<Fighter>();
+            Fighter myFighter = GetComponentInParent<Fighter>();
+
+            if (otherFighter.isInvincible || ranged == true) return;
                 otherFighter.HitDetect(damage);
+                myFighter.ReverseDirection();
                 if (sword == true)
                 {
                     damage += 1;
                 }
                 if (dagger == true)
                 {
-                    Fighter myFighter = GetComponentInParent<Fighter>();
                     myFighter.IncreaseSpeed();
                 }
         }
