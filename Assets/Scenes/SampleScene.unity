@@ -172,13 +172,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5311323215341001509, guid: 2206fffb5896e0144a2d94891e570075, type: 3}
-  launchSpeed: 10
   cam: {fileID: 963194227}
+  launchSpeed: 10
   shotDone: 0
   isPlayer: 0
   target: {fileID: 0}
   offset: {x: 0, y: -0.18, z: 0}
   hpText: {fileID: 962147939}
+  lineRenderer: {fileID: 0}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 3648
+  maxPredictionSteps: 100
+  timeStep: 0.05
 --- !u!23 &370757820
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1896,13 +1902,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 315616872674102727, guid: 581b4c2255aad2e4482cb2e2789d99b8, type: 3}
-  launchSpeed: 10
   cam: {fileID: 963194227}
+  launchSpeed: 10
   shotDone: 0
   isPlayer: 1
   target: {fileID: 0}
   offset: {x: 0, y: -0.18, z: 0}
   hpText: {fileID: 1969904044}
+  lineRenderer: {fileID: 0}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 3648
+  maxPredictionSteps: 100
+  timeStep: 0.05
 --- !u!54 &7801239521996951991
 Rigidbody:
   m_ObjectHideFlags: 0
