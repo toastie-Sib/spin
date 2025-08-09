@@ -9,12 +9,12 @@ public class Fighter : MonoBehaviour
     public float lastNudgeTime = -Mathf.Infinity;
     public bool isInvincible = false;
     public float invincibleUntil = 0f;
+    public int direction = 1;
 
     //Set then Static
-    public int direction = 1;
     public AudioClip parry;
     public AudioClip hit;
-    public HPFollow hpUI;
+    public Launcher hpUI;
     public float hp = 100;
     public float spinMult = 10f;
 
@@ -32,9 +32,7 @@ public class Fighter : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //Vector3 velocityBoost = new Vector3(Random.Range(5f, 8f), Random.Range(4f, 6f), 0f);
-        //rb.velocity += velocityBoost;
-
+        
     }
 
     // Update is called once per frame
@@ -46,13 +44,11 @@ public class Fighter : MonoBehaviour
         }
 
         float speed = rb.velocity.magnitude;
-
-
-        transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime);
-
         Vector3 velocity = rb.velocity;
 
-        if (isInvincible && Time.time >= invincibleUntil)
+        transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime); //Spin
+
+        if (isInvincible && Time.time >= invincibleUntil) //i-frames
         {
             isInvincible = false;
         }
@@ -92,7 +88,7 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(parry, transform.position);
 
         // Trigger impact frames
-        ImpactPause.Instance.PauseForImpact(0.1f);
+        ImpactPause.Instance.PauseForImpact(0.05f);
     }
 
     //Ouchy
@@ -104,8 +100,12 @@ public class Fighter : MonoBehaviour
         hp -= amount;
         hp = Mathf.Max(hp, 0);
         hpUI.hpText.text = hp.ToString();
+        if (hp == 0)
+        {
+            hpUI.hpText.text = (" ").ToString();
+        }
 
-        //How tf do you get this change to go
+        //How tf do you get this change to go RAHHHHHHHHHHHHHHHHHHHHHHH FIXXXXXXXXXXXXXXXXXXX
         GetComponentInChildren<Renderer>().material.color = Color.white;
         // Trigger impact frames
         ImpactPause.Instance.PauseForImpact(0.2f);
@@ -156,11 +156,11 @@ public class Fighter : MonoBehaviour
         }
 
         // Bottom WALL
-        if (collision.gameObject.CompareTag("BottomWall"))
-        {
-
-            
-        }
+        //if (collision.gameObject.CompareTag("BottomWall"))
+        //{
+        //
+        //    
+        //}
     }
 
 }

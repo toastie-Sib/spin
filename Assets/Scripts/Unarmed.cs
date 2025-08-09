@@ -12,12 +12,13 @@ public class Unarmed : Fighter
         
     //}
 
-    //Keep bounce going 
+    
     private void OnCollisionEnter(Collision collision)
     {
         float horizontalSpeed = Mathf.Abs(rb.velocity.x);
         float verticalSpeed = Mathf.Abs(rb.velocity.y);
 
+        //Keep bounce going 
         // LEFT WALL
         if (collision.gameObject.CompareTag("LeftWall"))
         {
@@ -25,7 +26,6 @@ public class Unarmed : Fighter
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity += wallBoost;
         }
-
         // RIGHT WALL
         if (collision.gameObject.CompareTag("RightWall"))
         {
@@ -33,7 +33,6 @@ public class Unarmed : Fighter
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity -= wallBoost;
         }
-
         // Bottom WALL
         if (collision.gameObject.CompareTag("BottomWall"))
         {
@@ -41,7 +40,6 @@ public class Unarmed : Fighter
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity += wallBoost;
         }
-
         // Top WALL
         if (collision.gameObject.CompareTag("Wall"))
         {

@@ -251,7 +251,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   hpUI: {fileID: 0}
   hp: 100
-  spinMult: -200
+  spinMult: 200
   invincibilityDuration: 0.1
   velocityThreshold: 1
   nudgeForce: 5

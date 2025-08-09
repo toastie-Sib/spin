@@ -359,7 +359,7 @@ MonoBehaviour:
   firePoint: {fileID: 8925497589034738960}
   refreshInterval: 1
   fireInterval: 0.05
-  arrowCount: 1
+  arrowCount: 0
   maxArrowCount: 1
 --- !u!1 &8925497589034738961
 GameObject:

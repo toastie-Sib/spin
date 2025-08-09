@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bow : Fighter
+public class Bow : Fighter //Inherit Fighter
 {
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float refreshInterval = 1f;         // Fire every second
     private float nextRefreshTime = 0.5f;
+
     public float fireInterval = 0.1f;
     private float nextFireTime = 0.0f;
+
     public float arrowCount = 1f;
     public float maxArrowCount = 1f;
 
@@ -23,17 +25,17 @@ public class Bow : Fighter
     void Update()
     {
 
-        if (hp <= 0)
+        if (hp <= 0) //Destroy if dead
         {
             Destroy(gameObject);
         }
 
-        if (Time.time >= nextRefreshTime)
+        if (Time.time >= nextRefreshTime) //Arrow Refresh
         {
             ArrowRefresh();
             nextRefreshTime = Time.time + refreshInterval;
         }
-        if (arrowCount > 0 && Time.time >= nextFireTime)
+        if (arrowCount > 0 && Time.time >= nextFireTime) //Try to fire
         {
             FireProjectile();
             arrowCount -= 1;
@@ -41,12 +43,11 @@ public class Bow : Fighter
         }
 
         float speed = rb.velocity.magnitude;
-
-        transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime);
-
         Vector3 velocity = rb.velocity;
 
-        if (isInvincible && Time.time >= invincibleUntil)
+        transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime); //Spin
+
+        if (isInvincible && Time.time >= invincibleUntil) // i-frames
         {
             isInvincible = false;
         }

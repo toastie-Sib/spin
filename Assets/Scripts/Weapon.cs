@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Weapon"))
+        if (other.gameObject.CompareTag("Weapon")) //Parry
         {
             // Prevent both sides from triggering — only do it on the one with lower ID
             if (gameObject.GetInstanceID() < other.gameObject.GetInstanceID())
@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("Fighter"))
+        if (other.gameObject.CompareTag("Fighter")) //Damage
         {
             Fighter otherFighter = other.GetComponent<Fighter>();
             Fighter myFighter = GetComponentInParent<Fighter>();

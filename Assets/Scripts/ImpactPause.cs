@@ -38,6 +38,7 @@ public class ImpactPause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Speed up function
         if (Input.GetKey(KeyCode.LeftShift))
         {
             if (overridePuase == true) return;
