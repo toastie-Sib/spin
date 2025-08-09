@@ -174,12 +174,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5311323215341001509, guid: 2206fffb5896e0144a2d94891e570075, type: 3}
   cam: {fileID: 963194227}
   launchSpeed: 10
-  shotDone: 0
   isPlayer: 0
-  target: {fileID: 0}
   offset: {x: 0, y: -0.18, z: 0}
   hpText: {fileID: 962147939}
-  lineRenderer: {fileID: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 3648
@@ -1469,7 +1466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8bbe759188ab741aef1628362c71cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overridePuase: 1
 --- !u!1 &1759258667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,15 +1897,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a689dc3876604824d9661bc31db4ee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 315616872674102727, guid: 581b4c2255aad2e4482cb2e2789d99b8, type: 3}
+  projectilePrefab: {fileID: 9204503434298110760, guid: 34d8cea4598a3e94f9b94c439944257b, type: 3}
   cam: {fileID: 963194227}
   launchSpeed: 10
-  shotDone: 0
   isPlayer: 1
-  target: {fileID: 0}
   offset: {x: 0, y: -0.18, z: 0}
   hpText: {fileID: 1969904044}
-  lineRenderer: {fileID: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 3648
