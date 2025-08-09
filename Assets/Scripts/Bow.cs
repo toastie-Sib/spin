@@ -23,24 +23,12 @@ public class Bow : Fighter //Inherit Fighter
     //}
 
     // Update is called once per frame
-    void Update()
+    void Update() //Make sure to update with Fighter
     {
 
         if (hp <= 0) //Destroy if dead
         {
             Destroy(gameObject);
-        }
-
-        if (Time.time >= nextRefreshTime) //Arrow Refresh
-        {
-            ArrowRefresh();
-            nextRefreshTime = Time.time + refreshInterval;
-        }
-        if (arrowCount > 0 && Time.time >= nextFireTime) //Try to fire
-        {
-            FireProjectile();
-            arrowCount -= 1;
-            nextFireTime = Time.time + fireInterval;
         }
 
         float speed = rb.velocity.magnitude;
@@ -72,6 +60,19 @@ public class Bow : Fighter //Inherit Fighter
             rb.AddForce(nudge, ForceMode.Impulse);
             lastNudgeTime = Time.time; // Important: Reset cooldown
             Debug.Log("Poke Poke :)");
+        }
+
+        //Bow specific
+        if (Time.time >= nextRefreshTime) //Arrow Refresh
+        {
+            ArrowRefresh();
+            nextRefreshTime = Time.time + refreshInterval;
+        }
+        if (arrowCount > 0 && Time.time >= nextFireTime) //Try to fire
+        {
+            FireProjectile();
+            arrowCount -= 1;
+            nextFireTime = Time.time + fireInterval;
         }
     }
 

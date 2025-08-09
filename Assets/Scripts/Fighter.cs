@@ -94,15 +94,18 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(parry, transform.position);
 
         // Trigger impact frames
-        ImpactPause.Instance.PauseForImpact(0.05f);
+        ImpactPause.Instance.PauseForImpact(0.1f);
     }
 
     //Ouchy
     public void HitDetect(float amount)
     {
         if (isInvincible) return; // Don't get hurt
-
-        AudioSource.PlayClipAtPoint(hit, transform.position);
+        StartCoroutine(GetHit(amount));
+    }
+    private IEnumerator GetHit(float amount)
+    {
+        //Take Damage
         hp -= amount;
         hp = Mathf.Max(hp, 0);
         hpUI.hpText.text = hp.ToString();
@@ -111,24 +114,12 @@ public class Fighter : MonoBehaviour
             hpUI.hpText.text = (" ").ToString();
         }
 
-        //How tf do you get this change to go RAHHHHHHHHHHHHHHHHHHHHHHH FIXXXXXXXXXXXXXXXXXXX
-        GetComponentInChildren<Renderer>().material.color = Color.white;
+        AudioSource.PlayClipAtPoint(hit, transform.position);
         // Trigger impact frames
+        GetComponentInChildren<Renderer>().material.color = Color.white;
         ImpactPause.Instance.PauseForImpact(0.2f);
+        yield return new WaitForSecondsRealtime(0.2f);
         GetComponentInChildren<Renderer>().material.color = Color.cyan;
-    }
-
-    //Dagger
-    public void IncreaseSpeed()
-    {
-        if (spinMult < 0)
-        {
-            spinMult -= 250f;
-        }
-        if (spinMult > 0)
-        {
-            spinMult += 250f;
-        }
     }
 
     //Keep bounce going
@@ -169,4 +160,16 @@ public class Fighter : MonoBehaviour
         //}
     }
 
+    //Dagger only
+    public void IncreaseSpeed()
+    {
+        if (spinMult < 0)
+        {
+            spinMult -= 250f;
+        }
+        if (spinMult > 0)
+        {
+            spinMult += 250f;
+        }
+    }
 }

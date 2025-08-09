@@ -9,21 +9,21 @@ public class Launcher : MonoBehaviour
     public GameObject projectilePrefab;
     public Camera cam;
     public float launchSpeed = 10f;
-    public bool shotDone = false;
+    private bool shotDone = false;
     public bool isPlayer = false;
 
     [Header("HP Tracking")]
-    public Transform target;       // The GameObject the HP follows
     public Vector3 offset;
     public Text hpText;
+    private Transform target;       // The GameObject the HP follows
 
     [Header("Trajectory Settings")]
-    public LineRenderer lineRenderer;
-    public LineRenderer aiLineRenderer;
-    public Vector3 direction;
     public LayerMask collisionMask;         // Layers to detect
     public int maxPredictionSteps = 100;    // Max segments to draw
     public float timeStep = 0.05f;          // Simulation step size
+    private LineRenderer lineRenderer;
+    private LineRenderer aiLineRenderer;
+    private Vector3 direction;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class Launcher : MonoBehaviour
             lineRenderer.endColor = Color.yellow;
         }
 
-        if (aiLineRenderer == null)
+        if (aiLineRenderer == null) // Other trajectory
         {
             GameObject aiLineObj = new GameObject("AI_Trajectory");
             aiLineRenderer = aiLineObj.AddComponent<LineRenderer>();
@@ -50,7 +50,7 @@ public class Launcher : MonoBehaviour
             aiLineRenderer.endColor = Color.magenta;
         }
 
-        if (!shotDone && !isPlayer)
+        if (!shotDone && !isPlayer) // Set up Other trajectory
         {
             // Generate preview direction for AI
             Vector2 randomDir2D = Random.insideUnitCircle.normalized;
@@ -89,7 +89,7 @@ public class Launcher : MonoBehaviour
         }
     }
 
-    void DrawTrajectory()
+    void DrawTrajectory() //Players Trajectory Drawn
     {
         Vector3 hitPoint;
         if (!GetMouseWorldPoint(out hitPoint)) return;
@@ -120,7 +120,7 @@ public class Launcher : MonoBehaviour
         lineRenderer.SetPositions(points.ToArray());
     }
 
-    bool GetMouseWorldPoint(out Vector3 hitPoint)
+    bool GetMouseWorldPoint(out Vector3 hitPoint) //Follow mouse
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.forward, Vector3.zero);

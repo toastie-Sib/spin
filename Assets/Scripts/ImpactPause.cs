@@ -5,7 +5,7 @@ using UnityEngine;
 public class ImpactPause : MonoBehaviour
 {
     public static ImpactPause Instance;
-    public bool overridePuase = true;
+    private bool overridePuase = false;
 
     private void Awake()
     {

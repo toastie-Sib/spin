@@ -7,6 +7,7 @@ public class Arrow : MonoBehaviour
     private HashSet<Collider> currentContacts = new HashSet<Collider>();
     private bool active = false;
     public Bow shooter;
+
     public AudioClip parry;
     public float damage = 1.0f;
     public float speed = 10.0f;
