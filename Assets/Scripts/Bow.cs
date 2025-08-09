@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bow : Fighter //Inherit Fighter
 {
+    [Header("Bow")]
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float refreshInterval = 1f;         // Fire every second

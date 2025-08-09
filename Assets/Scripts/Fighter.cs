@@ -4,35 +4,41 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
-    //unmodifyable or Dynamic
+    [Header("Unmodifyable or Dynamic Do not Touch")]
     public Rigidbody rb;
     public float lastNudgeTime = -Mathf.Infinity;
     public bool isInvincible = false;
     public float invincibleUntil = 0f;
     public int direction = 1;
 
-    //Set then Static
+    [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
     public AudioClip hit;
     public Launcher hpUI;
+    public float invincibilityDuration = 0.1f;
+
+    [Header("Modifyable")]
     public float hp = 100;
     public float spinMult = 10f;
-
-    //Modifyable
-    public float invincibilityDuration = 0.1f;
+    //Nudge shit
     public float velocityThreshold = 1f;
     public float nudgeForce = 5f;
     public float nudgeCooldown = 3f; 
-
-
-    
-
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+
+        float myXValue = transform.position.x;
+        if (myXValue < 0)
+        {
+            direction = 1;
+        }
+        if (myXValue > 0)
+        {
+            direction = -1;
+        }
     }
 
     // Update is called once per frame

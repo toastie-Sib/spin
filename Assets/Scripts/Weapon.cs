@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     private HashSet<Collider> currentContacts = new HashSet<Collider>();
 
     public float damage = 1.0f;
-
+    [Header("Type")]
     public bool sword = false;
     public bool dagger = false;
     public bool ranged = false;

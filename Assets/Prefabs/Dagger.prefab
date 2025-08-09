@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 9204503434298110762}
   - component: {fileID: 9204503434298110761}
   m_Layer: 7
-  m_Name: Dagger (Left)
+  m_Name: Dagger
   m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
