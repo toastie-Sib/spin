@@ -19,16 +19,17 @@ public class Launcher : MonoBehaviour
 
     [Header("Trajectory Settings")]
     public LineRenderer lineRenderer;
+    public LineRenderer aiLineRenderer;
+    public Vector3 direction;
     public LayerMask collisionMask;         // Layers to detect
     public int maxPredictionSteps = 100;    // Max segments to draw
     public float timeStep = 0.05f;          // Simulation step size
-    
 
     void Start()
     {
         cam = Camera.main;
 
-        if (lineRenderer == null) // trajectory
+        if (lineRenderer == null) // Player trajectory
         {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
             lineRenderer.positionCount = 0;
@@ -36,6 +37,25 @@ public class Launcher : MonoBehaviour
             lineRenderer.material = new Material(Shader.Find("Sprites/Default")); //Can change how looks
             lineRenderer.startColor = Color.green;
             lineRenderer.endColor = Color.yellow;
+        }
+
+        if (aiLineRenderer == null)
+        {
+            GameObject aiLineObj = new GameObject("AI_Trajectory");
+            aiLineRenderer = aiLineObj.AddComponent<LineRenderer>();
+            aiLineRenderer.positionCount = 0;
+            aiLineRenderer.widthMultiplier = 0.05f;
+            aiLineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+            aiLineRenderer.startColor = Color.red;
+            aiLineRenderer.endColor = Color.magenta;
+        }
+
+        if (!shotDone && !isPlayer)
+        {
+            // Generate preview direction for AI
+            Vector2 randomDir2D = Random.insideUnitCircle.normalized;
+            direction = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
+            DrawOtherTrajectoryFromDirection(direction, aiLineRenderer);
         }
     }
 
@@ -52,6 +72,7 @@ public class Launcher : MonoBehaviour
             if (isPlayer == false)
             {
                 Spawn();
+                aiLineRenderer.positionCount = 0; // Hide AI arc after spawn
             }
         }
 
@@ -59,6 +80,7 @@ public class Launcher : MonoBehaviour
         {
             DrawTrajectory();
         }
+        
 
         if (target != null) // HP follow target
         {
@@ -113,6 +135,33 @@ public class Launcher : MonoBehaviour
         return false;
     }
 
+    void DrawOtherTrajectoryFromDirection(Vector3 direction, LineRenderer lr)
+    {
+        Vector3 velocity = direction.normalized * launchSpeed;
+        Vector3 currentPosition = transform.position;
+
+        List<Vector3> points = new List<Vector3>();
+        points.Add(currentPosition);
+
+        for (int i = 0; i < maxPredictionSteps; i++)
+        {
+            Vector3 newPosition = currentPosition + velocity * timeStep + 0.5f * Physics.gravity * (timeStep * timeStep);
+
+            if (Physics.Raycast(currentPosition, newPosition - currentPosition, out RaycastHit hit, (newPosition - currentPosition).magnitude, collisionMask))
+            {
+                points.Add(hit.point);
+                break;
+            }
+
+            points.Add(newPosition);
+            velocity += Physics.gravity * timeStep;
+            currentPosition = newPosition;
+        }
+
+        lr.positionCount = points.Count;
+        lr.SetPositions(points.ToArray());
+    }
+
     void ShootTowardsMouse() //For Player
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -160,8 +209,7 @@ public class Launcher : MonoBehaviour
 
         if (rb != null)
         {
-            Vector2 randomDir2D = Random.insideUnitCircle.normalized;
-            Vector3 direction = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
+            
             rb.velocity = direction * launchSpeed;
         }
         shotDone = true;
