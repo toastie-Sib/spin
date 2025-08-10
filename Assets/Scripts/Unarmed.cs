@@ -56,6 +56,17 @@ public class Unarmed : Fighter
             if (otherFighter.isInvincible) return;
             otherFighter.HitDetect(Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))));
         }
+
+        // shield v unarmed
+        if (collision.gameObject.CompareTag("Weapon"))
+        {
+            Weapon other = collision.gameObject.GetComponentInParent<Weapon>();
+            if (other.shield == false) return;
+            float damage = Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))); // Same formula as above
+            HitDetect(damage); 
+
+            other.ShieldGrow(damage);
+        }
     }
 
 }

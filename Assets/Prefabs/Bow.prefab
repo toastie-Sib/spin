@@ -109,13 +109,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315616872435341066}
-  m_LocalRotation: {x: -0, y: -0, z: 0.98095584, w: -0.19423112}
-  m_LocalPosition: {x: -0.58, y: -0.3, z: 0}
-  m_LocalScale: {x: 0.26, y: 0.51, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.871903, w: 0.48967865}
+  m_LocalPosition: {x: -0.32587644, y: 0.48208362, z: 0}
+  m_LocalScale: {x: 0.26000008, y: 0.51000017, z: 0.010000001}
   m_Children: []
-  m_Father: {fileID: 315616873458628874}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 202.4}
+  m_Father: {fileID: 4308192939911625432}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 196.361}
 --- !u!33 &315616872435341060
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -191,10 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599168e5dadbe8c4b9f8542634cc735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
   sword: 0
   dagger: 0
-  ranged: 1
+  doNotHurt: 1
+  shield: 0
 --- !u!54 &315616872435341064
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -239,18 +240,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315616872674102727}
-  m_LocalRotation: {x: 0, y: 0, z: -0.8433915, w: 0.53729963}
+  m_LocalRotation: {x: 0, y: 0, z: -0.60876137, w: 0.7933534}
   m_LocalPosition: {x: -3.09, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_Children:
   - {fileID: 315616872297222191}
-  - {fileID: 315616872435341065}
-  - {fileID: 8925497589105384436}
-  - {fileID: 8925497590509479609}
+  - {fileID: 4308192939911625432}
   - {fileID: 8925497589034738960}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -115}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
 --- !u!33 &315616872674102722
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -346,12 +345,12 @@ MonoBehaviour:
   isInvincible: 0
   invincibleUntil: 0
   direction: 1
+  hpUI: {fileID: 0}
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  hpUI: {fileID: 0}
-  hp: 100
-  spinMult: 300
   invincibilityDuration: 0.1
+  hp: 100
+  spinMult: 400
   velocityThreshold: 1
   nudgeForce: 5
   nudgeCooldown: 3
@@ -361,6 +360,39 @@ MonoBehaviour:
   fireInterval: 0.05
   arrowCount: 0
   maxArrowCount: 1
+--- !u!1 &5722889775030313400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4308192939911625432}
+  m_Layer: 0
+  m_Name: Bow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4308192939911625432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722889775030313400}
+  m_LocalRotation: {x: -0, y: -0, z: 0.60876137, w: 0.7933534}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.94, y: 0.97, z: 10}
+  m_Children:
+  - {fileID: 315616872435341065}
+  - {fileID: 8925497589105384436}
+  - {fileID: 8925497590509479609}
+  m_Father: {fileID: 315616873458628874}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8925497589034738961
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +404,7 @@ GameObject:
   - component: {fileID: 8925497589034738960}
   - component: {fileID: 8925497589034738963}
   m_Layer: 0
-  m_Name: Sprite-0005 (1)
+  m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,12 +417,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8925497589034738961}
-  m_LocalRotation: {x: 0, y: 0, z: 0.5735764, w: 0.8191521}
-  m_LocalPosition: {x: -0.85, y: 0.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: 0.57357633, w: 0.81915206}
+  m_LocalPosition: {x: -0.81787163, y: 0.36348152, z: 0}
+  m_LocalScale: {x: 0.9459193, y: 0.9459729, z: 10}
   m_Children: []
   m_Father: {fileID: 315616873458628874}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 70}
 --- !u!212 &8925497589034738963
 SpriteRenderer:
@@ -471,13 +503,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8925497589105384437}
-  m_LocalRotation: {x: 0, y: 0, z: 0.84371954, w: 0.53678435}
-  m_LocalPosition: {x: -0.33, y: 0.553, z: 0}
-  m_LocalScale: {x: 0.26, y: 0.48, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.4141031, w: 0.91023}
+  m_LocalPosition: {x: 0.36339822, y: 0.4597189, z: 0}
+  m_LocalScale: {x: 0.25000003, y: 0.45000005, z: 0.010000001}
   m_Children: []
-  m_Father: {fileID: 315616873458628874}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 115.07}
+  m_Father: {fileID: 4308192939911625432}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 123.926}
 --- !u!33 &8925497589105384395
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -553,10 +585,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599168e5dadbe8c4b9f8542634cc735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
   sword: 0
   dagger: 0
-  ranged: 1
+  doNotHurt: 1
+  shield: 0
 --- !u!54 &8925497589105384439
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -597,12 +630,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8925497590509479590}
-  m_LocalRotation: {x: 0, y: 0, z: 0.8433915, w: 0.53729963}
-  m_LocalPosition: {x: -0.261, y: 0.05, z: -1}
-  m_LocalScale: {x: 1.95, y: 1.79, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: 0.34202018, w: 0.9396926}
+  m_LocalPosition: {x: 0.0010754913, y: 0.3, z: -0.1}
+  m_LocalScale: {x: 1.8750005, y: 1.6781254, z: 1}
   m_Children: []
-  m_Father: {fileID: 315616873458628874}
-  m_RootOrder: 3
+  m_Father: {fileID: 4308192939911625432}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 115}
 --- !u!212 &8925497590509479608
 SpriteRenderer:

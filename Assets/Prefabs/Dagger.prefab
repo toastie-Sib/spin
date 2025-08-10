@@ -210,7 +210,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 3
+  m_CollisionDetection: 2
 --- !u!1 &9204503434298110760
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204503434298110760}
-  m_LocalRotation: {x: 0, y: 0, z: -0.81666666, w: 0.57710963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.09, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_Children:
@@ -248,7 +248,7 @@ Transform:
   - {fileID: 9204503434436212216}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.505}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9204503434298110765
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -331,9 +331,9 @@ MonoBehaviour:
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   hpUI: {fileID: 0}
+  invincibilityDuration: 0.1
   hp: 100
   spinMult: 500
-  invincibilityDuration: 0.1
   velocityThreshold: 1
   nudgeForce: 5
   nudgeCooldown: 3

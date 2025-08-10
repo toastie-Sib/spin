@@ -10,7 +10,8 @@ public class Weapon : MonoBehaviour
     [Header("Type")]
     public bool sword = false;
     public bool dagger = false;
-    public bool ranged = false;
+    public bool doNotHurt = false;
+    public bool shield = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +36,21 @@ public class Weapon : MonoBehaviour
                 Fighter myFighter = GetComponentInParent<Fighter>();
                 if (myFighter != null)
                     myFighter.ReverseDirection();
+                    myFighter.isInvincible = true;
 
                 Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
                 if (otherFighter != null)
                     otherFighter.ReverseDirection();
+                    if (shield == false) { otherFighter.isInvincible = true; }
+
+                if (shield == true)
+                { // reflect arrows
+                    Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
+                    Weapon myWeapon = other.gameObject.GetComponentInParent<Weapon>();
+                    if (otherWeapon.doNotHurt == true) return;
+                    otherFighter.HitDetect(otherWeapon.damage);
+                    ShieldGrow(otherWeapon.damage);
+                }
             }
         }
 
@@ -47,7 +59,7 @@ public class Weapon : MonoBehaviour
             Fighter otherFighter = other.GetComponent<Fighter>();
             Fighter myFighter = GetComponentInParent<Fighter>();
 
-            if (otherFighter.isInvincible || ranged == true) return;
+            if (otherFighter.isInvincible || doNotHurt == true) return;
                 otherFighter.HitDetect(damage);
                 myFighter.ReverseDirection();
                 if (sword == true)
@@ -67,5 +79,13 @@ public class Weapon : MonoBehaviour
         {
             currentContacts.Remove(other);
         }
+    }
+
+    public void ShieldGrow(float damage)
+    {
+        Vector3 scale = transform.localScale;
+        scale += new Vector3(0f, ((0.01f) * damage), 0f);
+
+        transform.localScale = scale;
     }
 }

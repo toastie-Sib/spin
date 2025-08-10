@@ -10,11 +10,11 @@ public class Fighter : MonoBehaviour
     public bool isInvincible = false;
     public float invincibleUntil = 0f;
     public int direction = 1;
+    public Launcher hpUI;
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
     public AudioClip hit;
-    public Launcher hpUI;
     public float invincibilityDuration = 0.1f;
 
     [Header("Modifyable")]
@@ -88,7 +88,6 @@ public class Fighter : MonoBehaviour
         rb.velocity += velocityBoost;
         direction *= -1;
 
-        isInvincible = true;
         invincibleUntil = Time.time + invincibilityDuration;
 
         AudioSource.PlayClipAtPoint(parry, transform.position);
@@ -105,10 +104,10 @@ public class Fighter : MonoBehaviour
     }
     private IEnumerator GetHit(float amount)
     {
-        //Take Damage
+        //Take Damage to HP
         hp -= amount;
         hp = Mathf.Max(hp, 0);
-        hpUI.hpText.text = hp.ToString();
+        hpUI.hpText.text = Mathf.Round(hp).ToString();
         if (hp == 0)
         {
             hpUI.hpText.text = (" ").ToString();

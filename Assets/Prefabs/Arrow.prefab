@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 171728331832174311}
   m_LocalRotation: {x: 0, y: 0, z: -0.3305143, w: 0.943801}
   m_LocalPosition: {x: 2.96, y: 3.53, z: 0}
-  m_LocalScale: {x: 0.26000002, y: 0.48000005, z: 0.010000001}
+  m_LocalScale: {x: 0.26000002, y: 0.48000005, z: 0.5}
   m_Children:
   - {fileID: 5099909459314855660}
   m_Father: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   shooter: {fileID: 0}
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   damage: 1
-  speed: 20
+  speed: 10
 --- !u!1 &4482885593307947575
 GameObject:
   m_ObjectHideFlags: 0
