@@ -39,7 +39,7 @@ public class Bow : Fighter //Inherit Fighter
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-        Arrow arrow = projectile.GetComponent<Arrow>();
+        Projectile arrow = projectile.GetComponent<Projectile>();
         if (arrow != null)
         {
             arrow.shooter = this;
@@ -70,6 +70,8 @@ public class Bow : Fighter //Inherit Fighter
         
     }
 
+
+    // Bow Scale
     public void IncreaseFireRate()
     {
         maxArrowCount += 1;
