@@ -7,6 +7,8 @@ public class ImpactPause : MonoBehaviour
     public static ImpactPause Instance;
     private bool overridePuase = false;
 
+    public float timeScale = 2.0f;
+
     private void Awake()
     {
         if (Instance == null)
@@ -42,7 +44,23 @@ public class ImpactPause : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             if (overridePuase == true) return;
-            Time.timeScale = 3.0f; // 3x speed
+            Time.timeScale = timeScale;
+            if (Input.GetMouseButtonDown(0))
+            {
+                if(timeScale <= 0.5f)
+                {
+                    timeScale *= (0.5f);
+                } else { timeScale -= 0.5f; }
+                
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (timeScale <= 0.5f)
+                {
+                    timeScale *= (2f);
+                }
+                else { timeScale += 0.5f; }
+            }
         }
         else
         {

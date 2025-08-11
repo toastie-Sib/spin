@@ -88,12 +88,15 @@ public class Bow : Fighter //Inherit Fighter
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
-        // Ignore collision between shooter and projectile
-        Collider shooterCollider = GetComponent<Collider>();
+        // Ignore collision between bow and projectile
         Collider projectileCollider = projectile.GetComponent<Collider>();
-        if (shooterCollider != null && projectileCollider != null)
+        Collider[] weaponColliders = GetComponentsInChildren<Collider>();
+        foreach (Collider weaponCol in weaponColliders)
         {
-            Physics.IgnoreCollision(projectileCollider, shooterCollider);
+            if (weaponCol != GetComponent<Collider>()) // skip parent's collider
+            {
+                Physics.IgnoreCollision(weaponCol, projectileCollider);
+            }
         }
 
     }

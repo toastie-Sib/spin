@@ -5,7 +5,6 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     private HashSet<Collider> currentContacts = new HashSet<Collider>();
-    private bool active = false;
     private bool reflected = false;
     public Bow shooter;
     private Weapon reflector;
@@ -22,16 +21,18 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!active) return;
-     
-        
         if (other.gameObject.CompareTag("Weapon"))
         {
             Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
             AudioSource.PlayClipAtPoint(parry, transform.position);
 
             //Destroy Game object if it isn't a shield or reflected
-            if (otherWeapon.shield == false) {  if (reflected == false) { Destroy(gameObject); } } 
+            if (otherWeapon.shield == false) {  if (reflected == false) {
+                    //Fighter otherFighter = otherWeapon.GetComponentInParent<Fighter>(); //Potential Parry Reflect
+                    //transform.Rotate(0f, 0f, (otherFighter.direction) * -125f, Space.World); 
+                    Destroy(gameObject);
+                }
+            } 
             else //If it is Parried by Shield go to shooter
             {
                 if (shooter == null) { Destroy(gameObject); }
@@ -68,7 +69,11 @@ public class Arrow : MonoBehaviour
         
             if (otherFighter.isInvincible) return;
             if (otherFighter == shooter && reflected == false) return;
-            if (otherFighter == reflector && reflected == true) return;
+            if (reflected == true)
+            {
+                Fighter reflectorSheild = reflector.GetComponentInParent<Fighter>();
+                if (otherFighter == reflectorSheild) return;
+            }
 
             otherFighter.HitDetect(damage);
 
@@ -104,24 +109,6 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (active == false)
-        {
-            active = true;
-        }
-
-        if (other.gameObject.CompareTag("Weapon"))
-        {
-            currentContacts.Remove(other);
-        }
-    }
-
-
-
-
-
 
     //Reflection stuff
     private Vector3 FirstOrderIntercept(
@@ -177,3 +164,4 @@ public class Arrow : MonoBehaviour
             return Mathf.Max(-b / (2f * a), 0f);
     }
 }
+//reflect 90o
