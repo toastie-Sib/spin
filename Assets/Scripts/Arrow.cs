@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    [Header("Static or Dynamic")]
+    public Bow shooter; // This one auto assigned
+    private Weapon reflector;
     private HashSet<Collider> currentContacts = new HashSet<Collider>();
     private bool reflected = false;
-    public Bow shooter;
-    private Weapon reflector;
+    public AudioClip parry; //This one can be assigned in 
 
-    public AudioClip parry;
+    [Header("Values")]
     public float damage = 1.0f;
     public float speed = 10.0f;
-    
+
+    [Header("Type")]
+    public bool arrow = false;
 
     void Update()
     {
@@ -30,12 +34,12 @@ public class Arrow : MonoBehaviour
             if (otherWeapon.shield == false) {  if (reflected == false) {
                     //Fighter otherFighter = otherWeapon.GetComponentInParent<Fighter>(); //Potential Parry Reflect
                     //transform.Rotate(0f, 0f, (otherFighter.direction) * -125f, Space.World); 
-                    Destroy(gameObject);
+                    DestroySelf();
                 }
             } 
             else //If it is Parried by Shield go to shooter
             {
-                if (shooter == null) { Destroy(gameObject); }
+                if (shooter == null) { DestroySelf(); }
                 // Get target's rigidbody to read velocity
                 Rigidbody targetRb = shooter.GetComponent<Rigidbody>();
 
@@ -77,37 +81,42 @@ public class Arrow : MonoBehaviour
 
             otherFighter.HitDetect(damage);
 
-            if (reflected == false) {shooter.IncreaseFireRate(); } // Increase Firerate on Hit
+            if (reflected == false && arrow == true) {shooter.IncreaseFireRate(); } // Increase Firerate on Hit
             else // If it was reflected though
             { if (otherFighter == shooter) {
                     reflector.ShieldGrow(damage); } }
-            
-            Destroy(gameObject);
+
+            DestroySelf();
         }
 
         // LEFT WALL
         if (other.gameObject.CompareTag("LeftWall"))
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
 
         // RIGHT WALL
         if (other.gameObject.CompareTag("RightWall"))
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
 
         // Bottom WALL
         if (other.gameObject.CompareTag("BottomWall"))
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
 
         // Top WALL
         if (other.gameObject.CompareTag("Wall"))
         {
-            Destroy(gameObject);
+            DestroySelf();
         }
+    }
+
+    public virtual void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 
     //Reflection stuff
@@ -164,4 +173,3 @@ public class Arrow : MonoBehaviour
             return Mathf.Max(-b / (2f * a), 0f);
     }
 }
-//reflect 90o

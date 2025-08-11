@@ -8,50 +8,22 @@ public class Weapon : MonoBehaviour
 
     public float damage = 1.0f;
     [Header("Type")]
-    public bool sword = false;
-    public bool dagger = false;
     public bool doNotHurt = false;
     public bool shield = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Weapon")) //Parry
         {
-            // Prevent both sides from triggering — only do it on the one with lower ID
-            if (gameObject.GetInstanceID() < other.gameObject.GetInstanceID())
-            {
+            Fighter myFighter = GetComponentInParent<Fighter>();
+            if (myFighter != null)
+                myFighter.ReverseDirection();
+            myFighter.isInvincible = true;
 
-                Fighter myFighter = GetComponentInParent<Fighter>();
-                if (myFighter != null)
-                    myFighter.ReverseDirection();
-                    myFighter.isInvincible = true;
-
-                Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
-                if (otherFighter != null)
-                    otherFighter.ReverseDirection();
-                    if (shield == false) { otherFighter.isInvincible = true; }
-
-                if (shield == true)
-                { // reflect arrows
-                    Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
-                    Weapon myWeapon = other.gameObject.GetComponentInParent<Weapon>();
-                    if (otherWeapon.doNotHurt == true) return;
-                    otherFighter.HitDetect(otherWeapon.damage);
-                    ShieldGrow(otherWeapon.damage);
-                }
-            }
+            Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
+            if (otherFighter != null)
+                otherFighter.ReverseDirection();
+            otherFighter.isInvincible = true;
         }
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
@@ -60,16 +32,9 @@ public class Weapon : MonoBehaviour
             Fighter myFighter = GetComponentInParent<Fighter>();
 
             if (otherFighter.isInvincible || doNotHurt == true) return;
-                otherFighter.HitDetect(damage);
-                myFighter.ReverseDirection();
-                if (sword == true)
-                {
-                    damage += 1;
-                }
-                if (dagger == true)
-                {
-                    myFighter.IncreaseSpeed();
-                }
+            otherFighter.HitDetect(damage);
+            myFighter.ReverseDirection();
+            IncreaseScaling();
         }
     }
 
@@ -88,4 +53,6 @@ public class Weapon : MonoBehaviour
 
         transform.localScale = scale;
     }
+
+    public virtual void IncreaseScaling(){}
 }

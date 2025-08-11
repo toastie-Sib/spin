@@ -42,7 +42,7 @@ public class Fighter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (hp <= 0)
         {

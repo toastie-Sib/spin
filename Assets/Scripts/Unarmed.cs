@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Unarmed : Fighter
 {
-    
-
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
-    
     private void OnCollisionEnter(Collision collision)
     {
         float horizontalSpeed = Mathf.Abs(rb.velocity.x);

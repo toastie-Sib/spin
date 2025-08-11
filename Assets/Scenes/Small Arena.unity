@@ -154,8 +154,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0.10522278, w: 0.99444866}
   m_LocalPosition: {x: -0.024410844, y: 1.3464727, z: 0}
   m_LocalScale: {x: 0.5986508, y: 0.2585489, z: 0.10000001}
-  m_Children:
-  - {fileID: 7979226757819457788}
+  m_Children: []
   m_Father: {fileID: 7979226756829728511}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.61}
@@ -188,8 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  sword: 0
-  dagger: 0
   doNotHurt: 1
   shield: 0
 --- !u!136 &238927005
@@ -303,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a689dc3876604824d9661bc31db4ee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5311323215341001509, guid: 2206fffb5896e0144a2d94891e570075, type: 3}
+  projectilePrefab: {fileID: 1218755945156664945, guid: f34de2f804b060f41a25938ac825dbac, type: 3}
   cam: {fileID: 963194227}
   launchSpeed: 8
   isPlayer: 0
@@ -1723,7 +1720,7 @@ Transform:
   m_LocalScale: {x: 1.6, y: 1.74, z: 10}
   m_Children: []
   m_Father: {fileID: 7979226756829728511}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 49.88}
 --- !u!212 &1867344543
 SpriteRenderer:
@@ -1974,13 +1971,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226983984995193572}
-  m_LocalRotation: {x: -0, y: -0, z: 0.57357633, w: 0.81915206}
-  m_LocalPosition: {x: -0.08, y: 2.3, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 1.42, z: 0}
   m_LocalScale: {x: 0.9459193, y: 0.9459729, z: 10}
   m_Children: []
   m_Father: {fileID: 7979226756829728511}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 70}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1226983984995193574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2194,7 +2191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a689dc3876604824d9661bc31db4ee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 315616872674102727, guid: 581b4c2255aad2e4482cb2e2789d99b8, type: 3}
+  projectilePrefab: {fileID: 4165690970508015787, guid: d699b650cf487f54a8cc0d8efa4585e1, type: 3}
   cam: {fileID: 963194227}
   launchSpeed: 8
   isPlayer: 1
@@ -2249,6 +2246,7 @@ Transform:
   m_Children:
   - {fileID: 7979226757966030810}
   - {fileID: 238927002}
+  - {fileID: 7979226757819457788}
   - {fileID: 1867344542}
   - {fileID: 1226983984995193573}
   m_Father: {fileID: 0}
@@ -2316,8 +2314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  sword: 0
-  dagger: 0
   doNotHurt: 1
   shield: 0
 --- !u!136 &7979226757819457779
@@ -2331,9 +2327,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1.7440668
+  m_Height: 1.7698791
   m_Direction: 1
-  m_Center: {x: -0.000000008079084, y: 0.12796527, z: 0}
+  m_Center: {x: -0.009434433, y: 0.14054298, z: 0}
 --- !u!4 &7979226757819457788
 Transform:
   m_ObjectHideFlags: 0
@@ -2341,12 +2337,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7979226757819457791}
-  m_LocalRotation: {x: -0, y: -0, z: 0.04021906, w: 0.9991909}
-  m_LocalPosition: {x: 0.38027042, y: -2.03, z: 0}
-  m_LocalScale: {x: 0.36884665, y: 1.11, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.06514186, w: 0.99787605}
+  m_LocalPosition: {x: 0.08835727, y: 0.7855989, z: 0}
+  m_LocalScale: {x: 0.22000001, y: 0.28942797, z: 0.10000001}
   m_Children: []
-  m_Father: {fileID: 238927002}
-  m_RootOrder: 0
+  m_Father: {fileID: 7979226756829728511}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.47}
 --- !u!54 &7979226757819457789
 Rigidbody:
@@ -2484,17 +2480,17 @@ MonoBehaviour:
   invincibleUntil: 0
   direction: 1
   hpUI: {fileID: 0}
-  parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
+  parry: {fileID: 0}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   invincibilityDuration: 0.1
   hp: 100
-  spinMult: 400
+  spinMult: 150
   velocityThreshold: 1
   nudgeForce: 5
   nudgeCooldown: 3
-  projectilePrefab: {fileID: 171728331832174311, guid: a86cc25577a91a641a7f351846a74ddd, type: 3}
+  projectilePrefab: {fileID: 2741291000408104983, guid: 1513fe6b8b0ac7b419601a83dae3384d, type: 3}
   firePoint: {fileID: 1226983984995193573}
-  refreshInterval: 1
+  refreshInterval: 2
   fireInterval: 0.05
   arrowCount: 0
   maxArrowCount: 1

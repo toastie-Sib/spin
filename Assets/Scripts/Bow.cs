@@ -4,65 +4,24 @@ using UnityEngine;
 
 public class Bow : Fighter //Inherit Fighter
 {
-    [Header("Bow")]
+    [Header("Projectile User")]
     public GameObject projectilePrefab;
     public Transform firePoint;
+    //Shot Frequency
     public float refreshInterval = 1f;         // Fire every second
     private float nextRefreshTime = 0.5f;
-
-    public float fireInterval = 0.1f;
+    public float fireInterval = 0.1f;          // How fast Fire
     private float nextFireTime = 0.0f;
-
+    //Shot Count
     public float arrowCount = 1f;
     public float maxArrowCount = 1f;
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
     // Update is called once per frame
-    void Update() //Make sure to update with Fighter
+    public override void Update() //Make sure to update with Fighter
     {
+        base.Update();
 
-        if (hp <= 0) //Destroy if dead
-        {
-            Destroy(gameObject);
-        }
-
-        float speed = rb.velocity.magnitude;
-        Vector3 velocity = rb.velocity;
-
-        transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime); //Spin
-
-        if (isInvincible && Time.time >= invincibleUntil) // i-frames
-        {
-            isInvincible = false;
-        }
-
-        //Nudge
-        bool isMovingSlow = Mathf.Abs(velocity.magnitude) < velocityThreshold;
-        bool cooldownPassed = Time.time - lastNudgeTime >= nudgeCooldown;
-        if (isMovingSlow && cooldownPassed && (transform.position.x < -5.1f || transform.position.x > 5.1f))
-        {
-            float xNudge = 0f;
-
-            if (velocity.x > 0)
-                xNudge = -nudgeForce;
-            else if (velocity.x < 0)
-                xNudge = nudgeForce;
-            else
-                xNudge = (Random.value > 0.5f) ? nudgeForce : -nudgeForce; // Random left/right if stuck
-
-            Vector3 nudge = new Vector3(xNudge, 0f, 0f);
-
-            rb.AddForce(nudge, ForceMode.Impulse);
-            lastNudgeTime = Time.time; // Important: Reset cooldown
-            Debug.Log("Poke Poke :)");
-        }
-
-        //Bow specific
+        //Timers for Refresh
         if (Time.time >= nextRefreshTime) //Arrow Refresh
         {
             ArrowRefresh();
@@ -83,7 +42,7 @@ public class Bow : Fighter //Inherit Fighter
         Arrow arrow = projectile.GetComponent<Arrow>();
         if (arrow != null)
         {
-            arrow.shooter = this; // Or whatever object has the script that controls rate of fire
+            arrow.shooter = this;
         }
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
