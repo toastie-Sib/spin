@@ -30,10 +30,11 @@ public class Arrow : MonoBehaviour
             Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
             AudioSource.PlayClipAtPoint(parry, transform.position);
 
-            //Destroy Game object usually if it isn't a shield or reflected
+            //Destroy Game object if it isn't a shield or reflected
             if (otherWeapon.shield == false) {  if (reflected == false) { Destroy(gameObject); } } 
             else //If it is Parried by Shield go to shooter
             {
+                if (shooter == null) { Destroy(gameObject); }
                 // Get target's rigidbody to read velocity
                 Rigidbody targetRb = shooter.GetComponent<Rigidbody>();
 
@@ -66,16 +67,16 @@ public class Arrow : MonoBehaviour
             Fighter otherFighter = other.GetComponent<Fighter>();
         
             if (otherFighter.isInvincible) return;
+            if (otherFighter == shooter && reflected == false) return;
+            if (otherFighter == reflector && reflected == true) return;
+
             otherFighter.HitDetect(damage);
 
             if (reflected == false) {shooter.IncreaseFireRate(); } // Increase Firerate on Hit
             else // If it was reflected though
-            {
-                shooter.HitDetect(damage);
-                reflector.ShieldGrow(damage);
-            }
+            { if (otherFighter == shooter) {
+                    reflector.ShieldGrow(damage); } }
             
-
             Destroy(gameObject);
         }
 
@@ -122,7 +123,7 @@ public class Arrow : MonoBehaviour
 
 
 
-
+    //Reflection stuff
     private Vector3 FirstOrderIntercept(
     Vector3 shooterPosition,
     Vector3 shooterVelocity,
@@ -175,9 +176,4 @@ public class Arrow : MonoBehaviour
         else
             return Mathf.Max(-b / (2f * a), 0f);
     }
-
-
-
-    // When arrow hits shield after reflect, hits bow
-    //Widen Arrows (Not hitting???)
 }
