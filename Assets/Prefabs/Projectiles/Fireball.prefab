@@ -131,7 +131,9 @@ MonoBehaviour:
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   damage: 1
   speed: 3
-  arrow: 0
+  explosionRadius: 5
+  explosionDamage: 1
+  explosionEffect: {fileID: 2741291000408104983}
 --- !u!1 &8985149251112397297
 GameObject:
   m_ObjectHideFlags: 0

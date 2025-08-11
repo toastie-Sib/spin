@@ -35,7 +35,7 @@ public class Bow : Fighter //Inherit Fighter
         }
     }
 
-    void FireProjectile()
+    public virtual void FireProjectile()
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
