@@ -192,8 +192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  sword: 0
-  dagger: 0
   doNotHurt: 1
   shield: 0
 --- !u!54 &315616872435341064
@@ -345,6 +343,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibleUntil: 0
   direction: 1
+  freezeFrame: 0
   hpUI: {fileID: 0}
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
@@ -586,8 +585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  sword: 0
-  dagger: 0
   doNotHurt: 1
   shield: 0
 --- !u!54 &8925497589105384439

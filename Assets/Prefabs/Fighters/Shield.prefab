@@ -246,6 +246,7 @@ MonoBehaviour:
   isInvincible: 0
   invincibleUntil: 0
   direction: 1
+  freezeFrame: 0
   hpUI: {fileID: 0}
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
@@ -270,7 +271,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1 &1218755945272613627
 GameObject:
   m_ObjectHideFlags: 0

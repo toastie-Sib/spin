@@ -10,7 +10,11 @@ public class Fighter : MonoBehaviour
     public bool isInvincible = false;
     public float invincibleUntil = 0f;
     public int direction = 1;
+    public bool freezeFrame = false;
     public Launcher hpUI;
+    private Vector3 storedVelocity;
+    private Vector3 storedAngularVelocity;
+    private int storedDirection;
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
@@ -29,6 +33,8 @@ public class Fighter : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        hpUI.hpText.text = Mathf.Round(hp).ToString();
 
         float myXValue = transform.position.x;
         if (myXValue < 0)
@@ -84,8 +90,12 @@ public class Fighter : MonoBehaviour
     //Parry
     public void ReverseDirection()
     {
-        Vector3 velocityBoost = new Vector3(Random.Range(0.5f, 1.5f), Random.Range(1f, 2f), 0f);
-        rb.velocity += velocityBoost;
+        if (freezeFrame == false)
+        {
+            Vector3 velocityBoost = new Vector3(Random.Range(0.5f, 1.5f), Random.Range(1f, 2f), 0f);
+            rb.velocity += velocityBoost;
+        }
+
         direction *= -1;
 
         invincibleUntil = Time.time + invincibilityDuration;
@@ -93,13 +103,13 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(parry, transform.position);
 
         // Trigger impact frames
-        ImpactPause.Instance.PauseForImpact(0.1f);
+        StartCoroutine(ImpactFrames(0.2f));
     }
 
     //Ouchy
     public void HitDetect(float amount)
     {
-        if (isInvincible) return; // Don't get hurt
+        if (isInvincible || freezeFrame == true) return; // Don't get hurt
         StartCoroutine(GetHit(amount));
     }
     private IEnumerator GetHit(float amount)
@@ -116,7 +126,7 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(hit, transform.position);
         // Trigger impact frames
         GetComponentInChildren<Renderer>().material.color = Color.white;
-        ImpactPause.Instance.PauseForImpact(0.2f);
+        StartCoroutine(ImpactFrames(0.2f));
         yield return new WaitForSecondsRealtime(0.2f);
         GetComponentInChildren<Renderer>().material.color = Color.cyan;
     }
@@ -157,6 +167,32 @@ public class Fighter : MonoBehaviour
         //
         //    
         //}
+    }
+
+    private IEnumerator ImpactFrames(float freezeDuration)
+    {
+        if (freezeFrame == false)
+        {
+            storedVelocity = rb.velocity;
+            storedAngularVelocity = rb.angularVelocity;
+            storedDirection = direction;
+        }
+
+        freezeFrame = true;
+
+        //Set to 0
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.useGravity = false;
+        direction = 0;
+
+        yield return new WaitForSecondsRealtime(freezeDuration);
+
+        rb.velocity = storedVelocity;
+        rb.angularVelocity = storedAngularVelocity;
+        rb.useGravity = true;
+        direction = storedDirection;
+        freezeFrame = false;
     }
 
     //Dagger only

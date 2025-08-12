@@ -194,7 +194,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &8800063432083503891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,9 +212,10 @@ MonoBehaviour:
   isInvincible: 0
   invincibleUntil: 0
   direction: 1
+  freezeFrame: 0
+  hpUI: {fileID: 0}
   parry: {fileID: 0}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  hpUI: {fileID: 0}
   invincibilityDuration: 0.1
   hp: 100
   spinMult: 0

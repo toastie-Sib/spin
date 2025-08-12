@@ -133,7 +133,7 @@ MonoBehaviour:
   speed: 3
   explosionRadius: 5
   explosionDamage: 1
-  explosionEffect: {fileID: 2741291000408104983}
+  explosionEffect: {fileID: 3539011188045591672, guid: 56b58b25ad490f54793bd7eedc40b8c8, type: 3}
 --- !u!1 &8985149251112397297
 GameObject:
   m_ObjectHideFlags: 0

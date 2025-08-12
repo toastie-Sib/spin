@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spear : Weapon
 {
-    private float originalHeight;
+    public float originalHeight;
     public float scaleAmount = 0.05f;
 
     void Start()

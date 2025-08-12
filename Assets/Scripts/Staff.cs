@@ -11,6 +11,7 @@ public class Staff : Bow
     {
         base.FireProjectile();
 
+        //Apply Force away when shot
         float zRot = transform.eulerAngles.z;
 
         // Convert to radians for Mathf trig functions

@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\Launcher.cs" />
     <Compile Include="Assets\Scripts\Staff.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\ImpactPause.cs" />
+    <Compile Include="Assets\Scripts\GameSpeedManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
