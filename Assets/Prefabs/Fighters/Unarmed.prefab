@@ -217,7 +217,7 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   parry: {fileID: 0}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  invincibilityDuration: 0.1
+  invincibilityDuration: 0.2
   hp: 100
   spinMult: 0
   velocityThreshold: 1

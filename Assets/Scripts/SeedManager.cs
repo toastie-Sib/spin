@@ -22,11 +22,11 @@ public class SeedManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        InitSeed();
+        ApplySeed();
     }
 
     // Initialize the master seed
-    public void InitSeed()
+    public void ApplySeed()
     {
         if (randomizeOnStart)
         {

@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ChooseFighter.unity
     guid: 337be2c033191aa4bb6d325cf1a9df4d
   - enabled: 1
-    path: Assets/Scenes/SmallArena.unity
+    path: Assets/Scenes/ArenaSmall.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/BigArena.unity
+    path: Assets/Scenes/ArenaBig.unity
     guid: 19882981e24e087489c5e9b322b1b156
   m_configObjects: {}
