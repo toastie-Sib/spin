@@ -128,12 +128,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
+  reflector: {fileID: 0}
+  reflected: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   damage: 1
-  speed: 3
-  explosionRadius: 5
-  explosionDamage: 1
-  explosionEffect: {fileID: 3539011188045591672, guid: 56b58b25ad490f54793bd7eedc40b8c8, type: 3}
+  speed: 5
+  explosionEffect: {fileID: 4852147107929324276, guid: 8bfbc6d772fbd644c966bb849bc7505b, type: 3}
 --- !u!1 &8985149251112397297
 GameObject:
   m_ObjectHideFlags: 0

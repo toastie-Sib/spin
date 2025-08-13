@@ -5,32 +5,54 @@ using UnityEngine;
 public class Fireball : Projectile
 {
     [Header("Fireball")]
-    public float explosionRadius = 5f;
-    public float explosionDamage = 2f;
-    public GameObject explosionEffect; // Optional VFX prefab
+    public GameObject explosionEffect;
+    private SpriteRenderer childSpriteRenderer;
+    private CapsuleCollider capsuleCollider;
+    private bool explosionDone;
+    private Staff myFighter;
+
+    public override void Start()
+    {
+        base.Start();
+        myFighter = shooter.GetComponent<Staff>();
+        childSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        damage += myFighter.damageIncrease;
+    }
+
 
     public override void DestroySelf()
     {
+        if (explosionDone == true) return;
         if (explosionEffect != null) //Visual Effect
         {
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            float scaleFactor = myFighter.explosionRadius;
+            Vector3 Scale = explosion.transform.localScale;
+            Scale = Scale * scaleFactor; 
+            explosion.transform.localScale = Scale;
         }
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRadius); // Detect all in range
-        foreach (Collider hit in hitColliders)
-        {
-            Fighter fighter = hit.GetComponent<Fighter>();
-            if (fighter != null)
-            {
-                fighter.HitDetect(explosionDamage);
-            }
-        }
+        Color finalColor = Color.red;
+        finalColor.a = 0.0f;
+        childSpriteRenderer.color = finalColor;
+        capsuleCollider.center = new Vector3 (0,0,0);
+        capsuleCollider.radius = 2f *(myFighter.explosionRadius);
+        speed = 0;
 
+        explosionDone = true;
+        StartCoroutine(ActuallyDestroy());
+    }
+
+    private IEnumerator ActuallyDestroy()
+    {
+        yield return new WaitForSecondsRealtime(0.5f); //MAKE SURE THIS IS THE SAME AS THE EXPLOSION VALUE
         Destroy(gameObject);
     }
 
     public override void ScalingIncrease()
     {
-        //shooter.IncreaseFireRate();
+        myFighter.explosionRadius += 0.25f;
+        myFighter.damageIncrease += 0.5f;
     }
 }

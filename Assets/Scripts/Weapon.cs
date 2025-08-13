@@ -33,7 +33,6 @@ public class Weapon : MonoBehaviour
         {
             if (otherFighter.isInvincible || doNotHurt == true) return;
             otherFighter.HitDetect(damage);
-            myFighter.ReverseDirection();
             IncreaseScaling();
         }
     }

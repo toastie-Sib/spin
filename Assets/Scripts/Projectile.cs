@@ -6,14 +6,19 @@ public class Projectile : MonoBehaviour
 {
     [Header("Static or Dynamic")]
     public Bow shooter; // This one auto assigned
-    private Weapon reflector;
-    private HashSet<Collider> currentContacts = new HashSet<Collider>();
-    private bool reflected = false;
+    public Weapon reflector;
+    public bool reflected = false;
     public AudioClip parry; //This one can be assigned in 
 
     [Header("Values")]
     public float damage = 1.0f;
     public float speed = 10.0f;
+
+    public virtual void Start()
+    {
+
+    }
+
 
     void Update()
     {

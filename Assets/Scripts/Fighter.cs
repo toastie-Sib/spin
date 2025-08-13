@@ -109,7 +109,7 @@ public class Fighter : MonoBehaviour
     //Ouchy
     public void HitDetect(float amount)
     {
-        if (isInvincible || freezeFrame == true) return; // Don't get hurt
+        if (isInvincible) return; // Don't get hurt
         StartCoroutine(GetHit(amount));
     }
     private IEnumerator GetHit(float amount)

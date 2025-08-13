@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 171728331832174307}
   - component: {fileID: 171728331832174306}
   - component: {fileID: 171728331832174304}
-  - component: {fileID: 7751582432533999023}
+  - component: {fileID: 646089440874722933}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 3
---- !u!114 &7751582432533999023
+--- !u!114 &646089440874722933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 171728331832174311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb11e29d14ddf345866fe8f60f78209, type: 3}
+  m_Script: {fileID: 11500000, guid: 54feae66b6ec83b4c82c4b8f2a4d2961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
