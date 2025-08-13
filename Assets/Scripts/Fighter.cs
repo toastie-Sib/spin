@@ -6,6 +6,8 @@ public class Fighter : MonoBehaviour
 {
     [Header("Unmodifyable or Dynamic Do not Touch")]
     public Rigidbody rb;
+    public Color originalColor;
+    private Renderer objectRenderer;
     public float lastNudgeTime = -Mathf.Infinity;
     public bool isInvincible = false;
     public float invincibleUntil = 0f;
@@ -33,6 +35,8 @@ public class Fighter : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        objectRenderer = GetComponent<Renderer>();
+        originalColor = objectRenderer.material.color;
 
         hpUI.hpText.text = Mathf.Round(hp).ToString();
 
@@ -128,7 +132,7 @@ public class Fighter : MonoBehaviour
         GetComponentInChildren<Renderer>().material.color = Color.white;
         StartCoroutine(ImpactFrames(0.2f));
         yield return new WaitForSecondsRealtime(0.2f);
-        GetComponentInChildren<Renderer>().material.color = Color.cyan;
+        GetComponentInChildren<Renderer>().material.color = originalColor;
     }
 
     //Keep bounce going

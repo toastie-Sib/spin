@@ -130,6 +130,7 @@ MonoBehaviour:
   damage: 1
   doNotHurt: 0
   shield: 0
+  originalHeight: 0
   scaleAmount: 0.05
 --- !u!1 &4165690970508015787
 GameObject:
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   lastNudgeTime: -Infinity
   isInvincible: 0
   invincibleUntil: 0
