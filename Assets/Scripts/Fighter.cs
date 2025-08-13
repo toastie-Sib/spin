@@ -200,11 +200,11 @@ public class Fighter : MonoBehaviour
     {
         if (spinMult < 0)
         {
-            spinMult -= 250f;
+            spinMult -= 200;
         }
         if (spinMult > 0)
         {
-            spinMult += 250f;
+            spinMult += 200;
         }
     }
 }
