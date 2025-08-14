@@ -19,9 +19,13 @@ public class SceneSwitcher : MonoBehaviour
         // If a seed was saved previously, load it
         if (PlayerPrefs.HasKey("SavedSeed"))
         {
-            int savedSeed = PlayerPrefs.GetInt("SavedSeed");
-            seedInputField.text = savedSeed.ToString();
-            UpdateSeedText(savedSeed);
+            if (seedInputField != null)
+            {
+                int savedSeed = PlayerPrefs.GetInt("SavedSeed");
+                seedInputField.text = savedSeed.ToString();
+                UpdateSeedText(savedSeed);
+            }
+            
         }
         else
         {
