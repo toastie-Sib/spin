@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ArenaBig.unity
     guid: 19882981e24e087489c5e9b322b1b156
+  - enabled: 1
+    path: Assets/Scenes/Chapter0.unity
+    guid: c73b14f17a3ed9244aa67807997a270c
   m_configObjects: {}

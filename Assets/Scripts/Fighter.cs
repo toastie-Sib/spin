@@ -17,6 +17,7 @@ public class Fighter : MonoBehaviour
     private Vector3 storedVelocity;
     private Vector3 storedAngularVelocity;
     private int storedDirection;
+    public bool isUnarmed = false;
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;

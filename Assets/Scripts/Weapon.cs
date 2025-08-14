@@ -31,9 +31,11 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible || doNotHurt == true) return;
-            otherFighter.HitDetect(damage);
-            IncreaseScaling();
+            if (otherFighter.isInvincible == false || doNotHurt == false) {
+                otherFighter.HitDetect(damage);
+                IncreaseScaling();
+            }
+            
         }
     }
 

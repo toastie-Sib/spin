@@ -65,7 +65,7 @@ public class SceneSwitcher : MonoBehaviour
         Debug.Log($"[SeedUIManager] Starting game with seed: {finalSeed}");
 
         // Load your actual game scene
-        SceneManager.LoadScene("GameScene"); // Change to your scene name
+        SceneManager.LoadScene("Chapter0"); // Change to your scene name
     }
 
     private void UpdateSeedText(int seed)

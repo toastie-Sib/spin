@@ -95,10 +95,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.74330056
-  m_Height: 1.9422237
+  m_Radius: 0.7811763
+  m_Height: 1.9897218
   m_Direction: 1
-  m_Center: {x: -0.03686372, y: 0.028889101, z: 0}
+  m_Center: {x: 0.010481535, y: -0.002778065, z: 0}
 --- !u!54 &1218755944736140018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 3
+  m_CollisionDetection: 2
 --- !u!114 &6493679920490512205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,9 +249,10 @@ MonoBehaviour:
   direction: 1
   freezeFrame: 0
   hpUI: {fileID: 0}
+  isUnarmed: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  invincibilityDuration: 0.2
+  invincibilityDuration: 0.4
   hp: 60
   spinMult: 300
   velocityThreshold: 1

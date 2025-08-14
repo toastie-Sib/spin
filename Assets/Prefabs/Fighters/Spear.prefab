@@ -251,9 +251,10 @@ MonoBehaviour:
   direction: 1
   freezeFrame: 0
   hpUI: {fileID: 0}
+  isUnarmed: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  invincibilityDuration: 0.2
+  invincibilityDuration: 0.4
   hp: 100
   spinMult: 350
   velocityThreshold: 1
