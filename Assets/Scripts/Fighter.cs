@@ -21,7 +21,6 @@ public class Fighter : MonoBehaviour
     public bool isUnarmed = false;
 
     [Header("Set then Static Shouldnt need to touch")]
-    public GameObject animations;
     public AudioClip parry;
     public AudioClip hit;
     public AudioClip click;

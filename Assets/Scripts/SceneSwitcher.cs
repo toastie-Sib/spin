@@ -11,6 +11,7 @@ public class SceneSwitcher : MonoBehaviour
     public TMP_Text currentSeedText;
 
     public GameObject fighterPrefab;
+    public GameObject animatorPrefab;
 
     private void Start()
     {
@@ -80,9 +81,14 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
-    public void SetSelectedPrefab(GameObject prefabToSet)
+    public void SetSelectedPrefab1(GameObject prefabToSet1)
     {
-        fighterPrefab = prefabToSet;
+        fighterPrefab = prefabToSet1;
+    }
+
+    public void SetSelectedPrefab2(GameObject prefabToSet2)
+    {
+        animatorPrefab = prefabToSet2;
     }
 
     public GameObject GetSelectedPrefab()

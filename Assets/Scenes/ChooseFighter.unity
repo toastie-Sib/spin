@@ -287,7 +287,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1218755945156664945, guid: f34de2f804b060f41a25938ac825dbac, type: 3}
@@ -295,6 +295,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6070745921902017392, guid: b458930b89a8cd346b757faea67ce9a6, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &4941814
@@ -420,7 +432,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 4165690970508015787, guid: d699b650cf487f54a8cc0d8efa4585e1, type: 3}
@@ -428,6 +440,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4766159161853580743, guid: b6c4c8d2d4657194199940bd2db69df7, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &108615978
@@ -1240,6 +1264,7 @@ MonoBehaviour:
   seedInputField: {fileID: 1783154577}
   currentSeedText: {fileID: 149759961}
   fighterPrefab: {fileID: 0}
+  animatorPrefab: {fileID: 0}
 --- !u!114 &803803649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,7 +1527,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 7811194643921387890, guid: a0f93f8fcb78c894b87e088574dca25f, type: 3}
@@ -1510,6 +1535,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 858040605759260167, guid: e5ba3e39c722f8f4eb1be19ac9c15be2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &969686117
@@ -1809,7 +1846,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8800063432083503889, guid: c09fa3d935fa19b469aad60b082242c0, type: 3}
@@ -1817,6 +1854,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1053188438
@@ -2959,7 +3008,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 9204503434298110760, guid: 34d8cea4598a3e94f9b94c439944257b, type: 3}
@@ -2967,6 +3016,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4102209906329537587, guid: 92bd251e4a0ad994a85b04acf016b1f2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1511371740
@@ -3292,7 +3353,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8800063432083503889, guid: c09fa3d935fa19b469aad60b082242c0, type: 3}
@@ -3300,6 +3361,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5048674814633144717, guid: 6f203da8b38f1cd4a8f202266f0aa26f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1634126973
@@ -3425,7 +3498,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 315616872674102727, guid: 581b4c2255aad2e4482cb2e2789d99b8, type: 3}
@@ -3433,6 +3506,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7677716545353770495, guid: cce476aba9e452b4c9f622aeb3b2354d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1678275141
@@ -3558,7 +3643,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8800063432083503889, guid: c09fa3d935fa19b469aad60b082242c0, type: 3}
@@ -3566,6 +3651,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1690481752
@@ -4309,7 +4406,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 803803648}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: SetSelectedPrefab
+        m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 5311323215341001509, guid: 2206fffb5896e0144a2d94891e570075, type: 3}
@@ -4317,6 +4414,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ChooseFighter
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 803803648}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: SetSelectedPrefab2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5568016942853183821, guid: 9199cd515b9b178489ce33bc8d3f498b, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &2110334904
