@@ -56,22 +56,22 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Fireball.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Fireball.cs" />
     <Compile Include="Assets\Scripts\SeedManager.cs" />
-    <Compile Include="Assets\Scripts\Arrow.cs" />
-    <Compile Include="Assets\Scripts\Bow.cs" />
-    <Compile Include="Assets\Scripts\Spear.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Arrow.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Bow.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Spear.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Explosion.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Explosion.cs" />
     <Compile Include="Assets\Scripts\Fighter.cs" />
-    <Compile Include="Assets\Scripts\Dagger.cs" />
-    <Compile Include="Assets\Scripts\Sword.cs" />
-    <Compile Include="Assets\Scripts\Unarmed.cs" />
-    <Compile Include="Assets\Scripts\Shield.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Dagger.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Sword.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Unarmed.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Shield.cs" />
     <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
     <Compile Include="Assets\Scripts\Launcher.cs" />
-    <Compile Include="Assets\Scripts\Staff.cs" />
-    <Compile Include="Assets\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Scripts\GameSpeedManager.cs" />
   </ItemGroup>
   <ItemGroup>

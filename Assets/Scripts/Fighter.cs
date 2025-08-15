@@ -17,11 +17,14 @@ public class Fighter : MonoBehaviour
     private Vector3 storedVelocity;
     private Vector3 storedAngularVelocity;
     private int storedDirection;
+    public bool isActive = false;
     public bool isUnarmed = false;
 
     [Header("Set then Static Shouldnt need to touch")]
+    public GameObject animations;
     public AudioClip parry;
     public AudioClip hit;
+    public AudioClip click;
     public float invincibilityDuration = 0.1f;
 
     [Header("Modifyable")]
@@ -55,6 +58,7 @@ public class Fighter : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        if (isActive == false) return;
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -105,7 +109,7 @@ public class Fighter : MonoBehaviour
 
         invincibleUntil = Time.time + invincibilityDuration;
 
-        AudioSource.PlayClipAtPoint(parry, transform.position);
+        AudioSource.PlayClipAtPoint(parry, transform.position, 0.5f);
 
         // Trigger impact frames
         StartCoroutine(ImpactFrames(0.2f));
@@ -128,7 +132,7 @@ public class Fighter : MonoBehaviour
             hpUI.hpText.text = (" ").ToString();
         }
 
-        AudioSource.PlayClipAtPoint(hit, transform.position);
+        AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
         // Trigger impact frames
         GetComponentInChildren<Renderer>().material.color = Color.white;
         StartCoroutine(ImpactFrames(0.2f));
@@ -139,8 +143,9 @@ public class Fighter : MonoBehaviour
     //Keep bounce going
     private void OnCollisionEnter(Collision collision)
     {
+        AudioSource.PlayClipAtPoint(click, transform.position);
         float horizontalSpeed = Mathf.Abs(rb.velocity.x);
-        float verticalSpeed = Mathf.Abs(rb.velocity.y);
+        //float verticalSpeed = Mathf.Abs(rb.velocity.y);
 
         // LEFT WALL
         if (collision.gameObject.CompareTag("LeftWall"))

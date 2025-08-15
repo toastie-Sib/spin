@@ -190,7 +190,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
@@ -212,15 +212,18 @@ MonoBehaviour:
   lastNudgeTime: -Infinity
   isInvincible: 0
   invincibleUntil: 0
-  direction: 1
+  direction: 0
   freezeFrame: 0
   hpUI: {fileID: 0}
+  isActive: 0
   isUnarmed: 1
+  animations: {fileID: 5048674814633144717, guid: 6f203da8b38f1cd4a8f202266f0aa26f, type: 3}
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
+  click: {fileID: 8300000, guid: 644a91933fae62d40a74c9fb5fc64524, type: 3}
   invincibilityDuration: 0.4
   hp: 100
   spinMult: 0
   velocityThreshold: 1
-  nudgeForce: 5
+  nudgeForce: 3
   nudgeCooldown: 3

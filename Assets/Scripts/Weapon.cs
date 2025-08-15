@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public Animator animator;
     public float damage = 1.0f;
     [Header("Type")]
     public bool doNotHurt = false;
     public bool shield = false;
+
 
     public virtual void OnTriggerEnter(Collider other)
     {
@@ -31,9 +33,10 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false || doNotHurt == false) {
+            if (otherFighter.isInvincible == false && doNotHurt == false) {
                 otherFighter.HitDetect(damage);
                 IncreaseScaling();
+                animator.SetTrigger("attack");
             }
             
         }

@@ -11,6 +11,7 @@ public class Launcher : MonoBehaviour
     public float launchSpeed = 10f;
     private bool shotDone = false;
     public bool isPlayer = false;
+    private GameObject stashedProjectile;
 
     [Header("HP Tracking")]
     public Vector3 offset;
@@ -57,6 +58,20 @@ public class Launcher : MonoBehaviour
             direction = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
             DrawOtherTrajectoryFromDirection(direction, aiLineRenderer);
         }
+
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
+        stashedProjectile = projectile;
+
+        Fighter fighter = projectile.GetComponent<Fighter>(); // Get Fighter script
+        if (fighter != null)
+        {
+            // Assign HP UI
+            target = fighter.transform; // This is still for your own UI movement
+            fighter.hpUI = this;        // Let the fighter know which Launcher controls its HP UI
+        }
+
+        transform.position += new Vector3(0, 0, 0.5f);
     }
 
     void Update()
@@ -164,6 +179,13 @@ public class Launcher : MonoBehaviour
 
     void ShootTowardsMouse() //For Player
     {
+        Rigidbody projectileRb = stashedProjectile.GetComponent<Rigidbody>();
+
+        Fighter fighter = stashedProjectile.GetComponent<Fighter>(); // Get Fighter script
+
+        projectileRb.useGravity = true;
+        fighter.isActive = true;
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.forward, Vector3.zero);
 
@@ -171,48 +193,35 @@ public class Launcher : MonoBehaviour
         {
             Vector3 hitPoint = ray.GetPoint(enter);
 
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-
-            Fighter fighter = projectile.GetComponent<Fighter>(); // Get Fighter script
-            if (fighter != null)
-            {
-                // Assign HP UI
-                target = fighter.transform; // This is still for your own UI movement
-                fighter.hpUI = this;        // Let the fighter know which Launcher controls its HP UI
-            }
-
-            if (rb != null)
+            if (projectileRb != null)
             {
                 Vector3 direction = (hitPoint - transform.position).normalized;
-                rb.velocity = direction * launchSpeed;
+                projectileRb.velocity = direction * launchSpeed;
 
-                target = rb.transform;
+                target = projectileRb.transform;
             }
         }
         shotDone = true;
+        
         transform.position = new Vector3(50, 0, 0);
     }
 
     void Spawn() //For Other Spawner
     {
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        Rigidbody projectileRb = stashedProjectile.GetComponent<Rigidbody>();
 
-        Fighter fighter = projectile.GetComponent<Fighter>(); // Get Fighter script
-        if (fighter != null)
-        {
-            // Assign HP UI
-            target = fighter.transform; // This is still for your own UI movement
-            fighter.hpUI = this;        // Let the fighter know which Launcher controls its HP UI
-        }
+        Fighter fighter = stashedProjectile.GetComponent<Fighter>(); // Get Fighter script
 
-        if (rb != null)
+        projectileRb.useGravity = true;
+        fighter.isActive = true;
+
+        if (projectileRb != null)
         {
-            
-            rb.velocity = direction * launchSpeed;
+
+            projectileRb.velocity = direction * launchSpeed;
         }
         shotDone = true;
+        
         transform.position = new Vector3(50, 0, 0);
     }
 }
