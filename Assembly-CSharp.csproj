@@ -58,24 +58,24 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Projectiles\Fireball.cs" />
     <Compile Include="Assets\Scripts\SeedManager.cs" />
+    <Compile Include="Assets\Scripts\AssignAnimation.cs" />
+    <Compile Include="Assets\Scripts\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Fighter.cs" />
+    <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
+    <Compile Include="Assets\Scripts\Launcher.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Scripts\AssignSeedInputField.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Arrow.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Bow.cs" />
-    <Compile Include="Assets\Scripts\AssignAnimation.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Spear.cs" />
-    <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Explosion.cs" />
-    <Compile Include="Assets\Scripts\Fighter.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Dagger.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Sword.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Unarmed.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Shield.cs" />
-    <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
-    <Compile Include="Assets\Scripts\Launcher.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
-    <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
-    <Compile Include="Assets\Scripts\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Assign.cs" />
-    <Compile Include="Assets\Scripts\AssignSeedInputField.cs" />
+    <Compile Include="Assets\Scripts\GameSpeedManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
