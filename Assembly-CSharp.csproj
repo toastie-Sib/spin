@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Scripts\GameSpeedManager.cs" />
+    <Compile Include="Assets\Scripts\Assign.cs" />
+    <Compile Include="Assets\Scripts\AssignSeedInputField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

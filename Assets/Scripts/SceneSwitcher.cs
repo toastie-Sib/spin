@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class SceneSwitcher : MonoBehaviour
 {
@@ -13,74 +14,6 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject fighterPrefab;
     public GameObject animatorPrefab;
 
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-
-        // If a seed was saved previously, load it
-        if (PlayerPrefs.HasKey("SavedSeed"))
-        {
-            if (seedInputField != null)
-            {
-                int savedSeed = PlayerPrefs.GetInt("SavedSeed");
-                seedInputField.text = savedSeed.ToString();
-                UpdateSeedText(savedSeed);
-            }
-            
-        }
-        else
-        {
-            RandomizeSeed();
-        }
-    }
-
-    public void RandomizeSeed()
-    {
-        if (seedInputField == null) return;
-        int randomSeed = Random.Range(0 , 999999999);
-        seedInputField.text = randomSeed.ToString();
-        UpdateSeedText(randomSeed);
-    }
-
-    public void StartGame()
-    {
-        string input = seedInputField.text.Trim();
-
-        int finalSeed;
-        if (string.IsNullOrEmpty(input))
-        {
-            finalSeed = Random.Range(0, 999999999);
-        }
-        else if (!int.TryParse(input, out finalSeed))
-        {
-            finalSeed = input.GetHashCode(); // Allow word-based seeds
-        }
-
-        // Store the chosen seed
-        PlayerPrefs.SetInt("SavedSeed", finalSeed);
-        PlayerPrefs.Save();
-
-        // Apply to SeedManager
-        if (SeedManager.Instance != null)
-        {
-            SeedManager.Instance.masterSeed = finalSeed;
-            Random.InitState(finalSeed);
-        }
-
-        Debug.Log($"[SeedUIManager] Starting game with seed: {finalSeed}");
-
-        // Load your actual game scene
-        SceneManager.LoadScene("Chapter0"); // Change to your scene name
-    }
-
-    private void UpdateSeedText(int seed)
-    {
-        if (currentSeedText != null)
-        {
-            currentSeedText.text = $"Current Seed: {seed}";
-        }
-    }
-
     public void SetSelectedPrefab1(GameObject prefabToSet1)
     {
         fighterPrefab = prefabToSet1;
@@ -89,6 +22,12 @@ public class SceneSwitcher : MonoBehaviour
     public void SetSelectedPrefab2(GameObject prefabToSet2)
     {
         animatorPrefab = prefabToSet2;
+    }
+
+    public void SetButtonActive(GameObject button)
+    {
+        Button buttonRef = button.GetComponent<Button>();
+        buttonRef.interactable = true;
     }
 
     public GameObject GetSelectedPrefab()

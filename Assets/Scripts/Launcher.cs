@@ -13,6 +13,7 @@ public class Launcher : MonoBehaviour
     public bool isPlayer = false;
     private GameObject stashedProjectile;
     private SceneSwitcher es;
+    public GameObject[] enemyPrefabs;
 
     [Header("HP Tracking")]
     public Vector3 offset;
@@ -60,6 +61,13 @@ public class Launcher : MonoBehaviour
             Vector2 randomDir2D = Random.insideUnitCircle.normalized;
             direction = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
             DrawOtherTrajectoryFromDirection(direction, aiLineRenderer);
+
+            SeedManager.Instance.UseSubSeed("EnemySystem");
+
+            int enemyTypeIndex = Random.Range(0, enemyPrefabs.Length);
+            projectilePrefab = enemyPrefabs[enemyTypeIndex];
+
+            SeedManager.Instance.RestoreMasterSeed();
         }
         if (!shotDone && isPlayer)
         {
