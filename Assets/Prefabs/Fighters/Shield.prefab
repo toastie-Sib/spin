@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218755944736140016}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.57, z: 0}
+  m_LocalPosition: {x: 0, y: 0.688, z: 0}
   m_LocalScale: {x: 0.51, y: 0.61, z: 0.1}
   m_Children:
   - {fileID: 6439153791244783976}
@@ -95,10 +95,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.7811763
+  m_Radius: 0.63943243
   m_Height: 1.9897218
   m_Direction: 1
-  m_Center: {x: 0.010481535, y: -0.002778065, z: 0}
+  m_Center: {x: 0.15222558, y: -0.002778065, z: 0}
 --- !u!54 &1218755944736140018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,10 +252,9 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
-  animations: {fileID: 6070745921902017392, guid: b458930b89a8cd346b757faea67ce9a6, type: 3}
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  click: {fileID: 8300000, guid: 644a91933fae62d40a74c9fb5fc64524, type: 3}
+  click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   invincibilityDuration: 0.4
   hp: 60
   spinMult: 300

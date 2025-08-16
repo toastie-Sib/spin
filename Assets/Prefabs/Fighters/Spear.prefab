@@ -254,10 +254,9 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
-  animations: {fileID: 4766159161853580743, guid: b6c4c8d2d4657194199940bd2db69df7, type: 3}
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  click: {fileID: 8300000, guid: 644a91933fae62d40a74c9fb5fc64524, type: 3}
+  click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   invincibilityDuration: 0.4
   hp: 100
   spinMult: 350

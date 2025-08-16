@@ -12,6 +12,7 @@ public class Launcher : MonoBehaviour
     private bool shotDone = false;
     public bool isPlayer = false;
     private GameObject stashedProjectile;
+    private SceneSwitcher es;
 
     [Header("HP Tracking")]
     public Vector3 offset;
@@ -28,6 +29,8 @@ public class Launcher : MonoBehaviour
 
     void Start()
     {
+        GameObject esObject = GameObject.Find("EventSystem");
+        es = esObject.GetComponent<SceneSwitcher>();
         cam = Camera.main;
 
         if (lineRenderer == null) // Player trajectory
@@ -57,6 +60,10 @@ public class Launcher : MonoBehaviour
             Vector2 randomDir2D = Random.insideUnitCircle.normalized;
             direction = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
             DrawOtherTrajectoryFromDirection(direction, aiLineRenderer);
+        }
+        if (!shotDone && isPlayer)
+        {
+            projectilePrefab = es.fighterPrefab;
         }
 
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
