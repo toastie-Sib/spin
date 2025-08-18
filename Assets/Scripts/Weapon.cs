@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    private HashSet<GameObject> alreadyTriggered = new HashSet<GameObject>();
     public Animator animator;
     public float damage = 1.0f;
     [Header("Type")]
@@ -40,6 +41,15 @@ public class Weapon : MonoBehaviour
             }
             
         }
+
+        if (alreadyTriggered.Contains(other.gameObject)) return;
+
+        alreadyTriggered.Add(other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        alreadyTriggered.Remove(other.gameObject);
     }
 
     public void ShieldGrow(float damage)

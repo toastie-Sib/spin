@@ -114,7 +114,7 @@ public class Launcher : MonoBehaviour
 
         if (target != null) // HP follow target
         {
-            Vector3 screenPos = cam.WorldToScreenPoint(target.position + offset);
+            Vector2 screenPos = cam.WorldToScreenPoint(target.position + offset);
             hpText.transform.position = screenPos;
         }
     }
@@ -133,6 +133,7 @@ public class Launcher : MonoBehaviour
         for (int i = 0; i < maxPredictionSteps; i++)
         {
             Vector3 newPosition = currentPosition + velocity * timeStep + 0.5f * Physics.gravity * (timeStep * timeStep);
+            newPosition.z = 0f; // Keep flat
 
             // Check for collision between current and new position
             if (Physics.Raycast(currentPosition, newPosition - currentPosition, out RaycastHit hit, (newPosition - currentPosition).magnitude, collisionMask))
@@ -165,7 +166,7 @@ public class Launcher : MonoBehaviour
         return false;
     }
 
-    void DrawOtherTrajectoryFromDirection(Vector3 direction, LineRenderer lr)
+    void DrawOtherTrajectoryFromDirection(Vector3 direction, LineRenderer lr) //For Other Spawner
     {
         Vector3 velocity = direction.normalized * launchSpeed;
         Vector3 currentPosition = transform.position;
@@ -211,6 +212,7 @@ public class Launcher : MonoBehaviour
             if (projectileRb != null)
             {
                 Vector3 direction = (hitPoint - transform.position).normalized;
+                direction.z = 0f;
                 projectileRb.velocity = direction * launchSpeed;
 
                 target = projectileRb.transform;
