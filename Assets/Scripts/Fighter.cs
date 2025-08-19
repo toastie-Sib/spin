@@ -110,8 +110,7 @@ public class Fighter : MonoBehaviour
 
         AudioSource.PlayClipAtPoint(parry, transform.position, 0.5f);
 
-        // Trigger impact frames
-        GameSpeedManager.Instance.PauseForImpact(0.2f);
+        
     }
 
     //Ouchy
@@ -179,6 +178,8 @@ public class Fighter : MonoBehaviour
         //    
         //}
     }
+
+    
 
     //private IEnumerator ImpactFrames(float freezeDuration)
     //{

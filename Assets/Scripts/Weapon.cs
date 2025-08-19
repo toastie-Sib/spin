@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
     [Header("Type")]
     public bool doNotHurt = false;
     public bool shield = false;
-
+    public bool axe = false;
 
     public virtual void OnTriggerEnter(Collider other)
     {
@@ -19,16 +19,21 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Weapon")) //Parry
         {
+            TriggerParryImpactFrames();
             if (myFighter != null)
             {
-                myFighter.ReverseDirection();
+                if (axe == false) { myFighter.ReverseDirection(); }
                 myFighter.isInvincible = true;
+                
+                
             }
 
             if (otherFighter != null)
             {
                 otherFighter.ReverseDirection();
                 otherFighter.isInvincible = true;
+                
+                
             }
         }
 
@@ -50,6 +55,11 @@ public class Weapon : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         alreadyTriggered.Remove(other.gameObject);
+    }
+
+    public virtual void TriggerParryImpactFrames() 
+    {
+        GameSpeedManager.Instance.PauseForImpact(0.2f);
     }
 
     public void ShieldGrow(float damage)

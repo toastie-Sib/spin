@@ -10,7 +10,7 @@ public class Axe : Fighter
 
     public float returnDuration = 1.0f;
     public AnimationCurve returnSpeedCurve;
-    private Quaternion targetRot;
+    public GameObject weapon;
 
     public override void Update() //Make sure to update with Fighter
     {
@@ -30,39 +30,38 @@ public class Axe : Fighter
     {
         base.Start();
 
-        targetRot = Quaternion.identity; ;
+        weapon.SetActive(false);
     }
 
     private IEnumerator Spin()
     {
-        spinMult = 1200;
-        yield return new WaitForSeconds(0.30f);
-        spinMult = 0;
+        weapon.SetActive(true);
+        float duration = 0.3f; // How long the spin takes
         float timer = 0f;
 
         Quaternion startRot = transform.rotation;
+        Quaternion endRot = Quaternion.identity; // Always finish at Z = 0
 
-        while (timer < returnDuration)
+        while (timer < duration)
         {
-            float t = timer / returnDuration;
-
-            // Apply easing using an AnimationCurve if provided, otherwise use a default ease
-            //if (returnSpeedCurve != null)
-            //{
-            //    t = returnSpeedCurve.Evaluate(t);
-            //}
-            //else
-            //{
-                // You can use Mathf.SmoothStep or another easing function here
-                t = Mathf.SmoothStep(0.5f, 1.0f, t);
-            //}
-
-            // Interpolate from the rotation at the end of the spin to the target rotation (e.g., identity)
-            transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
-
             timer += Time.deltaTime;
-            yield return null; // Wait for the next frame
+            float t = timer / duration;
+
+            // Smooth ramp up and ramp down (ease-in-out)
+            float curve = Mathf.Sin(t * Mathf.PI); // 0→1→0
+
+            // Apply direction and scale to spin speed
+            spinMult = 1200;
+
+
+
+            yield return null;
         }
-        transform.rotation = targetRot;
+
+        // Snap rotation exactly to 0 and stop spinning
+        transform.rotation = endRot;
+        spinMult = 0;
+        weapon.SetActive(false);
     }
 }
+// more cool frames

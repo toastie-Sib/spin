@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8005193020781850032
 Transform:
   m_ObjectHideFlags: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   damage: 1
   doNotHurt: 0
   shield: 0
+  axe: 1
   damageIncrease: 2
 --- !u!1 &8005193020900284720
 GameObject:
@@ -278,7 +279,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ddb4f206415d84e4f96ecc1d979c6495, type: 2}
+  - {fileID: 2100000, guid: 7897bdd074516584e89102a2ae13ebf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -386,6 +387,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  weapon: {fileID: 8005193020781850033}
 --- !u!1 &8005193021318061498
 GameObject:
   m_ObjectHideFlags: 0
