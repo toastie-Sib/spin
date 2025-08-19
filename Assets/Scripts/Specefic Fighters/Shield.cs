@@ -13,6 +13,7 @@ public class Shield : Weapon
             Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
 
             otherFighter.isInvincible = false;
+            if (otherWeapon.scythe == true) { otherFighter.ApplyPoison(); }
             if (otherWeapon.doNotHurt == false)
             {
                 otherFighter.HitDetect(otherWeapon.damage);

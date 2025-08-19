@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     public bool doNotHurt = false;
     public bool shield = false;
     public bool axe = false;
+    public bool scythe = false;
 
     public virtual void OnTriggerEnter(Collider other)
     {
@@ -19,7 +20,7 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Weapon")) //Parry
         {
-            TriggerParryImpactFrames();
+            
             if (myFighter != null)
             {
                 if (axe == false) { myFighter.ReverseDirection(); }
@@ -35,14 +36,17 @@ public class Weapon : MonoBehaviour
                 
                 
             }
+            TriggerParryImpactFrames();
         }
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
+            if (scythe == true) { otherFighter.ApplyPoison(); }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
                 otherFighter.HitDetect(damage);
                 IncreaseScaling();
                 animator.SetTrigger("attack");
+                
             }
             
         }

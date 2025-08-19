@@ -101,8 +101,10 @@ MonoBehaviour:
   launchSpeed: 8
   isPlayer: 0
   enemyPrefabs:
+  - {fileID: 8005193020900284720, guid: ccdd7113ecc554d4db1e750d034d2c7a, type: 3}
   - {fileID: 315616872674102727, guid: 581b4c2255aad2e4482cb2e2789d99b8, type: 3}
   - {fileID: 9204503434298110760, guid: 34d8cea4598a3e94f9b94c439944257b, type: 3}
+  - {fileID: 1701393399670019588, guid: b0b497bfda7dd26409f50b73fe2f6b2d, type: 3}
   - {fileID: 1218755945156664945, guid: f34de2f804b060f41a25938ac825dbac, type: 3}
   - {fileID: 4165690970508015787, guid: d699b650cf487f54a8cc0d8efa4585e1, type: 3}
   - {fileID: 7811194643921387890, guid: a0f93f8fcb78c894b87e088574dca25f, type: 3}

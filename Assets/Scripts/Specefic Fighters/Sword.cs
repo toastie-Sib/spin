@@ -15,6 +15,13 @@ public class Sword : Weapon
 
     public override void TriggerParryImpactFrames()
     {
-        GameSpeedManager.Instance.PauseForImpact(0.4f);
+        if (axe == true)
+        {
+            GameSpeedManager.Instance.PauseForImpact(0.4f);
+        } else
+        {
+            GameSpeedManager.Instance.PauseForImpact(0.2f);
+        }
+        
     }
 }

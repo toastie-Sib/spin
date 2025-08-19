@@ -24,7 +24,7 @@ public class Fighter : MonoBehaviour
     public AudioClip parry;
     public AudioClip hit;
     public AudioClip click;
-    public float invincibilityDuration = 0.4f;
+    public float invincibilityDuration = 0.2f;
 
     [Header("Modifyable")]
     public float hp = 100;
@@ -46,11 +46,11 @@ public class Fighter : MonoBehaviour
         float myXValue = transform.position.x;
         if (myXValue < 0)
         {
-            direction = 1;
+            direction = -1;
         }
         if (myXValue > 0)
         {
-            direction = -1;
+            direction = 1;
         }
     }
 
@@ -136,7 +136,7 @@ public class Fighter : MonoBehaviour
         //StartCoroutine(ImpactFrames(0.2f));
         
         GameSpeedManager.Instance.PauseForImpact(0.2f);
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSeconds(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
     }
 
@@ -218,5 +218,34 @@ public class Fighter : MonoBehaviour
         {
             spinMult += 200;
         }
+    }
+
+    //Scythe only and Poison
+    public void ApplyPoison()
+    {
+        StartCoroutine(PoisonTick());
+    }
+
+    private IEnumerator PoisonTick()
+    {
+        
+        //Take Damage to HP
+        hp -= 1;
+        hp = Mathf.Max(hp, 0);
+        hpUI.hpText.text = Mathf.Round(hp).ToString();
+        if (hp == 0)
+        {
+            hpUI.hpText.text = (" ").ToString();
+        }
+
+        AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
+
+        GetComponentInChildren<Renderer>().material.color = Color.magenta;
+
+
+        yield return new WaitForSecondsRealtime(0.2f);
+        GetComponentInChildren<Renderer>().material.color = originalColor;
+        yield return new WaitForSeconds(4.8f); // wait 5 seconds for this stack
+        ApplyPoison();
     }
 }

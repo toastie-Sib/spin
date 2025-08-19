@@ -77,6 +77,8 @@
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
     <Compile Include="Assets\Scripts\Assign.cs" />
     <Compile Include="Assets\Scripts\GameSpeedManager.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Wrench.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\Scythe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
