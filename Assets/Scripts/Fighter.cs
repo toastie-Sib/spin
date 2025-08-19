@@ -41,7 +41,7 @@ public class Fighter : MonoBehaviour
         objectRenderer = GetComponent<Renderer>();
         originalColor = objectRenderer.material.color;
 
-        hpUI.hpText.text = Mathf.Round(hp).ToString();
+        if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
 
         float myXValue = transform.position.x;
         if (myXValue < 0)

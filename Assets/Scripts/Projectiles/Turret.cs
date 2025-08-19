@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Turret : Bow
 {
-    private float nextFireTime = 0.0f;
+    private float nextFireTime = 0.5f;
     private float nextRefreshTime = 1f;
     public Fighter owner;
     // Start is called before the first frame update
     public override void Start()
     {
-        
+        direction = owner.direction;
     }
 
     // Update is called once per frame

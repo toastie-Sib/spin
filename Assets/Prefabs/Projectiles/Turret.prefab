@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 8214782620715160610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.6, z: 0.8}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_LocalScale: {x: 0.36, y: 0.34, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8214782621584023930}
   m_RootOrder: 3
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 8214782621205854715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.31, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.31, z: 0.01}
   m_Children: []
   m_Father: {fileID: 8214782621584023930}
   m_RootOrder: 2
@@ -258,9 +258,9 @@ GameObject:
   - component: {fileID: 8214782621584023929}
   - component: {fileID: 8214782621584023910}
   - component: {fileID: 8214782621584023933}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Turret
-  m_TagString: Fighter
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 8214782621584023908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.597, y: 1.672, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.1}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.01}
   m_Children:
   - {fileID: 8214782621716139026}
   - {fileID: 8214782620636696799}
@@ -341,7 +341,7 @@ SphereCollider:
   m_GameObject: {fileID: 8214782621584023908}
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -394,7 +394,7 @@ MonoBehaviour:
   nudgeCooldown: 3
   projectilePrefab: {fileID: 5611828290570165464, guid: bedaa19a94f54d148935e4529a924164, type: 3}
   firePoint: {fileID: 8214782620636696799}
-  refreshInterval: 1
+  refreshInterval: 3
   fireInterval: 0.1
   arrowCount: 1
   maxArrowCount: 1
@@ -425,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 8214782621716139027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.49}
-  m_LocalScale: {x: 1.05, y: 1.05, z: 0.1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 0.01}
   m_Children: []
   m_Father: {fileID: 8214782621584023930}
   m_RootOrder: 0

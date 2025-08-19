@@ -6,8 +6,12 @@ public class Wrench : Weapon
 {
     public GameObject turretPrefab;
     public Transform spawnPoint;
+    private bool hasSpawnedTurretThisSwing = false;
     public override void IncreaseScaling()
     {
+        if (hasSpawnedTurretThisSwing) return;
+        hasSpawnedTurretThisSwing = true;
+
         GameObject turret = Instantiate(turretPrefab, spawnPoint.position, spawnPoint.rotation);
 
         Turret cannon = turret.GetComponent<Turret>();
@@ -29,6 +33,12 @@ public class Wrench : Weapon
                 Physics.IgnoreCollision(weaponCol, projectileCollider);
             }
         }
+        StartCoroutine(ResetSwing());
+    }
 
+    private IEnumerator ResetSwing()
+    {
+        yield return new WaitForSeconds(0.1f);
+        hasSpawnedTurretThisSwing = false;
     }
 }
