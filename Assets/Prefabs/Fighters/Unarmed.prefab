@@ -220,7 +220,7 @@ MonoBehaviour:
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
-  invincibilityDuration: 0.4
+  invincibilityDuration: 0.2
   hp: 100
   spinMult: 0
   velocityThreshold: 1

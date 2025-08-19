@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public Bow shooter; // This one auto assigned
     public Weapon reflector;
     public bool reflected = false;
+    public bool explosionDone = false;
     public AudioClip parry; //This one can be assigned in 
 
     [Header("Values")]
@@ -41,30 +42,31 @@ public class Projectile : MonoBehaviour
             } 
             else //If it is Parried by Shield go to shooter
             {
-                if (shooter == null) { DestroySelf(); } else {
-                    // Get target's rigidbody to read velocity
-                    Rigidbody targetRb = shooter.GetComponent<Rigidbody>();
+                if (explosionDone == false) { if (shooter == null) { DestroySelf(); } else {
+                        // Get target's rigidbody to read velocity
+                        Rigidbody targetRb = shooter.GetComponent<Rigidbody>();
 
-                    // Current shooter position
-                    Vector3 shooterPos = shooter.transform.position;
-                    Vector3 shooterVel = Vector3.zero;
+                        // Current shooter position
+                        Vector3 shooterPos = shooter.transform.position;
+                        Vector3 shooterVel = Vector3.zero;
 
-                    if (targetRb != null)
-                        shooterVel = targetRb.velocity;
+                        if (targetRb != null)
+                            shooterVel = targetRb.velocity;
 
-                    // Solve intercept point
-                    Vector3 interceptPoint = FirstOrderIntercept(
-                        transform.position,
-                        Vector3.zero,        // arrow velocity handled below
-                        shooterPos,
-                        shooterVel
-                    );
+                        // Solve intercept point
+                        Vector3 interceptPoint = FirstOrderIntercept(
+                            transform.position,
+                            Vector3.zero,        // arrow velocity handled below
+                            shooterPos,
+                            shooterVel
+                        );
 
-                    // Aim the arrow toward the intercept point
-                    Vector3 dirToShooter = (interceptPoint - transform.position).normalized;
-                    transform.up = dirToShooter;
-                    reflected = true;
-                    reflector = otherWeapon;
+                        // Aim the arrow toward the intercept point
+                        Vector3 dirToShooter = (interceptPoint - transform.position).normalized;
+                        transform.up = dirToShooter;
+                        reflected = true;
+                        reflector = otherWeapon;
+                    }
                 }
             }
         

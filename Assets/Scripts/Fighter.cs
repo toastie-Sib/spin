@@ -24,18 +24,18 @@ public class Fighter : MonoBehaviour
     public AudioClip parry;
     public AudioClip hit;
     public AudioClip click;
-    public float invincibilityDuration = 0.1f;
+    public float invincibilityDuration = 0.4f;
 
     [Header("Modifyable")]
     public float hp = 100;
-    public float spinMult = 10f;
+    public float spinMult = 100f;
     //Nudge shit
     public float velocityThreshold = 1f;
-    public float nudgeForce = 5f;
-    public float nudgeCooldown = 3f; 
+    public float nudgeForce = 3f;
+    public float nudgeCooldown = 3f;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         objectRenderer = GetComponent<Renderer>();
@@ -111,7 +111,7 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(parry, transform.position, 0.5f);
 
         // Trigger impact frames
-        StartCoroutine(ImpactFrames(0.2f));
+        GameSpeedManager.Instance.PauseForImpact(0.2f);
     }
 
     //Ouchy
@@ -134,7 +134,9 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
         // Trigger impact frames
         GetComponentInChildren<Renderer>().material.color = Color.white;
-        StartCoroutine(ImpactFrames(0.2f));
+        //StartCoroutine(ImpactFrames(0.2f));
+        
+        GameSpeedManager.Instance.PauseForImpact(0.2f);
         yield return new WaitForSecondsRealtime(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
     }
@@ -178,31 +180,31 @@ public class Fighter : MonoBehaviour
         //}
     }
 
-    private IEnumerator ImpactFrames(float freezeDuration)
-    {
-        if (freezeFrame == false)
-        {
-            storedVelocity = rb.velocity;
-            storedAngularVelocity = rb.angularVelocity;
-            storedDirection = direction;
-        }
-
-        freezeFrame = true;
-
-        //Set to 0
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.useGravity = false;
-        direction = 0;
-
-        yield return new WaitForSecondsRealtime(freezeDuration);
-
-        rb.velocity = storedVelocity;
-        rb.angularVelocity = storedAngularVelocity;
-        rb.useGravity = true;
-        direction = storedDirection;
-        freezeFrame = false;
-    }
+    //private IEnumerator ImpactFrames(float freezeDuration)
+    //{
+    //    if (freezeFrame == false)
+    //    {
+    //        storedVelocity = rb.velocity;
+    //        storedAngularVelocity = rb.angularVelocity;
+    //        storedDirection = direction;
+    //    }
+    //
+    //    freezeFrame = true;
+    //
+    //    //Set to 0
+    //    rb.velocity = Vector3.zero;
+    //    rb.angularVelocity = Vector3.zero;
+    //    rb.useGravity = false;
+    //    direction = 0;
+    //
+    //    yield return new WaitForSecondsRealtime(freezeDuration);
+    //
+    //    rb.velocity = storedVelocity;
+    //    rb.angularVelocity = storedAngularVelocity;
+    //    rb.useGravity = true;
+    //    direction = storedDirection;
+    //    freezeFrame = false;
+    //}
 
     //Dagger only
     public void IncreaseSpeed()

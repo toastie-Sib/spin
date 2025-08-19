@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Sword : Weapon
 {
+    public float damageIncrease = 1;
     public override void IncreaseScaling()
     {
-        damage += 1;
+        damage += damageIncrease;
     }
 }

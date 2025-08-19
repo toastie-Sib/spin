@@ -7,8 +7,7 @@ public class Unarmed : Fighter
     
     private void OnCollisionEnter(Collision collision)
     {
-        float horizontalSpeed = Mathf.Abs(rb.velocity.x);
-        float verticalSpeed = Mathf.Abs(rb.velocity.y);
+        
         
         //Keep bounce going 
         // LEFT WALL

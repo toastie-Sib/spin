@@ -8,7 +8,6 @@ public class Fireball : Projectile
     public GameObject explosionEffect;
     private SpriteRenderer childSpriteRenderer;
     private CapsuleCollider capsuleCollider;
-    private bool explosionDone;
     private Staff myFighter;
 
     public override void Start()
@@ -46,13 +45,13 @@ public class Fireball : Projectile
 
     private IEnumerator ActuallyDestroy()
     {
-        yield return new WaitForSecondsRealtime(0.5f); //MAKE SURE THIS IS THE SAME AS THE EXPLOSION VALUE
+        yield return new WaitForSeconds(0.5f); //MAKE SURE THIS IS THE SAME AS THE EXPLOSION VALUE
         Destroy(gameObject);
     }
 
     public override void ScalingIncrease()
     {
         myFighter.explosionRadius += 0.25f;
-        myFighter.damageIncrease += 0.5f;
+        myFighter.damageIncrease += 1f;
     }
 }
