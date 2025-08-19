@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Wrench.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Scythe.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\Turret.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

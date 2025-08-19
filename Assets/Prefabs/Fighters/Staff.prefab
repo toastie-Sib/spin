@@ -308,7 +308,7 @@ MonoBehaviour:
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   invincibilityDuration: 0.2
   hp: 100
-  spinMult: 150
+  spinMult: 100
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
@@ -436,6 +436,7 @@ MonoBehaviour:
   doNotHurt: 1
   shield: 0
   axe: 0
+  scythe: 0
 --- !u!54 &7811194644152359869
 Rigidbody:
   m_ObjectHideFlags: 0

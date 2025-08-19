@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bow : Fighter //Inherit Fighter
+public class Turret : Bow
 {
-    [Header("Projectile User")]
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-    //Shot Frequency
-    public float refreshInterval = 1f;         // Fire every second
-    private float nextRefreshTime = 0.5f;
-    public float fireInterval = 0.1f;          // How fast Fire
     private float nextFireTime = 0.0f;
-    //Shot Count
-    public float arrowCount = 1f;
-    public float maxArrowCount = 1f;
+    private float nextRefreshTime = 1f;
+    public Fighter owner;
+    // Start is called before the first frame update
+    public override void Start()
+    {
+        
+    }
 
     // Update is called once per frame
-    public override void Update() //Make sure to update with Fighter
+    public override void Update()
     {
-        base.Update();
+        transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime); //Spin
 
         //Timers for Refresh
         if (Time.time >= nextRefreshTime && rb.useGravity == true) //Arrow Refresh
@@ -29,20 +26,20 @@ public class Bow : Fighter //Inherit Fighter
         }
         if (arrowCount > 0 && Time.time >= nextFireTime && rb.useGravity == true) //Try to fire
         {
-            FireProjectile();
+            FireTurretProjectile();
             arrowCount -= 1;
             nextFireTime = Time.time + fireInterval;
         }
     }
 
-    public virtual void FireProjectile()
+    public virtual void FireTurretProjectile()
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
         Projectile arrow = projectile.GetComponent<Projectile>();
         if (arrow != null)
         {
-            arrow.shooter = this;
+            arrow.shooter = (Bow)owner;
         }
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
@@ -59,22 +56,4 @@ public class Bow : Fighter //Inherit Fighter
         }
 
     }
-
-    public void ArrowRefresh()
-    {
-        if (arrowCount > 0)
-        {
-            fireInterval -= 0.01f;
-        }
-        arrowCount = maxArrowCount;
-        
-    }
-
-
-    // Bow Scale
-    public void IncreaseFireRate()
-    {
-        maxArrowCount += 1;
-    }
-
 }
