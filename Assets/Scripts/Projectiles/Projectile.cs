@@ -5,7 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [Header("Static or Dynamic")]
-    public Bow shooter; // This one auto assigned
+    public Fighter shooter; // This one auto assigned
+    private Weapon weapon;
     public Weapon reflector;
     public bool reflected = false;
     public bool explosionDone = false;
@@ -17,7 +18,8 @@ public class Projectile : MonoBehaviour
 
     public virtual void Start()
     {
-
+        if (shooter != null) { weapon = shooter.GetComponentInChildren<Weapon>(); }
+        
     }
 
 
@@ -31,6 +33,7 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Weapon"))
         {
             Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
+            if (otherWeapon == weapon /*&& reflected == false*/) return;
             AudioSource.PlayClipAtPoint(parry, transform.position);
 
             //Destroy Game object if it isn't a shield or reflected

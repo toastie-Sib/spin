@@ -7,9 +7,11 @@ public class Turret : Bow
     private float nextFireTime = 0.5f;
     private float nextRefreshTime = 1f;
     public Fighter owner;
+    public GameObject nose;
     // Start is called before the first frame update
     public override void Start()
     {
+        rb = GetComponent<Rigidbody>();
         direction = owner.direction;
     }
 
@@ -39,7 +41,8 @@ public class Turret : Bow
         Projectile arrow = projectile.GetComponent<Projectile>();
         if (arrow != null)
         {
-            arrow.shooter = (Bow)owner;
+            arrow.shooter = owner;
+            arrow.GetComponentInChildren<Renderer>().material.color = owner.originalColor;
         }
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();

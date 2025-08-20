@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 97e5e2410631fbc43b95e5b8bdf36bdd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rb: {instanceID: 0}
+  - hpUI: {instanceID: 0}
+  - parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
+  - hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

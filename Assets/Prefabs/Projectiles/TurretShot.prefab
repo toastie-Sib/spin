@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5611828290570165283}
   - component: {fileID: 5611828290570165468}
   - component: {fileID: 5611828290570165471}
-  - component: {fileID: 5148877672664910922}
   - component: {fileID: 2046902818861053487}
+  - component: {fileID: -4550724552247968503}
   m_Layer: 0
   m_Name: TurretShot
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5611828290570165464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.58, y: 2.18, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.25}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.01}
   m_Children:
   - {fileID: 2022552616268055872}
   m_Father: {fileID: 0}
@@ -101,25 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 3
---- !u!114 &5148877672664910922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5611828290570165464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54feae66b6ec83b4c82c4b8f2a4d2961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shooter: {fileID: 0}
-  reflector: {fileID: 0}
-  reflected: 0
-  explosionDone: 0
-  parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
-  damage: 1
-  speed: 8
 --- !u!135 &2046902818861053487
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -133,6 +114,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4550724552247968503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611828290570165464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb11e29d14ddf345866fe8f60f78209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
+  reflector: {fileID: 0}
+  reflected: 0
+  explosionDone: 0
+  parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
+  damage: 1
+  speed: 8
 --- !u!1 &7455128584078731667
 GameObject:
   m_ObjectHideFlags: 0
