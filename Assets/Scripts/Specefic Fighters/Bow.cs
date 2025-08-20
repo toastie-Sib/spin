@@ -9,12 +9,15 @@ public class Bow : Fighter //Inherit Fighter
     public Transform firePoint;
     //Shot Frequency
     public float refreshInterval = 1f;         // Fire every second
-    private float nextRefreshTime = 0.5f;
+    
     public float fireInterval = 0.1f;          // How fast Fire
-    private float nextFireTime = 0.0f;
+    
     //Shot Count
     public float arrowCount = 1f;
     public float maxArrowCount = 1f;
+    [HideInInspector]
+    public float nextFireTime = 0.0f;
+    public float nextRefreshTime = 0.5f;
 
     // Update is called once per frame
     public override void Update() //Make sure to update with Fighter

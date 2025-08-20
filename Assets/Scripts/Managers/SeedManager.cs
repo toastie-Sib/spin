@@ -43,7 +43,7 @@ public class SeedManager : MonoBehaviour
         }
 
         Random.InitState(masterSeed);
-        Debug.Log($"[SeedManager] Master Seed: {masterSeed}");
+        //Debug.Log($"[SeedManager] Master Seed: {masterSeed}");
     }
 
     // Generate a sub-seed for a specific system
@@ -58,14 +58,14 @@ public class SeedManager : MonoBehaviour
     {
         int subSeed = GetSubSeed(systemName);
         Random.InitState(subSeed);
-        Debug.Log($"[SeedManager] Using sub-seed for {systemName}: {subSeed}");
+        //Debug.Log($"[SeedManager] Using sub-seed for {systemName}: {subSeed}");
     }
 
     // Restore RNG to master sequence
     public void RestoreMasterSeed()
     {
         Random.InitState(masterSeed);
-        Debug.Log($"[SeedManager] Restored master seed");
+        //Debug.Log($"[SeedManager] Restored master seed");
     }
 
     // Save seed to PlayerPrefs (or your save system)
@@ -106,7 +106,7 @@ public class SeedManager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(s))
         {
-            Debug.LogWarning("Input string is null or empty, returning 0.");
+            //Debug.LogWarning("Input string is null or empty, returning 0.");
             return 0;
         }
 
@@ -140,18 +140,18 @@ public class SeedManager : MonoBehaviour
                 // Check for potential overflow (simplistic check)
                 if (result < 0 && sign > 0) // If positive number overflows, result wraps to negative
                 {
-                    Debug.LogError($"Overflow detected for string: {s}, returning int.MaxValue.");
+                    //Debug.LogError($"Overflow detected for string: {s}, returning int.MaxValue.");
                     return int.MaxValue;
                 }
                 if (result > 0 && sign < 0 && result > int.MaxValue) // If negative number overflows, result wraps to positive
                 {
-                    Debug.LogError($"Overflow detected for string: {s}, returning int.MinValue.");
+                    //Debug.LogError($"Overflow detected for string: {s}, returning int.MinValue.");
                     return int.MinValue;
                 }
             }
             else
             {
-                Debug.LogError($"Invalid character '{c}' found at index {i}. Cannot convert string '{s}' to integer, returning 0.");
+                //Debug.LogError($"Invalid character '{c}' found at index {i}. Cannot convert string '{s}' to integer, returning 0.");
                 return 0; // Invalid character found, stop and return error value
             }
         }

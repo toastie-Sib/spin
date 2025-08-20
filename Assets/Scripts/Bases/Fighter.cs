@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
-    [Header("Unmodifyable or Dynamic Do not Touch")]
+    [Header("Unmodifyable or Dynamic Do not Touch")] // Note Code Bower: For some of these Should probably use [HideInInspector]
     public Rigidbody rb;
     public Color originalColor;
     private Renderer objectRenderer;

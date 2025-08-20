@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Turret : Bow
 {
-    private float nextFireTime = 0.5f;
-    private float nextRefreshTime = 1f;
     public Fighter owner;
     public GameObject nose;
     // Start is called before the first frame update
