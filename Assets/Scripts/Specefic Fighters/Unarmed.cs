@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Unarmed : Fighter
 {
-    
-    private void OnCollisionEnter(Collision collision)
+    public override void Start() //Make sure to update with Fighter
+    {
+        base.Start();
+        isUnarmed = true;
+    }
+
+        private void OnCollisionEnter(Collision collision)
     {
         
         

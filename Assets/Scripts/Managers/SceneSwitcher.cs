@@ -10,8 +10,9 @@ public class SceneSwitcher : MonoBehaviour
     [Header("UI References")] //Seed UI Manager
     public TMP_InputField seedInputField;
     public TMP_Text currentSeedText;
-
+    [HideInInspector]
     public GameObject fighterPrefab;
+    [HideInInspector]
     public GameObject animatorPrefab;
 
     public void SetSelectedPrefab1(GameObject prefabToSet1)

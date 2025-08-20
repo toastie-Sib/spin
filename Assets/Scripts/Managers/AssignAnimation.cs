@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AssignAnimation : Assign
 {
-    public GameObject stashedAnimation;
+    public GameObject stashedAnimation; //Could maybe go away?
 
     // Start is called before the first frame update
     public override void Start()

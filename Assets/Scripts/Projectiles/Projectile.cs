@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [Header("Static or Dynamic")]
+    [HideInInspector]
     public Fighter shooter; // This one auto assigned
+    [HideInInspector]
     private Weapon weapon;
+    [HideInInspector]
     public Weapon reflector;
+    [HideInInspector]
     public bool reflected = false;
+    [HideInInspector]
     public bool explosionDone = false;
-    public AudioClip parry; //This one can be assigned in 
+    
 
     [Header("Values")]
+    public AudioClip parry; //This one can be assigned in 
     public float damage = 1.0f;
     public float speed = 10.0f;
 

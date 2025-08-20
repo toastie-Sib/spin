@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SeedManager : MonoBehaviour
 {
+    [HideInInspector]
     public static SeedManager Instance;
+    [HideInInspector]
+    public string seedString = "";       // Optional: user input string
 
     [Header("Seed Settings")]
-    public string seedString = "";       // Optional: user input string
     public int masterSeed;               // Final seed used by the game
     public bool randomizeOnStart = true; // If false, will use seedString or last saved seed IT ONLY DOES ONE THING
 

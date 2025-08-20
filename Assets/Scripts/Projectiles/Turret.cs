@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Turret : Bow
 {
-    public Fighter owner;
     public GameObject nose;
+    [HideInInspector]
+    public Fighter owner;
     // Start is called before the first frame update
     public override void Start()
     {

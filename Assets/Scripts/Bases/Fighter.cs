@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
-    [Header("Unmodifyable or Dynamic Do not Touch")] // Note Code Bower: For some of these Should probably use [HideInInspector]
-    public Rigidbody rb;
-    public Color originalColor;
-    private Renderer objectRenderer;
-    public float lastNudgeTime = -Mathf.Infinity;
-    public bool isInvincible = false;
-    public float invincibleUntil = 0f;
-    public int direction = 1;
-    public bool freezeFrame = false;
-    public Launcher hpUI;
-    private Vector3 storedVelocity;
-    private Vector3 storedAngularVelocity;
-    private int storedDirection;
-    public bool isActive = false;
-    public bool isUnarmed = false;
+    [HideInInspector] public Rigidbody rb;
+    [HideInInspector] public Color originalColor;
+    [HideInInspector] private Renderer objectRenderer;
+    [HideInInspector] public float lastNudgeTime = -Mathf.Infinity;
+    [HideInInspector] public bool isInvincible = false;
+    [HideInInspector] public float invincibleUntil = 0f;
+    [HideInInspector] public int direction = 1;
+    [HideInInspector] public bool freezeFrame = false;
+    [HideInInspector] public Launcher hpUI;
+    [HideInInspector] private Vector3 storedVelocity;
+    [HideInInspector] private Vector3 storedAngularVelocity;
+    [HideInInspector] private int storedDirection;
+    [HideInInspector] public bool isActive = false;
+    [HideInInspector] public bool isUnarmed = false;
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;

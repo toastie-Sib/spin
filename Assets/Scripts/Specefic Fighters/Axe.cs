@@ -64,4 +64,3 @@ public class Axe : Fighter
         weapon.SetActive(false);
     }
 }
-// more cool frames
