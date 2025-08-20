@@ -10,10 +10,16 @@ public class SceneSwitcher : MonoBehaviour
     [Header("UI References")] //Seed UI Manager
     public TMP_InputField seedInputField;
     public TMP_Text currentSeedText;
-    [HideInInspector]
-    public GameObject fighterPrefab;
-    [HideInInspector]
-    public GameObject animatorPrefab;
+    [HideInInspector] public GameObject fighterPrefab;
+    [HideInInspector] public GameObject animatorPrefab;
+    [HideInInspector] public int fighterAmount = 0;
+    [HideInInspector] public static SceneSwitcher Instance;
+
+    void Start()
+    {
+       
+        Instance = this;
+    }
 
     public void SetSelectedPrefab1(GameObject prefabToSet1)
     {
@@ -39,20 +45,46 @@ public class SceneSwitcher : MonoBehaviour
     // Public function to load a scene by name
     public void LoadSpecificScene(string sceneName)
     {
+        fighterAmount = 0;
         SceneManager.LoadScene(sceneName);
     }
 
-    // Public function to load the next scene in the Build Settings order
-    public void LoadNextScene()
+    public void SlowLoadSpecificSceneDelay(string sceneName)
     {
-        // Get the index of the currently active scene and increment it
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        fighterAmount = 0;
+        StartCoroutine(LoadSpecificSceneDelayed(sceneName));
     }
 
-    // Public function to load a scene by its build index
-    public void LoadSceneByIndex(int sceneIndex)
+    private IEnumerator LoadSpecificSceneDelayed(string sceneName)
     {
-        SceneManager.LoadScene(sceneIndex);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    private void OnEnable()
+    {
+        Fighter.OnFighterDied += HandleFighterDeath;
+    }
+
+    private void OnDisable()
+    {
+        Fighter.OnFighterDied -= HandleFighterDeath;
+    }
+
+    private void HandleFighterDeath(Fighter fighter)
+    {
+        if (fighter.isPlayer)
+        {
+            SlowLoadSpecificSceneDelay("Title");
+        }
+        else
+        {
+            fighterAmount--;
+
+            if (fighterAmount <= 1)
+            {
+                SlowLoadSpecificSceneDelay("ItemPick");
+            }
+        }
     }
 }

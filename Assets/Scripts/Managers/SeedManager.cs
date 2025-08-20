@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class SeedManager : MonoBehaviour
 {
-    [HideInInspector]
-    public static SeedManager Instance;
-    [HideInInspector]
-    public string seedString = "";       // Optional: user input string
+    [HideInInspector] public static SeedManager Instance;
+    [HideInInspector] public string seedString = "";       // Optional: user input string
 
     [Header("Seed Settings")]
     public int masterSeed;               // Final seed used by the game

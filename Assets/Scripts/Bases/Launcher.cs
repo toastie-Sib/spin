@@ -34,6 +34,8 @@ public class Launcher : MonoBehaviour
         es = esObject.GetComponent<SceneSwitcher>();
         cam = Camera.main;
 
+        es.fighterAmount += 1; // Count the amount of Fighters spawned
+
         if (lineRenderer == null) // Player trajectory
         {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -62,7 +64,7 @@ public class Launcher : MonoBehaviour
             direction = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
             DrawOtherTrajectoryFromDirection(direction, aiLineRenderer);
 
-            SeedManager.Instance.UseSubSeed("EnemySystem");
+            SeedManager.Instance.UseSubSeed("EnemySystem"); //generate random enemy
 
             int enemyTypeIndex = Random.Range(0, enemyPrefabs.Length);
             projectilePrefab = enemyPrefabs[enemyTypeIndex];
@@ -74,11 +76,9 @@ public class Launcher : MonoBehaviour
             projectilePrefab = es.fighterPrefab;
         }
 
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        stashedProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
-        stashedProjectile = projectile;
-
-        Fighter fighter = projectile.GetComponent<Fighter>(); // Get Fighter script
+        Fighter fighter = stashedProjectile.GetComponent<Fighter>();    if (isPlayer) { fighter.isPlayer = true; } //Know that is player
         if (fighter != null)
         {
             // Assign HP UI

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Random = UnityEngine.Random;
 
 public class Fighter : MonoBehaviour
 {
@@ -18,20 +20,22 @@ public class Fighter : MonoBehaviour
     [HideInInspector] private int storedDirection;
     [HideInInspector] public bool isActive = false;
     [HideInInspector] public bool isUnarmed = false;
+    [HideInInspector] public bool isPlayer = false;
+    [HideInInspector] public static event Action<Fighter> OnFighterDied; // global event
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
     public AudioClip hit;
     public AudioClip click;
-    public float invincibilityDuration = 0.2f;
+    [HideInInspector] public float invincibilityDuration = 0.2f;
 
     [Header("Modifyable")]
     public float hp = 100;
     public float spinMult = 100f;
     //Nudge shit
-    public float velocityThreshold = 1f;
-    public float nudgeForce = 3f;
-    public float nudgeCooldown = 3f;
+    [HideInInspector] public float velocityThreshold = 1f;
+    [HideInInspector] public float nudgeForce = 3f;
+    [HideInInspector] public float nudgeCooldown = 3f;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -59,6 +63,9 @@ public class Fighter : MonoBehaviour
         if (isActive == false) return;
         if (hp <= 0)
         {
+            hpUI.hpText.text = (" ").ToString();
+            OnFighterDied?.Invoke(this);
+            
             Destroy(gameObject);
         }
 
@@ -124,10 +131,7 @@ public class Fighter : MonoBehaviour
         hp -= amount;
         hp = Mathf.Max(hp, 0);
         hpUI.hpText.text = Mathf.Round(hp).ToString();
-        if (hp == 0)
-        {
-            hpUI.hpText.text = (" ").ToString();
-        }
+        
 
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
         // Trigger impact frames
@@ -242,7 +246,7 @@ public class Fighter : MonoBehaviour
         GetComponentInChildren<Renderer>().material.color = Color.magenta;
 
 
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSeconds(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
         yield return new WaitForSeconds(4.8f); // wait 5 seconds for this stack
         ApplyPoison();
