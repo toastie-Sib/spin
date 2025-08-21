@@ -56,10 +56,10 @@ public class Turret : Bow
                 arrow.damage += BotK.damage;
             }
             //Blood of the Archer
-            if (GetComponentInChildren<BloodoftheArcher>() != null)
+            if (owner.GetComponentInChildren<BloodoftheArcher>() != null)
             {
                 float angleSpread = 30;
-                BloodoftheArcher BotA = GetComponentInChildren<BloodoftheArcher>();
+                BloodoftheArcher BotA = owner.GetComponentInChildren<BloodoftheArcher>();
                 float currentAngleSpread = (BotA != null) ? angleSpread : 0f;
                 float startAngle = -((BotA.stacks - 1) * currentAngleSpread) / 2f;
                 for (int i = 0; i < BotA.stacks; i++)
@@ -74,7 +74,8 @@ public class Turret : Bow
                     // Instantiate a new projectile
                     GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, projectileRotation);
                     Projectile bloodArrow = projectileGO.GetComponent<Projectile>();
-                    bloodArrow.shooter = this;
+                    bloodArrow.shooter = owner;
+                    bloodArrow.GetComponentInChildren<Renderer>().material.color = color;
 
                     //Item
                     if (GetComponentInChildren<BloodoftheKnight>() != null)

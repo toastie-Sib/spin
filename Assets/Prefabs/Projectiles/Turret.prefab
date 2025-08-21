@@ -396,8 +396,8 @@ MonoBehaviour:
   nudgeCooldown: 0
   projectilePrefab: {fileID: 4883005475974355221, guid: b7da917032ec0b24088dc134a248f8f2, type: 3}
   firePoint: {fileID: 8214782620636696799}
-  refreshInterval: 3
-  fireInterval: 3
+  refreshInterval: 1
+  fireInterval: 1
   arrowCount: 0
   maxArrowCount: 1
   nextFireTime: 0

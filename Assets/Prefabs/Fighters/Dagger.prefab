@@ -175,10 +175,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.7440668
+  m_Radius: 0.5076281
+  m_Height: 1.4247762
   m_Direction: 1
-  m_Center: {x: -0.000000008079084, y: 0.12796527, z: 0}
+  m_Center: {x: 0.005682309, y: -0.0562411, z: 0}
 --- !u!54 &9204503433997937127
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211,6 +211,8 @@ MonoBehaviour:
   damage: 1
   doNotHurt: 0
   shield: 0
+  axe: 0
+  scythe: 0
 --- !u!1 &9204503434298110760
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,9 +335,11 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
+  isPlayer: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
+  weapon: {fileID: 0}
   invincibilityDuration: 0.2
   hp: 100
   spinMult: 500
@@ -383,8 +387,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204503434436212215}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 10}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 10}
   m_Children: []
   m_Father: {fileID: 9204503434990012389}
   m_RootOrder: 2
