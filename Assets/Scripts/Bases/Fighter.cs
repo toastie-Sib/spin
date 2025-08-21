@@ -8,7 +8,7 @@ public class Fighter : MonoBehaviour
 {
     [HideInInspector] public Rigidbody rb;
     [HideInInspector] public Color originalColor;
-    [HideInInspector] private Renderer objectRenderer;
+    [HideInInspector] public Renderer objectRenderer;
     [HideInInspector] public float lastNudgeTime = -Mathf.Infinity;
     [HideInInspector] public bool isInvincible = false;
     [HideInInspector] public float invincibleUntil = 0f;

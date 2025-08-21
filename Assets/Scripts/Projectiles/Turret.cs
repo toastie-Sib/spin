@@ -21,6 +21,9 @@ public class Turret : Bow
         }
 
         isPlayer = side;
+
+        objectRenderer = GetComponent<Renderer>();
+        originalColor = objectRenderer.material.color;
     }
 
     // Update is called once per frame
