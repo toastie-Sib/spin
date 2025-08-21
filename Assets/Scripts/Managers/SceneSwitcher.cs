@@ -15,10 +15,21 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public int fighterAmount = 0;
     [HideInInspector] public static SceneSwitcher Instance;
 
-    void Start()
+    void Awake()
     {
-       
-        Instance = this;
+        
+        if (transform.parent == null)
+        {
+            // Singleton pattern so only one exists
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
     }
 
     public void SetSelectedPrefab1(GameObject prefabToSet1)
@@ -57,10 +68,15 @@ public class SceneSwitcher : MonoBehaviour
 
     private IEnumerator LoadSpecificSceneDelayed(string sceneName)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(sceneName);
+        if(sceneName == "Title")
+        {
+            Destroy(gameObject);
+        }
     }
 
+    //Ending Battle
     private void OnEnable()
     {
         Fighter.OnFighterDied += HandleFighterDeath;

@@ -274,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 8214782621584023908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.597, y: 1.672, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.01}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.1}
   m_Children:
   - {fileID: 8214782621716139026}
   - {fileID: 8214782620636696799}
@@ -340,7 +340,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8214782621584023908}
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -357,7 +357,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 3
@@ -383,6 +383,7 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
+  isPlayer: 0
   parry: {fileID: 0}
   hit: {fileID: 0}
   click: {fileID: 0}
@@ -400,8 +401,8 @@ MonoBehaviour:
   maxArrowCount: 1
   nextFireTime: 0
   nextRefreshTime: 0.5
-  owner: {fileID: 0}
   nose: {fileID: 8214782621205854715}
+  owner: {fileID: 0}
 --- !u!1 &8214782621716139027
 GameObject:
   m_ObjectHideFlags: 0

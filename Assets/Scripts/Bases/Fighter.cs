@@ -146,7 +146,7 @@ public class Fighter : MonoBehaviour
     //Keep bounce going
     private void OnCollisionEnter(Collision collision)
     {
-        AudioSource.PlayClipAtPoint(click, transform.position);
+        if (click != null) { AudioSource.PlayClipAtPoint(click, transform.position); } //bounce sound :D
         float horizontalSpeed = Mathf.Abs(rb.velocity.x);
         //float verticalSpeed = Mathf.Abs(rb.velocity.y);
 

@@ -213,6 +213,7 @@ MonoBehaviour:
   doNotHurt: 0
   shield: 0
   axe: 1
+  scythe: 0
   damageIncrease: 2
 --- !u!1 &8005193020900284720
 GameObject:
@@ -352,6 +353,7 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
+  isPlayer: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
@@ -361,7 +363,7 @@ MonoBehaviour:
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
-  refreshInterval: 3
+  refreshInterval: 1.2
   returnDuration: 1
   returnSpeedCurve:
     serializedVersion: 2

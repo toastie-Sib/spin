@@ -1769,6 +1769,7 @@ MonoBehaviour:
   currentSeedText: {fileID: 0}
   fighterPrefab: {fileID: 0}
   animatorPrefab: {fileID: 0}
+  fighterAmount: 0
 --- !u!1 &1630278241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1820,7 @@ GameObject:
   - component: {fileID: 1641398230}
   - component: {fileID: 1641398229}
   - component: {fileID: 1641398228}
+  - component: {fileID: 1641398225}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1826,6 +1828,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1641398225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641398224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2679f4246bf83e4c927209a60fe612e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: 
+  masterSeed: 0
+  randomizeOnStart: 1
 --- !u!114 &1641398228
 MonoBehaviour:
   m_ObjectHideFlags: 0
