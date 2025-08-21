@@ -48,7 +48,12 @@ public class Bow : Fighter //Inherit Fighter
             arrow.shooter = this;
         }
 
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        //Item
+        if (GetComponentInChildren<BloodoftheKnight>() != null)
+        { 
+            BloodoftheKnight BotK = GetComponentInChildren<BloodoftheKnight>();
+            arrow.damage += BotK.damage;
+        }
 
         // Ignore collision between bow and projectile
         Collider projectileCollider = projectile.GetComponent<Collider>();

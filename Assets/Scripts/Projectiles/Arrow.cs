@@ -6,6 +6,7 @@ public class Arrow : Projectile
 {
     public override void ScalingIncrease()
     {
+        base.ScalingIncrease();
         Bow bow = shooter.GetComponentInParent<Bow>();
         bow.IncreaseFireRate();
     }

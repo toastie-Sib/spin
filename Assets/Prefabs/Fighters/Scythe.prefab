@@ -284,6 +284,7 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
+  isPlayer: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
@@ -404,10 +405,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.64468676
-  m_Height: 1.3140087
+  m_Radius: 0.6491095
+  m_Height: 1.4024622
   m_Direction: 1
-  m_Center: {x: 0.1794607, y: 1.3189077, z: 0}
+  m_Center: {x: 0.44924343, y: 1.3631345, z: 0}
 --- !u!54 &1701393399788561031
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class Unarmed : Fighter
         isUnarmed = true;
     }
 
-        private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         
         

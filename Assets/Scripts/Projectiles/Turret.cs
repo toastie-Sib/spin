@@ -7,11 +7,16 @@ public class Turret : Bow
     public GameObject nose;
     [HideInInspector]
     public Fighter owner;
+    private Color color;
     // Start is called before the first frame update
     public override void Start()
     {
         rb = GetComponent<Rigidbody>();
         direction = owner.direction;
+        if (owner != null)
+        {
+            color = owner.originalColor;
+        }
     }
 
     // Update is called once per frame
@@ -38,10 +43,18 @@ public class Turret : Bow
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
         Projectile arrow = projectile.GetComponent<Projectile>();
-        if (arrow != null)
+        arrow.GetComponentInChildren<Renderer>().material.color = color;
+        if (arrow != null && owner != null)
         {
             arrow.shooter = owner;
-            arrow.GetComponentInChildren<Renderer>().material.color = owner.originalColor;
+            
+
+            //item
+            if (owner.GetComponentInChildren<BloodoftheKnight>() != null)
+            {
+                BloodoftheKnight BotK = owner.GetComponentInChildren<BloodoftheKnight>();
+                arrow.damage += BotK.damage;
+            }
         }
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();

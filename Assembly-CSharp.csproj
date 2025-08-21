@@ -80,6 +80,9 @@
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
     <Compile Include="Assets\Scripts\Managers\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\ItemSpawner.cs" />
+    <Compile Include="Assets\Scripts\Items\BloodoftheKnight.cs" />
+    <Compile Include="Assets\Scripts\Projectiles\TurretProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

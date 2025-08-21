@@ -132,7 +132,14 @@ public class Projectile : MonoBehaviour
     }
 
     //Increase scaling
-    public virtual void ScalingIncrease() { }
+    public virtual void ScalingIncrease() {
+        if (shooter == null) return;
+        if (shooter.GetComponentInChildren<BloodoftheKnight>() != null)
+        { //Item
+            BloodoftheKnight BotK = shooter.GetComponentInChildren<BloodoftheKnight>();
+            BotK.IncreaseScaling();
+        }
+    }
 
     // Destroy(gameObject);
     public virtual void DestroySelf()

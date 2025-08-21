@@ -17,10 +17,20 @@ public class Shield : Weapon
             if (otherWeapon.scythe == true) { otherFighter.ApplyPoison(); } //Scythe
             if (otherWeapon.doNotHurt == false)
             {
-                otherFighter.HitDetect(otherWeapon.damage); //Damage Fighter and Grow Shield
+                float totalDamage = otherWeapon.damage;
+                //item
+                if (GetComponent<BloodoftheKnight>() != null)
+                {
+                    BloodoftheKnight BotK = GetComponent<BloodoftheKnight>();
+                    totalDamage += BotK.damage;
+                    BotK.IncreaseScaling();
+                }
+
+                otherFighter.HitDetect(totalDamage); //Damage Fighter and Grow Shield
                 ShieldGrow(otherWeapon.damage);
                 if (otherWeapon is Wrench) { Wrench wrench = other.gameObject.GetComponentInParent<Wrench>();    wrench.ShieldTurret(myFighter); } // Wrench
 
+                
             }
 
         }
