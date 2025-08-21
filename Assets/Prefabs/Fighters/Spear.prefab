@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4165690970123226152}
   - component: {fileID: 1373465495070354369}
   m_Layer: 8
-  m_Name: Weapon
+  m_Name: Spear
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +131,9 @@ MonoBehaviour:
   damage: 1
   doNotHurt: 0
   shield: 0
+  axe: 0
+  scythe: 0
+  side: 0
   originalHeight: 0
   scaleAmount: 0.05
 --- !u!1 &4165690970508015787
@@ -254,11 +257,14 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
+  isPlayer: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
+  weapon: {fileID: 4165690970123226154}
   invincibilityDuration: 0.2
   hp: 100
+  maxHp: 100
   spinMult: 300
   velocityThreshold: 1
   nudgeForce: 3
@@ -271,7 +277,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4165690970508015787}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0

@@ -7,6 +7,14 @@ public class Wrench : Weapon
     public GameObject turretPrefab;
     public Transform spawnPoint;
     private bool hasSpawnedTurretThisSwing = false;
+
+    public override void Start() //Make sure to update with Fighter
+    {
+        base.Start();
+
+        
+    }
+
     public override void IncreaseScaling()
     {
         if (hasSpawnedTurretThisSwing) return;
@@ -19,6 +27,7 @@ public class Wrench : Weapon
         {
             Fighter myFighter = GetComponentInParent<Fighter>();
             cannon.owner = myFighter;
+            cannon.side = side;
         }
 
         // Ignore collision between bow and projectile   Code: Bower SHOULD THIS BE HERE????
@@ -46,6 +55,7 @@ public class Wrench : Weapon
         {
             Fighter myFighter = GetComponentInParent<Fighter>();
             cannon.owner = shieldFighter;
+            cannon.side = shieldFighter.isPlayer;
             cannon.GetComponentInChildren<Renderer>().material.color = shieldFighter.originalColor;
             cannon.nose.GetComponentInChildren<Renderer>().material.color = shieldFighter.originalColor;
         }

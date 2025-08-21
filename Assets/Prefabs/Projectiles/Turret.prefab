@@ -258,9 +258,9 @@ GameObject:
   - component: {fileID: 8214782621584023929}
   - component: {fileID: 8214782621584023910}
   - component: {fileID: -1070144347487038812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8214782621584023908}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 125.39
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -376,7 +376,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   originalColor: {r: 0, g: 0, b: 0, a: 0}
   lastNudgeTime: -Infinity
-  isInvincible: 1
+  isInvincible: 0
   invincibleUntil: 0
   direction: 1
   freezeFrame: 0
@@ -384,12 +384,13 @@ MonoBehaviour:
   isActive: 0
   isUnarmed: 0
   isPlayer: 0
-  parry: {fileID: 0}
-  hit: {fileID: 0}
-  click: {fileID: 0}
-  weapon: {fileID: 0}
+  parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
+  hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
+  click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
+  weapon: {fileID: 8214782621205854715}
   invincibilityDuration: 0
   hp: 1
+  maxHp: 100
   spinMult: 75
   velocityThreshold: 0
   nudgeForce: 0
@@ -404,6 +405,7 @@ MonoBehaviour:
   nextRefreshTime: 0.5
   nose: {fileID: 8214782621205854715}
   owner: {fileID: 0}
+  side: 0
 --- !u!1 &8214782621716139027
 GameObject:
   m_ObjectHideFlags: 0

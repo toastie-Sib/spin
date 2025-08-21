@@ -32,6 +32,7 @@ public class Fighter : MonoBehaviour
 
     [Header("Modifyable")]
     public float hp = 100;
+    [HideInInspector] public float maxHp = 100;
     public float spinMult = 100f;
     //Nudge shit
     [HideInInspector] public float velocityThreshold = 1f;
@@ -131,8 +132,7 @@ public class Fighter : MonoBehaviour
         //Take Damage to HP
         hp -= amount;
         hp = Mathf.Max(hp, 0);
-        hpUI.hpText.text = Mathf.Round(hp).ToString();
-        
+        if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
 
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
         // Trigger impact frames

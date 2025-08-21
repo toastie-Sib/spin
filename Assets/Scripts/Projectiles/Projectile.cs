@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [HideInInspector]
-    public Fighter shooter; // This one auto assigned
-    [HideInInspector]
-    private Weapon weapon;
-    [HideInInspector]
-    public Weapon reflector;
-    [HideInInspector]
-    public bool reflected = false;
-    [HideInInspector]
-    public bool explosionDone = false;
-    
+    [HideInInspector] public Fighter shooter; // This one auto assigned
+    [HideInInspector] private Weapon weapon;
+    [HideInInspector] public Weapon reflector;
+    [HideInInspector] public bool reflected = false;
+    [HideInInspector] public bool explosionDone = false;
+    [HideInInspector] public bool side;
+
 
     [Header("Values")]
     public AudioClip parry; //This one can be assigned in 
@@ -35,19 +31,18 @@ public class Projectile : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
+        Fighter otherFighter = other.GetComponent<Fighter>();
+        Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
+
         if (other.gameObject.CompareTag("Weapon"))
         {
-            Weapon otherWeapon = other.gameObject.GetComponentInParent<Weapon>();
-            if (otherWeapon == weapon /*&& reflected == false*/) return;
+            if (side == otherWeapon.side) return; //preventing hitting same team
+            if (otherWeapon == weapon /*&& reflected == false*/) return; //avoid hitting bow's weapon
+
             AudioSource.PlayClipAtPoint(parry, transform.position);
 
             //Destroy Game object if it isn't a shield or reflected
-            if (otherWeapon.shield == false) {  if (reflected == false) {
-                    //Fighter otherFighter = otherWeapon.GetComponentInParent<Fighter>(); //Potential Parry Reflect
-                    //transform.Rotate(0f, 0f, (otherFighter.direction) * -125f, Space.World); 
-                    DestroySelf();
-                }
-            } 
+            if (otherWeapon.shield == false) {  if (reflected == false) { DestroySelf(); } } 
             else //If it is Parried by Shield go to shooter
             {
                 if (explosionDone == false) { if (shooter == null) { DestroySelf(); } else {
@@ -82,8 +77,8 @@ public class Projectile : MonoBehaviour
         
         if (other.gameObject.CompareTag("Fighter"))
         {
-            Fighter otherFighter = other.GetComponent<Fighter>();
-        
+
+            if (side == otherFighter.isPlayer) return;
             if (otherFighter.isInvincible) return;
             if (otherFighter == shooter && reflected == false) return;
             if (reflected == true)

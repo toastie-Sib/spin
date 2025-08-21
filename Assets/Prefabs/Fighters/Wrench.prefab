@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4006982673203306455}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.42, z: 0}
-  m_LocalScale: {x: 0.9459193, y: 0.9459729, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08835727, y: 0.6344011, z: 0}
+  m_LocalScale: {x: 0.9459193, y: 0.9459729, z: 100}
   m_Children: []
-  m_Father: {fileID: 5199228309081555916}
-  m_RootOrder: 2
+  m_Father: {fileID: 5199228310101962191}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4006982673203306453
 SpriteRenderer:
@@ -116,8 +116,6 @@ Transform:
   m_Children:
   - {fileID: 5199228310223956713}
   - {fileID: 5199228310101962191}
-  - {fileID: 4006982673203306454}
-  - {fileID: 6464873793802068569}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -191,7 +189,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5199228309865821953}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -221,11 +219,14 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
+  isPlayer: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
+  weapon: {fileID: 5199228310101962188}
   invincibilityDuration: 0.2
   hp: 100
+  maxHp: 100
   spinMult: 250
   velocityThreshold: 1
   nudgeForce: 3
@@ -258,13 +259,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5199228310101962188}
-  m_LocalRotation: {x: 0, y: 0, z: 0.016143547, w: 0.9998697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.08835727, y: 0.7855989, z: 0}
-  m_LocalScale: {x: 0.22000001, y: 0.28942797, z: 0.10000001}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 0.10000001}
+  m_Children:
+  - {fileID: 6464873793802068569}
+  - {fileID: 4006982673203306454}
   m_Father: {fileID: 5199228309081555916}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.85}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5199228310101962178
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -324,10 +327,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.2169849
-  m_Height: 3.6484823
+  m_Radius: 0.26467985
+  m_Height: 1.0098082
   m_Direction: 1
-  m_Center: {x: -0.30912971, y: 1.087089, z: 0}
+  m_Center: {x: -0.09002495, y: 0.30787164, z: 0}
 --- !u!54 &5199228310101962190
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -362,6 +365,7 @@ MonoBehaviour:
   shield: 0
   axe: 0
   scythe: 0
+  side: 0
   turretPrefab: {fileID: 8214782621584023908, guid: 8472fa22f9751d2408623be1bd5a6d9c, type: 3}
   spawnPoint: {fileID: 4006982673203306454}
 --- !u!1 &5199228310223956726
@@ -469,12 +473,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6464873793802068566}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: -0.08835727, y: 0.31440115, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 100}
   m_Children: []
-  m_Father: {fileID: 5199228309081555916}
-  m_RootOrder: 3
+  m_Father: {fileID: 5199228310101962191}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!212 &6464873793802068568
 SpriteRenderer:

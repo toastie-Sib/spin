@@ -12,6 +12,12 @@ public class Weapon : MonoBehaviour
     public bool shield = false;
     public bool axe = false;
     public bool scythe = false;
+    [HideInInspector] public bool side;
+
+    public virtual void Start() {
+        Fighter myFighter = GetComponentInParent<Fighter>();
+        side = myFighter.isPlayer;
+    }
 
     public virtual void OnTriggerEnter(Collider other)
     {
@@ -20,7 +26,9 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Weapon")) //Parry
         {
-            
+            Weapon otherWeapon = other.GetComponent<Weapon>();
+            if (side == otherWeapon.side) return; //preventing hitting same team
+
             if (myFighter != null)
             {
                 if (axe == false) { myFighter.ReverseDirection(); }
@@ -39,14 +47,20 @@ public class Weapon : MonoBehaviour
             TriggerParryImpactFrames();
         }
 
+
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
+            if (side == otherFighter.isPlayer) return;
+
             if (scythe == true) { otherFighter.ApplyPoison(); }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
                 otherFighter.HitDetect(damage);
-                IncreaseScaling();
-                animator.SetTrigger("attack");
-                
+                //animator.SetTrigger("attack");
+
+                if (other.GetComponent<Turret>() == null)
+                {
+                    IncreaseScaling();
+                }
             }
             
         }

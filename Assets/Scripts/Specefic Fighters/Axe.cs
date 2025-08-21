@@ -10,6 +10,7 @@ public class Axe : Fighter
 
     public float returnDuration = 1.0f;
     public AnimationCurve returnSpeedCurve;
+    private CapsuleCollider capscollider;
 
     public override void Update() //Make sure to update with Fighter
     {
@@ -28,13 +29,14 @@ public class Axe : Fighter
     public override void Start() //Make sure to update with Fighter
     {
         base.Start();
-
-        weapon.SetActive(false);
+        Weapon myWeapon = GetComponentInChildren<Weapon>();
+        capscollider = myWeapon.GetComponent<CapsuleCollider>();
+        capscollider.enabled = false;
     }
 
     private IEnumerator Spin()
     {
-        weapon.SetActive(true);
+        capscollider.enabled = true;
         float duration = 0.3f; // How long the spin takes
         float timer = 0f;
 
@@ -60,6 +62,6 @@ public class Axe : Fighter
         // Snap rotation exactly to 0 and stop spinning
         transform.rotation = endRot;
         spinMult = 0;
-        weapon.SetActive(false);
+        capscollider.enabled = false;
     }
 }

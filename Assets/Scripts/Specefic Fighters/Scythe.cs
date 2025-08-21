@@ -7,7 +7,7 @@ public class Scythe : Weapon
     private int startingDirection;
     private Fighter myFighter;
     private Coroutine parryRoutine;
-    private void Start()
+    public override void Start()
     {
         myFighter = GetComponentInParent<Fighter>();
         startingDirection = myFighter.direction;

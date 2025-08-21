@@ -46,6 +46,7 @@ public class Bow : Fighter //Inherit Fighter
         if (arrow != null)
         {
             arrow.shooter = this;
+            arrow.side = isPlayer;
         }
 
         //Item Blood of the Knight
@@ -74,6 +75,7 @@ public class Bow : Fighter //Inherit Fighter
                 GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, projectileRotation);
                 Projectile bloodArrow = projectileGO.GetComponent<Projectile>();
                 bloodArrow.shooter = this;
+                bloodArrow.side = isPlayer;
 
                 //Item
                 if (GetComponentInChildren<BloodoftheKnight>() != null)

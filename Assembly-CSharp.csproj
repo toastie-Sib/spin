@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Projectiles\TurretProjectile.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheArcher.cs" />
     <Compile Include="Assets\Scripts\Bases\ItemBase.cs" />
+    <Compile Include="Assets\Scripts\Items\GlassBall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

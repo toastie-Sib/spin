@@ -47,11 +47,14 @@ public class Unarmed : Fighter
         //attack
         if (collision.gameObject.CompareTag("Fighter"))
         {
+            
             Fighter otherFighter = collision.gameObject.GetComponentInParent<Fighter>();
             if (otherFighter.isInvincible == false) {
                 otherFighter.HitDetect(Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))));
             }
-            
+            Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
+            rb.velocity -= wallBoost;
+            //rb.velocity -= rb.velocity * 2;
         }
 
         

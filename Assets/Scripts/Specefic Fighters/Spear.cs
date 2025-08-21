@@ -7,7 +7,7 @@ public class Spear : Weapon
     public float originalHeight;
     public float scaleAmount = 0.05f;
 
-    void Start()
+    public override void Start()
     {
         Collider collider = GetComponent<Collider>();
         originalHeight = collider.bounds.size.y;

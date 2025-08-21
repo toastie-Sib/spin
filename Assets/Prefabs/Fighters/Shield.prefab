@@ -131,6 +131,9 @@ MonoBehaviour:
   damage: 0
   doNotHurt: 1
   shield: 1
+  axe: 0
+  scythe: 0
+  side: 0
 --- !u!1 &1218755945156664945
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,11 +255,14 @@ MonoBehaviour:
   hpUI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
+  isPlayer: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
+  weapon: {fileID: 1218755944736140016}
   invincibilityDuration: 0.2
   hp: 60
+  maxHp: 100
   spinMult: 50
   velocityThreshold: 1
   nudgeForce: 3
@@ -269,7 +275,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218755945156664945}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0

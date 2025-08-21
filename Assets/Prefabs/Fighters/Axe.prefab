@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7321243860733249742}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1.35, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0.13, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 100}
   m_Children: []
-  m_Father: {fileID: 8005193021556621600}
-  m_RootOrder: 2
+  m_Father: {fileID: 8005193020781850032}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!212 &7321243860733249776
 SpriteRenderer:
@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8005193020781850032
 Transform:
   m_ObjectHideFlags: 0
@@ -112,8 +112,9 @@ Transform:
   m_GameObject: {fileID: 8005193020781850033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.22, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.85, z: 0.1}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 0.1}
+  m_Children:
+  - {fileID: 7321243860733249743}
   m_Father: {fileID: 8005193021556621600}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,10 +177,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2.0197117
-  m_Height: 1.4256787
+  m_Radius: 0.6016424
+  m_Height: 1.2032847
   m_Direction: 1
-  m_Center: {x: 0, y: 0.09300077, z: 0}
+  m_Center: {x: 0.008103371, y: 0.1438781, z: 0}
 --- !u!54 &8005193020781850035
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -214,6 +215,7 @@ MonoBehaviour:
   shield: 0
   axe: 1
   scythe: 0
+  side: 0
   damageIncrease: 2
 --- !u!1 &8005193020900284720
 GameObject:
@@ -249,7 +251,6 @@ Transform:
   m_Children:
   - {fileID: 8005193021318061501}
   - {fileID: 8005193020781850032}
-  - {fileID: 7321243860733249743}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -323,7 +324,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8005193020900284720}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -357,8 +358,10 @@ MonoBehaviour:
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
+  weapon: {fileID: 8005193020781850033}
   invincibilityDuration: 0.2
   hp: 100
+  maxHp: 100
   spinMult: 0
   velocityThreshold: 1
   nudgeForce: 3
@@ -389,7 +392,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  weapon: {fileID: 8005193020781850033}
 --- !u!1 &8005193021318061498
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,9 +5,10 @@ using UnityEngine;
 public class Turret : Bow
 {
     public GameObject nose;
-    [HideInInspector]
-    public Fighter owner;
+    [HideInInspector] public Fighter owner;
     private Color color;
+    [HideInInspector] public bool side;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -16,12 +17,21 @@ public class Turret : Bow
         if (owner != null)
         {
             color = owner.originalColor;
+            hp = owner.maxHp/10f;
         }
+
+        isPlayer = side;
     }
 
     // Update is called once per frame
     public override void Update()
     {
+        if (hp <= 0)
+        {
+
+            Destroy(gameObject);
+        }
+
         transform.Rotate(0f, 0f, spinMult * direction * Time.deltaTime); //Spin
 
         //Timers for Refresh
@@ -47,6 +57,7 @@ public class Turret : Bow
         if (arrow != null && owner != null)
         {
             arrow.shooter = owner;
+            arrow.side = side;
 
 
             //item Blood of the Knight
@@ -75,6 +86,7 @@ public class Turret : Bow
                     GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, projectileRotation);
                     Projectile bloodArrow = projectileGO.GetComponent<Projectile>();
                     bloodArrow.shooter = owner;
+                    bloodArrow.side = side;
                     bloodArrow.GetComponentInChildren<Renderer>().material.color = color;
 
                     //Item
