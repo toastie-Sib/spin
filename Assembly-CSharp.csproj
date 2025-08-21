@@ -83,6 +83,8 @@
     <Compile Include="Assets\Scripts\Managers\ItemSpawner.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheKnight.cs" />
     <Compile Include="Assets\Scripts\Projectiles\TurretProjectile.cs" />
+    <Compile Include="Assets\Scripts\Items\BloodoftheArcher.cs" />
+    <Compile Include="Assets\Scripts\Bases\ItemBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloodoftheKnight : MonoBehaviour
+public class BloodoftheKnight : ItemBase
 {
     private HashSet<GameObject> alreadyTriggered = new HashSet<GameObject>();
     public float damage = 0.0f;
@@ -33,5 +33,5 @@ public class BloodoftheKnight : MonoBehaviour
         alreadyTriggered.Remove(other.gameObject);
     }
 
-    public void IncreaseScaling() { if(damage < 3f) { damage += 0.2f; } }
+    public void IncreaseScaling() { if(damage < (3f * stacks)) { damage += (0.2f * stacks); } }
 } //Also Changed Projectile, Turret, and Shield

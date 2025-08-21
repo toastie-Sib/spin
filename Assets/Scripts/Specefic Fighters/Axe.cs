@@ -10,7 +10,6 @@ public class Axe : Fighter
 
     public float returnDuration = 1.0f;
     public AnimationCurve returnSpeedCurve;
-    public GameObject weapon;
 
     public override void Update() //Make sure to update with Fighter
     {

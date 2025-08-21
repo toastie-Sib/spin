@@ -47,13 +47,44 @@ public class Turret : Bow
         if (arrow != null && owner != null)
         {
             arrow.shooter = owner;
-            
 
-            //item
+
+            //item Blood of the Knight
             if (owner.GetComponentInChildren<BloodoftheKnight>() != null)
             {
                 BloodoftheKnight BotK = owner.GetComponentInChildren<BloodoftheKnight>();
                 arrow.damage += BotK.damage;
+            }
+            //Blood of the Archer
+            if (GetComponentInChildren<BloodoftheArcher>() != null)
+            {
+                float angleSpread = 30;
+                BloodoftheArcher BotA = GetComponentInChildren<BloodoftheArcher>();
+                float currentAngleSpread = (BotA != null) ? angleSpread : 0f;
+                float startAngle = -((BotA.stacks - 1) * currentAngleSpread) / 2f;
+                for (int i = 0; i < BotA.stacks; i++)
+                {
+                    // Calculate the current projectile's angle offset
+                    float currentAngleOffset = startAngle + (i * currentAngleSpread);
+
+                    // Create a rotation for this specific projectile
+                    // We apply the offset to the firePoint's original rotation
+                    Quaternion projectileRotation = firePoint.rotation * Quaternion.Euler(0, 0, currentAngleOffset);
+
+                    // Instantiate a new projectile
+                    GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, projectileRotation);
+                    Projectile bloodArrow = projectileGO.GetComponent<Projectile>();
+                    bloodArrow.shooter = this;
+
+                    //Item
+                    if (GetComponentInChildren<BloodoftheKnight>() != null)
+                    {
+                        BloodoftheKnight BotK = GetComponentInChildren<BloodoftheKnight>();
+                        bloodArrow.damage += BotK.damage;
+                    }
+                }
+
+                arrow.transform.Rotate(0, 0, angleSpread);
             }
         }
 
