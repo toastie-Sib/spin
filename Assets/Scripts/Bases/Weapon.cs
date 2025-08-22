@@ -53,15 +53,28 @@ public class Weapon : MonoBehaviour
         {
             if (side == otherFighter.isPlayer) return;
 
-            if (scythe == true) { otherFighter.ApplyPoison(); }
+            if (scythe == true) {
+                if (GetComponent<GlassBall>() != null)
+                {
+                    GlassBall glassBall = GetComponent<GlassBall>();
+                    for (int i = -1; i < glassBall.stacks; i++)
+                    {
+                        otherFighter.ApplyPoison(); // Call the actual scaling logic 'stacks' times
+                    }
+                }
+                else
+                {
+                    // If there's no GlassBall, perhaps just apply the single stack effect once?
+                    otherFighter.ApplyPoison(); ;
+                }
+            }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
                 otherFighter.HitDetect(damage);
                 //animator.SetTrigger("attack");
 
                 if (other.GetComponent<Turret>() == null)
                 {
-                    //TriggerScaling(); try to go for this
-                    IncreaseScaling();
+                    TriggerScaling();
                 }
             }
             
@@ -82,15 +95,7 @@ public class Weapon : MonoBehaviour
         GameSpeedManager.Instance.PauseForImpact(0.2f);
     }
 
-    public void ShieldGrow(float damage)
-    {
-        Vector3 scale = transform.localScale;
-        scale += new Vector3(0f, ((0.01f) * damage), 0f);
-
-        transform.localScale = scale;
-    }
-
-    public void TriggerScaling()
+    public void TriggerScaling() // call this
     {
         if (GetComponent<GlassBall>() != null)
         {
@@ -108,14 +113,19 @@ public class Weapon : MonoBehaviour
     }
 
     public virtual void IncreaseScaling(){
-        //Glass Ball
+        
+    }
+
+    public void ShieldGrow(float damage)
+    {
         if (GetComponent<GlassBall>() != null)
         {
             GlassBall glassBall = GetComponent<GlassBall>();
-            for (int i = 0; i < glassBall.stacks; i++)
-            {
-                IncreaseScaling();
-            }
+            damage *= glassBall.stacks;
         }
+        Vector3 scale = transform.localScale;
+        scale += new Vector3(0f, ((0.01f) * damage), 0f);
+
+        transform.localScale = scale;
     }
 }

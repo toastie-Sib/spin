@@ -89,7 +89,7 @@ public class Projectile : MonoBehaviour
 
             otherFighter.HitDetect(damage);
 
-            if (reflected == false) { ScalingIncrease(); } // Increase Whatever
+            if (reflected == false) { ScalingTrigger(); } // Increase Whatever
             else // If it was reflected though
             {
                 if (otherFighter == shooter)
@@ -123,6 +123,23 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             DestroySelf();
+        }
+    }
+
+    public void ScalingTrigger() // call this
+    {
+        if (shooter.GetComponentInChildren<GlassBall>() != null)
+        {
+            GlassBall glassBall = shooter.GetComponentInChildren<GlassBall>();
+            for (int i = -1; i < glassBall.stacks; i++)
+            {
+                ScalingIncrease(); // Call the actual scaling logic 'stacks' times
+            }
+        }
+        else
+        {
+            // If there's no GlassBall, perhaps just apply the single stack effect once?
+            ScalingIncrease();
         }
     }
 
