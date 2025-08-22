@@ -327,7 +327,6 @@ GameObject:
   - component: {fileID: 1701393399788561025}
   - component: {fileID: 1701393399788561031}
   - component: {fileID: 7636428229436780417}
-  - component: {fileID: 4752884729429624863}
   m_Layer: 8
   m_Name: Scythe
   m_TagString: Weapon
@@ -450,18 +449,3 @@ MonoBehaviour:
   side: 0
   firePoint: {fileID: 0}
   GBScythe: {fileID: 0}
---- !u!114 &4752884729429624863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701393399788561029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8677962463b18814da5f552b81b74ff7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 1
-  nextFireTime: 0
-  firepoint: {fileID: 0}

@@ -17,6 +17,7 @@ public class Wrench : Weapon
 
     public override void IncreaseScaling()
     {
+        base.IncreaseScaling();
         if (hasSpawnedTurretThisSwing) return;
         hasSpawnedTurretThisSwing = true;
 

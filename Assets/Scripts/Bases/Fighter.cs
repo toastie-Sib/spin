@@ -63,7 +63,14 @@ public class Fighter : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+            hpUI.hpText.text = (hp).ToString();
+        }
+
         if (isActive == false) return;
+
         if (hp <= 0)
         {
             hpUI.hpText.text = (" ").ToString();
@@ -71,6 +78,7 @@ public class Fighter : MonoBehaviour
             
             Destroy(gameObject);
         }
+        
 
         float speed = rb.velocity.magnitude;
         Vector3 velocity = rb.velocity;

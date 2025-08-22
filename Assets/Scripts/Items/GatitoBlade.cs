@@ -56,9 +56,10 @@ public class GatitoBlade : ItemBase
                 gb.firepoint = weapon.firePoint;
                 hasBow.RegisterExtraFirepoint(gb.firepoint);
             }
-            Scythe hasScythe = myWeapon.GetComponent<Scythe>();
-            if (hasScythe != null)
+            
+            if (myWeapon.GetComponent<Scythe>() != null) // switched logic since it is cleaner, could do for above too
             {
+                Scythe hasScythe = myWeapon.GetComponent<Scythe>();
                 Scythe gbScythe = gb.GetComponent<Scythe>();
                 hasScythe.GBScythe = gbScythe;
                 gbScythe.GBScythe = hasScythe;

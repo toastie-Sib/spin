@@ -13,6 +13,6 @@ public class TurretProjectile : Projectile
 
     public override void ScalingIncrease()
     {
-        
+        base.ScalingIncrease();
     }
 }

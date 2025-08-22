@@ -6,6 +6,7 @@ public class Dagger : Weapon
 {
     public override void IncreaseScaling()
     {
+        base.IncreaseScaling();
         Fighter myFighter = GetComponentInParent<Fighter>();
         myFighter.IncreaseSpeed();
     }

@@ -91,7 +91,7 @@ public class Bow : Fighter //Inherit Fighter
                 bloodArrow.shooter = this;
                 bloodArrow.side = isPlayer;
 
-                //Item
+                //Item BOTH HERE AGAIN COULD CONDENCE??
                 if (GetComponentInChildren<BloodoftheKnight>() != null)
                 {
                     BloodoftheKnight BotK = GetComponentInChildren<BloodoftheKnight>();

@@ -60,6 +60,7 @@ public class Weapon : MonoBehaviour
 
                 if (other.GetComponent<Turret>() == null)
                 {
+                    //TriggerScaling(); try to go for this
                     IncreaseScaling();
                 }
             }
@@ -89,5 +90,32 @@ public class Weapon : MonoBehaviour
         transform.localScale = scale;
     }
 
-    public virtual void IncreaseScaling(){}
+    public void TriggerScaling()
+    {
+        if (GetComponent<GlassBall>() != null)
+        {
+            GlassBall glassBall = GetComponent<GlassBall>();
+            for (int i = -1; i < glassBall.stacks; i++)
+            {
+                IncreaseScaling(); // Call the actual scaling logic 'stacks' times
+            }
+        }
+        else
+        {
+            // If there's no GlassBall, perhaps just apply the single stack effect once?
+            IncreaseScaling();
+        }
+    }
+
+    public virtual void IncreaseScaling(){
+        //Glass Ball
+        if (GetComponent<GlassBall>() != null)
+        {
+            GlassBall glassBall = GetComponent<GlassBall>();
+            for (int i = 0; i < glassBall.stacks; i++)
+            {
+                IncreaseScaling();
+            }
+        }
+    }
 }

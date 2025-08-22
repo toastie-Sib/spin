@@ -10,6 +10,7 @@ public class Sword : Weapon
 
     public override void IncreaseScaling()
     {
+        base.IncreaseScaling();
         damage += damageIncrease;
     }
 

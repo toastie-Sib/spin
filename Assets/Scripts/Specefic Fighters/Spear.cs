@@ -16,6 +16,7 @@ public class Spear : Weapon
 
     public override void IncreaseScaling()
     {
+        base.IncreaseScaling();
         Vector3 scale = transform.localScale;
         scale += new Vector3(0f, (0.1f), 0f);
 
