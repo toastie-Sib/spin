@@ -77,7 +77,7 @@
     <Compile Include="Assets\Scripts\Projectiles\Explosion.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Scythe.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Axe.cs" />
-    <Compile Include="Assets\Scripts\Items\GlassBall.cs" />
+    <Compile Include="Assets\Scripts\Items\GatitoBlade.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheKnight.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Dagger.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Sword.cs" />

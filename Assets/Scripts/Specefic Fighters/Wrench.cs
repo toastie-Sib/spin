@@ -41,6 +41,12 @@ public class Wrench : Weapon
             }
         }
         StartCoroutine(ResetSwing());
+
+        //Item HERE TOO
+        GatitoBlade gB = GetComponentInParent<GatitoBlade>();
+        if (gB != null) { GatitoBlade newGatitoBlade = turret.AddComponent<GatitoBlade>();
+            newGatitoBlade.stacks = gB.stacks;
+        }
     }
 
     public void ShieldTurret(Fighter shieldFighter) // For shield make sure same as above

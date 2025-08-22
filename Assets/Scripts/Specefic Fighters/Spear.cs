@@ -9,6 +9,7 @@ public class Spear : Weapon
 
     public override void Start()
     {
+        base.Start();
         Collider collider = GetComponent<Collider>();
         originalHeight = collider.bounds.size.y;
     }
@@ -21,7 +22,7 @@ public class Spear : Weapon
         transform.localScale = scale;
 
         Vector3 position = transform.localPosition;
-        position += new Vector3(0f, (0.1f), 0f);
+        position -= new Vector3(0f, (0.05f), 0f);
 
         transform.localPosition = position;
 

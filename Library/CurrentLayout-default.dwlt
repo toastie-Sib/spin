@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1007
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 14042}
   vertical: 0
-  controlID: 19
+  controlID: 172
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 392}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 80
+  controlID: 70
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 81
+  controlID: 71
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 136
+  controlID: 150
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -484,7 +484,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs/Fighters
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ae2d0000
     m_LastClickedID: 11694
-    m_ExpandedIDs: 00000000fc3f0000104100009a4200009c4200009e420000a0420000a2420000a4420000a6420000a8420000aa420000ac420000ae420000b0420000b2420000b4420000b6420000b8420000ba420000bc420000be420000c0420000c2420000
+    m_ExpandedIDs: 00000000803e000018400000f4400000ae420000b0420000b2420000b4420000b6420000b8420000ba420000bc420000be420000c0420000c2420000c4420000c6420000c8420000ca420000cc420000ce420000d0420000d2420000d4420000d6420000d8420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -523,21 +523,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 480}
+    scrollPos: {x: 0, y: 410}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000683e0000fc3f0000104100009a4200009c4200009e420000a0420000a2420000a4420000a6420000a8420000aa420000ac420000ae420000b0420000b2420000b4420000b6420000b8420000ba420000bc420000be420000c0420000c242000022e60000
+    m_ExpandedIDs: ffffffff00000000803e0000963e000018400000f4400000ae420000b0420000b2420000b4420000b6420000b8420000ba420000bc420000be420000c0420000c2420000c4420000c6420000c8420000ca420000cc420000ce420000d0420000d2420000d4420000d6420000d8420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Axe
-      m_OriginalName: Axe
+      m_Name: Dagger
+      m_OriginalName: Dagger
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15976
+      m_UserData: 16010
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -612,21 +612,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 50c5f2ff2ac9f2ff40e9f2ff7a63f3ff6a71f3ffdc71f3ff4004f4ffac04f4ffbcd9f4ffac29f5ffbe3ff5ffd43ff5ff4040f5ff144df5ff804df5ff4e6df5ff8886f5ff3435f7ff4a3cf7ff5049f7ff3c6af7ff66a7f7ff7835f8ffae35f8ffe842f8ff5443f8ff82d4f8ffeed4f8ff9266f9fffe66f9ffaa71f9ff1c72f9ff9674f9ff0275f9ff7279f9ff087af9ff8c88f9fff888f9ff748cf9ff8a8cf9fff68cf9ff5697f9ffc297f9ff6c69faff8269fafff869faff9089faffa689faff128afafff48efaff0a8ffaff768ffaffa49efaffba9efaff269ffaff02a9faff18a9faff84a9faffcce7faff1a4cfbff564cfbff8c4cfbff0e00fcff4a00fcff8000fcff5494fcffc094fcff1c97fcff7adcfcff90dcfcff02ddfcffb015fdffc615fdff3216fdff7a2dfdff4261fdff7861fdffae61fdff9a62fdffa06afdff0c6bfdff087cfdffd67cfdff7cd6fdff3cb3ffffecbaffffa0caffff86d2ffff66d4ffffeed8ffffa4d9ffffdadbffff22e7ffff8ef4ffff32f9ffff6cfbffff7a3d0000484700005c4f0000a0630000fe6d00001e6e000040d8000054d8000068d80000b6d80000c0d80000dcd8000098ef0000acef0000882701009c27010062680200
+      m_ExpandedIDs: ecfefdff22fffdff58fffdffcc01feffec01feff0202feff3802feff7c07feffb207feffe807feffca0afeff060bfeff3c0bfeffc410feff0011feff3611feffc212feffd812feff4a13feff9a15feffd615feff0c16feff7e19fefff019feff4e1bfeffba1bfeff0e1dfeff801dfeff8e48fefffa48feff70b0feff86b0fefff2b0feffc40bffff360cffff7e0effffea0effffce10ffffda11fffff011ffff6212ffffe813ffff6415ffff7a15ffffd215ffff6cfbfffff4ffffff723d0000923d0000f83d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Dagger(Clone)
+        m_OriginalName: Dagger(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -61234
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 

@@ -17,13 +17,16 @@ public class Turret : Bow
         if (owner != null)
         {
             color = owner.originalColor;
-            hp = owner.maxHp/10f;
+            hp = owner.maxHp/5f;
         }
 
         isPlayer = side;
 
         objectRenderer = GetComponent<Renderer>();
         originalColor = objectRenderer.material.color;
+
+        Weapon myWeapon = GetComponentInChildren<Weapon>();
+        myWeapon.firePoint = firePoint;
     }
 
     // Update is called once per frame
@@ -45,13 +48,19 @@ public class Turret : Bow
         }
         if (arrowCount > 0 && Time.time >= nextFireTime && rb.useGravity == true) //Try to fire
         {
-            FireTurretProjectile();
+            // Fire from main firepoint
+            FireProjectile(firePoint);
+
+            // Fire from extra firepoints
+            foreach (Transform fp in extraFirepoints)
+                FireProjectile(fp);
+
             arrowCount -= 1;
             nextFireTime = Time.time + fireInterval;
         }
     }
 
-    public virtual void FireTurretProjectile()
+    public override void FireProjectile(Transform firePoint)
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 

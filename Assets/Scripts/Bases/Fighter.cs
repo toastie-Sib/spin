@@ -34,6 +34,7 @@ public class Fighter : MonoBehaviour
     public float hp = 100;
     [HideInInspector] public float maxHp = 100;
     public float spinMult = 100f;
+    //public float damage = 1.0f;
     //Nudge shit
     [HideInInspector] public float velocityThreshold = 1f;
     [HideInInspector] public float nudgeForce = 3f;
@@ -138,8 +139,9 @@ public class Fighter : MonoBehaviour
         // Trigger impact frames
         GetComponentInChildren<Renderer>().material.color = Color.white;
         //StartCoroutine(ImpactFrames(0.2f));
+
+        if (hpUI != null) { GameSpeedManager.Instance.PauseForImpact(0.2f); }
         
-        GameSpeedManager.Instance.PauseForImpact(0.2f);
         yield return new WaitForSeconds(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
     }
@@ -230,7 +232,7 @@ public class Fighter : MonoBehaviour
         StartCoroutine(PoisonTick());
     }
 
-    private IEnumerator PoisonTick()
+    public IEnumerator PoisonTick()
     {
         
         //Take Damage to HP

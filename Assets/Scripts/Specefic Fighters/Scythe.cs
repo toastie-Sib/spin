@@ -7,8 +7,10 @@ public class Scythe : Weapon
     private int startingDirection;
     private Fighter myFighter;
     private Coroutine parryRoutine;
+    [HideInInspector] public Scythe GBScythe;
     public override void Start()
     {
+        base.Start();
         myFighter = GetComponentInParent<Fighter>();
         startingDirection = myFighter.direction;
         if (startingDirection == 1)
@@ -21,11 +23,17 @@ public class Scythe : Weapon
     {
         base.TriggerParryImpactFrames();
         // Cancel old routine but *don’t* reset transform
-        if (parryRoutine != null)
-            StopCoroutine(parryRoutine);
+        //if (parryRoutine != null)
+            //StopCoroutine(parryRoutine);
 
         // Start a new one from the current local state
-        parryRoutine = StartCoroutine(ParryImpactMotion());
+        GatitoBlade gB = GetComponentInParent<GatitoBlade>();
+        if (gB == null) { parryRoutine = StartCoroutine(ParryImpactMotion()); } else
+        {
+            StartCoroutine(ParryImpactMotion());
+            StartCoroutine(GBScythe.ParryImpactMotion());
+        }
+        
     }
 
     private IEnumerator ParryImpactMotion()
@@ -37,15 +45,26 @@ public class Scythe : Weapon
 
             yield return new WaitForSeconds(0.02f); // controls speed (0.02s = 50 FPS)
         }
+        
         if (myFighter.direction == -1) 
         {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            // Set Y to 0, preserve Z
+            Quaternion initialZRotation = Quaternion.Euler(0, 0, transform.localEulerAngles.z);
+            Vector3 finalEuler = initialZRotation.eulerAngles; // Start with the preserved Z
+            finalEuler.y = 0; // Set Y to 0
+            transform.localRotation = Quaternion.Euler(finalEuler);
         }
         
         if (myFighter.direction == 1)
         {
-            transform.localRotation = Quaternion.Euler(0, 180f, 0);
+            // Set Y to 180, preserve Z
+            Quaternion initialZRotation = Quaternion.Euler(0, 0, transform.localEulerAngles.z);
+            Vector3 finalEuler = initialZRotation.eulerAngles; // Start with the preserved Z
+            finalEuler.y = 180f; // Set Y to 180
+            transform.localRotation = Quaternion.Euler(finalEuler);
         }
         parryRoutine = null;
     }
+
+    
 }

@@ -15,9 +15,17 @@ public class Bow : Fighter //Inherit Fighter
     //Shot Count
     public float arrowCount = 1f;
     public float maxArrowCount = 1f;
-    [HideInInspector]
-    public float nextFireTime = 0.0f;
+    [HideInInspector] public float nextFireTime = 0.0f;
     public float nextRefreshTime = 0.5f;
+    [HideInInspector] public List<Transform> extraFirepoints = new List<Transform>();
+
+    public override void Start() //Make sure to update with Fighter
+    {
+        base.Start();
+
+        Weapon myWeapon = GetComponentInChildren<Weapon>();
+        myWeapon.firePoint = firePoint;
+    }
 
     // Update is called once per frame
     public override void Update() //Make sure to update with Fighter
@@ -32,13 +40,19 @@ public class Bow : Fighter //Inherit Fighter
         }
         if (arrowCount > 0 && Time.time >= nextFireTime && rb.useGravity == true) //Try to fire
         {
-            FireProjectile();
+            // Fire from main firepoint
+            FireProjectile(firePoint);
+
+            // Fire from extra firepoints
+            foreach (Transform fp in extraFirepoints)
+                FireProjectile(fp);
+
             arrowCount -= 1;
             nextFireTime = Time.time + fireInterval;
         }
     }
 
-    public virtual void FireProjectile()
+    public virtual void FireProjectile(Transform firePoint)
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
@@ -116,6 +130,12 @@ public class Bow : Fighter //Inherit Fighter
     public void IncreaseFireRate()
     {
         maxArrowCount += 1;
+    }
+
+    public void RegisterExtraFirepoint(Transform fp)
+    {
+        if (!extraFirepoints.Contains(fp))
+            extraFirepoints.Add(fp);
     }
 
 }

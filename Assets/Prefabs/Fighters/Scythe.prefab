@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543389804689952257}
   m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.05, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 10}
   m_Children: []
   m_Father: {fileID: 1701393399788561028}
@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 1701393399788561025}
   - component: {fileID: 1701393399788561031}
   - component: {fileID: 7636428229436780417}
+  - component: {fileID: 4752884729429624863}
   m_Layer: 8
   m_Name: Scythe
   m_TagString: Weapon
@@ -342,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701393399788561029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_Children:
   - {fileID: 543389804689952256}
@@ -411,7 +412,7 @@ CapsuleCollider:
   m_Radius: 0.54676193
   m_Height: 1.1030241
   m_Direction: 1
-  m_Center: {x: 0.38324124, y: 0.079746306, z: 0}
+  m_Center: {x: 0.38324124, y: 1.1297463, z: 0}
 --- !u!54 &1701393399788561031
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -447,3 +448,20 @@ MonoBehaviour:
   axe: 0
   scythe: 1
   side: 0
+  firePoint: {fileID: 0}
+  GBScythe: {fileID: 0}
+--- !u!114 &4752884729429624863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701393399788561029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8677962463b18814da5f552b81b74ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 1
+  nextFireTime: 0
+  firepoint: {fileID: 0}

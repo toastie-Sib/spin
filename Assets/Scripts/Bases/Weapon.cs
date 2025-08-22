@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     public bool axe = false;
     public bool scythe = false;
     [HideInInspector] public bool side;
+    [HideInInspector] public Transform firePoint;
 
     public virtual void Start() {
         Fighter myFighter = GetComponentInParent<Fighter>();

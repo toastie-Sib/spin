@@ -9,9 +9,9 @@ public class Staff : Bow
     public float explosionRadius = 1f;
     public float damageIncrease = 0f;
 
-    public override void FireProjectile()
+    public override void FireProjectile(Transform firePoint)
     {
-        base.FireProjectile();
+        base.FireProjectile(firePoint);
         
         //Apply Force away when shot
         float zRot = transform.eulerAngles.z;
