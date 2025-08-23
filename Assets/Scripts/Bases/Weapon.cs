@@ -65,7 +65,7 @@ public class Weapon : MonoBehaviour
                 else
                 {
                     // If there's no GlassBall, perhaps just apply the single stack effect once?
-                    otherFighter.ApplyPoison(); ;
+                    otherFighter.ApplyPoison();
                 }
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {

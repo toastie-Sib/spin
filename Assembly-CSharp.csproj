@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Projectiles\Fireball.cs" />
     <Compile Include="Assets\Scripts\Bases\ItemBase.cs" />
     <Compile Include="Assets\Scripts\Managers\SeedManager.cs" />
+    <Compile Include="Assets\Scripts\Items\GlassBall.cs" />
     <Compile Include="Assets\Scripts\Managers\AssignAnimation.cs" />
     <Compile Include="Assets\Scripts\Bases\Weapon.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Turret.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
     <Compile Include="Assets\Scripts\Managers\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Items\GlassBall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

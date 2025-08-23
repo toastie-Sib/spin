@@ -111,6 +111,12 @@ public class Turret : Bow
 
                 arrow.transform.Rotate(0, 0, angleSpread);
             }
+            // Glass ball
+            if (owner.GetComponentInChildren<GlassBall>() != null)
+            {
+                GlassBall glassBall = GetComponent<GlassBall>();
+                for (int i = -1; i < glassBall.stacks; i++) { arrow.damage *= 2; }
+            }
         }
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();

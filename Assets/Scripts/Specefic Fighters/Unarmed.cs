@@ -50,7 +50,19 @@ public class Unarmed : Fighter
             
             Fighter otherFighter = collision.gameObject.GetComponentInParent<Fighter>();
             if (otherFighter.isInvincible == false) {
-                otherFighter.HitDetect(Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))));
+                if (GetComponent<GlassBall>() != null)
+                {
+                    GlassBall glassBall = GetComponent<GlassBall>();
+                    for (int i = -1; i < glassBall.stacks; i++)
+                    {
+                        Damage(otherFighter);
+                    }
+                }
+                else
+                {
+                    // If there's no GlassBall, perhaps just apply the single stack effect once?
+                    Damage(otherFighter);
+                }
             }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity -= wallBoost;
@@ -60,6 +72,9 @@ public class Unarmed : Fighter
         
     }
 
-    
+    public void Damage(Fighter otherFighter)
+    {
+        otherFighter.HitDetect(Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))));
+    }
 
 }
