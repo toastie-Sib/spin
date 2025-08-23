@@ -5,7 +5,6 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     private HashSet<GameObject> alreadyTriggered = new HashSet<GameObject>();
-    public Animator animationRef;
     public float damage = 1.0f;
     [Header("Type")]
     public bool doNotHurt = false;
@@ -19,24 +18,6 @@ public class Weapon : MonoBehaviour
         Fighter myFighter = GetComponentInParent<Fighter>();
         side = myFighter.isPlayer;
 
-        StartCoroutine(AssignAnim());
-    }
-
-    public IEnumerator AssignAnim()
-    {
-        yield return new WaitForSeconds(0.01f);
-        if (side == true)
-        {
-            GameObject pA = GameObject.Find("PlayerAnim");
-            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
-            animationRef = aA.stashedAnimation;
-        }
-        else
-        {
-            GameObject pA = GameObject.Find("EnemyAnim");
-            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
-            animationRef = aA.stashedAnimation;
-        }
     }
 
     public virtual void OnTriggerEnter(Collider other)
@@ -54,7 +35,7 @@ public class Weapon : MonoBehaviour
                 if (axe == false) { myFighter.ReverseDirection(); }
                 myFighter.isInvincible = true;
 
-                animationRef.SetTrigger("Parry");
+                myFighter.ParryAnimation();
             }
 
             if (otherFighter != null)
@@ -62,7 +43,7 @@ public class Weapon : MonoBehaviour
                 otherFighter.ReverseDirection();
                 otherFighter.isInvincible = true;
 
-                otherWeapon.animationRef.SetTrigger("Parry");
+                otherFighter.ParryAnimation();
             }
             TriggerParryImpactFrames();
         }
@@ -88,10 +69,10 @@ public class Weapon : MonoBehaviour
                 }
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
-                animationRef.SetTrigger("Attack");
+                myFighter.AttackAnimation();
 
                 Weapon otherWeapon = other.GetComponentInChildren<Weapon>();
-                otherWeapon.animationRef.SetTrigger("Pain");
+                otherFighter.HurtAnimation();
 
                 otherFighter.HitDetect(damage);
 
@@ -135,7 +116,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public virtual void IncreaseScaling(){
+    public virtual void IncreaseScaling(){ // do not call this one
         
     }
 

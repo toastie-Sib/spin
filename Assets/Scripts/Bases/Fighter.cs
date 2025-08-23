@@ -22,6 +22,7 @@ public class Fighter : MonoBehaviour
     [HideInInspector] public bool isUnarmed = false;
     [HideInInspector] public bool isPlayer = false;
     [HideInInspector] public static event Action<Fighter> OnFighterDied; // global event
+    [HideInInspector] public Animator animationRef;
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
@@ -65,6 +66,24 @@ public class Fighter : MonoBehaviour
             GameObject esObject = GameObject.Find("EventSystem");
             SceneSwitcher es = esObject.GetComponent<SceneSwitcher>();
             es.otherAnimPrefab = Animation; 
+        }
+        StartCoroutine(AssignAnim());
+    }
+
+    public IEnumerator AssignAnim()
+    {
+        yield return new WaitForSeconds(0.01f);
+        if (isPlayer == true)
+        {
+            GameObject pA = GameObject.Find("PlayerAnim");
+            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+            animationRef = aA.stashedAnimation;
+        }
+        else
+        {
+            GameObject pA = GameObject.Find("EnemyAnim");
+            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+            animationRef = aA.stashedAnimation;
         }
     }
 
@@ -201,7 +220,7 @@ public class Fighter : MonoBehaviour
         //}
     }
 
-    
+
 
     //private IEnumerator ImpactFrames(float freezeDuration)
     //{
@@ -228,6 +247,22 @@ public class Fighter : MonoBehaviour
     //    direction = storedDirection;
     //    freezeFrame = false;
     //}
+
+    public void ParryAnimation()
+    {
+        animationRef.SetTrigger("Parry");
+    }
+
+    public void HurtAnimation()
+    {
+        animationRef.SetTrigger("Pain");
+    }
+
+    public void AttackAnimation()
+    {
+        animationRef.SetTrigger("Attack");
+    }
+
 
     //Dagger only
     public void IncreaseSpeed()
