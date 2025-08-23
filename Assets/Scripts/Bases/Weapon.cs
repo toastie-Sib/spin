@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     private HashSet<GameObject> alreadyTriggered = new HashSet<GameObject>();
-    public Animator animator;
+    public Animator animationRef;
     public float damage = 1.0f;
     [Header("Type")]
     public bool doNotHurt = false;
@@ -18,6 +18,19 @@ public class Weapon : MonoBehaviour
     public virtual void Start() {
         Fighter myFighter = GetComponentInParent<Fighter>();
         side = myFighter.isPlayer;
+
+        if (side == true)
+        {
+            GameObject pA = GameObject.Find("PlayerAnim");
+            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+            animationRef = aA.stashedAnimation;
+        }
+        else
+        {
+            GameObject pA = GameObject.Find("EnemyAnim");
+            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+            animationRef = aA.stashedAnimation;
+        }
     }
 
     public virtual void OnTriggerEnter(Collider other)
@@ -34,16 +47,16 @@ public class Weapon : MonoBehaviour
             {
                 if (axe == false) { myFighter.ReverseDirection(); }
                 myFighter.isInvincible = true;
-                
-                
+
+                animationRef.SetTrigger("Parry");
             }
 
             if (otherFighter != null)
             {
                 otherFighter.ReverseDirection();
                 otherFighter.isInvincible = true;
-                
-                
+
+                otherWeapon.animationRef.SetTrigger("Parry");
             }
             TriggerParryImpactFrames();
         }
@@ -70,7 +83,10 @@ public class Weapon : MonoBehaviour
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
                 otherFighter.HitDetect(damage);
-                //animator.SetTrigger("attack");
+                animationRef.SetTrigger("Attack");
+
+                Weapon otherWeapon = other.GetComponentInChildren<Weapon>();
+                otherWeapon.animationRef.SetTrigger("Pain");
 
                 if (other.GetComponent<Turret>() == null)
                 {

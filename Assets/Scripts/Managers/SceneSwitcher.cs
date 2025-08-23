@@ -12,6 +12,7 @@ public class SceneSwitcher : MonoBehaviour
     public TMP_Text currentSeedText;
     [HideInInspector] public GameObject fighterPrefab;
     [HideInInspector] public GameObject animatorPrefab;
+    public GameObject otherAnimPrefab;
     [HideInInspector] public int fighterAmount = 0;
     [HideInInspector] public static SceneSwitcher Instance;
 

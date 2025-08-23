@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class Unarmed : Fighter
 {
+    [HideInInspector] public Animator animationRef;
+
     public override void Start() //Make sure to update with Fighter
     {
         base.Start();
         isUnarmed = true;
+
+        if (isPlayer == true)
+        {
+            GameObject pA = GameObject.Find("PlayerAnim");
+            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+            animationRef = aA.stashedAnimation;
+        }
+        else
+        {
+            GameObject pA = GameObject.Find("EnemyAnim");
+            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+            animationRef = aA.stashedAnimation;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

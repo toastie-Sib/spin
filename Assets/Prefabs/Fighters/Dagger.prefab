@@ -208,13 +208,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084b52ed276778249b4ab8b7ba45ec9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animationRef: {fileID: 0}
   damage: 1
   doNotHurt: 0
   shield: 0
   axe: 0
   scythe: 0
   side: 0
+  firePoint: {fileID: 0}
 --- !u!1 &9204503434298110760
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +343,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   weapon: {fileID: 9204503433997937125}
+  Animation: {fileID: 4102209906329537587, guid: 92bd251e4a0ad994a85b04acf016b1f2, type: 3}
   invincibilityDuration: 0.2
   hp: 100
   maxHp: 100

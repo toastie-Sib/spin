@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   originalColor: {r: 0, g: 0, b: 0, a: 0}
+  objectRenderer: {fileID: 0}
   lastNudgeTime: -Infinity
   isInvincible: 0
   invincibleUntil: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   weapon: {fileID: 8800063432083503889}
+  Animation: {fileID: 5048674814633144717, guid: 6f203da8b38f1cd4a8f202266f0aa26f, type: 3}
   invincibilityDuration: 0.2
   hp: 100
   maxHp: 100

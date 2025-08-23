@@ -4,16 +4,40 @@ using UnityEngine;
 
 public class AssignAnimation : Assign
 {
-    public GameObject stashedAnimation; //Could maybe go away?
+    public Animator stashedAnimation;
+    public bool isPlayer = false;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-        GameObject animation = Instantiate(es.animatorPrefab, transform.position, Quaternion.identity);
+        StartCoroutine(CheckIfPlayer());
+    }
 
-        stashedAnimation = animation;
+    public IEnumerator CheckIfPlayer()
+    {
+        yield return new WaitForSeconds(0.000001f);
+        if (isPlayer == true)
+        {
+            SpawnAnimation(es.animatorPrefab);
 
-        animation.transform.localScale *= 1.5f;
+        }
+        else
+        {
+            SpawnAnimation(es.otherAnimPrefab);
+
+        }
+    }
+
+    void SpawnAnimation(GameObject prefab)
+    {
+        GameObject animation = Instantiate(prefab, transform.position, Quaternion.identity);
+
+        stashedAnimation = animation.GetComponent<Animator>();
+
+        Vector3 scale = transform.localScale;
+        animation.transform.localScale = scale;
+        Quaternion rotation = transform.localRotation;
+        animation.transform.localRotation = rotation;
     }
 }

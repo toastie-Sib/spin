@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599168e5dadbe8c4b9f8542634cc735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animationRef: {fileID: 0}
   damage: 0
   doNotHurt: 1
   shield: 0
@@ -360,6 +360,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   weapon: {fileID: 315616872435341066}
+  Animation: {fileID: 7677716545353770495, guid: cce476aba9e452b4c9f622aeb3b2354d, type: 3}
   invincibilityDuration: 0.2
   hp: 100
   maxHp: 100
@@ -375,6 +376,7 @@ MonoBehaviour:
   maxArrowCount: 1
   nextFireTime: 0
   nextRefreshTime: 0.5
+  extraFirepoints: []
 --- !u!1 &8925497589034738961
 GameObject:
   m_ObjectHideFlags: 0

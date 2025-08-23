@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d1a4e7b0b008b469cfbc98572e3b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animationRef: {fileID: 0}
   damage: 1
   doNotHurt: 0
   shield: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   weapon: {fileID: 4165690970123226154}
+  Animation: {fileID: 4766159161853580743, guid: b6c4c8d2d4657194199940bd2db69df7, type: 3}
   invincibilityDuration: 0.2
   hp: 100
   maxHp: 100

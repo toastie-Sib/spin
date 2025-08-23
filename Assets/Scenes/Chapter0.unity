@@ -1152,6 +1152,8 @@ MonoBehaviour:
   currentSeedText: {fileID: 0}
   fighterPrefab: {fileID: 0}
   animatorPrefab: {fileID: 0}
+  otherAnimPrefab: {fileID: 0}
+  fighterAmount: 0
 --- !u!1 &803803644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,6 +1239,8 @@ MonoBehaviour:
   currentSeedText: {fileID: 0}
   fighterPrefab: {fileID: 0}
   animatorPrefab: {fileID: 0}
+  otherAnimPrefab: {fileID: 0}
+  fighterAmount: 0
 --- !u!114 &803803649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1264,6 +1268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8bbe759188ab741aef1628362c71cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overridePuase: 0
   timeScale: 2
 --- !u!1 &963194225
 GameObject:
@@ -2406,7 +2411,7 @@ GameObject:
   - component: {fileID: 1940320513}
   - component: {fileID: 1940320514}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2440,6 +2445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   es: {fileID: 0}
   stashedAnimation: {fileID: 0}
+  isPlayer: 1
 --- !u!1 &1969904041
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,7 @@ public class Fighter : MonoBehaviour
     public AudioClip hit;
     public AudioClip click;
     public GameObject weapon;
+    public GameObject Animation;
     [HideInInspector] public float invincibilityDuration = 0.2f;
 
     [Header("Modifyable")]
@@ -57,6 +58,13 @@ public class Fighter : MonoBehaviour
         if (myXValue > 0)
         {
             direction = 1;
+        }
+
+        if (isPlayer == false) // Assign non player's animation to ES
+        {
+            GameObject esObject = GameObject.Find("EventSystem");
+            SceneSwitcher es = esObject.GetComponent<SceneSwitcher>();
+            es.otherAnimPrefab = Animation; 
         }
     }
 
