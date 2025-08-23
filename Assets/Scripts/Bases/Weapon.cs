@@ -19,6 +19,12 @@ public class Weapon : MonoBehaviour
         Fighter myFighter = GetComponentInParent<Fighter>();
         side = myFighter.isPlayer;
 
+        StartCoroutine(AssignAnim());
+    }
+
+    public IEnumerator AssignAnim()
+    {
+        yield return new WaitForSeconds(0.01f);
         if (side == true)
         {
             GameObject pA = GameObject.Find("PlayerAnim");

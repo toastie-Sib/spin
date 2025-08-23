@@ -1453,6 +1453,7 @@ MonoBehaviour:
   currentSeedText: {fileID: 149759961}
   fighterPrefab: {fileID: 0}
   animatorPrefab: {fileID: 0}
+  otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
 --- !u!114 &803803649
 MonoBehaviour:
@@ -4046,6 +4047,7 @@ MonoBehaviour:
   currentSeedText: {fileID: 0}
   fighterPrefab: {fileID: 0}
   animatorPrefab: {fileID: 0}
+  otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
 --- !u!1 &1630278241
 GameObject:
