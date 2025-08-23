@@ -1,28 +1,19 @@
 fileFormatVersion: 2
-guid: 05b8bb4ea5325394784b0d83bea2ed20
+guid: 2a818dd0a7ffd014c84c41c6d324401f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5851508949065600529
-    second: SwordSwing-Sheet_0
+      213: 7804782151888433250
+    second: Sword-Swing-Sheet_0
   - first:
-      213: -4409028424134989046
-    second: SwordSwing-Sheet_1
+      213: 4154677336739261583
+    second: Sword-Swing-Sheet_1
   - first:
-      213: 2628790036935026393
-    second: SwordSwing-Sheet_2
+      213: 3243303790648944643
+    second: Sword-Swing-Sheet_2
   - first:
-      213: -5627167991457633023
-    second: SwordSwing-Sheet_3
-  - first:
-      213: 360903374888114721
-    second: SwordSwing-Sheet_4
-  - first:
-      213: 3391500099196914805
-    second: SwordSwing-Sheet_5
-  - first:
-      213: 5040619789839347418
-    second: SwordSwing-Sheet_6
+      213: -5974870403270628156
+    second: Sword-Swing-Sheet_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -125,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SwordSwing-Sheet_0
+      name: Sword-Swing-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe1fcea0d934bcea0800000000000000
-      internalID: -5851508949065600529
+      spriteID: 2607e900408205c60800000000000000
+      internalID: 7804782151888433250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SwordSwing-Sheet_1
+      name: Sword-Swing-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -160,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0b65de120cffc2c0800000000000000
-      internalID: -4409028424134989046
+      spriteID: f8ca5bc760168a930800000000000000
+      internalID: 4154677336739261583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SwordSwing-Sheet_2
+      name: Sword-Swing-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -181,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d629945c965b7420800000000000000
-      internalID: 2628790036935026393
+      spriteID: 308ee442d97820d20800000000000000
+      internalID: 3243303790648944643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SwordSwing-Sheet_3
+      name: Sword-Swing-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -202,71 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10d28b9968848e1b0800000000000000
-      internalID: -5627167991457633023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SwordSwing-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12a127215bf220500800000000000000
-      internalID: 360903374888114721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SwordSwing-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57c855c0f57011f20800000000000000
-      internalID: 3391500099196914805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SwordSwing-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adead251ef0e3f540800000000000000
-      internalID: 5040619789839347418
+      spriteID: 4cc2f02460ff41da0800000000000000
+      internalID: -5974870403270628156
       vertices: []
       indices: 
       edges: []
@@ -274,7 +202,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3a5e55996ce5e0846877595835f16f95
+    spriteID: 320388a69fc2490469956c69d30fe421
     internalID: 0
     vertices: []
     indices: 

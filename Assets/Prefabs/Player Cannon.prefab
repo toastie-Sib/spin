@@ -182,7 +182,7 @@ MonoBehaviour:
   launchSpeed: 8
   isPlayer: 1
   enemyPrefabs: []
-  offset: {x: 0, y: -0.12, z: 0}
+  offset: {x: 0, y: -0.175, z: 0}
   hpText: {fileID: 0}
   collisionMask:
     serializedVersion: 2

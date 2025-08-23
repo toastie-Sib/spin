@@ -111,7 +111,7 @@ MonoBehaviour:
   - {fileID: 5311323215341001509, guid: 2206fffb5896e0144a2d94891e570075, type: 3}
   - {fileID: 8800063432083503889, guid: c09fa3d935fa19b469aad60b082242c0, type: 3}
   - {fileID: 5199228309865821953, guid: 8bfe0af967919c948b59d3609a24426a, type: 3}
-  offset: {x: 0, y: -0.12, z: 0}
+  offset: {x: 0, y: -0.175, z: 0}
   hpText: {fileID: 0}
   collisionMask:
     serializedVersion: 2

@@ -88,11 +88,12 @@ public class Weapon : MonoBehaviour
                 }
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
-                otherFighter.HitDetect(damage);
                 animationRef.SetTrigger("Attack");
 
                 Weapon otherWeapon = other.GetComponentInChildren<Weapon>();
                 otherWeapon.animationRef.SetTrigger("Pain");
+
+                otherFighter.HitDetect(damage);
 
                 if (other.GetComponent<Turret>() == null)
                 {
