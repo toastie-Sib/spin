@@ -27,23 +27,46 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Weapon")) //Parry
         {
+            Fighter otherParentighter = other.GetComponentInParent<Fighter>();
             Weapon otherWeapon = other.GetComponent<Weapon>();
             if (side == otherWeapon.side) return; //preventing hitting same team
+            // Prevent double trigger by comparing instance IDs
+            if (GetInstanceID() > otherWeapon.GetInstanceID()) return;
 
             if (myFighter != null)
             {
                 if (axe == false) { myFighter.ReverseDirection(); }
                 myFighter.isInvincible = true;
 
-                myFighter.ParryAnimation();
+                if (otherParentighter.GetComponent<Bow>() != null || otherWeapon.GetComponent<Shield>() != null)
+                {
+                    otherParentighter.AttackAnimation();
+                } else
+                if (otherParentighter.GetComponent<Bow>() != null || GetComponent<Shield>() != null)
+                {
+                    otherParentighter.ParryAnimation();
+                } else
+                if (otherParentighter.direction == 1) { myFighter.AttackAnimation(); } else { myFighter.ParryAnimation(); }
+
             }
 
-            if (otherFighter != null)
+            if (otherParentighter != null)
             {
-                otherFighter.ReverseDirection();
-                otherFighter.isInvincible = true;
+                otherParentighter.ReverseDirection();
+                otherParentighter.isInvincible = true;
 
-                otherFighter.ParryAnimation();
+                if (otherParentighter.GetComponent<Bow>() != null || otherWeapon.GetComponent<Shield>() != null)
+                {
+                    otherParentighter.ParryAnimation();
+                }
+                else
+                if (myFighter.GetComponent<Bow>() != null || GetComponent<Shield>() != null)
+                {
+                    otherParentighter.AttackAnimation();
+                }
+                else
+                if (myFighter.direction == 1) { otherParentighter.ParryAnimation(); } else { otherParentighter.AttackAnimation(); }
+                
             }
             TriggerParryImpactFrames();
         }

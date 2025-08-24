@@ -40,6 +40,10 @@ public class Projectile : MonoBehaviour
             if (otherWeapon == weapon /*&& reflected == false*/) return; //avoid hitting bow's weapon
 
             AudioSource.PlayClipAtPoint(parry, transform.position);
+            Fighter otherParentFighter = other.GetComponentInParent<Fighter>();
+            
+            otherParentFighter.ParryAnimation(); // Maybe should be delayed?
+            shooter.AttackAnimation();
 
             //Destroy Game object if it isn't a shield or reflected
             if (otherWeapon.shield == false) {  if (reflected == false) { DestroySelf(); } } 
@@ -87,7 +91,10 @@ public class Projectile : MonoBehaviour
                 if (otherFighter == reflectorSheild) return;
             }
 
+            shooter.AttackAnimation();
             otherFighter.HitDetect(damage);
+            otherFighter.DelayedHurtAnimation();
+
 
             if (reflected == false) { ScalingTrigger(); } // Increase Whatever
             else // If it was reflected though

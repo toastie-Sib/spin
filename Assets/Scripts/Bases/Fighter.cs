@@ -258,9 +258,20 @@ public class Fighter : MonoBehaviour
         animationRef.SetTrigger("Pain");
     }
 
-    public void AttackAnimation()
+    public virtual void AttackAnimation()
     {
         animationRef.SetTrigger("Attack");
+    }
+
+    public void DelayedHurtAnimation()
+    {
+        StartCoroutine(DelayedHurt());
+    }
+
+    public IEnumerator DelayedHurt()
+    {
+        yield return new WaitForSeconds(0.75f);
+        animationRef.SetTrigger("Pain");
     }
 
 

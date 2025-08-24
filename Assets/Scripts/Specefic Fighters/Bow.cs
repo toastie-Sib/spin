@@ -125,7 +125,6 @@ public class Bow : Fighter //Inherit Fighter
         
     }
 
-
     // Bow Scale
     public void IncreaseFireRate()
     {
@@ -136,6 +135,11 @@ public class Bow : Fighter //Inherit Fighter
     {
         if (!extraFirepoints.Contains(fp))
             extraFirepoints.Add(fp);
+    }
+
+    public override void AttackAnimation()
+    {
+        base.AttackAnimation();
     }
 
 }
