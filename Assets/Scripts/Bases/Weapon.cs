@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     public bool shield = false;
     public bool axe = false;
     public bool scythe = false;
+    private bool firstHitDone = false;
     [HideInInspector] public bool side;
     [HideInInspector] public Transform firePoint;
 
@@ -76,7 +77,17 @@ public class Weapon : MonoBehaviour
         {
             if (side == otherFighter.isPlayer) return;
 
-            if (scythe == true) {
+            if (scythe == true) { // Scythe stuff
+                if (GetComponent<Training>() != null && firstHitDone == false)
+                {
+                    Training training = GetComponent<Training>();
+                    for (int i = 0; i < training.stacks; i++)
+                    {
+                        otherFighter.ApplyPoison();
+                        otherFighter.ApplyPoison();
+                    }
+                    firstHitDone = true;
+                } else 
                 if (GetComponent<GlassBall>() != null)
                 {
                     GlassBall glassBall = GetComponent<GlassBall>();
@@ -87,8 +98,7 @@ public class Weapon : MonoBehaviour
                 }
                 else
                 {
-                    // If there's no GlassBall, perhaps just apply the single stack effect once?
-                    otherFighter.ApplyPoison();
+                    otherFighter.ApplyPoison(); // Regular Sytche apply Poison Scaling Alternative
                 }
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {

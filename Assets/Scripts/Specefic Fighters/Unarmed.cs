@@ -9,13 +9,6 @@ public class Unarmed : Fighter
     {
         base.Start();
         isUnarmed = true;
-
-        if (GetComponent<Training>() != null)
-        {
-            while (isActive == false) { }
-            Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity += wallBoost * 2;
-        }
     }
 
     private void OnCollisionEnter(Collision collision)

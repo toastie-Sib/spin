@@ -303,6 +303,8 @@ MonoBehaviour:
   isActive: 0
   isUnarmed: 0
   isPlayer: 0
+  animationRef: {fileID: 0}
+  canPlayAnimation: 1
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
@@ -316,6 +318,7 @@ MonoBehaviour:
   nudgeForce: 3
   nudgeCooldown: 3
   projectilePrefab: {fileID: 2741291000408104983, guid: 1513fe6b8b0ac7b419601a83dae3384d, type: 3}
+  animatedProjectilePrefab: {fileID: 6499553163874361040, guid: 589645603178e1e41ab6116f66b45b29, type: 3}
   firePoint: {fileID: 1430463801702427045}
   refreshInterval: 2
   fireInterval: 0.1
@@ -439,7 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599168e5dadbe8c4b9f8542634cc735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationRef: {fileID: 0}
   damage: 0
   doNotHurt: 1
   shield: 0

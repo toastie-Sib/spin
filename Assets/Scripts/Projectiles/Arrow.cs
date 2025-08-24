@@ -8,6 +8,6 @@ public class Arrow : Projectile
     {
         base.ScalingIncrease();
         Bow bow = shooter.GetComponentInParent<Bow>();
-        bow.IncreaseFireRate();
+        bow.IncreaseProjectileScale();
     }
 }

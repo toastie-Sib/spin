@@ -296,7 +296,7 @@ public class Fighter : MonoBehaviour
 
     public IEnumerator DelayedHurt()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
         animationRef.SetTrigger("Pain");
         StartCoroutine(AllowAnimationPlay());
     }

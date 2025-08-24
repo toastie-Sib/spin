@@ -9,10 +9,11 @@ public class Training : ItemBase
     // Start is called before the first frame update
     public override void Start()
     {
-        Fighter myFighter = GetComponentInParent<Fighter>();
+        Weapon myWeapon = GetComponent<Weapon>();
         for (int i = 0; i < stacks; i++)
         {
-            myFighter.maxHp *= 0.5f;
+            myWeapon.IncreaseScaling();
+            myWeapon.IncreaseScaling();
         }
     }
 

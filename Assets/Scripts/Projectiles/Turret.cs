@@ -32,6 +32,7 @@ public class Turret : Bow
     // Update is called once per frame
     public override void Update()
     {
+        if (owner.isActive == false) return;
         if (hp <= 0)
         {
 

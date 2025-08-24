@@ -151,8 +151,8 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    //Increase scaling
-    public virtual void ScalingIncrease() {
+    public virtual void ScalingIncrease() //( Don't call ) Increase scaling for each type
+    {
         if (shooter == null) return;
         if (shooter.GetComponentInChildren<BloodoftheKnight>() != null)
         { //Item

@@ -6,6 +6,7 @@ public class Bow : Fighter //Inherit Fighter
 {
     [Header("Projectile User")]
     public GameObject projectilePrefab;
+    public GameObject animatedProjectilePrefab;
     public Transform firePoint;
     //Shot Frequency
     public float refreshInterval = 1f;         // Fire every second
@@ -25,6 +26,17 @@ public class Bow : Fighter //Inherit Fighter
 
         Weapon myWeapon = GetComponentInChildren<Weapon>();
         myWeapon.firePoint = firePoint;
+
+        //Training Item
+        if (GetComponentInChildren<Training>() != null)
+        {
+            Training glassBall = GetComponentInChildren<Training>();
+            for (int i = 0; i < glassBall.stacks; i++)
+            {
+                IncreaseProjectileScale(); // Call the actual scaling logic 'stacks' times
+                IncreaseProjectileScale();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -126,7 +138,7 @@ public class Bow : Fighter //Inherit Fighter
     }
 
     // Bow Scale
-    public void IncreaseFireRate()
+    public virtual void IncreaseProjectileScale()
     {
         maxArrowCount += 1;
     }
@@ -140,16 +152,14 @@ public class Bow : Fighter //Inherit Fighter
     public override void AttackAnimation()
     {
         base.AttackAnimation();
-        GameObject projectile = Instantiate(projectilePrefab, animationRef.transform.position, animationRef.transform.rotation);
+        GameObject projectile = Instantiate(animatedProjectilePrefab, animationRef.transform.position, animationRef.transform.rotation);
         projectile.transform.Rotate(0, 0, -90);
-        projectile.GetComponent<CapsuleCollider>().enabled = false;
         StartCoroutine(AnimationProjectile(projectile));
     }
 
     public IEnumerator AnimationProjectile(GameObject projectile)
     {
-        yield return new WaitForSeconds(0.4f);
-        Projectile arrow = projectile.GetComponent<Projectile>();
-        arrow.DestroySelf();
+        yield return new WaitForSeconds(0.75f);
+        Destroy(projectile);
     }
 }

@@ -52,7 +52,6 @@ public class Fireball : Projectile
     public override void ScalingIncrease()
     {
         base.ScalingIncrease();
-        myFighter.explosionRadius += 0.25f;
-        myFighter.damageIncrease += 1f;
+        myFighter.IncreaseProjectileScale();
     }
 }

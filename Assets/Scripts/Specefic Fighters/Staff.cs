@@ -27,4 +27,10 @@ public class Staff : Bow
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(fireBoost * fireBoostStrength, ForceMode.Impulse);
     }
+    
+    public override void IncreaseProjectileScale()
+    {
+        explosionRadius += 0.25f;
+        damageIncrease += 1f;
+    }
 }
