@@ -140,6 +140,15 @@ public class Bow : Fighter //Inherit Fighter
     public override void AttackAnimation()
     {
         base.AttackAnimation();
+        GameObject projectile = Instantiate(projectilePrefab, animationRef.transform.position, animationRef.transform.rotation);
+        projectile.transform.Rotate(0, 0, -90);
+        StartCoroutine(AnimationProjectile(projectile));
     }
 
+    public IEnumerator AnimationProjectile(GameObject projectile)
+    {
+        yield return new WaitForSeconds(0.4f);
+        Projectile arrow = projectile.GetComponent<Projectile>();
+        arrow.DestroySelf();
+    }
 }

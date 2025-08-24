@@ -38,15 +38,27 @@ public class Weapon : MonoBehaviour
                 if (axe == false) { myFighter.ReverseDirection(); }
                 myFighter.isInvincible = true;
 
+                //Animation Logic
                 if (otherParentighter.GetComponent<Bow>() != null || otherWeapon.GetComponent<Shield>() != null)
                 {
-                    otherParentighter.AttackAnimation();
+                    if (myFighter.GetComponent<Bow>() != null || GetComponent<Shield>() != null)
+                    {
+                        myFighter.ParryAnimation();
+                        otherParentighter.ParryAnimation();
+                    } else
+                    {
+                        myFighter.AttackAnimation();
+                        otherParentighter.ParryAnimation();
+                    }
                 } else
-                if (otherParentighter.GetComponent<Bow>() != null || GetComponent<Shield>() != null)
+                if (myFighter.GetComponent<Bow>() != null || GetComponent<Shield>() != null)
                 {
-                    otherParentighter.ParryAnimation();
-                } else
-                if (otherParentighter.direction == 1) { myFighter.AttackAnimation(); } else { myFighter.ParryAnimation(); }
+                    myFighter.ParryAnimation();
+                    otherParentighter.AttackAnimation();
+                } else {
+                    if (otherParentighter.direction == 1) { myFighter.AttackAnimation(); } else { myFighter.ParryAnimation(); }
+                    if (myFighter.direction == 1) { otherParentighter.ParryAnimation(); } else { otherParentighter.AttackAnimation(); }
+                }
 
             }
 
@@ -55,18 +67,6 @@ public class Weapon : MonoBehaviour
                 otherParentighter.ReverseDirection();
                 otherParentighter.isInvincible = true;
 
-                if (otherParentighter.GetComponent<Bow>() != null || otherWeapon.GetComponent<Shield>() != null)
-                {
-                    otherParentighter.ParryAnimation();
-                }
-                else
-                if (myFighter.GetComponent<Bow>() != null || GetComponent<Shield>() != null)
-                {
-                    otherParentighter.AttackAnimation();
-                }
-                else
-                if (myFighter.direction == 1) { otherParentighter.ParryAnimation(); } else { otherParentighter.AttackAnimation(); }
-                
             }
             TriggerParryImpactFrames();
         }

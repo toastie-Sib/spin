@@ -73,6 +73,7 @@ public class Projectile : MonoBehaviour
                         transform.up = dirToShooter;
                         reflected = true;
                         reflector = otherWeapon;
+                        side = otherWeapon.side;
                     }
                 }
             }

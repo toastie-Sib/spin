@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171728331832174311}
-  m_LocalRotation: {x: 0, y: 0, z: -0.3305143, w: 0.943801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.96, y: 3.53, z: 0}
-  m_LocalScale: {x: 0.26000002, y: 0.48000005, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.6, z: 0.5}
   m_Children:
   - {fileID: 5099909459314855660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.6}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &171728331832174108
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,10 +95,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.3210086
-  m_Height: 1.6193457
+  m_Radius: 0.16295362
+  m_Height: 1.3249291
   m_Direction: 1
-  m_Center: {x: 0.0034552352, y: 0.14478414, z: 0}
+  m_Center: {x: -0.00816673, y: 0.020819405, z: 0}
 --- !u!54 &171728331832174304
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   reflector: {fileID: 0}
   reflected: 0
   explosionDone: 0
+  side: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   damage: 1
   speed: 10
@@ -160,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 4482885593307947575}
   m_LocalRotation: {x: -0, y: -0, z: 0.3907311, w: 0.9205049}
   m_LocalPosition: {x: 0, y: -0.20000008, z: 0}
-  m_LocalScale: {x: 2.89327, y: 2.5356867, z: 100}
+  m_LocalScale: {x: 2, y: 2, z: 100}
   m_Children: []
   m_Father: {fileID: 171728331832174109}
   m_RootOrder: 0

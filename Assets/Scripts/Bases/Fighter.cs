@@ -309,10 +309,11 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
 
         GetComponentInChildren<Renderer>().material.color = Color.magenta;
-
+        animationRef.GetComponent<SpriteRenderer>().color = Color.magenta;
 
         yield return new WaitForSeconds(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
+        animationRef.GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(4.8f); // wait 5 seconds for this stack
         ApplyPoison();
     }
