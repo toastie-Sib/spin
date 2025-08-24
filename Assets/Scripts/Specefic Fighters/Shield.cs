@@ -26,7 +26,7 @@ public class Shield : Weapon
                     BotK.IncreaseScaling();
                 }
 
-                otherFighter.DelayedHurtAnimation();
+                otherFighter.DelayedHurtAnimation(0.5f);
                 otherFighter.HitDetect(totalDamage); //Damage Fighter and Grow Shield
                 ShieldGrow(otherWeapon.damage);
                 if (otherWeapon is Wrench) { Wrench wrench = other.gameObject.GetComponentInParent<Wrench>();    wrench.ShieldTurret(myFighter); } // Wrench
@@ -44,7 +44,7 @@ public class Shield : Weapon
                 
                 float damage = Mathf.RoundToInt(Mathf.Abs((otherFighter.rb.velocity.magnitude / 5))); // Same formula as Unarmed
 
-                otherFighter.DelayedHurtAnimation();
+                otherFighter.DelayedHurtAnimation(0.5f);
                 otherFighter.HitDetect(damage);
 
                 ShieldGrow(damage);

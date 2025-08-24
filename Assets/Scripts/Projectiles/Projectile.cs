@@ -94,7 +94,11 @@ public class Projectile : MonoBehaviour
 
             shooter.AttackAnimation();
             otherFighter.HitDetect(damage);
-            otherFighter.DelayedHurtAnimation();
+            if (shooter.GetComponent<Staff>() != null)
+            {
+                otherFighter.DelayedHurtAnimation(0.5f);
+            } else { otherFighter.DelayedHurtAnimation(0.1f); }
+            
 
 
             if (reflected == false) { ScalingTrigger(); } // Increase Whatever

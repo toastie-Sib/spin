@@ -286,24 +286,24 @@ public class Fighter : MonoBehaviour
         StartCoroutine(AllowAnimationPlay());
     }
 
-    public void DelayedHurtAnimation()
+    public void DelayedHurtAnimation(float amount)
     {
         if (canPlayAnimation == false) return;
         canPlayAnimation = false;
         animationRef.GetComponent<AnimationMovement>().StartingPoint();
-        StartCoroutine(DelayedHurt());
+        StartCoroutine(DelayedHurt(amount));
     }
 
-    public IEnumerator DelayedHurt()
+    public IEnumerator DelayedHurt(float amount)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(amount);
         animationRef.SetTrigger("Pain");
         StartCoroutine(AllowAnimationPlay());
     }
 
     public IEnumerator AllowAnimationPlay()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         canPlayAnimation = true;
     }
 
