@@ -142,6 +142,7 @@ public class Bow : Fighter //Inherit Fighter
         base.AttackAnimation();
         GameObject projectile = Instantiate(projectilePrefab, animationRef.transform.position, animationRef.transform.rotation);
         projectile.transform.Rotate(0, 0, -90);
+        projectile.GetComponent<CapsuleCollider>().enabled = false;
         StartCoroutine(AnimationProjectile(projectile));
     }
 

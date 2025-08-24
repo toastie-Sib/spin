@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3667220229913123158}
   - component: {fileID: 3667220229913123159}
   m_Layer: 7
-  m_Name: Other Spawn
+  m_Name: OtherSpawnCannon
   m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

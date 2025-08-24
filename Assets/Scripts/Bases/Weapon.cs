@@ -47,17 +47,17 @@ public class Weapon : MonoBehaviour
                         otherParentighter.ParryAnimation();
                     } else
                     {
-                        myFighter.AttackAnimation();
+                        myFighter.AttackOnParryAnimation();
                         otherParentighter.ParryAnimation();
                     }
                 } else
                 if (myFighter.GetComponent<Bow>() != null || GetComponent<Shield>() != null)
                 {
                     myFighter.ParryAnimation();
-                    otherParentighter.AttackAnimation();
+                    otherParentighter.AttackOnParryAnimation();
                 } else {
-                    if (otherParentighter.direction == 1) { myFighter.AttackAnimation(); } else { myFighter.ParryAnimation(); }
-                    if (myFighter.direction == 1) { otherParentighter.ParryAnimation(); } else { otherParentighter.AttackAnimation(); }
+                    if (otherParentighter.direction == 1) { myFighter.AttackOnParryAnimation(); } else { myFighter.ParryAnimation(); }
+                    if (myFighter.direction == 1) { otherParentighter.ParryAnimation(); } else { otherParentighter.AttackOnParryAnimation(); }
                 }
 
             }

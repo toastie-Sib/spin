@@ -23,6 +23,8 @@ public class Fighter : MonoBehaviour
     [HideInInspector] public bool isPlayer = false;
     [HideInInspector] public static event Action<Fighter> OnFighterDied; // global event
     [HideInInspector] public Animator animationRef;
+    [HideInInspector] public bool canPlayAnimation = true;
+
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
@@ -250,28 +252,54 @@ public class Fighter : MonoBehaviour
 
     public void ParryAnimation()
     {
+        canPlayAnimation = false;
+        animationRef.GetComponent<AnimationMovement>().ParryPoint();
         animationRef.SetTrigger("Parry");
+        StartCoroutine(AllowAnimationPlay());
     }
 
     public void HurtAnimation()
     {
+        canPlayAnimation = false;
+        animationRef.GetComponent<AnimationMovement>().StartingPoint();
         animationRef.SetTrigger("Pain");
+        StartCoroutine(AllowAnimationPlay());
     }
 
     public virtual void AttackAnimation()
     {
+        canPlayAnimation = false;
+        animationRef.GetComponent<AnimationMovement>().AttackPoint();
         animationRef.SetTrigger("Attack");
+        StartCoroutine(AllowAnimationPlay());
+    }
+
+    public virtual void AttackOnParryAnimation()
+    {
+        canPlayAnimation = false;
+        animationRef.GetComponent<AnimationMovement>().ParryPoint();
+        animationRef.SetTrigger("Attack");
+        StartCoroutine(AllowAnimationPlay());
     }
 
     public void DelayedHurtAnimation()
     {
+        canPlayAnimation = false;
+        animationRef.GetComponent<AnimationMovement>().StartingPoint();
         StartCoroutine(DelayedHurt());
     }
 
     public IEnumerator DelayedHurt()
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.4f);
         animationRef.SetTrigger("Pain");
+        StartCoroutine(AllowAnimationPlay());
+    }
+
+    public IEnumerator AllowAnimationPlay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        canPlayAnimation = true;
     }
 
 
