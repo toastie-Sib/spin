@@ -33,14 +33,14 @@ public class Shield : Weapon
 
 
                 //Item
-                if (GetComponentInChildren<BloodoftheBandit>() != null)
+                if (GetComponent<BloodoftheBandit>() != null)
                 {
                     if (myFighter.spinMult < 500) { myFighter.spinMult += 20; }
                 }
                 //Item
-                if (GetComponentInChildren<TriTippedDagger>() != null)
+                if (GetComponent<TriTippedDagger>() != null)
                 {
-                    TriTippedDagger tTD = GetComponentInChildren<TriTippedDagger>();
+                    TriTippedDagger tTD = GetComponent<TriTippedDagger>();
                     SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
 
                     int randomInt = Random.Range(0, 100);
@@ -72,14 +72,17 @@ public class Shield : Weapon
                 myFighter.isInvincible = true;
 
                 //Item
-                if (GetComponentInChildren<BloodoftheBandit>() != null)
+                if (GetComponent<BloodoftheBandit>() != null)
                 {
-                    if (myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                    for (int i = 0; i < GetComponent<BloodoftheBandit>().stacks; i++)
+                    {
+                        if (myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                    }
                 }
                 
-                if (GetComponentInChildren<TriTippedDagger>() != null)
+                if (GetComponent<TriTippedDagger>() != null)
                 {
-                    TriTippedDagger tTD = GetComponentInChildren<TriTippedDagger>();
+                    TriTippedDagger tTD = GetComponent<TriTippedDagger>();
                     SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
 
                     int randomInt = Random.Range(0, 100);

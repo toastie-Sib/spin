@@ -13,9 +13,13 @@ public class BloodoftheBandit : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponent<Axe>() == null)
+            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Shield>() == null && myFighter.GetComponent<Axe>() == null)
             {
-                if(myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                for (int i = 0; i < stacks; i++)
+                {
+                    if (myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                }
+                
                 
 
             }

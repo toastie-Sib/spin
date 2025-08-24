@@ -17,7 +17,11 @@ public class Sword : Weapon
         {
             if (GetComponent<BloodoftheBandit>() != null)
             {
-                if (GetComponentInParent<Axe>().refreshInterval > 0.1f) { GetComponentInParent<Axe>().refreshInterval -= 0.1f; }
+                for (int i = 0; i < GetComponent<BloodoftheBandit>().stacks; i++)
+                {
+                    if (GetComponentInParent<Axe>().refreshInterval > 0.1f) { GetComponentInParent<Axe>().refreshInterval -= 0.1f; }
+                }
+                
             }
         }
     }

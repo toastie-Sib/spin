@@ -117,9 +117,13 @@ public class Projectile : MonoBehaviour
                     SeedManager.Instance.RestoreMasterSeed();
                 }
                 //Item
-                if (GetComponentInChildren<BloodoftheBandit>() != null)
+                if (shooter.GetComponentInChildren<BloodoftheBandit>() != null)
                 {
-                    if (shooter.GetComponent<Bow>().refreshInterval > 0.1f) { shooter.GetComponent<Bow>().refreshInterval -= 0.1f; }
+                    for (int i = 0; i < shooter.GetComponentInChildren<BloodoftheBandit>().stacks; i++)
+                    {
+                        if (shooter.GetComponent<Bow>().refreshInterval > 0.1f) { shooter.GetComponent<Bow>().refreshInterval -= 0.1f; }
+                    }
+                    
                 }
             } 
             else // If it was reflected though
