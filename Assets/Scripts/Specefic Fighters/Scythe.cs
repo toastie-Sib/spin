@@ -17,6 +17,13 @@ public class Scythe : Weapon
         {
             transform.Rotate(0, 180f, 0);
         }
+
+        if (GetComponentInParent<GatitoBlade>() != null) { parryRoutine = StartCoroutine(ParryImpactMotion()); }
+        else
+        {
+            StartCoroutine(ParryImpactMotion());
+            StartCoroutine(GBScythe.ParryImpactMotion());
+        }
     }
 
     public override void TriggerParryImpactFrames()
@@ -27,7 +34,7 @@ public class Scythe : Weapon
             //StopCoroutine(parryRoutine);
 
         // Start a new one from the current local state
-        GatitoBlade gB = GetComponentInParent<GatitoBlade>();
+        GatitoBlade gB = GetComponent<GatitoBlade>();
         if (gB == null) { parryRoutine = StartCoroutine(ParryImpactMotion()); } else
         {
             StartCoroutine(ParryImpactMotion());

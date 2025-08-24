@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Managers\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Managers\AnimationMovement.cs" />
+    <Compile Include="Assets\Scripts\Items\Training.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

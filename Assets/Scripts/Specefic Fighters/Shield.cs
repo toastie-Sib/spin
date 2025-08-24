@@ -53,5 +53,12 @@ public class Shield : Weapon
                 myFighter.isInvincible = true;
             }
         }
+
+        
+    }
+
+    public override void IncreaseScaling()
+    {
+        ShieldGrow(1);
     }
 }

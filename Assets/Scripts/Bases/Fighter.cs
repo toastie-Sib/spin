@@ -252,6 +252,7 @@ public class Fighter : MonoBehaviour
 
     public void ParryAnimation()
     {
+        if (canPlayAnimation == false) return;
         canPlayAnimation = false;
         animationRef.GetComponent<AnimationMovement>().ParryPoint();
         animationRef.SetTrigger("Parry");
@@ -260,6 +261,7 @@ public class Fighter : MonoBehaviour
 
     public void HurtAnimation()
     {
+        if (canPlayAnimation == false) return;
         canPlayAnimation = false;
         animationRef.GetComponent<AnimationMovement>().StartingPoint();
         animationRef.SetTrigger("Pain");
@@ -268,6 +270,7 @@ public class Fighter : MonoBehaviour
 
     public virtual void AttackAnimation()
     {
+        if (canPlayAnimation == false) return;
         canPlayAnimation = false;
         animationRef.GetComponent<AnimationMovement>().AttackPoint();
         animationRef.SetTrigger("Attack");
@@ -276,6 +279,7 @@ public class Fighter : MonoBehaviour
 
     public virtual void AttackOnParryAnimation()
     {
+        if (canPlayAnimation == false) return;
         canPlayAnimation = false;
         animationRef.GetComponent<AnimationMovement>().ParryPoint();
         animationRef.SetTrigger("Attack");
@@ -284,6 +288,7 @@ public class Fighter : MonoBehaviour
 
     public void DelayedHurtAnimation()
     {
+        if (canPlayAnimation == false) return;
         canPlayAnimation = false;
         animationRef.GetComponent<AnimationMovement>().StartingPoint();
         StartCoroutine(DelayedHurt());
