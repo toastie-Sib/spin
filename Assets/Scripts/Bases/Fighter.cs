@@ -220,6 +220,20 @@ public class Fighter : MonoBehaviour
         //
         //    
         //}
+
+        // Top WALL
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            if (GetComponentInChildren<RaiseTheRoof>() != null)
+            {
+                RaiseTheRoof raiseTheRoof = GetComponentInChildren<RaiseTheRoof>();
+                for (int i = 0; i < raiseTheRoof.stacks; i++)
+                {
+                    hp += 2;
+                    if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
+                }
+            }
+        }
     }
 
 

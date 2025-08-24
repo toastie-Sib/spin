@@ -40,7 +40,15 @@ public class Unarmed : Fighter
         // Top WALL
         if (collision.gameObject.CompareTag("Wall"))
         {
-
+            if (GetComponent<RaiseTheRoof>() != null)
+            {
+                RaiseTheRoof raiseTheRoof = GetComponent<RaiseTheRoof>();
+                for (int i = 0; i < raiseTheRoof.stacks; i++)
+                {
+                    hp += 2;
+                    if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
+                }
+            }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity -= wallBoost;
         }

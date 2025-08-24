@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Managers\AnimationMovement.cs" />
     <Compile Include="Assets\Scripts\Items\Training.cs" />
     <Compile Include="Assets\Scripts\Items\Food.cs" />
+    <Compile Include="Assets\Scripts\Items\RaiseTheRoof.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
