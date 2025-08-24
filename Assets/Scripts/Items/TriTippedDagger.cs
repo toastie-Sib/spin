@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloodoftheKnight : ItemBase
+public class TriTippedDagger : ItemBase
 {
     private HashSet<GameObject> alreadyTriggered = new HashSet<GameObject>();
-    public float damage = 0.0f;
     public void OnTriggerEnter(Collider other)
     {
         Fighter myFighter = GetComponentInParent<Fighter>();
@@ -16,12 +15,20 @@ public class BloodoftheKnight : ItemBase
         {
             if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Shield>() == null)
             {
-                otherFighter.HitDetect(damage);
-                IncreaseScaling();
+                SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
+
+                int randomInt = Random.Range(0, 100);
+                if (randomInt <= 20*stacks)
+                {
+                    otherFighter.bleedStacks += 1;
+                }
+
+                SeedManager.Instance.RestoreMasterSeed();
 
             }
 
         }
+
 
         if (alreadyTriggered.Contains(other.gameObject)) return;
 
@@ -32,6 +39,4 @@ public class BloodoftheKnight : ItemBase
     {
         alreadyTriggered.Remove(other.gameObject);
     }
-
-    public void IncreaseScaling() { if(damage < (3f * stacks)) { damage += (0.2f * stacks); } }
-} //Also Changed Projectile, Turret, and Shield
+}

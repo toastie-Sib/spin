@@ -31,7 +31,26 @@ public class Shield : Weapon
                 ShieldGrow(otherWeapon.damage);
                 if (otherWeapon is Wrench) { Wrench wrench = other.gameObject.GetComponentInParent<Wrench>();    wrench.ShieldTurret(myFighter); } // Wrench
 
-                
+
+                //Item
+                if (GetComponentInChildren<BloodoftheBandit>() != null)
+                {
+                    if (myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                }
+                //Item
+                if (GetComponentInChildren<TriTippedDagger>() != null)
+                {
+                    TriTippedDagger tTD = GetComponentInChildren<TriTippedDagger>();
+                    SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
+
+                    int randomInt = Random.Range(0, 100);
+                    if (randomInt <= 20 * tTD.stacks)
+                    {
+                        otherFighter.bleedStacks += 1;
+                    }
+
+                    SeedManager.Instance.RestoreMasterSeed();
+                }
             }
 
         }
@@ -51,6 +70,26 @@ public class Shield : Weapon
 
                 myFighter.ReverseDirection();
                 myFighter.isInvincible = true;
+
+                //Item
+                if (GetComponentInChildren<BloodoftheBandit>() != null)
+                {
+                    if (myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                }
+                
+                if (GetComponentInChildren<TriTippedDagger>() != null)
+                {
+                    TriTippedDagger tTD = GetComponentInChildren<TriTippedDagger>();
+                    SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
+
+                    int randomInt = Random.Range(0, 100);
+                    if (randomInt <= 20 * tTD.stacks)
+                    {
+                        otherFighter.bleedStacks += 1;
+                    }
+
+                    SeedManager.Instance.RestoreMasterSeed();
+                }
             }
         }
 

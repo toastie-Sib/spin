@@ -101,7 +101,27 @@ public class Projectile : MonoBehaviour
             
 
 
-            if (reflected == false) { ScalingTrigger(); } // Increase Whatever
+            if (reflected == false) { ScalingTrigger(); // Increase Whatever
+                //Items
+                if (shooter.GetComponentInChildren<TriTippedDagger>() != null)
+                {
+                    TriTippedDagger tTD = shooter.GetComponentInChildren<TriTippedDagger>();
+                    SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
+
+                    int randomInt = Random.Range(0, 100);
+                    if (randomInt <= 20 * tTD.stacks)
+                    {
+                        otherFighter.bleedStacks += 1;
+                    }
+
+                    SeedManager.Instance.RestoreMasterSeed();
+                }
+                //Item
+                if (GetComponentInChildren<BloodoftheBandit>() != null)
+                {
+                    if (shooter.GetComponent<Bow>().refreshInterval > 0.1f) { shooter.GetComponent<Bow>().refreshInterval -= 0.1f; }
+                }
+            } 
             else // If it was reflected though
             {
                 if (otherFighter == shooter)

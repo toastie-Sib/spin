@@ -91,6 +91,8 @@
     <Compile Include="Assets\Scripts\Items\Training.cs" />
     <Compile Include="Assets\Scripts\Items\Food.cs" />
     <Compile Include="Assets\Scripts\Items\RaiseTheRoof.cs" />
+    <Compile Include="Assets\Scripts\Items\TriTippedDagger.cs" />
+    <Compile Include="Assets\Scripts\Items\BloodoftheBandit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

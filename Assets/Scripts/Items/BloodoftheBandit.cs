@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloodoftheKnight : ItemBase
+public class BloodoftheBandit : ItemBase
 {
     private HashSet<GameObject> alreadyTriggered = new HashSet<GameObject>();
-    public float damage = 0.0f;
     public void OnTriggerEnter(Collider other)
     {
         Fighter myFighter = GetComponentInParent<Fighter>();
@@ -14,14 +13,15 @@ public class BloodoftheKnight : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Shield>() == null)
+            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponent<Axe>() == null)
             {
-                otherFighter.HitDetect(damage);
-                IncreaseScaling();
+                if(myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                
 
             }
 
         }
+
 
         if (alreadyTriggered.Contains(other.gameObject)) return;
 
@@ -32,6 +32,4 @@ public class BloodoftheKnight : ItemBase
     {
         alreadyTriggered.Remove(other.gameObject);
     }
-
-    public void IncreaseScaling() { if(damage < (3f * stacks)) { damage += (0.2f * stacks); } }
-} //Also Changed Projectile, Turret, and Shield
+}

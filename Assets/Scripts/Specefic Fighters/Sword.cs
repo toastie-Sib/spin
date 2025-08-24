@@ -12,6 +12,14 @@ public class Sword : Weapon
     {
         base.IncreaseScaling();
         damage += damageIncrease;
+
+        if(GetComponentInParent<Axe>() != null)
+        {
+            if (GetComponent<BloodoftheBandit>() != null)
+            {
+                if (GetComponentInParent<Axe>().refreshInterval > 0.1f) { GetComponentInParent<Axe>().refreshInterval -= 0.1f; }
+            }
+        }
     }
 
     public override void TriggerParryImpactFrames()

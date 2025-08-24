@@ -22,6 +22,11 @@ public class Unarmed : Fighter
 
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity += wallBoost;
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
+            }
         }
         // RIGHT WALL
         if (collision.gameObject.CompareTag("RightWall"))
@@ -29,6 +34,11 @@ public class Unarmed : Fighter
 
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity -= wallBoost;
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
+            }
         }
         // Bottom WALL
         if (collision.gameObject.CompareTag("BottomWall"))
@@ -36,6 +46,11 @@ public class Unarmed : Fighter
 
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity += wallBoost;
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
+            }
         }
         // Top WALL
         if (collision.gameObject.CompareTag("Wall"))
@@ -51,6 +66,11 @@ public class Unarmed : Fighter
             }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
             rb.velocity -= wallBoost;
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
+            }
         }
         
         //attack

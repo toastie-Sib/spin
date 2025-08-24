@@ -25,6 +25,8 @@ public class Fighter : MonoBehaviour
     [HideInInspector] public Animator animationRef;
     [HideInInspector] public bool canPlayAnimation = true;
 
+    [HideInInspector] public int bleedStacks = 0;
+
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
@@ -200,6 +202,11 @@ public class Fighter : MonoBehaviour
                 Vector3 wallBoost = new Vector3(Random.Range(4f, 7f), Random.Range(-2f, 2f), 0f);
                 rb.velocity += wallBoost;
             }
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
+            }
         }
 
         // RIGHT WALL
@@ -212,14 +219,22 @@ public class Fighter : MonoBehaviour
                 Vector3 wallBoost = new Vector3(Random.Range(4f, 7f), Random.Range(-2f, 2f), 0f);
                 rb.velocity -= wallBoost;
             }
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
+            }
         }
 
-        // Bottom WALL
-        //if (collision.gameObject.CompareTag("BottomWall"))
-        //{
-        //
-        //    
-        //}
+         //Bottom WALL
+        if (collision.gameObject.CompareTag("BottomWall"))
+        {
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
+            }
+        }
 
         // Top WALL
         if (collision.gameObject.CompareTag("Wall"))
@@ -232,6 +247,11 @@ public class Fighter : MonoBehaviour
                     hp += 2;
                     if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
                 }
+            }
+
+            if (bleedStacks > 0)
+            {
+                BleedDamage(bleedStacks);
             }
         }
     }
@@ -346,12 +366,7 @@ public class Fighter : MonoBehaviour
         
         //Take Damage to HP
         hp -= 1;
-        hp = Mathf.Max(hp, 0);
         hpUI.hpText.text = Mathf.Round(hp).ToString();
-        if (hp == 0)
-        {
-            hpUI.hpText.text = (" ").ToString();
-        }
 
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
 
@@ -363,5 +378,25 @@ public class Fighter : MonoBehaviour
         animationRef.GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(4.8f); // wait 5 seconds for this stack
         ApplyPoison();
+    }
+
+    public void BleedDamage(int amount)
+    {
+
+        //Take Damage to HP
+        hp -= amount;
+        hpUI.hpText.text = Mathf.Round(hp).ToString();
+
+        AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
+    }
+
+    public IEnumerator BleedVisual()
+    {
+        GetComponentInChildren<Renderer>().material.color = Color.red;
+        animationRef.GetComponent<SpriteRenderer>().color = Color.red;
+
+        yield return new WaitForSeconds(0.2f);
+        GetComponentInChildren<Renderer>().material.color = originalColor;
+        animationRef.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
