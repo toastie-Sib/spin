@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Spear : Weapon
 {
-    public float originalHeight;
-    public float scaleAmount = 0.05f;
 
     public override void Start()
     {
         base.Start();
         Collider collider = GetComponent<Collider>();
-        originalHeight = collider.bounds.size.y;
     }
 
     public override void IncreaseScaling()
