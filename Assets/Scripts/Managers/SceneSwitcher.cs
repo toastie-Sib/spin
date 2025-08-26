@@ -16,6 +16,8 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public int fighterAmount = 0;
     [HideInInspector] public static SceneSwitcher Instance;
 
+    private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
+
     void Awake()
     {
         
@@ -103,5 +105,37 @@ public class SceneSwitcher : MonoBehaviour
                 SlowLoadSpecificSceneDelay("ItemPick");
             }
         }
+    }
+
+    // Item manager scripts
+    // Add an item (increase count if already collected)
+    public void AddItem(string itemID)
+    {
+        if (collectedItems.ContainsKey(itemID))
+        {
+            collectedItems[itemID]++; // add another copy
+        }
+        else
+        {
+            collectedItems[itemID] = 1; // first copy
+        }
+
+        Debug.Log($"Collected {itemID}. Total: {collectedItems[itemID]}");
+    }
+
+    // Get the number of copies the player has of an item
+    public int GetItemCount(string itemID)
+    {
+        if (collectedItems.ContainsKey(itemID))
+        {
+            return collectedItems[itemID];
+        }
+        return 0;
+    }
+
+    // Check if player has at least one copy of an item
+    public bool HasItem(string itemID)
+    {
+        return GetItemCount(itemID) > 0;
     }
 }
