@@ -558,10 +558,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   es: {fileID: 0}
-  itemPrefabs:
-  - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
-  - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
+  commonItems:
+  - {fileID: 7167371399629690870, guid: 660ef68d427eca346b3b9b25137e8c04, type: 3}
+  - {fileID: 927246039592745668, guid: d646556157bf57545b8d248be9bba470, type: 3}
   - {fileID: 4797578484506038833, guid: c5892763567ca8245944f201a677c017, type: 3}
+  - {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
+  - {fileID: 2805811854434871915, guid: d206bdc0a0fa5384684d268aa50a1119, type: 3}
+  - {fileID: 6288408122322142964, guid: a019498cb9680aa4ba64ec4ff3688a49, type: 3}
+  - {fileID: 6523228037749239196, guid: 432b3c7423fe8b94b885f837ecd51bea, type: 3}
+  uncommonItems:
+  - {fileID: 810934615206871094, guid: 04c2d4adf89a08f49961b5024501f9a8, type: 3}
+  rareItems:
+  - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
+  - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   waitTime: 0
 --- !u!1 &742214409
 GameObject:
@@ -2303,10 +2312,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   es: {fileID: 0}
-  itemPrefabs:
-  - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
-  - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
+  commonItems:
+  - {fileID: 7167371399629690870, guid: 660ef68d427eca346b3b9b25137e8c04, type: 3}
+  - {fileID: 927246039592745668, guid: d646556157bf57545b8d248be9bba470, type: 3}
   - {fileID: 4797578484506038833, guid: c5892763567ca8245944f201a677c017, type: 3}
+  - {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
+  - {fileID: 2805811854434871915, guid: d206bdc0a0fa5384684d268aa50a1119, type: 3}
+  - {fileID: 6288408122322142964, guid: a019498cb9680aa4ba64ec4ff3688a49, type: 3}
+  - {fileID: 6523228037749239196, guid: 432b3c7423fe8b94b885f837ecd51bea, type: 3}
+  uncommonItems:
+  - {fileID: 810934615206871094, guid: 04c2d4adf89a08f49961b5024501f9a8, type: 3}
+  rareItems:
+  - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
+  - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   waitTime: 0
 --- !u!114 &1547425849
 MonoBehaviour:
@@ -2787,10 +2805,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   es: {fileID: 0}
-  itemPrefabs:
-  - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
-  - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
+  commonItems:
+  - {fileID: 7167371399629690870, guid: 660ef68d427eca346b3b9b25137e8c04, type: 3}
+  - {fileID: 927246039592745668, guid: d646556157bf57545b8d248be9bba470, type: 3}
   - {fileID: 4797578484506038833, guid: c5892763567ca8245944f201a677c017, type: 3}
+  - {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
+  - {fileID: 2805811854434871915, guid: d206bdc0a0fa5384684d268aa50a1119, type: 3}
+  - {fileID: 6288408122322142964, guid: a019498cb9680aa4ba64ec4ff3688a49, type: 3}
+  - {fileID: 6523228037749239196, guid: 432b3c7423fe8b94b885f837ecd51bea, type: 3}
+  uncommonItems:
+  - {fileID: 810934615206871094, guid: 04c2d4adf89a08f49961b5024501f9a8, type: 3}
+  rareItems:
+  - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
+  - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   waitTime: 0
 --- !u!114 &2035655226
 MonoBehaviour:
