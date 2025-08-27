@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Projectiles\Arrow.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Bow.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Wrench.cs" />
+    <Compile Include="Assets\Scripts\Managers\ItemBans.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Spear.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheArcher.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Explosion.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="Assets\Scripts\Items\TriTippedDagger.cs" />
     <Compile Include="Assets\Scripts\Managers\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\ItemBans.cs" />
+    <Compile Include="Assets\Scripts\Managers\MapNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

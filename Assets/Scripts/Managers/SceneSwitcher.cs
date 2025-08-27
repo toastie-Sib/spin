@@ -18,6 +18,8 @@ public class SceneSwitcher : MonoBehaviour
 
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
 
+    [HideInInspector] public MapNode currentNode;
+
     void Awake()
     {
         
@@ -137,5 +139,16 @@ public class SceneSwitcher : MonoBehaviour
     public bool HasItem(string itemID)
     {
         return GetItemCount(itemID) > 0;
+    }
+
+    public void SetCurrentNode(MapNode node)
+    {
+        currentNode = node;
+
+        // Unlock connected nodes
+        foreach (var next in currentNode.connectedNodes)
+        {
+            next.Unlock();
+        }
     }
 }

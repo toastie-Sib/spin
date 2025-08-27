@@ -755,6 +755,7 @@ GameObject:
   - component: {fileID: 677122236}
   - component: {fileID: 677122235}
   - component: {fileID: 677122234}
+  - component: {fileID: 677122238}
   m_Layer: 5
   m_Name: Boss
   m_TagString: Untagged
@@ -776,7 +777,7 @@ RectTransform:
   - {fileID: 280502096}
   - {fileID: 1765673310}
   m_Father: {fileID: 1284192011}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -892,6 +893,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677122232}
   m_CullTransparentMesh: 1
+--- !u!114 &677122238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677122232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  connectedNodes: []
+  isUnlocked: 0
+  startingNode: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1037,7 @@ RectTransform:
   - {fileID: 1178427874}
   - {fileID: 133860192}
   m_Father: {fileID: 1284192011}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1086,16 +1103,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 798406775}
-        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: LoadSpecificScene
-        m_Mode: 5
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ArenaSmall
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &798406773
@@ -1145,15 +1162,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 798406769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7c10529c98f2c049813acc1d8f51f0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedInputField: {fileID: 0}
-  currentSeedText: {fileID: 0}
-  fighterPrefab: {fileID: 0}
-  animatorPrefab: {fileID: 0}
-  otherAnimPrefab: {fileID: 0}
-  fighterAmount: 0
+  sceneName: ArenaSmall
+  connectedNodes:
+  - {fileID: 1314563507}
+  - {fileID: 1477884353}
+  isUnlocked: 0
+  startingNode: 1
 --- !u!1 &803803644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1258,7 @@ MonoBehaviour:
   animatorPrefab: {fileID: 0}
   otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
+  currentNode: {fileID: 0}
 --- !u!114 &803803649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,10 +1542,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1969904042}
-  - {fileID: 1314563502}
-  - {fileID: 1477884348}
-  - {fileID: 798406770}
   - {fileID: 677122233}
+  - {fileID: 1477884348}
+  - {fileID: 1314563502}
+  - {fileID: 798406770}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1725,6 +1743,7 @@ GameObject:
   - component: {fileID: 1314563505}
   - component: {fileID: 1314563504}
   - component: {fileID: 1314563503}
+  - component: {fileID: 1314563507}
   m_Layer: 5
   m_Name: Campfire
   m_TagString: Untagged
@@ -1746,7 +1765,7 @@ RectTransform:
   - {fileID: 190708451}
   - {fileID: 7555551384880096572}
   m_Father: {fileID: 1284192011}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1862,6 +1881,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314563501}
   m_CullTransparentMesh: 1
+--- !u!114 &1314563507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314563501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  connectedNodes:
+  - {fileID: 677122238}
+  isUnlocked: 0
+  startingNode: 0
 --- !u!1 &1315540571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2168,7 @@ GameObject:
   - component: {fileID: 1477884351}
   - component: {fileID: 1477884350}
   - component: {fileID: 1477884349}
+  - component: {fileID: 1477884353}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -2269,6 +2306,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477884347}
   m_CullTransparentMesh: 1
+--- !u!114 &1477884353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477884347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  connectedNodes:
+  - {fileID: 677122238}
+  isUnlocked: 0
+  startingNode: 0
 --- !u!1 &1630278241
 GameObject:
   m_ObjectHideFlags: 0
