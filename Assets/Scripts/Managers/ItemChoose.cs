@@ -22,7 +22,7 @@ public class ItemChoose : Assign
         if(itemString == "")
         {
             GameObject nI = GameObject.Find("No Item");
-            nI.transform.SetParent(GameObject.Find("Set Position").transform);
+            nI.transform.SetParent(GameObject.Find("Set Position").transform, false);
         } else
         {
             es.AddItem(itemString);
