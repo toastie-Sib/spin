@@ -173,68 +173,68 @@ public class Weapon : MonoBehaviour
 
     public void ItemCheck() // Update on Unarmed too since no weapon
     {
-        if (SceneSwitcher.Instance.HasItem("BloodoftheArcher"))
+        if (SceneSwitcher.Instance.HasItem("BloodoftheArcher(Clone)"))
         {
             var botA = gameObject.AddComponent<BloodoftheArcher>();
-            botA.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheArcher");
+            botA.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheArcher(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("BloodoftheBandit"))
+        if (SceneSwitcher.Instance.HasItem("BloodoftheBandit(Clone)"))
         {
             var botB = gameObject.AddComponent<BloodoftheBandit>();
-            botB.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheBandit");
+            botB.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheBandit(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("BloodoftheKnight"))
+        if (SceneSwitcher.Instance.HasItem("BloodoftheKnight(Clone)"))
         {
             var botK = gameObject.AddComponent<BloodoftheKnight>();
-            botK.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheKnight");
+            botK.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheKnight(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("BloodoftheSoldier"))
+        if (SceneSwitcher.Instance.HasItem("BloodoftheSoldier(Clone)"))
         {
             var botS = gameObject.AddComponent<BloodoftheSoldier>();
-            botS.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheSoldier");
+            botS.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheSoldier(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("Food"))
+        if (SceneSwitcher.Instance.HasItem("Food(Clone)"))
         {
             var food = gameObject.AddComponent<Food>();
-            food.stacks = SceneSwitcher.Instance.GetItemCount("Food");
+            food.stacks = SceneSwitcher.Instance.GetItemCount("Food(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("GlassBall"))
+        if (SceneSwitcher.Instance.HasItem("GlassBall(Clone)"))
         {
             var glassBall = gameObject.AddComponent<GlassBall>();
-            glassBall.stacks = SceneSwitcher.Instance.GetItemCount("GlassBall");
+            glassBall.stacks = SceneSwitcher.Instance.GetItemCount("GlassBall(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("RaiseTheRoof"))
+        if (SceneSwitcher.Instance.HasItem("RaiseTheRoof(Clone)"))
         {
             var raisetheRoof = gameObject.AddComponent<RaiseTheRoof>();
-            raisetheRoof.stacks = SceneSwitcher.Instance.GetItemCount("RaiseTheRoof");
+            raisetheRoof.stacks = SceneSwitcher.Instance.GetItemCount("RaiseTheRoof(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("Training"))
+        if (SceneSwitcher.Instance.HasItem("Training(Clone)"))
         {
             var training = gameObject.AddComponent<Training>();
-            training.stacks = SceneSwitcher.Instance.GetItemCount("Training");
+            training.stacks = SceneSwitcher.Instance.GetItemCount("Training(Clone)");
         }
 
-        if (SceneSwitcher.Instance.HasItem("TriTippedDagger"))
+        if (SceneSwitcher.Instance.HasItem("TriTippedDagger(Clone)"))
         {
             var ttD = gameObject.AddComponent<TriTippedDagger>();
-            ttD.stacks = SceneSwitcher.Instance.GetItemCount("TriTippedDagger");
+            ttD.stacks = SceneSwitcher.Instance.GetItemCount("TriTippedDagger(Clone)");
         }
 
 
 
 
         //Make sure to be last
-        if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
+        if (SceneSwitcher.Instance.HasItem("GatitoBlade(Clone)"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();
-            gatitoBlade.stacks = SceneSwitcher.Instance.GetItemCount("GatitoBlade");
+            gatitoBlade.stacks = SceneSwitcher.Instance.GetItemCount("GatitoBlade(Clone)");
         }
     }
 }
