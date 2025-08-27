@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Items\TriTippedDagger.cs" />
     <Compile Include="Assets\Scripts\Managers\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\ItemBans.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

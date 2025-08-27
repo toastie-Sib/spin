@@ -116,7 +116,7 @@ public class Weapon : MonoBehaviour
 
                 if (other.GetComponent<Turret>() == null)
                 {
-                    IncreaseScaling();
+                    TriggerScaling();
                 }
             }
             
@@ -137,25 +137,25 @@ public class Weapon : MonoBehaviour
         GameSpeedManager.Instance.PauseForImpact(0.2f);
     }
 
-    public void TriggerScaling() // do not call this
+    public void TriggerScaling() // call this
     {
-        
-    }
-
-    public virtual void IncreaseScaling(){ // call this
         if (GetComponent<GlassBall>() != null)
         {
             GlassBall glassBall = GetComponent<GlassBall>();
             for (int i = -1; i < glassBall.stacks; i++)
             {
-                TriggerScaling(); // Call the actual scaling logic 'stacks' times
+                IncreaseScaling(); // Call the actual scaling logic 'stacks' times
             }
         }
         else
         {
             // If there's no GlassBall, perhaps just apply the single stack effect once?
-            TriggerScaling();
+            IncreaseScaling();
         }
+    }
+
+    public virtual void IncreaseScaling(){ // do not call this
+        
     }
 
     public void ShieldGrow(float damage)

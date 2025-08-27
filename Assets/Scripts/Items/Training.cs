@@ -12,8 +12,8 @@ public class Training : ItemBase
         Weapon myWeapon = GetComponent<Weapon>();
         for (int i = 0; i < stacks; i++)
         {
-            myWeapon.IncreaseScaling();
-            myWeapon.IncreaseScaling();
+            myWeapon.TriggerScaling();
+            myWeapon.TriggerScaling();
         }
     }
 

@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 5543377922700409562}
   - component: {fileID: 5543377922700409561}
   - component: {fileID: 5543377922700409560}
+  - component: {fileID: 7223737325023123194}
   m_Layer: 5
   m_Name: GatitoBlade
   m_TagString: Untagged
@@ -290,6 +291,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7223737325023123194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543377922700409565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753371442e091084c9d0ab5bff657810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  es: {fileID: 0}
+  blockedFighters: []
 --- !u!1 &5543377923288679777
 GameObject:
   m_ObjectHideFlags: 0

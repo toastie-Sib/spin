@@ -101,6 +101,7 @@ public class Shield : Weapon
 
     public override void IncreaseScaling()
     {
+        base.IncreaseScaling();
         ShieldGrow(1);
     }
 }
