@@ -64,7 +64,8 @@ public class ItemSpawner : Assign
         itemCard.GetComponent<Button>().onClick.AddListener(HoldOntoName);
         itemCard.transform.SetParent(GameObject.Find("Items").transform);
 
-        transform.position = new Vector3(5000, 0, 0);
+        transform.localScale += new Vector3(0.25f, 0.25f, 0);
+        //transform.position = new Vector3(5000, 0, 0);
     }
 
     public void HoldOntoName()
