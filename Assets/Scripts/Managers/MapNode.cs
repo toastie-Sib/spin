@@ -10,7 +10,7 @@ public class MapNode : MonoBehaviour
     public List<MapNode> connectedNodes;         // What nodes can be reached from here
     public bool isUnlocked = false;              // Can you click this node?
     private Button button;
-
+    public string nodeID;
     public bool startingNode = false;
 
     [Header("Path Settings")]
@@ -25,6 +25,12 @@ public class MapNode : MonoBehaviour
 
     void Start()
     {
+        var current = SceneSwitcher.Instance.GetCurrentNode();
+        if (current != null)
+        {
+            current.isUnlocked = true;
+        }
+
         DrawPaths();
 
         UpdateVisual();
@@ -32,13 +38,12 @@ public class MapNode : MonoBehaviour
         UpdatePathColors();
 
 
-        if (SceneSwitcher.Instance.currentNode == null && startingNode == true)
-        {
-            SceneSwitcher.Instance.currentNode = this;
-            Unlock();
-        }
+
+        StartCoroutine(TryUnlockConnectedNodes());
 
 
+        StartCoroutine(TryInitSpace());
+        
     }
 
     void OnClick()
@@ -46,9 +51,36 @@ public class MapNode : MonoBehaviour
         if (isUnlocked)
         {
             // Save which node you're at
-            SceneSwitcher.Instance.SetCurrentNode(this);
+            SceneSwitcher.Instance.SetCurrentNode(nodeID);
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay(sceneName);
             isUnlocked = false;
+        }
+    }
+
+    private IEnumerator TryInitSpace()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        var current = SceneSwitcher.Instance.GetCurrentNode();
+        if (current == null && startingNode == true)
+        {
+            SceneSwitcher.Instance.SetCurrentNode(nodeID);
+            Unlock();
+        }
+    }
+
+    private IEnumerator TryUnlockConnectedNodes()
+    {
+        var current = SceneSwitcher.Instance.GetCurrentNode();
+        yield return new WaitForSeconds(0.2f);
+        if (current != null)
+        {
+            current.isUnlocked = false;
+
+            foreach (var item in current.connectedNodes)
+            {
+                item.GetComponent<MapNode>().Unlock();
+            }
         }
     }
 
