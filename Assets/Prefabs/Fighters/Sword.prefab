@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 5311323215224532896}
   - component: {fileID: 5311323215224532902}
   - component: {fileID: 7615825487574879916}
-  - component: {fileID: 4346481526671273010}
-  - component: {fileID: 4627907369654974786}
   m_Layer: 8
   m_Name: Sword
   m_TagString: Weapon
@@ -137,32 +135,6 @@ MonoBehaviour:
   side: 0
   firePoint: {fileID: 0}
   damageIncrease: 1
---- !u!114 &4346481526671273010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5311323215224532900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4562f3bf84a07df4f8fe6c00ee21b022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 1
---- !u!114 &4627907369654974786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5311323215224532900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd7f6225e30b9842922a63f519311aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 1
 --- !u!1 &5311323215341001509
 GameObject:
   m_ObjectHideFlags: 0
