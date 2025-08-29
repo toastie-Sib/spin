@@ -29,6 +29,8 @@ public class MapNode : MonoBehaviour
         if (current != null)
         {
             current.isUnlocked = true;
+
+            
         }
 
         DrawPaths();
@@ -64,16 +66,16 @@ public class MapNode : MonoBehaviour
 
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay(sceneName);
             isUnlocked = false;
+            UpdateVisual();
 
-            
-            
+
         }
     }
 
     private IEnumerator TryInitSpace()
     {
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.01f);
         var current = SceneSwitcher.Instance.GetCurrentNode();
         if (current == null && startingNode == true)
         {
@@ -85,10 +87,17 @@ public class MapNode : MonoBehaviour
     private IEnumerator TryUnlockConnectedNodes()
     {
         var current = SceneSwitcher.Instance.GetCurrentNode();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.01f);
         if (current != null)
         {
+            SphereCollider collider = current.GetComponentInChildren<SphereCollider>();
+            GameObject startPoint = GameObject.Find("Start Point");
+
+            startPoint.transform.position = collider.transform.position;
+            startPoint.transform.position += new Vector3(0f, 1.4f, 0f);
+
             current.isUnlocked = false;
+            UpdateVisual();
 
             foreach (var item in current.connectedNodes)
             {

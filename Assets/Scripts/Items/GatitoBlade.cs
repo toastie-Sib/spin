@@ -12,7 +12,6 @@ public class GatitoBlade : ItemBase
 
     public override void Start() //Make sure to update with Fighter
     {
-        stacks = 5;
         base.Start();
         if (hasSpawned == false)
         {

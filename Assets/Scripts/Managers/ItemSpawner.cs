@@ -27,7 +27,9 @@ public class ItemSpawner : Assign
         // Pick rarity pool first
         GameObject[] pool = ChooseRarityPool();
 
-        SeedManager.Instance.UseSubSeed("ItemSystem"); // generate random item
+        string name = "ItemSystem";
+        string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID);
+        SeedManager.Instance.UseSubSeed(rngName); // generate random item
 
         // Filter out blocked items
         List<GameObject> validItems = new List<GameObject>();
@@ -77,7 +79,9 @@ public class ItemSpawner : Assign
 
     private GameObject[] ChooseRarityPool()
     {
-        SeedManager.Instance.UseSubSeed("ItemSystemRare");
+        string name = "Item System Rarity";
+        string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID);
+        SeedManager.Instance.UseSubSeed(rngName); // generate random item
 
         int roll = Random.Range(0, 100);
 
@@ -101,7 +105,9 @@ public class ItemSpawner : Assign
         // Pick rarity pool first
         GameObject[] pool = commonItems;
 
-        SeedManager.Instance.UseSubSeed("ItemSystem"); // generate random item
+        string name = "ItemRetrySystem";
+        string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID);
+        SeedManager.Instance.UseSubSeed(rngName); // generate random item
 
         // Filter out blocked items
         List<GameObject> validItems = new List<GameObject>();

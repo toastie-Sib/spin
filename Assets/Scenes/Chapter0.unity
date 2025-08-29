@@ -718,7 +718,7 @@ MonoBehaviour:
   sceneName: 
   connectedNodes: []
   isUnlocked: 0
-  nodeID: 3
+  nodeID: 03
   startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &705507993
@@ -982,7 +982,7 @@ MonoBehaviour:
   - {fileID: 1314563507}
   - {fileID: 1477884353}
   isUnlocked: 0
-  nodeID: 1
+  nodeID: 01
   startingNode: 1
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &803803644
@@ -1742,11 +1742,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: ArenaSmall
   connectedNodes:
   - {fileID: 677122238}
   isUnlocked: 0
-  nodeID: 2a
+  nodeID: 02a
   startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &1315540571
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   connectedNodes:
   - {fileID: 677122238}
   isUnlocked: 0
-  nodeID: 2b
+  nodeID: 02b
   startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &1630278241

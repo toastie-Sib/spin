@@ -738,6 +738,7 @@ MonoBehaviour:
   animatorPrefab: {fileID: 0}
   otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
+  currentNodeID: 
 --- !u!114 &803803649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,6 +827,7 @@ MonoBehaviour:
   animatorPrefab: {fileID: 0}
   otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
+  currentNodeID: 
 --- !u!114 &895640520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,6 +1873,7 @@ MonoBehaviour:
   animatorPrefab: {fileID: 0}
   otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
+  currentNodeID: 
 --- !u!114 &1319519053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2325,7 +2328,7 @@ MonoBehaviour:
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
-  waitTime: 0
+  waitTime: 0.02
 --- !u!114 &1547425849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2818,7 +2821,7 @@ MonoBehaviour:
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
-  waitTime: 0
+  waitTime: 0.01
 --- !u!114 &2035655226
 MonoBehaviour:
   m_ObjectHideFlags: 0
