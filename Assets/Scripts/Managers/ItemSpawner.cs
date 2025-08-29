@@ -9,147 +9,297 @@ public class ItemSpawner : Assign
     public GameObject[] uncommonItems;
     public GameObject[] rareItems;
     public float waitTime;
+    public int num;
     private GameObject storedItemPrefab;
     private string objectName;
-    private static List<int> chosenIndices = new List<int>();
+    private static HashSet<string> chosenNamesThisRound = new HashSet<string>();
+    private static string lastRoundKey = null; // e.g., node ID or scene key
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+
+        // New round? Clear the set so the three spawners can pick unique items again
+        string roundKey = SceneSwitcher.Instance.currentNodeID; // or SceneManager.GetActiveScene().name
+        if (lastRoundKey != roundKey)
+        {
+            chosenNamesThisRound.Clear();
+            lastRoundKey = roundKey;
+        }
+
         StartCoroutine(RandomizeItem());
     }
 
-    public IEnumerator RandomizeItem()
+    private IEnumerator RandomizeItem()
     {
         yield return new WaitForSeconds(waitTime);
 
-        // Pick rarity pool first
+        // 1) Pick rarity pool
         GameObject[] pool = ChooseRarityPool();
 
-        string name = "ItemSystem";
-        string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID);
-        SeedManager.Instance.UseSubSeed(rngName); // generate random item
+        // 2) Seed for item choice (deterministic within a node/seed, still varied among the 3)
+        string seedName = "ItemSystem";
+        string rngName = seedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(rngName);
 
-        // Filter out blocked items
+        // 3) Build valid list (not banned, and not already chosen this round)
         List<GameObject> validItems = new List<GameObject>();
         foreach (var item in pool)
         {
-            ItemBans itemBans = item.GetComponent<ItemBans>();
-            if (itemBans == null || !itemBans.CannotBeUsedBy(es.fighterPrefab))
-            {
+            var bans = item.GetComponent<ItemBans>();
+            bool blocked = (bans != null && bans.CannotBeUsedBy(es.fighterPrefab));
+            bool alreadyPickedThisRound = chosenNamesThisRound.Contains(item.name);
+
+            if (!blocked && !alreadyPickedThisRound)
                 validItems.Add(item);
-            }
         }
 
-        // Remove already chosen ones
-        for (int i = validItems.Count - 1; i >= 0; i--)
-        {
-            if (chosenIndices.Contains(System.Array.IndexOf(pool, validItems[i])))
-            {
-                validItems.RemoveAt(i);
-            }
-        }
+        // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
+        //if (validItems.Count == 0)
+        //{
+        //    foreach (var item in pool)
+        //    {
+        //        var bans = item.GetComponent<ItemBans>();
+        //        if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+        //            validItems.Add(item);
+        //    }
+        //}
 
         if (validItems.Count == 0)
         {
-            Debug.LogWarning("No valid items left for this fighter!");
-            FailsafeRandomizeItem();
+            Debug.LogWarning("No valid items left for this fighter in any pool!");
+            FallbackRareRandomizeItem();
             yield break;
         }
 
-        // Pick random from valid list
+        // 5) Pick one from the remaining list
         GameObject chosen = validItems[Random.Range(0, validItems.Count)];
-        int itemTypeIndex = System.Array.IndexOf(pool, chosen);
-        chosenIndices.Add(itemTypeIndex);
-
-        storedItemPrefab = chosen;
+        chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
 
         SeedManager.Instance.RestoreMasterSeed();
 
-        GameObject itemCard = Instantiate(storedItemPrefab, this.transform);
+        // 6) Spawn the UI card
+        GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
 
-        itemCard.GetComponent<Button>().onClick.AddListener(HoldOntoName);
-        itemCard.transform.SetParent(GameObject.Find("Items").transform);
+        var btn = itemCard.GetComponent<Button>();
+        if (btn != null) btn.onClick.AddListener(HoldOntoName);
 
-        transform.localScale += new Vector3(0.15f, 0.15f, 0);
-        //transform.position = new Vector3(5000, 0, 0);
+        // Keep UI hierarchy tidy; don't keep world position
+        Transform itemsParent = GameObject.Find("Items")?.transform;
+        if (itemsParent != null)
+            itemCard.transform.SetParent(GameObject.Find("Items").transform);
+
+        // Optional: scale/animate the card
+        transform.localScale += new Vector3(0.15f, 0.15f, 0f);
     }
 
     private GameObject[] ChooseRarityPool()
     {
-        string name = "Item System Rarity";
-        string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID);
-        SeedManager.Instance.UseSubSeed(rngName); // generate random item
+        // Seed rarity choice separately (deterministic per node if you want)
+        string seedName = "Item System Rarity";
+        string rngName = seedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(rngName);
 
         int roll = Random.Range(0, 100);
+        // Your original split was 70/20/10 (common/uncommon/rare).
+        // If you actually want 70/20/10, leave it as-is. If you want 70/20/10 -> 70/20/10.
+        GameObject[] result = (roll < 70) ? commonItems : (roll < 90) ? uncommonItems : rareItems;
 
-        if (roll < 70)
-            return commonItems;
-        else if (roll < 90)
-            return uncommonItems;
-        else
-            return rareItems;
+        // Do NOT restore here; we restore once per RandomizeItem after picking the item
+        return result;
     }
 
-    public void HoldOntoName()
+    private void HoldOntoName()
     {
-        ItemChoose lII = GameObject.Find("Lock In Item").GetComponent<ItemChoose>();
-        lII.itemString = objectName;
+        ItemChoose lII = GameObject.Find("Lock In Item")?.GetComponent<ItemChoose>();
+        if (lII != null) lII.itemString = objectName;
     }
 
-    public void FailsafeRandomizeItem()
+    private void FallbackRareRandomizeItem()
     {
 
-        // Pick rarity pool first
-        GameObject[] pool = commonItems;
+        // 1) Pick rarity pool
+        GameObject[] pool = rareItems;
 
-        string name = "ItemRetrySystem";
-        string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID);
-        SeedManager.Instance.UseSubSeed(rngName); // generate random item
+        // 2) Seed for item choice (deterministic within a node/seed, still varied among the 3)
+        string seedName = "ItemRareSystem";
+        string rngName = seedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(rngName);
 
-        // Filter out blocked items
+        // 3) Build valid list (not banned, and not already chosen this round)
         List<GameObject> validItems = new List<GameObject>();
         foreach (var item in pool)
         {
-            ItemBans itemBans = item.GetComponent<ItemBans>();
-            if (itemBans == null || !itemBans.CannotBeUsedBy(es.fighterPrefab))
-            {
+            var bans = item.GetComponent<ItemBans>();
+            bool blocked = (bans != null && bans.CannotBeUsedBy(es.fighterPrefab));
+            bool alreadyPickedThisRound = chosenNamesThisRound.Contains(item.name);
+
+            if (!blocked && !alreadyPickedThisRound)
                 validItems.Add(item);
-            }
         }
 
-        // Remove already chosen ones
-        for (int i = validItems.Count - 1; i >= 0; i--)
+        // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
+        if (validItems.Count == 0)
         {
-            if (chosenIndices.Contains(System.Array.IndexOf(pool, validItems[i])))
+            foreach (var item in pool)
             {
-                validItems.RemoveAt(i);
+                var bans = item.GetComponent<ItemBans>();
+                if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+                    validItems.Add(item);
             }
         }
 
         if (validItems.Count == 0)
         {
-            Debug.LogWarning("No valid items left for this fighter!");
+            Debug.LogWarning("No valid items left for this fighter in any pool!");
+            FallbackUncommonRandomizeItem();
         }
 
-        // Pick random from valid list
+        // 5) Pick one from the remaining list
         GameObject chosen = validItems[Random.Range(0, validItems.Count)];
-        int itemTypeIndex = System.Array.IndexOf(pool, chosen);
-        chosenIndices.Add(itemTypeIndex);
-
-        storedItemPrefab = chosen;
+        chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
 
         SeedManager.Instance.RestoreMasterSeed();
 
-        GameObject itemCard = Instantiate(storedItemPrefab, this.transform);
+        // 6) Spawn the UI card
+        GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
 
-        itemCard.GetComponent<Button>().onClick.AddListener(HoldOntoName);
-        itemCard.transform.SetParent(GameObject.Find("Items").transform);
+        var btn = itemCard.GetComponent<Button>();
+        if (btn != null) btn.onClick.AddListener(HoldOntoName);
 
-        transform.localScale += new Vector3(0.15f, 0.15f, 0);
-        //transform.position = new Vector3(5000, 0, 0);
+        // Keep UI hierarchy tidy; don't keep world position
+        Transform itemsParent = GameObject.Find("Items")?.transform;
+        if (itemsParent != null)
+            itemCard.transform.SetParent(GameObject.Find("Items").transform);
+
+        // Optional: scale/animate the card
+        transform.localScale += new Vector3(0.15f, 0.15f, 0f);
+    }
+
+    private void FallbackUncommonRandomizeItem()
+    {
+
+        // 1) Pick rarity pool
+        GameObject[] pool = uncommonItems;
+
+        // 2) Seed for item choice (deterministic within a node/seed, still varied among the 3)
+        string seedName = "ItemUncommonSystem";
+        string rngName = seedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(rngName);
+
+        // 3) Build valid list (not banned, and not already chosen this round)
+        List<GameObject> validItems = new List<GameObject>();
+        foreach (var item in pool)
+        {
+            var bans = item.GetComponent<ItemBans>();
+            bool blocked = (bans != null && bans.CannotBeUsedBy(es.fighterPrefab));
+            bool alreadyPickedThisRound = chosenNamesThisRound.Contains(item.name);
+
+            if (!blocked && !alreadyPickedThisRound)
+                validItems.Add(item);
+        }
+
+        // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
+        if (validItems.Count == 0)
+        {
+            foreach (var item in pool)
+            {
+                var bans = item.GetComponent<ItemBans>();
+                if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+                    validItems.Add(item);
+            }
+        }
+
+        if (validItems.Count == 0)
+        {
+            Debug.LogWarning("No valid items left for this fighter in any pool!");
+            FallbackCommonRandomizeItem();
+        }
+
+        // 5) Pick one from the remaining list
+        GameObject chosen = validItems[Random.Range(0, validItems.Count)];
+        chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
+
+        SeedManager.Instance.RestoreMasterSeed();
+
+        // 6) Spawn the UI card
+        GameObject itemCard = Instantiate(chosen, transform);
+        objectName = itemCard.name.Replace("(Clone)", "");
+
+        var btn = itemCard.GetComponent<Button>();
+        if (btn != null) btn.onClick.AddListener(HoldOntoName);
+
+        // Keep UI hierarchy tidy; don't keep world position
+        Transform itemsParent = GameObject.Find("Items")?.transform;
+        if (itemsParent != null)
+            itemCard.transform.SetParent(GameObject.Find("Items").transform);
+
+        // Optional: scale/animate the card
+        transform.localScale += new Vector3(0.15f, 0.15f, 0f);
+    }
+
+    private void FallbackCommonRandomizeItem()
+    {
+
+        // 1) Pick rarity pool
+        GameObject[] pool = commonItems;
+
+        // 2) Seed for item choice (deterministic within a node/seed, still varied among the 3)
+        string seedName = "ItemCommonSystem";
+        string rngName = seedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(rngName);
+
+        // 3) Build valid list (not banned, and not already chosen this round)
+        List<GameObject> validItems = new List<GameObject>();
+        foreach (var item in pool)
+        {
+            var bans = item.GetComponent<ItemBans>();
+            bool blocked = (bans != null && bans.CannotBeUsedBy(es.fighterPrefab));
+            bool alreadyPickedThisRound = chosenNamesThisRound.Contains(item.name);
+
+            if (!blocked && !alreadyPickedThisRound)
+                validItems.Add(item);
+        }
+
+        // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
+        if (validItems.Count == 0)
+        {
+            foreach (var item in pool)
+            {
+                var bans = item.GetComponent<ItemBans>();
+                if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+                    validItems.Add(item);
+            }
+        }
+
+        if (validItems.Count == 0)
+        {
+            Debug.LogWarning("No valid items left for this fighter in any pool! Could spawn Food.");
+            return;
+        }
+
+        // 5) Pick one from the remaining list
+        GameObject chosen = validItems[Random.Range(0, validItems.Count)];
+        chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
+
+        SeedManager.Instance.RestoreMasterSeed();
+
+        // 6) Spawn the UI card
+        GameObject itemCard = Instantiate(chosen, transform);
+        objectName = itemCard.name.Replace("(Clone)", "");
+
+        var btn = itemCard.GetComponent<Button>();
+        if (btn != null) btn.onClick.AddListener(HoldOntoName);
+
+        // Keep UI hierarchy tidy; don't keep world position
+        Transform itemsParent = GameObject.Find("Items")?.transform;
+        if (itemsParent != null)
+            itemCard.transform.SetParent(GameObject.Find("Items").transform);
+
+        // Optional: scale/animate the card
+        transform.localScale += new Vector3(0.15f, 0.15f, 0f);
     }
 }

@@ -12,7 +12,7 @@ public class GlassBall : ItemBase
         Fighter myFighter = GetComponentInParent<Fighter>();
         for (int i = 0; i < stacks; i++)
         {
-            myFighter.maxHp *= 0.5f;
+            //myFighter.maxHp *= 0.5f;
         }
     }
 
