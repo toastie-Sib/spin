@@ -7,7 +7,7 @@ public class AnimationMovement : MonoBehaviour
     public Transform startingPoint;
     public Transform attackPoint;
     public Transform parryPoint;
-    private float slideDuration = 0.01f;
+    [HideInInspector] public float slideDuration = 0.01f;
 
     void Start()
     {

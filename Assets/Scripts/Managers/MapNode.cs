@@ -52,16 +52,21 @@ public class MapNode : MonoBehaviour
         {
             // Save which node you're at
             SceneSwitcher.Instance.SetCurrentNode(nodeID);
+
+            var current = SceneSwitcher.Instance.GetCurrentNode();
+            SphereCollider collider = current.GetComponentInChildren<SphereCollider>();
+            GameObject startPoint = GameObject.Find("Start Point");
+            AssignAnimation animMovement = GameObject.Find("PlayerAnim").GetComponent<AssignAnimation>();
+            animMovement.stashedAnimation.GetComponent<AnimationMovement>().slideDuration = 1.5f;
+
+            startPoint.transform.position = collider.transform.position;
+            startPoint.transform.position += new Vector3(0f, 1.4f, 0f);
+
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay(sceneName);
             isUnlocked = false;
 
-            Transform colliderTransform = GetComponentInChildren<SphereCollider>().transform;
-            AnimationMovement animMovement = GameObject.Find("PlayerAnim").GetComponent<AnimationMovement>();
-            if (animMovement.startingPoint != null)
-            {
-                animMovement.startingPoint = colliderTransform;
-                animMovement.startingPoint.position += new Vector3(0f, 5f, 0f);
-            }
+            
+            
         }
     }
 
