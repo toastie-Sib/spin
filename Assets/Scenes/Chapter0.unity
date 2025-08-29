@@ -718,6 +718,7 @@ MonoBehaviour:
   sceneName: 
   connectedNodes: []
   isUnlocked: 0
+  nodeID: 3
   startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &705507993
@@ -909,7 +910,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 798406773}
   m_OnClick:
     m_PersistentCalls:
@@ -981,6 +982,7 @@ MonoBehaviour:
   - {fileID: 1314563507}
   - {fileID: 1477884353}
   isUnlocked: 0
+  nodeID: 1
   startingNode: 1
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &803803644
@@ -1070,7 +1072,7 @@ MonoBehaviour:
   animatorPrefab: {fileID: 0}
   otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
-  currentNode: {fileID: 0}
+  currentNodeID: 
 --- !u!114 &803803649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,6 +1746,7 @@ MonoBehaviour:
   connectedNodes:
   - {fileID: 677122238}
   isUnlocked: 0
+  nodeID: 2a
   startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &1315540571
@@ -2075,6 +2078,7 @@ MonoBehaviour:
   connectedNodes:
   - {fileID: 677122238}
   isUnlocked: 0
+  nodeID: 2b
   startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &1630278241

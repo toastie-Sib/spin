@@ -54,6 +54,14 @@ public class MapNode : MonoBehaviour
             SceneSwitcher.Instance.SetCurrentNode(nodeID);
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay(sceneName);
             isUnlocked = false;
+
+            Transform colliderTransform = GetComponentInChildren<SphereCollider>().transform;
+            AnimationMovement animMovement = GameObject.Find("PlayerAnim").GetComponent<AnimationMovement>();
+            if (animMovement.startingPoint != null)
+            {
+                animMovement.startingPoint = colliderTransform;
+                animMovement.startingPoint.position += new Vector3(0f, 5f, 0f);
+            }
         }
     }
 
