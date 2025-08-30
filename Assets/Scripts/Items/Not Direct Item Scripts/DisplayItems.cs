@@ -41,7 +41,7 @@ public class DisplayItems : MonoBehaviour
             texts[1].text = "x" + kvp.Value;   // Quantity
 
             // Optionally: assign icon from Resources or ScriptableObject database
-            Sprite loadedSprite = Resources.Load<Sprite>("Items/" + kvp.Key);
+            Sprite loadedSprite = Resources.Load<Sprite>("Sprites/Items/" + kvp.Key);
             if (loadedSprite != null)
                 icon.sprite = loadedSprite;
         }
