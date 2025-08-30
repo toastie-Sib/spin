@@ -106,9 +106,12 @@ public class ShopItemSpawner : Assign
 
         SeedManager.Instance.RestoreMasterSeed();
 
-        GameObject cost = Instantiate(costPrefab, transform);
-        cost.GetComponent<Text>().text = itemcost.ToString();
-        cost.transform.SetParent(costPlacement, false);
+        if (costPrefab != null)
+        {
+            GameObject cost = Instantiate(costPrefab, transform);
+            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.transform.SetParent(costPlacement, false);
+        }
 
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
@@ -204,9 +207,13 @@ public class ShopItemSpawner : Assign
 
         SeedManager.Instance.RestoreMasterSeed();
 
-        GameObject cost = Instantiate(costPrefab, transform);
-        cost.GetComponent<Text>().text = itemcost.ToString();
-        cost.transform.SetParent(costPlacement, false);
+        if (costPrefab != null)
+        {
+            GameObject cost = Instantiate(costPrefab, transform);
+            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.transform.SetParent(costPlacement, false);
+        }
+        
 
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
@@ -276,9 +283,12 @@ public class ShopItemSpawner : Assign
 
         SeedManager.Instance.RestoreMasterSeed();
 
-        GameObject cost = Instantiate(costPrefab, transform);
-        cost.GetComponent<Text>().text = itemcost.ToString();
-        cost.transform.SetParent(costPlacement, false);
+        if (costPrefab != null)
+        {
+            GameObject cost = Instantiate(costPrefab, transform);
+            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.transform.SetParent(costPlacement, false);
+        }
 
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
@@ -348,9 +358,12 @@ public class ShopItemSpawner : Assign
 
         SeedManager.Instance.RestoreMasterSeed();
 
-        GameObject cost = Instantiate(costPrefab, transform);
-        cost.GetComponent<Text>().text = itemcost.ToString();
-        cost.transform.SetParent(costPlacement, false);
+        if (costPrefab != null)
+        {
+            GameObject cost = Instantiate(costPrefab, transform);
+            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.transform.SetParent(costPlacement, false);
+        }
 
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
