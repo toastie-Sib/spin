@@ -49,8 +49,11 @@ public class Fighter : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        maxHp = SceneSwitcher.Instance.playerMaxHP;
-        hp = SceneSwitcher.Instance.playerCurrentHP;
+        if (isPlayer == true)
+        {
+            maxHp = SceneSwitcher.Instance.playerMaxHP;
+            hp = SceneSwitcher.Instance.playerCurrentHP;
+        }
 
         rb = GetComponent<Rigidbody>();
         objectRenderer = GetComponent<Renderer>();

@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class ItemChoose : Assign
 {
-    public string itemString;
+    public bool buying = false;
+    [HideInInspector] public string itemString;
+    [HideInInspector] public int cost;
+
 
     // Start is called before the first frame update
     public override void Start()

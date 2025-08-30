@@ -49,6 +49,12 @@ public class SceneSwitcher : MonoBehaviour
         animatorPrefab = prefabToSet2;
     }
 
+    public void SetStartHP(float hp)
+    {
+        playerCurrentHP = hp;
+        playerMaxHP = hp;
+    }
+
     public void SetButtonActive(GameObject button)
     {
         Button buttonRef = button.GetComponent<Button>();
