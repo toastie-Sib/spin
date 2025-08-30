@@ -99,6 +99,7 @@
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Campfire.cs" />
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopItemSpawner.cs" />
+    <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\DisplayItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

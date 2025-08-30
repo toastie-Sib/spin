@@ -172,6 +172,11 @@ public class SceneSwitcher : MonoBehaviour
         return GetItemCount(itemID) > 0;
     }
 
+    public Dictionary<string, int> GetItemsList()
+    {
+        return collectedItems;
+    }
+
     public void SetCurrentNode(string id)
     {
         currentNodeID = id;

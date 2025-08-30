@@ -11,6 +11,10 @@ public class ShopItemSpawner : Assign
     public float waitTime;
     public int num;
     public int rarity;
+    [HideInInspector] public int itemcost = 100;
+    public bool trading = false;
+    public GameObject costPrefab;
+    public Transform costPlacement;
     private GameObject storedItemPrefab;
     private string objectName;
     private static HashSet<string> chosenNamesThisRound = new HashSet<string>();
@@ -38,9 +42,24 @@ public class ShopItemSpawner : Assign
         yield return new WaitForSeconds(waitTime);
 
         // 1) Pick rarity pool
-        if (rarity == 1) { pool = commonItems; }
-        else if (rarity == 2) { pool = uncommonItems; }
-        else if (rarity == 3) { pool = rareItems; }
+        if (rarity == 1) { pool = commonItems;
+            string costSeedName = "Item System Cost";
+            string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+            SeedManager.Instance.UseSubSeed(costName);
+            itemcost = Random.Range(70, 130);
+        }
+        else if (rarity == 2) { pool = uncommonItems;
+            string costSeedName = "Item System Cost";
+            string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+            SeedManager.Instance.UseSubSeed(costName);
+            itemcost = Random.Range(170, 230);
+        }
+        else if (rarity == 3) { pool = rareItems;
+            string costSeedName = "Item System Cost";
+            string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+            SeedManager.Instance.UseSubSeed(costName);
+            int itemcost = Random.Range(270, 330);
+        }
 
         // 2) Seed for item choice (deterministic within a node/seed, still varied among the 3)
         string seedName = "ItemSystem";
@@ -81,7 +100,12 @@ public class ShopItemSpawner : Assign
         GameObject chosen = validItems[Random.Range(0, validItems.Count)];
         chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
 
+
         SeedManager.Instance.RestoreMasterSeed();
+
+        GameObject cost = Instantiate(costPrefab, transform);
+        cost.GetComponent<Text>().text = itemcost.ToString();
+        cost.transform.SetParent(costPlacement, false);
 
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
@@ -121,10 +145,16 @@ public class ShopItemSpawner : Assign
         ItemChoose itemChoose = GameObject.Find("Purchase")?.GetComponent<ItemChoose>();
         if (itemChoose != null) itemChoose.itemString = objectName;
         itemChoose.storedCard = storedItemPrefab;
+        itemChoose.trading = trading;
     }
 
     private void FallbackRareRandomizeItem()
     {
+
+        string costSeedName = "Item System Cost";
+        string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(costName);
+        itemcost = Random.Range(270, 330);
 
         // 1) Pick rarity pool
         pool = rareItems;
@@ -169,6 +199,10 @@ public class ShopItemSpawner : Assign
 
         SeedManager.Instance.RestoreMasterSeed();
 
+        GameObject cost = Instantiate(costPrefab, transform);
+        cost.GetComponent<Text>().text = itemcost.ToString();
+        cost.transform.SetParent(costPlacement, false);
+
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
@@ -188,6 +222,10 @@ public class ShopItemSpawner : Assign
 
     private void FallbackUncommonRandomizeItem()
     {
+        string costSeedName = "Item System Cost";
+        string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(costName);
+        itemcost = Random.Range(170, 230);
 
         // 1) Pick rarity pool
         pool = uncommonItems;
@@ -232,6 +270,10 @@ public class ShopItemSpawner : Assign
 
         SeedManager.Instance.RestoreMasterSeed();
 
+        GameObject cost = Instantiate(costPrefab, transform);
+        cost.GetComponent<Text>().text = itemcost.ToString();
+        cost.transform.SetParent(costPlacement, false);
+
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
@@ -251,6 +293,10 @@ public class ShopItemSpawner : Assign
 
     private void FallbackCommonRandomizeItem()
     {
+        string costSeedName = "Item System Cost";
+        string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
+        SeedManager.Instance.UseSubSeed(costName);
+        itemcost = Random.Range(70, 130);
 
         // 1) Pick rarity pool
         pool = commonItems;
@@ -294,6 +340,10 @@ public class ShopItemSpawner : Assign
         chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
 
         SeedManager.Instance.RestoreMasterSeed();
+
+        GameObject cost = Instantiate(costPrefab, transform);
+        cost.GetComponent<Text>().text = itemcost.ToString();
+        cost.transform.SetParent(costPlacement, false);
 
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);

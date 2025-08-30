@@ -9,6 +9,7 @@ public class ItemChoose : Assign
     [HideInInspector] public string itemString;
     [HideInInspector] public GameObject storedCard;
     [HideInInspector] public int cost;
+    [HideInInspector] public bool trading = false;
     private Button button;
 
 
@@ -18,7 +19,7 @@ public class ItemChoose : Assign
     {
         base.Start();
 
-        Button button = GetComponent<Button>();
+        button = GetComponent<Button>();
 
         button.onClick.AddListener(AssignName);
     }
@@ -41,18 +42,25 @@ public class ItemChoose : Assign
         } else
         {
             if (itemString == "") return;
-            if (SceneSwitcher.Instance.playerMoney >= cost)
+            if (trading == false)
             {
-                es.AddItem(itemString);
-                SceneSwitcher.Instance.playerMoney -= cost;
-                itemString = "";
-                Destroy(storedCard);
-            }
-            else
+                if (SceneSwitcher.Instance.playerMoney >= cost)
+                {
+                    es.AddItem(itemString);
+                    SceneSwitcher.Instance.playerMoney -= cost;
+                    itemString = "";
+                    Destroy(storedCard);
+                }
+                else
+                {
+                    GameObject nM = GameObject.Find("No Money");
+                    nM.transform.SetParent(GameObject.Find("Set Position").transform, false);
+                }
+            } else //Trade cards
             {
-                GameObject nM = GameObject.Find("No Money");
-                nM.transform.SetParent(GameObject.Find("Set Position").transform, false);
+
             }
+            
         }
         
         

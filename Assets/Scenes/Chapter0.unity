@@ -648,7 +648,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 677122236}
   m_OnClick:
     m_PersistentCalls:
@@ -717,9 +717,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ItemPick
   connectedNodes: []
-  isUnlocked: 1
+  isUnlocked: 0
   nodeID: 03
-  startingNode: 1
+  startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &705507993
 GameObject:
@@ -1075,6 +1075,7 @@ MonoBehaviour:
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
+  playerMoney: 100
 --- !u!114 &803803649
 MonoBehaviour:
   m_ObjectHideFlags: 0
