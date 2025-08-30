@@ -109,7 +109,7 @@ public class ShopItemSpawner : Assign
         if (costPrefab != null)
         {
             GameObject cost = Instantiate(costPrefab, transform);
-            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
         }
 
@@ -210,7 +210,7 @@ public class ShopItemSpawner : Assign
         if (costPrefab != null)
         {
             GameObject cost = Instantiate(costPrefab, transform);
-            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
         }
         
@@ -286,7 +286,7 @@ public class ShopItemSpawner : Assign
         if (costPrefab != null)
         {
             GameObject cost = Instantiate(costPrefab, transform);
-            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
         }
 
@@ -361,7 +361,7 @@ public class ShopItemSpawner : Assign
         if (costPrefab != null)
         {
             GameObject cost = Instantiate(costPrefab, transform);
-            cost.GetComponent<Text>().text = itemcost.ToString();
+            cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
         }
 
