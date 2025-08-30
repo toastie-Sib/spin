@@ -86,6 +86,7 @@ public class ShopItemSpawner : Assign
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
+        storedItemPrefab = itemCard;
 
         var btn = itemCard.GetComponent<Button>();
         if (btn != null) btn.onClick.AddListener(HoldOntoName);
@@ -117,8 +118,9 @@ public class ShopItemSpawner : Assign
 
     private void HoldOntoName()
     {
-        ItemChoose lII = GameObject.Find("Purchase")?.GetComponent<ItemChoose>();
-        if (lII != null) lII.itemString = objectName;
+        ItemChoose itemChoose = GameObject.Find("Purchase")?.GetComponent<ItemChoose>();
+        if (itemChoose != null) itemChoose.itemString = objectName;
+        itemChoose.storedCard = storedItemPrefab;
     }
 
     private void FallbackRareRandomizeItem()
@@ -170,6 +172,7 @@ public class ShopItemSpawner : Assign
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
+        storedItemPrefab = itemCard;
 
         var btn = itemCard.GetComponent<Button>();
         if (btn != null) btn.onClick.AddListener(HoldOntoName);
@@ -232,6 +235,7 @@ public class ShopItemSpawner : Assign
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
+        storedItemPrefab = itemCard;
 
         var btn = itemCard.GetComponent<Button>();
         if (btn != null) btn.onClick.AddListener(HoldOntoName);
@@ -294,6 +298,7 @@ public class ShopItemSpawner : Assign
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
         objectName = itemCard.name.Replace("(Clone)", "");
+        storedItemPrefab = itemCard;
 
         var btn = itemCard.GetComponent<Button>();
         if (btn != null) btn.onClick.AddListener(HoldOntoName);

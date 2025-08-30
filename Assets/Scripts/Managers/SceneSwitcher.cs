@@ -7,20 +7,22 @@ using UnityEngine.UI;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    [Header("UI References")] //Seed UI Manager
+    [Header("UI References for Seed")] //Seed UI Manager
     public TMP_InputField seedInputField;
     public TMP_Text currentSeedText;
+    [Header("Memory")]
     [HideInInspector] public GameObject fighterPrefab;
     [HideInInspector] public GameObject animatorPrefab;
-    public GameObject otherAnimPrefab;
+    [HideInInspector] public GameObject otherAnimPrefab;
     [HideInInspector] public int fighterAmount = 0;
     [HideInInspector] public static SceneSwitcher Instance;
-
+    [Header("Player Info")]
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
+    [HideInInspector] public string currentNodeID; //Where on Map
+    public float playerMaxHP;
+    public float playerCurrentHP;
+    public float playerMoney = 100;
 
-    [HideInInspector] public string currentNodeID;
-    [HideInInspector] public float playerMaxHP;
-    [HideInInspector] public float playerCurrentHP;
 
     void Awake()
     {
@@ -100,7 +102,7 @@ public class SceneSwitcher : MonoBehaviour
         Fighter.OnFighterDied -= HandleFighterDeath;
     }
 
-    private void HandleFighterDeath(Fighter fighter)
+    private void HandleFighterDeath(Fighter fighter) //Game End
     {
         if (fighter.isPlayer)
         {
@@ -115,6 +117,13 @@ public class SceneSwitcher : MonoBehaviour
                 GameObject pSC = GameObject.Find("PlayerSpawnCannon");
                 playerCurrentHP = pSC.GetComponent<Launcher>().fighter.hp;
 
+                string name = "MoneySystem";
+                string rngName = name.Replace("System", currentNodeID);
+                SeedManager.Instance.UseSubSeed(rngName); //generate random amount of money
+                int rewardMoney = Random.Range(50, 75);
+                SeedManager.Instance.RestoreMasterSeed();
+
+                playerMoney += rewardMoney;
 
                 SlowLoadSpecificSceneDelay("ItemPick");
             }

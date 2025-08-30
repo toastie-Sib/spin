@@ -1769,7 +1769,11 @@ MonoBehaviour:
   currentSeedText: {fileID: 0}
   fighterPrefab: {fileID: 0}
   animatorPrefab: {fileID: 0}
+  otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
+  currentNodeID: 
+  playerMaxHP: 0
+  playerCurrentHP: 0
 --- !u!1 &1630278241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,7 +2135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.20964043, g: 0.08926664, b: 0.3207547, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

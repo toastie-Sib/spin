@@ -13,6 +13,8 @@ public class Campfire : MonoBehaviour
     public bool upgradeHP = false;
     public bool upgradeAtkSpd = false;
     public bool upgradeDmg = false;
+    public bool goBackToChapter = false;
+    public bool moveUI = false;
 
     void Awake()
     {
@@ -22,7 +24,7 @@ public class Campfire : MonoBehaviour
 
     void OnClick()
     {
-        if (restoreHP)
+        if (restoreHP == true)
         {
             foreach (var item in mainPage)
             {
@@ -30,10 +32,10 @@ public class Campfire : MonoBehaviour
             }
             SceneSwitcher.Instance.playerCurrentHP = SceneSwitcher.Instance.playerMaxHP;
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
-        } else if (upgradeStats)
+        } else if (upgradeStats == true)
         {
 
-        } else if (upgradeHP)
+        } else if (upgradeHP == true)
         {
             foreach (var item in upgradePage)
             {
@@ -43,12 +45,19 @@ public class Campfire : MonoBehaviour
             SceneSwitcher.Instance.playerMaxHP += (SceneSwitcher.Instance.playerMaxHP * 0.35f);
             SceneSwitcher.Instance.playerCurrentHP += (SceneSwitcher.Instance.playerMaxHP - heldHP);
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
-        } else if (upgradeAtkSpd)
+        } else if (upgradeAtkSpd == true)
         {
 
-        } else if (upgradeDmg)
+        } else if (upgradeDmg == true)
         {
 
+        } else if (goBackToChapter == true)
+        {
+            SceneSwitcher.Instance.LoadSpecificScene("Chapter0");
+        } else if (moveUI == true)
+        {
+            GameObject nM = GameObject.Find("No Money");
+            nM.transform.SetParent(GameObject.Find("No Item").transform, false);
         }
     }
 }

@@ -7,7 +7,10 @@ public class ItemChoose : Assign
 {
     public bool buying = false;
     [HideInInspector] public string itemString;
+    [HideInInspector] public GameObject storedCard;
     [HideInInspector] public int cost;
+    private Button button;
+
 
 
     // Start is called before the first frame update
@@ -15,22 +18,43 @@ public class ItemChoose : Assign
     {
         base.Start();
 
-        Button proceedButton = GetComponent<Button>();
+        Button button = GetComponent<Button>();
 
-        proceedButton.onClick.AddListener(AssignName);
+        button.onClick.AddListener(AssignName);
     }
 
     public void AssignName()
     {
-        if(itemString == "")
+        if (buying == false)
         {
-            GameObject nI = GameObject.Find("No Item");
-            nI.transform.SetParent(GameObject.Find("Set Position").transform, false);
+            if (itemString == "")
+            {
+                GameObject nI = GameObject.Find("No Item");
+                nI.transform.SetParent(GameObject.Find("Set Position").transform, false);
+            }
+            else
+            {
+                button.interactable = false;
+                es.AddItem(itemString);
+                es.LoadSpecificScene("Chapter0");
+            }
         } else
         {
-            es.AddItem(itemString);
-            es.LoadSpecificScene("Chapter0");
+            if (itemString == "") return;
+            if (SceneSwitcher.Instance.playerMoney >= cost)
+            {
+                es.AddItem(itemString);
+                SceneSwitcher.Instance.playerMoney -= cost;
+                itemString = "";
+                Destroy(storedCard);
+            }
+            else
+            {
+                GameObject nM = GameObject.Find("No Money");
+                nM.transform.SetParent(GameObject.Find("Set Position").transform, false);
+            }
         }
+        
         
     }
 }

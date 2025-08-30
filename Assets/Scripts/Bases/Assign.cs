@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Assign : MonoBehaviour
 {
-    public SceneSwitcher es;
+    [HideInInspector] public SceneSwitcher es;
     
     public virtual void Start()
     {
