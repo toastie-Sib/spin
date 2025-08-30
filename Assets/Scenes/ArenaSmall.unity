@@ -1392,6 +1392,9 @@ MonoBehaviour:
   animatorPrefab: {fileID: 0}
   otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
+  currentNodeID: 
+  playerMaxHP: 0
+  playerCurrentHP: 0
 --- !u!114 &1881583354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1721,7 +1724,7 @@ PrefabInstance:
       objectReference: {fileID: 1969904044}
     - target: {fileID: 7325518802902402498, guid: 5f5e6dac3ec6086419d233d1829095b8, type: 3}
       propertyPath: m_Name
-      value: Player Cannon
+      value: PlayerSpawnCannon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f5e6dac3ec6086419d233d1829095b8, type: 3}

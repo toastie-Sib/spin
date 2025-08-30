@@ -18,7 +18,9 @@ public class SceneSwitcher : MonoBehaviour
 
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
 
-    public string currentNodeID;
+    [HideInInspector] public string currentNodeID;
+    [HideInInspector] public float playerMaxHP;
+    [HideInInspector] public float playerCurrentHP;
 
     void Awake()
     {
@@ -104,6 +106,10 @@ public class SceneSwitcher : MonoBehaviour
 
             if (fighterAmount <= 1)
             {
+                GameObject pSC = GameObject.Find("PlayerSpawnCannon");
+                playerCurrentHP = pSC.GetComponent<Launcher>().fighter.hp;
+
+
                 SlowLoadSpecificSceneDelay("ItemPick");
             }
         }
@@ -113,6 +119,16 @@ public class SceneSwitcher : MonoBehaviour
     // Add an item (increase count if already collected)
     public void AddItem(string itemID)
     {
+        if (itemID == "GlassBall") //Items
+        {
+            playerMaxHP *= 0.5f;
+        }
+        if (itemID == "Food")
+        {
+            float heldHP = playerMaxHP;
+            playerMaxHP += (playerMaxHP * 0.3f);
+            playerCurrentHP += (playerMaxHP - heldHP);
+        }
         if (collectedItems.ContainsKey(itemID))
         {
             collectedItems[itemID]++; // add another copy

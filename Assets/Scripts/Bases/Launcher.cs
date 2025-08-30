@@ -12,6 +12,7 @@ public class Launcher : MonoBehaviour
     private bool shotDone = false;
     public bool isPlayer = false;
     private GameObject stashedProjectile;
+    [HideInInspector] public Fighter fighter;
     private SceneSwitcher es;
     public GameObject[] enemyPrefabs;
 
@@ -80,7 +81,7 @@ public class Launcher : MonoBehaviour
 
         stashedProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
-        Fighter fighter = stashedProjectile.GetComponent<Fighter>();    if (isPlayer) { fighter.isPlayer = true; } //Know that is player
+        fighter = stashedProjectile.GetComponent<Fighter>();    if (isPlayer) { fighter.isPlayer = true; } //Know that is player
         if (fighter != null)
         {
             // Assign HP UI
