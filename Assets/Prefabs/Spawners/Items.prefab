@@ -151,7 +151,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   es: {fileID: 0}
+  buying: 0
   itemString: 
+  storedCard: {fileID: 0}
+  cost: 0
+  trading: 0
 --- !u!1 &2232292702253834369
 GameObject:
   m_ObjectHideFlags: 0

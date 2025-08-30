@@ -47,18 +47,21 @@ public class ShopItemSpawner : Assign
             string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
             SeedManager.Instance.UseSubSeed(costName);
             itemcost = Random.Range(70, 130);
+            if (trading == true) { itemcost = 2; }
         }
         else if (rarity == 2) { pool = uncommonItems;
             string costSeedName = "Item System Cost";
             string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
             SeedManager.Instance.UseSubSeed(costName);
             itemcost = Random.Range(170, 230);
+            if (trading == true) { itemcost = 3; }
         }
         else if (rarity == 3) { pool = rareItems;
             string costSeedName = "Item System Cost";
             string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
             SeedManager.Instance.UseSubSeed(costName);
             int itemcost = Random.Range(270, 330);
+            if (trading == true) { itemcost = 5; }
         }
 
         // 2) Seed for item choice (deterministic within a node/seed, still varied among the 3)
@@ -146,6 +149,7 @@ public class ShopItemSpawner : Assign
         if (itemChoose != null) itemChoose.itemString = objectName;
         itemChoose.storedCard = storedItemPrefab;
         itemChoose.trading = trading;
+        itemChoose.cost = itemcost;
     }
 
     private void FallbackRareRandomizeItem()
@@ -155,6 +159,7 @@ public class ShopItemSpawner : Assign
         string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
         SeedManager.Instance.UseSubSeed(costName);
         itemcost = Random.Range(270, 330);
+        if (trading == true) { itemcost = 5; }
 
         // 1) Pick rarity pool
         pool = rareItems;
@@ -226,6 +231,7 @@ public class ShopItemSpawner : Assign
         string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
         SeedManager.Instance.UseSubSeed(costName);
         itemcost = Random.Range(170, 230);
+        if (trading == true) { itemcost = 3; }
 
         // 1) Pick rarity pool
         pool = uncommonItems;
@@ -297,6 +303,7 @@ public class ShopItemSpawner : Assign
         string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
         SeedManager.Instance.UseSubSeed(costName);
         itemcost = Random.Range(70, 130);
+        if (trading == true) { itemcost = 2; }
 
         // 1) Pick rarity pool
         pool = commonItems;

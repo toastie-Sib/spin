@@ -58,7 +58,32 @@ public class ItemChoose : Assign
                 }
             } else //Trade cards
             {
-
+                GameObject iP = GameObject.Find("InventoryPanel");
+                iP.transform.SetParent(GameObject.Find("Set Position").transform, false);
+                if(cost == 3)
+                {
+                    iP.GetComponent<ShopTradeItems>().filterRarity = "Common";
+                    iP.GetComponent<ShopTradeItems>().selectionLimit = 3;
+                    iP.GetComponent<ShopTradeItems>().RefreshDisplay();
+                    iP.GetComponent<ShopTradeItems>().itemString = itemString;
+                    itemString = "";
+                }
+                if (cost == 5)
+                {
+                    iP.GetComponent<ShopTradeItems>().filterRarity = "Uncommon";
+                    iP.GetComponent<ShopTradeItems>().selectionLimit = 5;
+                    iP.GetComponent<ShopTradeItems>().RefreshDisplay();
+                    iP.GetComponent<ShopTradeItems>().itemString = itemString;
+                    itemString = "";
+                }
+                if (cost == 2)
+                {
+                    iP.GetComponent<ShopTradeItems>().filterRarity = "Rare";
+                    iP.GetComponent<ShopTradeItems>().selectionLimit = 1;
+                    iP.GetComponent<ShopTradeItems>().RefreshDisplay();
+                    iP.GetComponent<ShopTradeItems>().itemString = itemString;
+                    itemString = "";
+                }
             }
             
         }

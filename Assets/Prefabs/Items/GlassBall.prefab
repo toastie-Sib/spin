@@ -384,6 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   es: {fileID: 0}
   blockedFighters: []
+  rarity: 3
 --- !u!1 &8705406917843614879
 GameObject:
   m_ObjectHideFlags: 0

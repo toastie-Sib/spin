@@ -386,6 +386,7 @@ MonoBehaviour:
   es: {fileID: 0}
   blockedFighters:
   - Unarmed
+  rarity: 3
 --- !u!1 &5543377923288679777
 GameObject:
   m_ObjectHideFlags: 0

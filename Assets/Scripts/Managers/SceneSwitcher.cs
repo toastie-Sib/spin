@@ -131,8 +131,7 @@ public class SceneSwitcher : MonoBehaviour
     }
 
     // Item manager scripts
-    // Add an item (increase count if already collected)
-    public void AddItem(string itemID)
+    public void AddItem(string itemID)// Add an item (increase count if already collected)
     {
         if (itemID == "GlassBall") //Items
         {
@@ -156,8 +155,17 @@ public class SceneSwitcher : MonoBehaviour
         Debug.Log($"Collected {itemID}. Total: {collectedItems[itemID]}");
     }
 
-    // Get the number of copies the player has of an item
-    public int GetItemCount(string itemID)
+    public void RemoveItem(string itemName, int amount) // Remove Item from Cards Collected
+    {
+        if (collectedItems.ContainsKey(itemName))
+        {
+            collectedItems[itemName] -= amount;
+            if (collectedItems[itemName] <= 0)
+                collectedItems.Remove(itemName);
+        }
+    }
+
+    public int GetItemCount(string itemID)// Get the number of copies the player has of an item
     {
         if (collectedItems.ContainsKey(itemID))
         {
@@ -166,8 +174,7 @@ public class SceneSwitcher : MonoBehaviour
         return 0;
     }
 
-    // Check if player has at least one copy of an item
-    public bool HasItem(string itemID)
+    public bool HasItem(string itemID)// Check if player has at least one copy of an item
     {
         return GetItemCount(itemID) > 0;
     }
@@ -175,6 +182,25 @@ public class SceneSwitcher : MonoBehaviour
     public Dictionary<string, int> GetItemsList()
     {
         return collectedItems;
+    }
+
+    private Dictionary<string, string> itemRarities = new Dictionary<string, string>()
+    {
+    { "BloodoftheArcher", "Uncommon" },
+    { "BloodoftheBandit", "Common" },
+    { "BloodoftheKnight", "Common" },
+    { "BloodoftheSoldier", "Common" },
+    { "Food", "Common" },
+    { "RaiseTheRoof", "Common" },
+    { "Training", "Common" },
+    { "TriTippedDagger", "Common" },
+    { "GlassBall", "Rare" },
+    { "GatitoBlade", "Rare" }
+    };
+
+    public string GetItemRarity(string itemName)
+    {
+        return itemRarities.ContainsKey(itemName) ? itemRarities[itemName] : "Common";
     }
 
     public void SetCurrentNode(string id)

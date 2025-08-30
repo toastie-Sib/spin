@@ -312,6 +312,7 @@ MonoBehaviour:
   - Bow
   - Staff
   - Unarmed
+  rarity: 1
 --- !u!1 &6523228038530437865
 GameObject:
   m_ObjectHideFlags: 0
