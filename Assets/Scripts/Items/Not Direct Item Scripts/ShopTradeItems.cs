@@ -28,7 +28,10 @@ public class ShopTradeItems : MonoBehaviour
     {
         // Clear old entries
         foreach (Transform child in contentTopParent)
-            Destroy(child.gameObject);
+        {
+            if (child.name != "BottomContent")
+                Destroy(child.gameObject);
+        }
 
         foreach (Transform child in contentBottomParent)
             Destroy(child.gameObject);
