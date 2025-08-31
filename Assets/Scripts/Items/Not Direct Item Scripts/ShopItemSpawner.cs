@@ -20,6 +20,7 @@ public class ShopItemSpawner : Assign
     private static HashSet<string> chosenNamesThisRound = new HashSet<string>();
     private static string lastRoundKey = null; // e.g., node ID or scene key
     private GameObject[] pool;
+    private GameObject cost;
 
     // Start is called before the first frame update
     public override void Start()
@@ -82,15 +83,15 @@ public class ShopItemSpawner : Assign
         }
 
         // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
-        //if (validItems.Count == 0)
-        //{
-        //    foreach (var item in pool)
-        //    {
-        //        var bans = item.GetComponent<ItemBans>();
-        //        if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
-        //            validItems.Add(item);
-        //    }
-        //}
+        if (validItems.Count == 0)
+        {
+            foreach (var item in pool)
+            {
+                var bans = item.GetComponent<ItemBans>();
+                if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+                    validItems.Add(item);
+            }
+        }
 
         if (validItems.Count == 0)
         {
@@ -108,9 +109,10 @@ public class ShopItemSpawner : Assign
 
         if (costPrefab != null)
         {
-            GameObject cost = Instantiate(costPrefab, transform);
+            cost = Instantiate(costPrefab, transform);
             cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
+            cost.transform.SetParent(GameObject.Find("Set Position").transform, true);
         }
 
         // 6) Spawn the UI card
@@ -153,6 +155,10 @@ public class ShopItemSpawner : Assign
         itemChoose.storedCard = storedItemPrefab;
         itemChoose.trading = trading;
         itemChoose.cost = itemcost;
+        if (costPrefab != null)
+        {
+            itemChoose.costObject = cost;
+        }
     }
 
     private void FallbackRareRandomizeItem()
@@ -185,15 +191,15 @@ public class ShopItemSpawner : Assign
         }
 
         // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
-        //if (validItems.Count == 0)
-        //{
-        //    foreach (var item in pool)
-        //    {
-        //        var bans = item.GetComponent<ItemBans>();
-        //        if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
-        //            validItems.Add(item);
-        //    }
-        //}
+        if (validItems.Count == 0)
+        {
+            foreach (var item in pool)
+            {
+                var bans = item.GetComponent<ItemBans>();
+                if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+                    validItems.Add(item);
+            }
+        }
 
         if (validItems.Count == 0)
         {
@@ -209,7 +215,7 @@ public class ShopItemSpawner : Assign
 
         if (costPrefab != null)
         {
-            GameObject cost = Instantiate(costPrefab, transform);
+            cost = Instantiate(costPrefab, transform);
             cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
         }
@@ -261,15 +267,15 @@ public class ShopItemSpawner : Assign
         }
 
         // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
-        //if (validItems.Count == 0)
-        //{
-        //    foreach (var item in pool)
-        //    {
-        //        var bans = item.GetComponent<ItemBans>();
-        //        if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
-        //            validItems.Add(item);
-        //    }
-        //}
+        if (validItems.Count == 0)
+        {
+            foreach (var item in pool)
+            {
+                var bans = item.GetComponent<ItemBans>();
+                if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+                    validItems.Add(item);
+            }
+        }
 
         if (validItems.Count == 0)
         {
@@ -285,7 +291,7 @@ public class ShopItemSpawner : Assign
 
         if (costPrefab != null)
         {
-            GameObject cost = Instantiate(costPrefab, transform);
+            cost = Instantiate(costPrefab, transform);
             cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
         }
@@ -360,7 +366,7 @@ public class ShopItemSpawner : Assign
 
         if (costPrefab != null)
         {
-            GameObject cost = Instantiate(costPrefab, transform);
+            cost = Instantiate(costPrefab, transform);
             cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
         }

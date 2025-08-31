@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: ItemPick
+  sceneName: ArenaSmall
   connectedNodes: []
   isUnlocked: 0
   nodeID: 03
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: ArenaSmall
+  sceneName: Campfire
   connectedNodes:
   - {fileID: 677122238}
   isUnlocked: 0
@@ -2077,7 +2077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f88444a94b49d4cb65a0fa9970c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: Shop
   connectedNodes:
   - {fileID: 677122238}
   isUnlocked: 0

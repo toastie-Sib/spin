@@ -10,6 +10,7 @@ public class ItemChoose : Assign
     [HideInInspector] public GameObject storedCard;
     [HideInInspector] public int cost;
     [HideInInspector] public bool trading = false;
+    [HideInInspector] public GameObject costObject;
     private Button button;
 
 
@@ -26,7 +27,7 @@ public class ItemChoose : Assign
 
     public void AssignName()
     {
-        if (buying == false)
+        if (buying == false) //Item Pick from winning Match
         {
             if (itemString == "")
             {
@@ -41,7 +42,7 @@ public class ItemChoose : Assign
             }
         } else
         {
-            if (itemString == "") return;
+            if (itemString == "") return; // Item Shop
             if (trading == false)
             {
                 if (SceneSwitcher.Instance.playerMoney >= cost)
@@ -49,6 +50,7 @@ public class ItemChoose : Assign
                     es.AddItem(itemString);
                     SceneSwitcher.Instance.playerMoney -= cost;
                     itemString = "";
+                    Destroy(costObject);
                     Destroy(storedCard);
                 }
                 else

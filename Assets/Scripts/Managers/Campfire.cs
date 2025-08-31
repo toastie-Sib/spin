@@ -15,6 +15,7 @@ public class Campfire : MonoBehaviour
     public bool upgradeDmg = false;
     public bool goBackToChapter = false;
     public bool moveUI = false;
+    public bool moveUIBack = false;
 
     void Awake()
     {
@@ -54,9 +55,13 @@ public class Campfire : MonoBehaviour
         } else if (goBackToChapter == true)
         {
             SceneSwitcher.Instance.LoadSpecificScene("Chapter0");
-        } else if (moveUI == true)
+        } if (moveUI == true)
         {
             GameObject nM = GameObject.Find("No Money");
+            nM.transform.SetParent(GameObject.Find("No Item").transform, false);
+        } if (moveUIBack == true)
+        {
+            GameObject nM = GameObject.Find("GoAwayHolder");
             nM.transform.SetParent(GameObject.Find("No Item").transform, false);
         }
     }
