@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class ShopTradeItems : MonoBehaviour
 {
     public GameObject itemDisplayPrefab; // assign in inspector
-    public Transform contentParent;      // assign ScrollView Content
+    public Transform contentTopParent;      // assign ScrollView Content
+    public Transform contentBottomParent;
     [HideInInspector] public int selectionLimit = 3;       // max allowed selection
     [HideInInspector] public string filterRarity = "Common"; // which rarity to show
     [HideInInspector] public string itemString;
@@ -26,13 +27,18 @@ public class ShopTradeItems : MonoBehaviour
     public void RefreshDisplay()
     {
         // Clear old entries
-        foreach (Transform child in contentParent)
+        foreach (Transform child in contentTopParent)
+            Destroy(child.gameObject);
+
+        foreach (Transform child in contentBottomParent)
             Destroy(child.gameObject);
 
         selectedButtons.Clear();
 
         // Get all items
         Dictionary<string, int> items = sceneSwitcher.GetItemsList();
+
+        int globalIndex = 0;
 
         foreach (var kvp in items)
         {
@@ -46,25 +52,27 @@ public class ShopTradeItems : MonoBehaviour
             // Spawn one entry per copy
             for (int i = 0; i < quantity; i++)
             {
-                GameObject newEntry = Instantiate(itemDisplayPrefab, contentParent);
+                // decide which row based on global index
+                Transform parent = (globalIndex % 2 == 0) ? contentTopParent : contentBottomParent;
 
-                // Assign UI values
+                GameObject newEntry = Instantiate(itemDisplayPrefab, parent);
+
+                // Assign UI
                 TextMeshProUGUI[] texts = newEntry.GetComponentsInChildren<TextMeshProUGUI>();
                 Image icon = newEntry.GetComponentInChildren<Image>();
 
                 texts[0].text = itemName;
-                texts[1].text = ""; // no stack number
 
                 Sprite loadedSprite = Resources.Load<Sprite>("Sprites/Items/" + itemName);
                 if (loadedSprite != null)
                     icon.sprite = loadedSprite;
 
-                // Reset background color
                 newEntry.GetComponent<Image>().color = Color.white;
 
-                // Add toggle functionality
                 Button btn = newEntry.GetComponent<Button>();
                 btn.onClick.AddListener(() => OnItemClicked(newEntry, itemName));
+
+                globalIndex++; // <--- increment across all items
             }
         }
     }
@@ -90,7 +98,7 @@ public class ShopTradeItems : MonoBehaviour
 
         // Otherwise select it
         selectedButtons.Add(buttonObj);
-        bg.color = Color.yellow; // highlight
+        bg.color = Color.cyan; // highlight
     }
 
     public void ConfirmTrade()

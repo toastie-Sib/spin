@@ -61,7 +61,7 @@ public class ShopItemSpawner : Assign
             string costSeedName = "Item System Cost";
             string costName = costSeedName.Replace("System", SceneSwitcher.Instance.currentNodeID + num);
             SeedManager.Instance.UseSubSeed(costName);
-            int itemcost = Random.Range(270, 330);
+            itemcost = Random.Range(270, 330);
             if (trading == true) { itemcost = 5; }
         }
 
@@ -218,6 +218,7 @@ public class ShopItemSpawner : Assign
             cost = Instantiate(costPrefab, transform);
             cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
+            cost.transform.SetParent(GameObject.Find("Set Position").transform, true);
         }
         
 
@@ -294,6 +295,7 @@ public class ShopItemSpawner : Assign
             cost = Instantiate(costPrefab, transform);
             cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
+            cost.transform.SetParent(GameObject.Find("Set Position").transform, true);
         }
 
         // 6) Spawn the UI card
@@ -369,6 +371,7 @@ public class ShopItemSpawner : Assign
             cost = Instantiate(costPrefab, transform);
             cost.GetComponent<Text>().text = "$" + itemcost.ToString();
             cost.transform.SetParent(costPlacement, false);
+            cost.transform.SetParent(GameObject.Find("Set Position").transform, true);
         }
 
         // 6) Spawn the UI card
