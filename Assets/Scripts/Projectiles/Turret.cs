@@ -71,7 +71,7 @@ public class Turret : Bow
         {
             arrow.shooter = owner;
             arrow.side = side;
-
+            arrow.damage += bonusDamage;
 
             //item Blood of the Knight
             if (owner.GetComponentInChildren<BloodoftheKnight>() != null)

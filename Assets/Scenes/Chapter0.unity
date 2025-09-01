@@ -983,7 +983,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 0
+  startingNode: 1
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &803803644
 GameObject:
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   - {fileID: 677122238}
   isUnlocked: 0
   nodeID: 02b
-  startingNode: 1
+  startingNode: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &1630278241
 GameObject:

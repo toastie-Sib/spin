@@ -25,7 +25,7 @@ public class Unarmed : Fighter
         {
 
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity += wallBoost;
+            rb.velocity += wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -37,7 +37,7 @@ public class Unarmed : Fighter
         {
 
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity -= wallBoost;
+            rb.velocity -= wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -49,7 +49,7 @@ public class Unarmed : Fighter
         {
 
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity += wallBoost;
+            rb.velocity += wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -69,7 +69,7 @@ public class Unarmed : Fighter
                 }
             }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity -= wallBoost;
+            rb.velocity -= wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -98,8 +98,7 @@ public class Unarmed : Fighter
                 }
             }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity -= wallBoost;
-            //rb.velocity -= rb.velocity * 2;
+            rb.velocity -= wallBoost * (1+(SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
         }
 
         
@@ -107,7 +106,7 @@ public class Unarmed : Fighter
 
     public void Damage(Fighter otherFighter)
     {
-        otherFighter.HitDetect(Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))));
+        otherFighter.HitDetect(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5)))));
         AttackAnimation();
         otherFighter.HurtAnimation();
     }

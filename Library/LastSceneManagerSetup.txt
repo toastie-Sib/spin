@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Campfire.unity
+- path: Assets/Scenes/Chapter0.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

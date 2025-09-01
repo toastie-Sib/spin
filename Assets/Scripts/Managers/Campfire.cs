@@ -9,7 +9,6 @@ public class Campfire : MonoBehaviour
     public List<Campfire> upgradePage;
     [HideInInspector] public Button button;
     public bool restoreHP = false;
-    public bool upgradeStats = false;
     public bool upgradeHP = false;
     public bool upgradeAtkSpd = false;
     public bool upgradeDmg = false;
@@ -34,9 +33,6 @@ public class Campfire : MonoBehaviour
             }
             SceneSwitcher.Instance.playerCurrentHP = SceneSwitcher.Instance.playerMaxHP;
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
-        } else if (upgradeStats == true)
-        {
-
         } else if (upgradeHP == true)
         {
             foreach (var item in upgradePage)
@@ -49,11 +45,26 @@ public class Campfire : MonoBehaviour
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } else if (upgradeAtkSpd == true)
         {
-
+            foreach (var item in upgradePage)
+            {
+                item.button.interactable = false;
+            }
+            
+            SceneSwitcher.Instance.playerBonusAtkSpd += (1);
+            SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } else if (upgradeDmg == true)
         {
+            foreach (var item in upgradePage)
+            {
+                item.button.interactable = false;
+            }
 
-        } else if (goBackToChapter == true)
+            SceneSwitcher.Instance.playerBonusDamage += (1);
+            SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
+        } 
+        
+        
+        else if (goBackToChapter == true)
         {
             SceneSwitcher.Instance.LoadSpecificScene("Chapter0");
         } if (moveUI == true)

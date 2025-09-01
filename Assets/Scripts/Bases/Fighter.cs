@@ -40,7 +40,7 @@ public class Fighter : MonoBehaviour
     public float hp = 100;
     [HideInInspector] public float maxHp = 100;
     public float spinMult = 100f;
-    //public float damage = 1.0f;
+    public float bonusDamage = 0.0f;
     //Nudge shit
     [HideInInspector] public float velocityThreshold = 1f;
     [HideInInspector] public float nudgeForce = 3f;
@@ -53,6 +53,8 @@ public class Fighter : MonoBehaviour
         {
             maxHp = SceneSwitcher.Instance.playerMaxHP;
             hp = SceneSwitcher.Instance.playerCurrentHP;
+            bonusDamage = SceneSwitcher.Instance.playerBonusDamage;
+            IncreaseBaseAtkSpeed();
         }
 
         rb = GetComponent<Rigidbody>();
@@ -94,6 +96,15 @@ public class Fighter : MonoBehaviour
             GameObject pA = GameObject.Find("EnemyAnim");
             AssignAnimation aA = pA.GetComponent<AssignAnimation>();
             animationRef = aA.stashedAnimation;
+        }
+    }
+
+    public virtual void IncreaseBaseAtkSpeed()
+    {
+        
+        for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+        {
+            spinMult += (spinMult * 0.5f);
         }
     }
 

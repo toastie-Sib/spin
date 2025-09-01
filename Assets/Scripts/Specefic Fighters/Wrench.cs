@@ -29,6 +29,15 @@ public class Wrench : Weapon
             Fighter myFighter = GetComponentInParent<Fighter>();
             cannon.owner = myFighter;
             cannon.side = side;
+            cannon.bonusDamage = myFighter.bonusDamage;
+            if (side == true)
+            {
+                for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+                {
+                    cannon.spinMult += (cannon.spinMult * 0.25f);
+                    cannon.refreshInterval *= 0.90f;
+                }
+            }
         }
 
         // Ignore collision between bow and projectile   Code: Bower SHOULD THIS BE HERE????

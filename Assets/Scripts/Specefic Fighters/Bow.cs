@@ -39,6 +39,17 @@ public class Bow : Fighter //Inherit Fighter
         }
     }
 
+    public override void IncreaseBaseAtkSpeed()
+    {
+
+        for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+        {
+            spinMult += (spinMult * 0.25f);
+            refreshInterval *= 0.90f;
+        }
+
+    }
+
     // Update is called once per frame
     public override void Update() //Make sure to update with Fighter
     {
@@ -73,6 +84,7 @@ public class Bow : Fighter //Inherit Fighter
         {
             arrow.shooter = this;
             arrow.side = isPlayer;
+            arrow.damage += bonusDamage;
         }
 
         //Item Blood of the Knight

@@ -21,6 +21,8 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public string currentNodeID; //Where on Map
     public float playerMaxHP;
     public float playerCurrentHP;
+    public float playerBonusDamage = 0;
+    public float playerBonusAtkSpd = 0;
     public float playerMoney = 100;
 
 

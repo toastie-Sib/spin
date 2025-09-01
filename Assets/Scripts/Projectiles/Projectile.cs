@@ -121,7 +121,7 @@ public class Projectile : MonoBehaviour
                 {
                     for (int i = 0; i < shooter.GetComponentInChildren<BloodoftheBandit>().stacks; i++)
                     {
-                        if (shooter.GetComponent<Bow>().refreshInterval > 0.1f) { shooter.GetComponent<Bow>().refreshInterval -= 0.1f; }
+                        if (shooter.GetComponent<Bow>().refreshInterval > 0.5f) { shooter.GetComponent<Bow>().refreshInterval *= 0.99f; }
                     }
                     
                 }

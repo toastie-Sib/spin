@@ -270,6 +270,7 @@ MonoBehaviour:
   hp: 100
   maxHp: 100
   spinMult: 200
+  bonusDamage: 0
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3

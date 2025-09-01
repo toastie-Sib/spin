@@ -23,7 +23,14 @@ public class Weapon : MonoBehaviour
         if (myFighter.isPlayer == true)
         {
             ItemCheck();
+
+            if (doNotHurt == false)
+            {
+                damage += myFighter.bonusDamage;
+
+            }
         }
+
     }
 
     public virtual void OnTriggerEnter(Collider other)
