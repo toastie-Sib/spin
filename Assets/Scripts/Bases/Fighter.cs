@@ -14,7 +14,7 @@ public class Fighter : MonoBehaviour
     [HideInInspector] public float invincibleUntil = 0f;
     [HideInInspector] public int direction = 1;
     [HideInInspector] public bool freezeFrame = false;
-    [HideInInspector] public Launcher hpUI;
+    [HideInInspector] public Launcher UI;
     [HideInInspector] private Vector3 storedVelocity;
     [HideInInspector] private Vector3 storedAngularVelocity;
     [HideInInspector] private int storedDirection;
@@ -61,7 +61,7 @@ public class Fighter : MonoBehaviour
         objectRenderer = GetComponent<Renderer>();
         originalColor = objectRenderer.material.color;
 
-        if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
+        UpdateUI();
 
         float myXValue = transform.position.x;
         if (myXValue < 0)
@@ -114,14 +114,14 @@ public class Fighter : MonoBehaviour
         if (hp > maxHp)
         {
             hp = maxHp;
-            hpUI.hpText.text = (hp).ToString();
+            UpdateUI();
         }
 
         if (isActive == false) return;
 
         if (hp <= 0)
         {
-            hpUI.hpText.text = (" ").ToString();
+            if (UI != null) { UI.hpText.text = (" ").ToString(); }
             OnFighterDied?.Invoke(this);
             
             Destroy(gameObject);
@@ -189,14 +189,14 @@ public class Fighter : MonoBehaviour
         //Take Damage to HP
         hp -= amount;
         hp = Mathf.Max(hp, 0);
-        if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
+        UpdateUI();
 
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
         // Trigger impact frames
         GetComponentInChildren<Renderer>().material.color = Color.white;
         //StartCoroutine(ImpactFrames(0.2f));
 
-        if (hpUI != null) { GameSpeedManager.Instance.PauseForImpact(0.2f); }
+        if (UI != null) { GameSpeedManager.Instance.PauseForImpact(0.2f); }
         
         yield return new WaitForSeconds(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
@@ -262,7 +262,7 @@ public class Fighter : MonoBehaviour
                 for (int i = 0; i < raiseTheRoof.stacks; i++)
                 {
                     hp += 2;
-                    if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
+                    UpdateUI();
                 }
             }
 
@@ -301,6 +301,29 @@ public class Fighter : MonoBehaviour
     //    freezeFrame = false;
     //}
 
+    public void UpdateUI()
+    {
+        if (UI != null) { 
+            UI.hpText.text = Mathf.Round(hp).ToString();
+            UI.hpUIText.text = ("HP " + (Mathf.Round(hp))).ToString();
+            UI.spinText.text = ("Spin " + (Mathf.Round(spinMult))).ToString();
+        }
+    }
+
+    public void UpdateDynamicUI(string str, float num, int text)
+    {
+        if (UI != null)
+        {
+            if (text == 1) {
+                UI.stacksText.text = (str + (Mathf.Round(num))).ToString();
+            } else if (text == 1) {
+                UI.damageText.text = (str + (Mathf.Round(num))).ToString();
+            } else if (text == 1) {
+                UI.extraText.text = (str + (Mathf.Round(num))).ToString();
+            }
+        }
+    }
+
     public void ParryAnimation()
     {
         if (canPlayAnimation == false) return;
@@ -321,6 +344,7 @@ public class Fighter : MonoBehaviour
 
     public virtual void AttackAnimation()
     {
+        UpdateUI();
         if (canPlayAnimation == false) return;
         canPlayAnimation = false;
         animationRef.GetComponent<AnimationMovement>().AttackPoint();
@@ -383,7 +407,7 @@ public class Fighter : MonoBehaviour
         
         //Take Damage to HP
         hp -= 1;
-        hpUI.hpText.text = Mathf.Round(hp).ToString();
+        UpdateUI();
 
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
 
@@ -402,7 +426,7 @@ public class Fighter : MonoBehaviour
 
         //Take Damage to HP
         hp -= amount;
-        hpUI.hpText.text = Mathf.Round(hp).ToString();
+        UpdateUI();
 
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
     }

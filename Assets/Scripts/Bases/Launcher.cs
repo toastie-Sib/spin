@@ -16,10 +16,16 @@ public class Launcher : MonoBehaviour
     private SceneSwitcher es;
     public GameObject[] enemyPrefabs;
 
-    [Header("HP Tracking")]
+    [Header("UI Tracking")]
     public Vector3 offset;
     public Text hpText;
     private Transform target;       // The GameObject the HP follows
+    public Text nameUIText;
+    public Text hpUIText;
+    public Text stacksText;
+    public Text damageText;
+    public Text spinText;
+    public Text extraText;
 
     [Header("Trajectory Settings")]
     public LayerMask collisionMask;         // Layers to detect
@@ -86,10 +92,24 @@ public class Launcher : MonoBehaviour
         {
             // Assign HP UI
             target = fighter.transform; // This is still for your own UI movement
-            fighter.hpUI = this;        // Let the fighter know which Launcher controls its HP UI
+            fighter.UI = this;        // Let the fighter know which Launcher controls its HP UI
         }
 
         transform.position += new Vector3(0, 0, 0.5f);
+
+        if (nameUIText != null)
+        {
+            if (isPlayer == true)
+            {
+                string objectName = stashedProjectile.name.Replace("(Clone)", "");
+                nameUIText.text = ("Player " + objectName).ToString();
+            }
+            else
+            {
+                string objectName = stashedProjectile.name.Replace("(Clone)", "");
+                nameUIText.text = ("Enemy " + objectName).ToString();
+            }
+        }
     }
 
     void Update()

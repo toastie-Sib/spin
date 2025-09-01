@@ -209,8 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0ea81d6e978f84fbb8f04a9d547e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationRef: {fileID: 0}
-  damage: 1
+  damage: 2
   doNotHurt: 0
   shield: 0
   axe: 1
@@ -353,10 +352,13 @@ MonoBehaviour:
   invincibleUntil: 0
   direction: 1
   freezeFrame: 0
-  hpUI: {fileID: 0}
+  UI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
   isPlayer: 0
+  animationRef: {fileID: 0}
+  canPlayAnimation: 1
+  bleedStacks: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
@@ -366,6 +368,7 @@ MonoBehaviour:
   hp: 100
   maxHp: 100
   spinMult: 0
+  bonusDamage: 0
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3

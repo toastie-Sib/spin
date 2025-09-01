@@ -65,7 +65,7 @@ public class Unarmed : Fighter
                 for (int i = 0; i < raiseTheRoof.stacks; i++)
                 {
                     hp += 2;
-                    if (hpUI != null) { hpUI.hpText.text = Mathf.Round(hp).ToString(); }
+                    UpdateUI();
                 }
             }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);

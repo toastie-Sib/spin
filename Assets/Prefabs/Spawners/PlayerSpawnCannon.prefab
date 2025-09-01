@@ -181,9 +181,16 @@ MonoBehaviour:
   cam: {fileID: 0}
   launchSpeed: 8
   isPlayer: 1
+  fighter: {fileID: 0}
   enemyPrefabs: []
   offset: {x: 0, y: -0.175, z: 0}
   hpText: {fileID: 0}
+  nameUIText: {fileID: 0}
+  hpUIText: {fileID: 0}
+  stacksText: {fileID: 0}
+  damageText: {fileID: 0}
+  spinText: {fileID: 0}
+  extraText: {fileID: 0}
   collisionMask:
     serializedVersion: 2
     m_Bits: 3648
