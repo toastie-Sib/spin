@@ -305,8 +305,8 @@ public class Fighter : MonoBehaviour
     {
         if (UI != null) { 
             UI.hpText.text = Mathf.Round(hp).ToString();
-            UI.hpUIText.text = ("HP " + (Mathf.Round(hp))).ToString();
-            UI.spinText.text = ("Spin " + (Mathf.Round(spinMult))).ToString();
+            UI.hpUIText.text = ("HP: " + (Mathf.Round(hp))).ToString();
+            UI.spinText.text = ("Spin: " + (Mathf.Round(spinMult))).ToString();
         }
     }
 
@@ -316,9 +316,9 @@ public class Fighter : MonoBehaviour
         {
             if (text == 1) {
                 UI.stacksText.text = (str + (Mathf.Round(num))).ToString();
-            } else if (text == 1) {
+            } else if (text == 2) {
                 UI.damageText.text = (str + (Mathf.Round(num))).ToString();
-            } else if (text == 1) {
+            } else if (text == 3) {
                 UI.extraText.text = (str + (Mathf.Round(num))).ToString();
             }
         }

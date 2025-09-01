@@ -13,6 +13,16 @@ public class Unarmed : Fighter
         {
             ItemCheck();
         }
+
+        UpdateDynamicUI("Speed: ", 0, 1);
+        UpdateDynamicUI("Damage: ", 0, 2);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        UpdateDynamicUI("Speed: ", Mathf.Abs((rb.velocity.magnitude / 5)), 1);
+        UpdateDynamicUI("Damage: ", (bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))))), 2); // Doesn't account Items (GB BotK)
     }
 
     private void OnCollisionEnter(Collision collision)

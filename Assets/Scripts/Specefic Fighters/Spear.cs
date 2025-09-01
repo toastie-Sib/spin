@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Spear : Weapon
 {
-
+    private int stacks = 0;
     public override void Start()
     {
         base.Start();
         Collider collider = GetComponent<Collider>();
+
+        myFighter.UpdateDynamicUI("Length: ", 1, 1);
+        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
     }
 
     public override void IncreaseScaling()
@@ -25,5 +28,9 @@ public class Spear : Weapon
         transform.localPosition = position;
 
         damage += 0.5f;
+
+        stacks += 1;
+        myFighter.UpdateDynamicUI("Length: ", stacks, 1);
+        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
     }
 }

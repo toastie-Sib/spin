@@ -5,19 +5,20 @@ using UnityEngine;
 public class Scythe : Weapon
 {
     private int startingDirection;
-    private Fighter myFighter;
     private Coroutine parryRoutine;
     [HideInInspector] public Scythe GBScythe;
+
     public override void Start()
     {
         base.Start();
-        myFighter = GetComponentInParent<Fighter>();
         startingDirection = myFighter.direction;
         if (startingDirection == 1)
         {
             transform.Rotate(0, 180f, 0);
         }
 
+        myFighter.UpdateDynamicUI("Poison: ", 0, 1);
+        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
     }
 
     public override void TriggerParryImpactFrames()

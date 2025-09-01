@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Shield : Weapon
 {
+    private int stacks = 0;
+
+    public override void Start()
+    {
+        base.Start();
+
+        myFighter.UpdateDynamicUI("Width: ", stacks, 1);
+        myFighter.UpdateDynamicUI("Damage: ", 0, 2);
+    }
+
     public override void OnTriggerEnter(Collider other)
     {
         Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
@@ -25,8 +35,10 @@ public class Shield : Weapon
                     totalDamage += BotK.damage;
                     BotK.IncreaseScaling();
                 }
-
+                totalDamage += myFighter.bonusDamage;
                 otherFighter.DelayedHurtAnimation(0.5f);
+
+                myFighter.UpdateDynamicUI("Damage: ", totalDamage, 2);
                 otherFighter.HitDetect(totalDamage); //Damage Fighter and Grow Shield
                 ShieldGrow(otherWeapon.damage);
                 if (otherWeapon is Wrench) { Wrench wrench = other.gameObject.GetComponentInParent<Wrench>();    wrench.ShieldTurret(myFighter); } // Wrench
@@ -64,7 +76,15 @@ public class Shield : Weapon
                 float damage = Mathf.RoundToInt(Mathf.Abs((otherFighter.rb.velocity.magnitude / 5))); // Same formula as Unarmed
 
                 otherFighter.DelayedHurtAnimation(0.5f);
+                if (GetComponent<BloodoftheKnight>() != null)
+                {
+                    BloodoftheKnight BotK = GetComponent<BloodoftheKnight>();
+                    damage += BotK.damage;
+                    BotK.IncreaseScaling();
+                }
+                damage += myFighter.bonusDamage;
                 otherFighter.HitDetect(damage);
+                myFighter.UpdateDynamicUI("Damage: ", damage, 2);
 
                 ShieldGrow(damage);
 
@@ -103,5 +123,8 @@ public class Shield : Weapon
     {
         base.IncreaseScaling();
         ShieldGrow(1);
+        stacks += 1;
+        myFighter.UpdateDynamicUI("Width: ", stacks, 1);
+        
     }
 }

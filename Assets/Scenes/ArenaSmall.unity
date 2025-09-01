@@ -2251,6 +2251,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 673375811}
     - target: {fileID: 7325518802902402497, guid: 5f5e6dac3ec6086419d233d1829095b8, type: 3}
+      propertyPath: extraText
+      value: 
+      objectReference: {fileID: 2065214896}
+    - target: {fileID: 7325518802902402497, guid: 5f5e6dac3ec6086419d233d1829095b8, type: 3}
       propertyPath: damageText
       value: 
       objectReference: {fileID: 997282963}

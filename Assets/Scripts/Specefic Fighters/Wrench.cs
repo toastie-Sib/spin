@@ -7,12 +7,14 @@ public class Wrench : Weapon
     public GameObject turretPrefab;
     public Transform spawnPoint;
     private bool hasSpawnedTurretThisSwing = false;
+    public int turrets = 0;
 
     public override void Start() //Make sure to update with Fighter
     {
         base.Start();
 
-        
+        myFighter.UpdateDynamicUI("Turrets: ", 0, 1);
+        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
     }
 
     public override void IncreaseScaling()
@@ -22,6 +24,10 @@ public class Wrench : Weapon
         hasSpawnedTurretThisSwing = true;
 
         GameObject turret = Instantiate(turretPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        turrets += 1;
+        myFighter.UpdateDynamicUI("Turrets: ", turrets, 1);
+        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
 
         Turret cannon = turret.GetComponent<Turret>();
         if (cannon != null)

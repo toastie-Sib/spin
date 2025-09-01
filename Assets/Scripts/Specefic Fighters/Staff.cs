@@ -8,6 +8,15 @@ public class Staff : Bow
     public float fireBoostStrength = 5f;
     public float explosionRadius = 1f;
     public float damageIncrease = 0f;
+    private int radiusUI = 0;
+
+    public override void Start()
+    {
+        base.Start();
+        UpdateDynamicUI("Radius: ", radiusUI, 1);
+        UpdateDynamicUI("Damage: ", 1+damageIncrease+ bonusDamage, 2);
+        UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
+    }
 
     public override void FireProjectile(Transform firePoint)
     {
@@ -32,5 +41,10 @@ public class Staff : Bow
     {
         explosionRadius += 0.25f;
         damageIncrease += 1f;
+
+        radiusUI += 1;
+        UpdateDynamicUI("Radius: ", radiusUI, 1);
+        UpdateDynamicUI("Damage: ", 1 + damageIncrease + bonusDamage, 2);
+        UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 }

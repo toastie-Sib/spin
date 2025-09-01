@@ -14,9 +14,11 @@ public class Weapon : MonoBehaviour
     private bool firstHitDone = false;
     [HideInInspector] public bool side;
     [HideInInspector] public Transform firePoint;
+    [HideInInspector] public Fighter myFighter;
+    private int tracker = 0;
 
     public virtual void Start() {
-        Fighter myFighter = GetComponentInParent<Fighter>();
+        myFighter = GetComponentInParent<Fighter>();
         side = myFighter.isPlayer;
 
         //Item Check
@@ -96,21 +98,29 @@ public class Weapon : MonoBehaviour
                     for (int i = 0; i < training.stacks; i++)
                     {
                         otherFighter.ApplyPoison();
-                        otherFighter.ApplyPoison();
+                        tracker += 1;
+                        myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
+                        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
                     }
                     firstHitDone = true;
-                } else 
+                }
                 if (GetComponent<GlassBall>() != null)
                 {
                     GlassBall glassBall = GetComponent<GlassBall>();
                     for (int i = -1; i < glassBall.stacks; i++)
                     {
                         otherFighter.ApplyPoison(); // Call the actual scaling logic 'stacks' times
+                        tracker += 1;
+                        myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
+                        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
                     }
                 }
                 else
                 {
                     otherFighter.ApplyPoison(); // Regular Sytche apply Poison Scaling Alternative
+                    tracker += 1;
+                    myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
+                    myFighter.UpdateDynamicUI("Damage: ", damage, 2);
                 }
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {

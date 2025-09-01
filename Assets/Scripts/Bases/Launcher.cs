@@ -102,12 +102,12 @@ public class Launcher : MonoBehaviour
             if (isPlayer == true)
             {
                 string objectName = stashedProjectile.name.Replace("(Clone)", "");
-                nameUIText.text = ("Player " + objectName).ToString();
+                nameUIText.text = ("Player: " + objectName).ToString();
             }
             else
             {
                 string objectName = stashedProjectile.name.Replace("(Clone)", "");
-                nameUIText.text = ("Enemy " + objectName).ToString();
+                nameUIText.text = ("Enemy: " + objectName).ToString();
             }
         }
     }

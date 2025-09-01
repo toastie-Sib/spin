@@ -6,6 +6,14 @@ public class Sword : Weapon
 {
     [Header("Sword Weapon Type")]
     public float damageIncrease = 1;
+
+    public override void Start()
+    {
+        base.Start();
+
+        myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
+        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+    }
     
 
     public override void IncreaseScaling()
@@ -24,6 +32,9 @@ public class Sword : Weapon
                 
             }
         }
+
+        myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
+        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
     }
 
     public override void TriggerParryImpactFrames()

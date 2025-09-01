@@ -37,6 +37,10 @@ public class Bow : Fighter //Inherit Fighter
                 IncreaseProjectileScale();
             }
         }
+
+        UpdateDynamicUI("Arrows: ", arrowCount, 1);
+        UpdateDynamicUI("Damage: ", 1 + bonusDamage, 2);
+        UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 
     public override void IncreaseBaseAtkSpeed()
@@ -153,6 +157,9 @@ public class Bow : Fighter //Inherit Fighter
     public virtual void IncreaseProjectileScale()
     {
         maxArrowCount += 1;
+        UpdateDynamicUI("Arrows: ", arrowCount, 1);
+        UpdateDynamicUI("Damage: ", 1 + bonusDamage, 2);
+        UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 
     public void RegisterExtraFirepoint(Transform fp)

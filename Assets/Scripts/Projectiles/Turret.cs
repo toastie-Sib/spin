@@ -35,7 +35,7 @@ public class Turret : Bow
         if (owner.isActive == false) return;
         if (hp <= 0)
         {
-
+            owner.GetComponentInChildren<Wrench>().turrets -= 1;
             Destroy(gameObject);
         }
 
