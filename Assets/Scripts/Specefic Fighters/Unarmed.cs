@@ -21,7 +21,7 @@ public class Unarmed : Fighter
     public override void Update()
     {
         base.Update();
-        UpdateDynamicUI("Speed: ", Mathf.Abs((rb.velocity.magnitude / 5)), 1);
+        UpdateDynamicUI("Speed: ", Mathf.Abs((rb.velocity.magnitude)), 1);
         UpdateDynamicUI("Damage: ", (bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))))), 2); // Doesn't account Items (GB BotK)
     }
 

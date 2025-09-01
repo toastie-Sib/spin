@@ -2858,15 +2858,15 @@ PrefabInstance:
     - target: {fileID: 3667220229913123158, guid: e6a02cbc458a99b46b19843a61eacdfe, type: 3}
       propertyPath: spinText
       value: 
-      objectReference: {fileID: 997282963}
+      objectReference: {fileID: 744627730}
     - target: {fileID: 3667220229913123158, guid: e6a02cbc458a99b46b19843a61eacdfe, type: 3}
       propertyPath: extraText
       value: 
-      objectReference: {fileID: 2065214896}
+      objectReference: {fileID: 1525227969}
     - target: {fileID: 3667220229913123158, guid: e6a02cbc458a99b46b19843a61eacdfe, type: 3}
       propertyPath: damageText
       value: 
-      objectReference: {fileID: 997282963}
+      objectReference: {fileID: 877410715}
     - target: {fileID: 3667220229913123158, guid: e6a02cbc458a99b46b19843a61eacdfe, type: 3}
       propertyPath: nameUIText
       value: 
@@ -2874,6 +2874,6 @@ PrefabInstance:
     - target: {fileID: 3667220229913123158, guid: e6a02cbc458a99b46b19843a61eacdfe, type: 3}
       propertyPath: stacksText
       value: 
-      objectReference: {fileID: 90622335}
+      objectReference: {fileID: 1539329863}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a02cbc458a99b46b19843a61eacdfe, type: 3}

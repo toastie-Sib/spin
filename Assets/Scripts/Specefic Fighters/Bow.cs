@@ -38,7 +38,7 @@ public class Bow : Fighter //Inherit Fighter
             }
         }
 
-        UpdateDynamicUI("Arrows: ", arrowCount, 1);
+        UpdateDynamicUI("Arrows: ", maxArrowCount, 1);
         UpdateDynamicUI("Damage: ", 1 + bonusDamage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
@@ -157,7 +157,7 @@ public class Bow : Fighter //Inherit Fighter
     public virtual void IncreaseProjectileScale()
     {
         maxArrowCount += 1;
-        UpdateDynamicUI("Arrows: ", arrowCount, 1);
+        UpdateDynamicUI("Arrows: ", maxArrowCount, 1);
         UpdateDynamicUI("Damage: ", 1 + bonusDamage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
