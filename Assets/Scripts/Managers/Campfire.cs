@@ -16,6 +16,7 @@ public class Campfire : MonoBehaviour
     public bool goBackToChapter = false;
     public bool moveUI = false;
     public bool moveUIBack = false;
+    public bool moveUICamp = false;
 
     void Awake()
     {
@@ -59,10 +60,24 @@ public class Campfire : MonoBehaviour
         {
             GameObject nM = GameObject.Find("No Money");
             nM.transform.SetParent(GameObject.Find("No Item").transform, false);
+            if (moveUICamp == true)
+            {
+                foreach (var item in mainPage)
+                {
+                    item.transform.SetParent(GameObject.Find("GoAwayHolder").transform, false);
+                }
+            }
         } if (moveUIBack == true)
         {
-            GameObject nM = GameObject.Find("GoAwayHolder");
-            nM.transform.SetParent(GameObject.Find("No Item").transform, false);
+            GameObject nM = GameObject.Find("No Money");
+            nM.transform.SetParent(GameObject.Find("GoAwayHolder").transform, false);
+            if (moveUICamp == true)
+            {
+                foreach (var item in mainPage)
+                {
+                    item.transform.SetParent(GameObject.Find("No Item").transform, false);
+                }
+            }
         }
     }
 }
