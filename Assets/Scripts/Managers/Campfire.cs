@@ -19,6 +19,7 @@ public class Campfire : MonoBehaviour
     public bool moveUIBack = false;
     public bool moveUICamp = false;
     public bool UItextInit = false;
+    public bool MapUIInit = false;
     [Header("UI Tracking")]
     public Text hpMaxUIText;
     public Text hpCurrentText;
@@ -26,22 +27,24 @@ public class Campfire : MonoBehaviour
     public Text damageText;
     public Text extraText;
 
-    void Awake()
-    {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
-    }
-
     void Start()
     {
-        if (UItextInit == true)
-        {
-            hpMaxUIText.text = ("Max HP: " + (Mathf.Round(SceneSwitcher.Instance.playerMaxHP))).ToString();
-            hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
-            damageText.text = ("Damage: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
-            atkSpdText.text = ("Spin Speed: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusAtkSpd))).ToString();// Change to match player's Fighter
-            if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
-                extraText.text = ("Attack Rate: " + (1 + Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString(); //Change to match player's Fighter
+        if (UItextInit == true) {
+            if (MapUIInit == true) {
+                if(hpCurrentText != null)
+                { hpCurrentText.text = ("HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP)) + "/" + (Mathf.Round(SceneSwitcher.Instance.playerMaxHP))).ToString(); }
+                extraText.text = ("Currancy: $" + (SceneSwitcher.Instance.playerMoney)).ToString();
+            } else {
+                hpMaxUIText.text = ("Max HP: " + (Mathf.Round(SceneSwitcher.Instance.playerMaxHP))).ToString();
+                hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
+                damageText.text = ("Damage: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
+                atkSpdText.text = ("Spin Speed: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusAtkSpd))).ToString();// Change to match player's Fighter
+                if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
+                    extraText.text = ("Attack Rate: " + (1 + Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString(); //Change to match player's Fighter
+            }
+        } else {
+            button = GetComponent<Button>();
+            button.onClick.AddListener(OnClick);
         }
     }
 
