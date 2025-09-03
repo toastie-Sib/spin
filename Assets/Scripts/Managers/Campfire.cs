@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Campfire : MonoBehaviour
 {
+    [Header("Campfire")]
     public List<Campfire> mainPage;
     public List<Campfire> upgradePage;
     [HideInInspector] public Button button;
+    //Behold my collection of bools
     public bool restoreHP = false;
     public bool upgradeHP = false;
     public bool upgradeAtkSpd = false;
@@ -16,6 +18,13 @@ public class Campfire : MonoBehaviour
     public bool moveUI = false;
     public bool moveUIBack = false;
     public bool moveUICamp = false;
+    public bool UItextInit = false;
+    [Header("UI Tracking")]
+    public Text hpMaxUIText;
+    public Text hpCurrentText;
+    public Text atkSpdText;
+    public Text damageText;
+    public Text extraText;
 
     void Awake()
     {
@@ -23,8 +32,22 @@ public class Campfire : MonoBehaviour
         button.onClick.AddListener(OnClick);
     }
 
+    void Start()
+    {
+        if (UItextInit == true)
+        {
+            hpMaxUIText.text = ("Max HP: " + (Mathf.Round(SceneSwitcher.Instance.playerMaxHP))).ToString();
+            hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
+            damageText.text = ("Damage: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
+            atkSpdText.text = ("Spin Speed: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusAtkSpd))).ToString();// Change to match player's Fighter
+            if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
+                extraText.text = ("Attack Rate: " + (1 + Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString(); //Change to match player's Fighter
+        }
+    }
+
     void OnClick()
     {
+        //Campfire UI Navigation
         if (restoreHP == true)
         {
             foreach (var item in mainPage)
@@ -32,6 +55,7 @@ public class Campfire : MonoBehaviour
                 item.button.interactable = false;
             }
             SceneSwitcher.Instance.playerCurrentHP = SceneSwitcher.Instance.playerMaxHP;
+            hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } else if (upgradeHP == true)
         {
@@ -42,6 +66,8 @@ public class Campfire : MonoBehaviour
             float heldHP = SceneSwitcher.Instance.playerMaxHP;
             SceneSwitcher.Instance.playerMaxHP += (SceneSwitcher.Instance.playerMaxHP * 0.35f);
             SceneSwitcher.Instance.playerCurrentHP += (SceneSwitcher.Instance.playerMaxHP - heldHP);
+            hpMaxUIText.text = ("Max HP: " + (Mathf.Round(SceneSwitcher.Instance.playerMaxHP))).ToString();
+            hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } else if (upgradeAtkSpd == true)
         {
@@ -51,6 +77,9 @@ public class Campfire : MonoBehaviour
             }
             
             SceneSwitcher.Instance.playerBonusAtkSpd += (1);
+            atkSpdText.text = ("Spin Speed: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusAtkSpd))).ToString();// Change to match player's Fighter
+            if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
+                extraText.text = ("Attack Rate: " + (1 + Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString(); //Change to match player's Fighter
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } else if (upgradeDmg == true)
         {
@@ -60,10 +89,11 @@ public class Campfire : MonoBehaviour
             }
 
             SceneSwitcher.Instance.playerBonusDamage += (1);
+            damageText.text = ("Damage: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } 
         
-        
+        //Additional Campfire Utility Functions
         else if (goBackToChapter == true)
         {
             SceneSwitcher.Instance.LoadSpecificScene("Chapter0");
