@@ -558,6 +558,7 @@ MonoBehaviour:
   moveUIBack: 0
   moveUICamp: 0
   UItextInit: 0
+  MapUIInit: 0
   hpMaxUIText: {fileID: 1691553062}
   hpCurrentText: {fileID: 351048763}
   atkSpdText: {fileID: 1699194504}
@@ -810,7 +811,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Damage: '
+  m_Text: 'Damage Increase: '
 --- !u!222 &312110447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1787,6 +1788,7 @@ MonoBehaviour:
   moveUIBack: 0
   moveUICamp: 0
   UItextInit: 0
+  MapUIInit: 0
   hpMaxUIText: {fileID: 1691553062}
   hpCurrentText: {fileID: 351048763}
   atkSpdText: {fileID: 1699194504}
@@ -2666,6 +2668,7 @@ MonoBehaviour:
   moveUIBack: 0
   moveUICamp: 0
   UItextInit: 1
+  MapUIInit: 0
   hpMaxUIText: {fileID: 1691553062}
   hpCurrentText: {fileID: 351048763}
   atkSpdText: {fileID: 1699194504}
@@ -3069,6 +3072,7 @@ MonoBehaviour:
   moveUIBack: 0
   moveUICamp: 1
   UItextInit: 0
+  MapUIInit: 0
   hpMaxUIText: {fileID: 1691553062}
   hpCurrentText: {fileID: 351048763}
   atkSpdText: {fileID: 1699194504}
@@ -3330,6 +3334,7 @@ MonoBehaviour:
   moveUIBack: 0
   moveUICamp: 0
   UItextInit: 0
+  MapUIInit: 0
   hpMaxUIText: {fileID: 1691553062}
   hpCurrentText: {fileID: 351048763}
   atkSpdText: {fileID: 1699194504}
@@ -3408,6 +3413,7 @@ MonoBehaviour:
   moveUIBack: 1
   moveUICamp: 1
   UItextInit: 0
+  MapUIInit: 0
   hpMaxUIText: {fileID: 1691553062}
   hpCurrentText: {fileID: 351048763}
   atkSpdText: {fileID: 1699194504}
@@ -3890,6 +3896,7 @@ MonoBehaviour:
   moveUIBack: 0
   moveUICamp: 0
   UItextInit: 0
+  MapUIInit: 0
   hpMaxUIText: {fileID: 1691553062}
   hpCurrentText: {fileID: 351048763}
   atkSpdText: {fileID: 1699194504}

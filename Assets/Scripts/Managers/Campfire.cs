@@ -26,6 +26,8 @@ public class Campfire : MonoBehaviour
     public Text atkSpdText;
     public Text damageText;
     public Text extraText;
+    private float spinMult;
+    private float refreshInterval;
 
     void Start()
     {
@@ -37,10 +39,26 @@ public class Campfire : MonoBehaviour
             } else {
                 hpMaxUIText.text = ("Max HP: " + (Mathf.Round(SceneSwitcher.Instance.playerMaxHP))).ToString();
                 hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
-                damageText.text = ("Damage: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
-                atkSpdText.text = ("Spin Speed: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusAtkSpd))).ToString();// Change to match player's Fighter
+                damageText.text = ("Damage Increase: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
+                spinMult = SceneSwitcher.Instance.fighterPrefab.GetComponent<Fighter>().spinMult;
+                if(SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
+                {
+                    refreshInterval = SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>().refreshInterval;
+                    for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+                    {
+                        spinMult += (spinMult * 0.25f);
+                        refreshInterval *= 0.90f;
+                    }
+                } else {
+                    for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+                    {
+                        spinMult += (spinMult * 0.5f);
+                    }
+                }
+                
+                atkSpdText.text = ("Spin Speed: " + (Mathf.Round(spinMult))).ToString();
                 if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
-                    extraText.text = ("Attack Rate: " + (1 + Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString(); //Change to match player's Fighter
+                    extraText.text = ("Attack Rate: " + (1 + Mathf.Round(refreshInterval))).ToString();
             }
         } else {
             button = GetComponent<Button>();
@@ -80,9 +98,27 @@ public class Campfire : MonoBehaviour
             }
             
             SceneSwitcher.Instance.playerBonusAtkSpd += (1);
-            atkSpdText.text = ("Spin Speed: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusAtkSpd))).ToString();// Change to match player's Fighter
+            spinMult = SceneSwitcher.Instance.fighterPrefab.GetComponent<Fighter>().spinMult;
             if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
-                extraText.text = ("Attack Rate: " + (1 + Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString(); //Change to match player's Fighter
+            {
+                refreshInterval = SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>().refreshInterval;
+                for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+                {
+                    spinMult += (spinMult * 0.25f);
+                    refreshInterval *= 0.90f;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+                {
+                    spinMult += (spinMult * 0.5f);
+                }
+            }
+
+            atkSpdText.text = ("Spin Speed: " + (Mathf.Round(spinMult))).ToString();
+            if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
+                extraText.text = ("Attack Rate: " + (1 + Mathf.Round(refreshInterval))).ToString();
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } else if (upgradeDmg == true)
         {
@@ -92,7 +128,7 @@ public class Campfire : MonoBehaviour
             }
 
             SceneSwitcher.Instance.playerBonusDamage += (1);
-            damageText.text = ("Damage: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
+            damageText.text = ("Damage Increase: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
         } 
         
