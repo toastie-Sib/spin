@@ -32,7 +32,7 @@ public class Shield : Weapon
                 if (GetComponent<BloodoftheKnight>() != null)
                 {
                     BloodoftheKnight BotK = GetComponent<BloodoftheKnight>();
-                    totalDamage += BotK.damage;
+                    totalDamage += damage;
                     BotK.IncreaseScaling();
                 }
                 totalDamage += myFighter.bonusDamage;
@@ -79,7 +79,7 @@ public class Shield : Weapon
                 if (GetComponent<BloodoftheKnight>() != null)
                 {
                     BloodoftheKnight BotK = GetComponent<BloodoftheKnight>();
-                    damage += BotK.damage;
+                    damage += damage;
                     BotK.IncreaseScaling();
                 }
                 damage += myFighter.bonusDamage;

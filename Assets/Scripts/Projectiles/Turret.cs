@@ -77,7 +77,7 @@ public class Turret : Bow
             if (owner.GetComponentInChildren<BloodoftheKnight>() != null)
             {
                 BloodoftheKnight BotK = owner.GetComponentInChildren<BloodoftheKnight>();
-                arrow.damage += BotK.damage;
+                arrow.damage += (0.2f * BotK.stacks);
             }
             //Blood of the Archer
             if (owner.GetComponentInChildren<BloodoftheArcher>() != null)
@@ -106,7 +106,7 @@ public class Turret : Bow
                     if (GetComponentInChildren<BloodoftheKnight>() != null)
                     {
                         BloodoftheKnight BotK = GetComponentInChildren<BloodoftheKnight>();
-                        bloodArrow.damage += BotK.damage;
+                        bloodArrow.damage += (0.2f * BotK.stacks);
                     }
                 }
 

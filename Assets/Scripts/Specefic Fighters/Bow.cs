@@ -19,12 +19,13 @@ public class Bow : Fighter //Inherit Fighter
     [HideInInspector] public float nextFireTime = 0.0f;
     public float nextRefreshTime = 0.5f;
     [HideInInspector] public List<Transform> extraFirepoints = new List<Transform>();
+    [HideInInspector] public Weapon myWeapon;
 
     public override void Start() //Make sure to update with Fighter
     {
         base.Start();
 
-        Weapon myWeapon = GetComponentInChildren<Weapon>();
+        myWeapon = GetComponentInChildren<Weapon>();
         myWeapon.firePoint = firePoint;
 
         //Training Item
@@ -39,7 +40,7 @@ public class Bow : Fighter //Inherit Fighter
         }
 
         UpdateDynamicUI("Arrows: ", maxArrowCount, 1);
-        UpdateDynamicUI("Damage: ", 1 + bonusDamage, 2);
+        UpdateDynamicUI("Damage: ", 1 + bonusDamage + myWeapon.damage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 
@@ -94,8 +95,7 @@ public class Bow : Fighter //Inherit Fighter
         //Item Blood of the Knight
         if (GetComponentInChildren<BloodoftheKnight>() != null)
         { 
-            BloodoftheKnight BotK = GetComponentInChildren<BloodoftheKnight>();
-            arrow.damage += BotK.damage;
+            arrow.damage += myWeapon.damage;
         }
         //Blood of the Archer
         if (GetComponentInChildren<BloodoftheArcher>() != null)
@@ -122,8 +122,7 @@ public class Bow : Fighter //Inherit Fighter
                 //Item BOTH HERE AGAIN COULD CONDENCE??
                 if (GetComponentInChildren<BloodoftheKnight>() != null)
                 {
-                    BloodoftheKnight BotK = GetComponentInChildren<BloodoftheKnight>();
-                    bloodArrow.damage += BotK.damage;
+                    bloodArrow.damage += myWeapon.damage;
                 }
             }
 
@@ -158,7 +157,7 @@ public class Bow : Fighter //Inherit Fighter
     {
         maxArrowCount += 1;
         UpdateDynamicUI("Arrows: ", maxArrowCount, 1);
-        UpdateDynamicUI("Damage: ", 1 + bonusDamage, 2);
+        UpdateDynamicUI("Damage: ", 1 + bonusDamage + myWeapon.damage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 

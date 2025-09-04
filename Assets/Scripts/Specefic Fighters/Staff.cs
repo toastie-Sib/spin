@@ -14,7 +14,7 @@ public class Staff : Bow
     {
         base.Start();
         UpdateDynamicUI("Radius: ", radiusUI, 1);
-        UpdateDynamicUI("Damage: ", 1+damageIncrease+ bonusDamage, 2);
+        UpdateDynamicUI("Damage: ", 1+damageIncrease+ bonusDamage + myWeapon.damage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 
@@ -44,7 +44,7 @@ public class Staff : Bow
 
         radiusUI += 1;
         UpdateDynamicUI("Radius: ", radiusUI, 1);
-        UpdateDynamicUI("Damage: ", 1 + damageIncrease + bonusDamage, 2);
+        UpdateDynamicUI("Damage: ", 1 + damageIncrease + bonusDamage + myWeapon.damage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 }

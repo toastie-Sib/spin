@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unarmed : Fighter
 {
-
+    private int glassBallStacks = 1;
     public override void Start() //Make sure to update with Fighter
     {
         base.Start();
@@ -16,13 +16,22 @@ public class Unarmed : Fighter
 
         UpdateDynamicUI("Speed: ", 0, 1);
         UpdateDynamicUI("Damage: ", 0, 2);
+
+        if (GetComponent<GlassBall>() != null)
+        {
+            GlassBall glassBall = GetComponent<GlassBall>();
+            for (int i = 1; i < glassBall.stacks; i++)
+            {
+                glassBallStacks += 1;
+            }
+        }
     }
 
     public override void Update()
     {
         base.Update();
         UpdateDynamicUI("Speed: ", Mathf.Abs((rb.velocity.magnitude)), 1);
-        UpdateDynamicUI("Damage: ", (bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))))), 2); // Doesn't account Items (GB BotK)
+        UpdateDynamicUI("Damage: ", glassBallStacks*(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))))), 2); // Doesn't account Items (GB BotK)
     }
 
     private void OnCollisionEnter(Collision collision)
