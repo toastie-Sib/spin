@@ -230,8 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   es: {fileID: 0}
   blockedFighters:
-  - Unarmed
-  rarity: 1
+  - Anchor
 --- !u!1 &2805811855023019479
 GameObject:
   m_ObjectHideFlags: 0

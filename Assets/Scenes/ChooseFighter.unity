@@ -1482,6 +1482,9 @@ MonoBehaviour:
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
+  playerBonusDamage: 0
+  playerBonusAtkSpd: 0
+  playerMoney: 100
 --- !u!114 &803803649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4127,6 +4130,9 @@ MonoBehaviour:
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
+  playerBonusDamage: 0
+  playerBonusAtkSpd: 0
+  playerMoney: 100
 --- !u!1 &1630278241
 GameObject:
   m_ObjectHideFlags: 0

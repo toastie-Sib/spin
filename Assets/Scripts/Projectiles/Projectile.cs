@@ -121,7 +121,7 @@ public class Projectile : MonoBehaviour
                 {
                     for (int i = 0; i < shooter.GetComponentInChildren<BloodoftheBandit>().stacks; i++)
                     {
-                        if (shooter.GetComponent<Bow>().refreshInterval > 0.5f) { shooter.GetComponent<Bow>().refreshInterval *= 0.99f; }
+                        if (shooter.GetComponentInChildren<BloodoftheBandit>().applied < 25* shooter.GetComponentInChildren<BloodoftheBandit>().stacks) { BotbScale(); }
                     }
                     
                 }
@@ -160,6 +160,11 @@ public class Projectile : MonoBehaviour
         {
             DestroySelf();
         }
+    }
+
+    public virtual void BotbScale()
+    {
+        shooter.GetComponent<Bow>().refreshInterval *= 0.99f;
     }
 
     public void ScalingTrigger() // call this

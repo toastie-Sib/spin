@@ -65,11 +65,12 @@ public class Turret : Bow
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-        Projectile arrow = projectile.GetComponent<Projectile>();
+        TurretProjectile arrow = projectile.GetComponent<TurretProjectile>();
         arrow.GetComponentInChildren<Renderer>().material.color = color;
         if (arrow != null && owner != null)
         {
             arrow.shooter = owner;
+            arrow.cannon = this;
             arrow.side = side;
             arrow.damage += bonusDamage;
 
@@ -97,7 +98,7 @@ public class Turret : Bow
 
                     // Instantiate a new projectile
                     GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, projectileRotation);
-                    Projectile bloodArrow = projectileGO.GetComponent<Projectile>();
+                    TurretProjectile bloodArrow = projectileGO.GetComponent<TurretProjectile>();
                     bloodArrow.shooter = owner;
                     bloodArrow.side = side;
                     bloodArrow.GetComponentInChildren<Renderer>().material.color = color;

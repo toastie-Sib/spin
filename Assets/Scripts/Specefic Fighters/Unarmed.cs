@@ -5,6 +5,7 @@ using UnityEngine;
 public class Unarmed : Fighter
 {
     private int glassBallStacks = 1;
+    private float bounceBonus = 0;
     public override void Start() //Make sure to update with Fighter
     {
         base.Start();
@@ -44,7 +45,7 @@ public class Unarmed : Fighter
         {
 
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity += wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
+            rb.velocity += wallBoost * (1+ bounceBonus + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -56,7 +57,7 @@ public class Unarmed : Fighter
         {
 
             Vector3 wallBoost = new Vector3(Random.Range(0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity -= wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
+            rb.velocity -= wallBoost * (1+ bounceBonus + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -68,7 +69,7 @@ public class Unarmed : Fighter
         {
 
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity += wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
+            rb.velocity += wallBoost * (1+ bounceBonus + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -88,7 +89,7 @@ public class Unarmed : Fighter
                 }
             }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity -= wallBoost * (1 + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
+            rb.velocity -= wallBoost * (1+ bounceBonus + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
 
             if (bleedStacks > 0)
             {
@@ -117,7 +118,7 @@ public class Unarmed : Fighter
                 }
             }
             Vector3 wallBoost = new Vector3(Random.Range(-0.7f, 0.7f), Random.Range(0.7f, 0.7f), 0f);
-            rb.velocity -= wallBoost * (1+(SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
+            rb.velocity -= wallBoost * (1+ bounceBonus + (SceneSwitcher.Instance.playerBonusAtkSpd * 0.25f));
         }
 
         
@@ -128,6 +129,16 @@ public class Unarmed : Fighter
         otherFighter.HitDetect(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5)))));
         AttackAnimation();
         otherFighter.HurtAnimation();
+
+        if (GetComponent<BloodoftheBandit>() != null)
+        {
+            BloodoftheBandit botB = GetComponent<BloodoftheBandit>();
+            for (int i = 0; i < botB.stacks; i++)
+            {
+                if (botB.applied < 25* botB.stacks) { bounceBonus += 0.15f; }
+            }
+        }
+
     }
 
     public void ItemCheck() // Update on Unarmed too since no weapon

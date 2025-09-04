@@ -36,7 +36,7 @@ public class Sword : Weapon
             {
                 for (int i = 0; i < GetComponent<BloodoftheBandit>().stacks; i++)
                 {
-                    if (myFighter.GetComponent<Bow>().refreshInterval > 0.5f) { myFighter.GetComponent<Bow>().refreshInterval *= 0.99f; }
+                    if (GetComponent<BloodoftheBandit>().applied < 25* GetComponent<BloodoftheBandit>().stacks) { myFighter.GetComponent<Axe>().refreshInterval *= 0.99f; }
                     myFighter.UpdateDynamicUI("Fire Rate: ", myFighter.GetComponent<Axe>().refreshInterval, 3);
                 }
                 

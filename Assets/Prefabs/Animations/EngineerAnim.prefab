@@ -154,6 +154,7 @@ MonoBehaviour:
   startingPoint: {fileID: 4213029007101185717}
   attackPoint: {fileID: 4307270050389149153}
   parryPoint: {fileID: 1209593386940410355}
+  slideDuration: 0.01
 --- !u!1 &4702089596354864267
 GameObject:
   m_ObjectHideFlags: 0

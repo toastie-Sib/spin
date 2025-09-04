@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TurretProjectile : Projectile
 {
+    [HideInInspector] public Turret cannon;
     public override void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Turret>() != null) return;
@@ -14,5 +15,10 @@ public class TurretProjectile : Projectile
     public override void ScalingIncrease()
     {
         base.ScalingIncrease();
+    }
+
+    public override void BotbScale()
+    {
+        cannon.refreshInterval *= 0.99f;
     }
 }

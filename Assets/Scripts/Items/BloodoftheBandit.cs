@@ -5,6 +5,9 @@ using UnityEngine;
 public class BloodoftheBandit : ItemBase
 {
     private HashSet<GameObject> alreadyTriggered = new HashSet<GameObject>();
+
+    public int applied = 0;
+
     public void OnTriggerEnter(Collider other)
     {
         Fighter myFighter = GetComponentInParent<Fighter>();
@@ -17,7 +20,7 @@ public class BloodoftheBandit : ItemBase
             {
                 for (int i = 0; i < stacks; i++)
                 {
-                    if (myFighter.spinMult < 500) { myFighter.spinMult += 20; }
+                    if (applied < 25*stacks) { myFighter.spinMult += 20; }
                 }
                 
                 
