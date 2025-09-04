@@ -13,6 +13,15 @@ public class Sword : Weapon
 
         myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
         myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+
+        if (GetComponentInParent<Axe>() != null)
+        {
+            
+            if (GetComponentInParent<Axe>().refreshInterval > 0.1f) { 
+                GetComponentInParent<Axe>().refreshInterval -= 0.1f; 
+            }
+            
+        }
     }
     
 
@@ -27,7 +36,8 @@ public class Sword : Weapon
             {
                 for (int i = 0; i < GetComponent<BloodoftheBandit>().stacks; i++)
                 {
-                    if (GetComponentInParent<Axe>().refreshInterval > 0.1f) { GetComponentInParent<Axe>().refreshInterval -= 0.1f; }
+                    if (myFighter.GetComponent<Bow>().refreshInterval > 0.5f) { myFighter.GetComponent<Bow>().refreshInterval *= 0.99f; }
+                    myFighter.UpdateDynamicUI("Fire Rate: ", myFighter.GetComponent<Axe>().refreshInterval, 3);
                 }
                 
             }

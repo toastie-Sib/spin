@@ -34,6 +34,16 @@ public class Axe : Fighter
         capscollider.enabled = false;
     }
 
+    public override void IncreaseBaseAtkSpeed()
+    {
+
+        for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
+        {
+            refreshInterval *= 0.90f;
+        }
+        UpdateDynamicUI("Attack Rate: ", refreshInterval, 3);
+    }
+
     private IEnumerator Spin()
     {
         capscollider.enabled = true;
