@@ -12,6 +12,7 @@ public class MapNode : MonoBehaviour
     private Button button;
     public string nodeID;
     public bool startingNode = false;
+    public int enemyHP = 0;
 
     [Header("Path Settings")]
     public Material lineMaterial;   // Assign a simple UI/Unlit material
@@ -54,12 +55,17 @@ public class MapNode : MonoBehaviour
         {
             // Save which node you're at
             SceneSwitcher.Instance.SetCurrentNode(nodeID);
+            if(enemyHP != 0)
+            {
+                SceneSwitcher.Instance.enemyHP = enemyHP;
+            }
 
             var current = SceneSwitcher.Instance.GetCurrentNode();
             SphereCollider collider = current.GetComponentInChildren<SphereCollider>();
             GameObject startPoint = GameObject.Find("Start Point");
             AssignAnimation animMovement = GameObject.Find("PlayerAnim").GetComponent<AssignAnimation>();
             animMovement.stashedAnimation.GetComponent<AnimationMovement>().slideDuration = 1.5f;
+            animMovement.stashedAnimation.GetComponent<AnimationMovement>().StartingPoint();        //This should be making the animation move immedietly but it stays still for a moment
 
             startPoint.transform.position = collider.transform.position;
             startPoint.transform.position += new Vector3(0f, 1.4f, 0f);

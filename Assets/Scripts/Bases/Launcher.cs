@@ -79,6 +79,7 @@ public class Launcher : MonoBehaviour
             projectilePrefab = enemyPrefabs[enemyTypeIndex];
 
             SeedManager.Instance.RestoreMasterSeed();
+
         }
         if (!shotDone && isPlayer)
         {
@@ -108,6 +109,12 @@ public class Launcher : MonoBehaviour
             {
                 string objectName = stashedProjectile.name.Replace("(Clone)", "");
                 nameUIText.text = ("Enemy: " + objectName).ToString();
+
+
+
+                //Set up enemy HP
+                fighter.maxHp = SceneSwitcher.Instance.enemyHP;
+                fighter.hp = SceneSwitcher.Instance.enemyHP;
             }
         }
     }

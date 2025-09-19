@@ -16,6 +16,7 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public GameObject otherAnimPrefab;
     [HideInInspector] public int fighterAmount = 0;
     [HideInInspector] public static SceneSwitcher Instance;
+    [HideInInspector] public int enemyHP;
     [Header("Player Info")]
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
     [HideInInspector] public string currentNodeID; //Where on Map
