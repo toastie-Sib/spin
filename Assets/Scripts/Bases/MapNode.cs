@@ -13,6 +13,7 @@ public class MapNode : MonoBehaviour
     public string nodeID;
     public bool startingNode = false;
     public int enemyHP = 0;
+    public bool isChapterFinal = false;
 
     [Header("Path Settings")]
     public Material lineMaterial;   // Assign a simple UI/Unlit material
@@ -55,6 +56,10 @@ public class MapNode : MonoBehaviour
         {
             // Save which node you're at
             SceneSwitcher.Instance.SetCurrentNode(nodeID);
+            if (isChapterFinal == true)
+            {
+                SceneSwitcher.Instance.chapter += 1;
+            }
             if(enemyHP != 0)
             {
                 SceneSwitcher.Instance.enemyHP = enemyHP;

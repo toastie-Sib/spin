@@ -17,6 +17,7 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public int fighterAmount = 0;
     [HideInInspector] public static SceneSwitcher Instance;
     [HideInInspector] public int enemyHP;
+    [HideInInspector] public int chapter = 0;
     [Header("Player Info")]
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
     [HideInInspector] public string currentNodeID; //Where on Map
@@ -91,6 +92,22 @@ public class SceneSwitcher : MonoBehaviour
         if(sceneName == "Title")
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void LoadMapScene()
+    {
+        if(chapter == 0) {
+            SceneManager.LoadScene("Chapter0");
+        } else if (chapter == 1) {
+            SceneManager.LoadScene("Chapter1");
+        } else if (chapter == 2) {
+            SceneManager.LoadScene("Chapter2");
+        } else if (chapter == 3) {
+            SceneManager.LoadScene("Chapter3");
+        } else if (chapter == 4)
+        {
+            SceneManager.LoadScene("Chapter4");
         }
     }
 

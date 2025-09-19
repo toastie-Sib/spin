@@ -38,7 +38,7 @@ public class ItemChoose : Assign
             {
                 button.interactable = false;
                 es.AddItem(itemString);
-                es.LoadSpecificScene("Chapter0");
+                es.LoadMapScene();
             }
         } else
         {

@@ -800,6 +800,7 @@ MonoBehaviour:
   nodeID: 03
   startingNode: 0
   enemyHP: 100
+  isChapterFinal: 1
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &705507993
 GameObject:
@@ -1065,6 +1066,7 @@ MonoBehaviour:
   nodeID: 01
   startingNode: 1
   enemyHP: 50
+  isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &803803644
 GameObject:
@@ -1154,6 +1156,7 @@ MonoBehaviour:
   otherAnimPrefab: {fileID: 0}
   fighterAmount: 0
   enemyHP: 0
+  chapter: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -1984,6 +1987,7 @@ MonoBehaviour:
   nodeID: 02a
   startingNode: 0
   enemyHP: 0
+  isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &1315540571
 GameObject:
@@ -2317,6 +2321,7 @@ MonoBehaviour:
   nodeID: 02b
   startingNode: 0
   enemyHP: 0
+  isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
 --- !u!1 &1630278241
 GameObject:
@@ -2525,8 +2530,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661.33, y: 40}
-  m_SizeDelta: {x: 1261.82, y: 678.04}
+  m_AnchoredPosition: {x: -661.33, y: 447.93707}
+  m_SizeDelta: {x: 554.82, y: 111.4607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969904044
 MonoBehaviour:

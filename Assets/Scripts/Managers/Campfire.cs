@@ -77,7 +77,7 @@ public class Campfire : MonoBehaviour
             }
             SceneSwitcher.Instance.playerCurrentHP = SceneSwitcher.Instance.playerMaxHP;
             hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
-            SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
+            SceneSwitcher.Instance.LoadMapScene();
         } else if (upgradeHP == true)
         {
             foreach (var item in upgradePage)
@@ -89,7 +89,7 @@ public class Campfire : MonoBehaviour
             SceneSwitcher.Instance.playerCurrentHP += (SceneSwitcher.Instance.playerMaxHP - heldHP);
             hpMaxUIText.text = ("Max HP: " + (Mathf.Round(SceneSwitcher.Instance.playerMaxHP))).ToString();
             hpCurrentText.text = ("Current HP: " + (Mathf.Round(SceneSwitcher.Instance.playerCurrentHP))).ToString();
-            SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
+            SceneSwitcher.Instance.LoadMapScene();
         } else if (upgradeAtkSpd == true)
         {
             foreach (var item in upgradePage)
@@ -119,7 +119,7 @@ public class Campfire : MonoBehaviour
             atkSpdText.text = ("Spin Speed: " + (Mathf.Round(spinMult))).ToString();
             if (SceneSwitcher.Instance.fighterPrefab.GetComponent<Bow>() != null)
                 extraText.text = ("Attack Rate: " + (1 + Mathf.Round(refreshInterval))).ToString();
-            SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
+            SceneSwitcher.Instance.LoadMapScene();
         } else if (upgradeDmg == true)
         {
             foreach (var item in upgradePage)
@@ -129,13 +129,13 @@ public class Campfire : MonoBehaviour
 
             SceneSwitcher.Instance.playerBonusDamage += (1);
             damageText.text = ("Damage Increase: " + (Mathf.Round(SceneSwitcher.Instance.playerBonusDamage))).ToString();
-            SceneSwitcher.Instance.SlowLoadSpecificSceneDelay("Chapter0");
+            SceneSwitcher.Instance.LoadMapScene();
         } 
         
         //Additional Campfire Utility Functions
         else if (goBackToChapter == true)
         {
-            SceneSwitcher.Instance.LoadSpecificScene("Chapter0");
+            SceneSwitcher.Instance.LoadMapScene();
         } if (moveUI == true)
         {
             GameObject nM = GameObject.Find("No Money");
