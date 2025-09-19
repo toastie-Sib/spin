@@ -11,17 +11,12 @@ public class Sword : Weapon
     {
         base.Start();
 
-        myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
-
-        if (GetComponentInParent<Axe>() != null)
+        if (gatitoBlade == false)
         {
-            
-            if (GetComponentInParent<Axe>().refreshInterval > 0.1f) { 
-                GetComponentInParent<Axe>().refreshInterval -= 0.1f; 
-            }
-            
+            myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
         }
+
     }
     
 
@@ -36,15 +31,18 @@ public class Sword : Weapon
             {
                 for (int i = 0; i < GetComponent<BloodoftheBandit>().stacks; i++)
                 {
-                    if (GetComponent<BloodoftheBandit>().applied < 25* GetComponent<BloodoftheBandit>().stacks) { myFighter.GetComponent<Axe>().refreshInterval *= 0.99f; }
+                    if (GetComponentInParent<Axe>().weapon.GetComponent<BloodoftheBandit>().applied < 25* GetComponent<BloodoftheBandit>().stacks) { myFighter.GetComponent<Axe>().refreshInterval *= 0.99f; }
                     myFighter.UpdateDynamicUI("Fire Rate: ", myFighter.GetComponent<Axe>().refreshInterval, 3);
                 }
                 
             }
         }
 
-        myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if(gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
     }
 
     public override void TriggerParryImpactFrames()

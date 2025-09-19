@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public bool side;
     [HideInInspector] public Transform firePoint;
     [HideInInspector] public Fighter myFighter;
+    [HideInInspector] public bool gatitoBlade = false;
     private int tracker = 0;
 
     public virtual void Start() {
@@ -22,7 +23,7 @@ public class Weapon : MonoBehaviour
         side = myFighter.isPlayer;
 
         //Item Check
-        if (myFighter.isPlayer == true)
+        if (myFighter.isPlayer == true && gatitoBlade == false)
         {
             ItemCheck();
 
@@ -99,8 +100,12 @@ public class Weapon : MonoBehaviour
                     {
                         otherFighter.ApplyPoison();
                         tracker += 1;
-                        myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
-                        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+                        if (gatitoBlade == false)
+                        {
+                            myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
+                            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+                        }
+                        
                     }
                     firstHitDone = true;
                 }
@@ -111,16 +116,22 @@ public class Weapon : MonoBehaviour
                     {
                         otherFighter.ApplyPoison(); // Call the actual scaling logic 'stacks' times
                         tracker += 1;
-                        myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
-                        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+                        if (gatitoBlade == false)
+                        {
+                            myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
+                            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+                        }
                     }
                 }
                 else
                 {
                     otherFighter.ApplyPoison(); // Regular Sytche apply Poison Scaling Alternative
                     tracker += 1;
-                    myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
-                    myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+                    if (gatitoBlade == false)
+                    {
+                        myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
+                        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+                    }
                 }
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
@@ -244,10 +255,6 @@ public class Weapon : MonoBehaviour
             ttD.stacks = SceneSwitcher.Instance.GetItemCount("TriTippedDagger");
         }
 
-
-
-
-        //Make sure to be last
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();

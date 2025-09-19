@@ -317,9 +317,9 @@ public class Fighter : MonoBehaviour
             if (text == 1) {
                 UI.stacksText.text = (str + (Mathf.Round(num))).ToString();
             } else if (text == 2) {
-                UI.damageText.text = (str + (Mathf.Round(num))).ToString();
+                UI.damageText.text = (str + num).ToString();
             } else if (text == 3) {
-                UI.extraText.text = (str + (Mathf.Round(num))).ToString();
+                UI.extraText.text = (str + num).ToString();
             }
         }
     }

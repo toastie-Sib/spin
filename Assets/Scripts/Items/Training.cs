@@ -10,10 +10,13 @@ public class Training : ItemBase
     public override void Start()
     {
         Weapon myWeapon = GetComponent<Weapon>();
-        for (int i = 0; i < stacks; i++)
+        if(myWeapon.gatitoBlade == false)
         {
-            myWeapon.TriggerScaling();
-            myWeapon.TriggerScaling();
+            for (int i = 0; i < stacks; i++)
+            {
+                myWeapon.TriggerScaling();
+                myWeapon.TriggerScaling();
+            }
         }
     }
 

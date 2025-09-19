@@ -13,8 +13,11 @@ public class Wrench : Weapon
     {
         base.Start();
 
-        myFighter.UpdateDynamicUI("Turrets: ", 0, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Turrets: ", 0, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
     }
 
     public override void IncreaseScaling()
@@ -26,8 +29,12 @@ public class Wrench : Weapon
         GameObject turret = Instantiate(turretPrefab, spawnPoint.position, spawnPoint.rotation);
 
         turrets += 1;
+
         myFighter.UpdateDynamicUI("Turrets: ", turrets, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
 
         Turret cannon = turret.GetComponent<Turret>();
         if (cannon != null)

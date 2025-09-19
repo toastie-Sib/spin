@@ -47,6 +47,7 @@ public class GatitoBlade : ItemBase
             // Reduce damage (since it’s an extra)
             Weapon weapon = blade.GetComponent<Weapon>();
             if (weapon != null) weapon.damage *= 0.5f;
+            blade.GetComponent<Weapon>().gatitoBlade = true;
 
             // Register firepoint if it’s a Bow
             Bow hasBow = gb.GetComponentInParent<Bow>();

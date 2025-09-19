@@ -40,7 +40,8 @@ public class Bow : Fighter //Inherit Fighter
         }
 
         UpdateDynamicUI("Arrows: ", maxArrowCount, 1);
-        UpdateDynamicUI("Damage: ", 1 + bonusDamage + myWeapon.damage, 2);
+        if (weapon.GetComponent<Weapon>().gatitoBlade == false)
+            UpdateDynamicUI("Damage: ", 1 + bonusDamage + myWeapon.damage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 
@@ -157,7 +158,8 @@ public class Bow : Fighter //Inherit Fighter
     {
         maxArrowCount += 1;
         UpdateDynamicUI("Arrows: ", maxArrowCount, 1);
-        UpdateDynamicUI("Damage: ", 1 + bonusDamage + myWeapon.damage, 2);
+        if (weapon.GetComponent<Weapon>().gatitoBlade == false)
+            UpdateDynamicUI("Damage: ", 1 + bonusDamage + myWeapon.damage, 2);
         UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 

@@ -124,7 +124,11 @@ public class Shield : Weapon
         base.IncreaseScaling();
         ShieldGrow(1);
         stacks += 1;
-        myFighter.UpdateDynamicUI("Width: ", stacks, 1);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Width: ", stacks, 1);
+        }
+        
         
     }
 }

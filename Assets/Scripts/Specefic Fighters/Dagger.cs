@@ -9,8 +9,11 @@ public class Dagger : Weapon
     {
         base.Start();
 
-        myFighter.UpdateDynamicUI("Extra Spd: ", stacks, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Extra Spd: ", stacks, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
     }
 
     public override void IncreaseScaling()
@@ -20,7 +23,10 @@ public class Dagger : Weapon
         myFighter.IncreaseSpeed();
 
         stacks += 1;
-        myFighter.UpdateDynamicUI("Extra Spd: ", stacks, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Extra Spd: ", stacks, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
     }
 }

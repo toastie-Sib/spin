@@ -17,8 +17,11 @@ public class Scythe : Weapon
             transform.Rotate(0, 180f, 0);
         }
 
-        myFighter.UpdateDynamicUI("Poison: ", 0, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Poison: ", 0, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
     }
 
     public override void TriggerParryImpactFrames()

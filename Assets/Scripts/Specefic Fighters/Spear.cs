@@ -10,8 +10,11 @@ public class Spear : Weapon
         base.Start();
         Collider collider = GetComponent<Collider>();
 
-        myFighter.UpdateDynamicUI("Length: ", 1, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Length: ", stacks + 1, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
     }
 
     public override void IncreaseScaling()
@@ -30,7 +33,10 @@ public class Spear : Weapon
         damage += 0.5f;
 
         stacks += 1;
-        myFighter.UpdateDynamicUI("Length: ", stacks, 1);
-        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Length: ", stacks + 1, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
     }
 }
