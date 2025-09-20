@@ -11,7 +11,7 @@ public class Launcher : MonoBehaviour
     public float launchSpeed = 10f;
     private bool shotDone = false;
     public bool isPlayer = false;
-    private GameObject stashedProjectile;
+    [HideInInspector] public GameObject stashedProjectile;
     [HideInInspector] public Fighter fighter;
     private SceneSwitcher es;
     public GameObject[] enemyPrefabs;
