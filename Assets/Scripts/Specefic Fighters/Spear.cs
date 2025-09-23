@@ -64,13 +64,13 @@ public class Spear : Weapon
             
             if (gatitoBlade == false)
             {
-                myFighter.UpdateDynamicUI("Length: ", stacks + 1, 1);
                 myFighter.UpdateDynamicUI("Damage: ", damage, 2);
             }
 
 
-            yield return new WaitForSeconds(0.02f); // controls speed (0.02s = 50 FPS)
+            yield return new WaitForSeconds(0.05f); // controls speed (0.02s = 50 FPS)
         }
         stacks = 0;
+        myFighter.UpdateDynamicUI("Length: ", stacks + 1, 1);
     }
 }

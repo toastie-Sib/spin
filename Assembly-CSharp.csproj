@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ItemBans.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Spear.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheArcher.cs" />
+    <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\BossItemManager.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Explosion.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Scythe.cs" />
     <Compile Include="Assets\Scripts\Items\RaiseTheRoof.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopTradeItems.cs" />
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\BossItemManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
