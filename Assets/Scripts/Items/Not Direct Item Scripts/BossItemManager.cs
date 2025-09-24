@@ -153,20 +153,12 @@ public class BossItemManager : MonoBehaviour
     private void OnBossItemEffectTrigger(string itemName)
     {
         // Example effect for "New Equipment"
-        if (itemName == "New Equipment")
-        {
-            foreach (var spawner in FindObjectsOfType<Launcher>())
-            {
-                if (spawner.isPlayer == true)
-                    spawner.stashedProjectile.GetComponentInChildren<Spear>().NewEquipment();
-            }
-        } else if (itemName == "Rubber Arrows")
-        {
-            foreach (var spawner in FindObjectsOfType<Launcher>())
-            {
-                if (spawner.isPlayer == true)
-                    spawner.stashedProjectile.GetComponentInChildren<Bow>().RubberArrows();
-            }
+        if (itemName == "New Equipment") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Spear>().NewEquipment(); }
+        } else if (itemName == "Rubber Arrows") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Bow>().RubberArrows(); }
+        } else if (itemName == "Remote Detonation") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    foreach (var fireball in FindObjectsOfType<Fireball>()) { if (fireball.side == true) { fireball.damage *= 1.5f;  fireball.DestroySelf(); } } }
         }
     }
 

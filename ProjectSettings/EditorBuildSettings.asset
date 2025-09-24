@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title.unity
+    path: Assets/_Scenes/Title.unity
     guid: 4933179741e9deb4a9a0b6727cd170b6
   - enabled: 1
-    path: Assets/Scenes/ChooseFighter.unity
+    path: Assets/_Scenes/ChooseFighter.unity
     guid: 337be2c033191aa4bb6d325cf1a9df4d
   - enabled: 1
-    path: Assets/Scenes/Chapter0.unity
+    path: Assets/_Scenes/Chapter0.unity
     guid: c73b14f17a3ed9244aa67807997a270c
   - enabled: 1
-    path: Assets/Scenes/ArenaSmall.unity
+    path: Assets/_Scenes/ArenaSmall.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/ItemPick.unity
+    path: Assets/_Scenes/ItemPick.unity
     guid: 9fc58076a41581e458dae72dcd8a7f76
   - enabled: 1
-    path: Assets/Scenes/ItemPickBoss.unity
+    path: Assets/_Scenes/ItemPickBoss.unity
     guid: 8b08bc163626b6142944fd483eb8bf52
   - enabled: 1
-    path: Assets/Scenes/Campfire.unity
+    path: Assets/_Scenes/Campfire.unity
     guid: 4e996018475b8d2458ed7710a5eaae4a
   - enabled: 1
-    path: Assets/Scenes/Shop.unity
+    path: Assets/_Scenes/Shop.unity
     guid: ce50835f9a318f64caf8894ad2986ce5
   m_configObjects: {}
