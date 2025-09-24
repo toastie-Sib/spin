@@ -7,13 +7,17 @@ public class Sword : Weapon
     [Header("Sword Weapon Type")]
     public float damageIncrease = 1;
 
+    private int stackIncreases = 0;
+
+    public GameObject bladeBeam;
+
     public override void Start()
     {
         base.Start();
 
         if (gatitoBlade == false)
         {
-            myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
+            myFighter.UpdateDynamicUI("Dmg Increase: ", stackIncreases, 1);
             myFighter.UpdateDynamicUI("Damage: ", damage, 2);
         }
 
@@ -24,8 +28,9 @@ public class Sword : Weapon
     {
         base.IncreaseScaling();
         damage += damageIncrease;
+        stackIncreases += 1;
 
-        if(GetComponentInParent<Axe>() != null)
+        if (GetComponentInParent<Axe>() != null)
         {
             if (GetComponent<BloodoftheBandit>() != null)
             {
@@ -40,7 +45,7 @@ public class Sword : Weapon
 
         if(gatitoBlade == false)
         {
-            myFighter.UpdateDynamicUI("Dmg Increase: ", damageIncrease, 1);
+            myFighter.UpdateDynamicUI("Dmg Increase: ", stackIncreases, 1);
             myFighter.UpdateDynamicUI("Damage: ", damage, 2);
         }
     }
@@ -59,6 +64,16 @@ public class Sword : Weapon
 
     public void BladeBeam()
     {
+        GameObject projectile = Instantiate(bladeBeam, firePoint.position, firePoint.rotation);
 
+        Projectile arrow = projectile.GetComponent<Projectile>();
+        if (arrow != null)
+        {
+            arrow.shooter = myFighter;
+            arrow.side = side;
+            arrow.damage = stackIncreases;
+        }
+
+        
     }
 }

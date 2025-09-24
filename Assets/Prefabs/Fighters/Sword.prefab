@@ -133,8 +133,11 @@ MonoBehaviour:
   axe: 0
   scythe: 0
   side: 0
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 5311323215224532901}
+  myFighter: {fileID: 0}
+  gatitoBlade: 0
   damageIncrease: 1
+  bladeBeam: {fileID: 5460210223157892090, guid: ccf2fc210a36ebf4ab6f4b4912340f27, type: 3}
 --- !u!1 &5311323215341001509
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +257,7 @@ MonoBehaviour:
   invincibleUntil: 0
   direction: 1
   freezeFrame: 0
-  hpUI: {fileID: 0}
+  UI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
   isPlayer: 0

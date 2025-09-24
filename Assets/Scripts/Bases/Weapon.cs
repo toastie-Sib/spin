@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
     public bool scythe = false;
     private bool firstHitDone = false;
     [HideInInspector] public bool side;
-    [HideInInspector] public Transform firePoint;
+    public Transform firePoint;
     [HideInInspector] public Fighter myFighter;
     [HideInInspector] public bool gatitoBlade = false;
     private int tracker = 0;
@@ -45,7 +45,8 @@ public class Weapon : MonoBehaviour
         {
             Fighter otherParentighter = other.GetComponentInParent<Fighter>();
             Weapon otherWeapon = other.GetComponent<Weapon>();
-            if (side == otherWeapon.side) return; //preventing hitting same team
+            
+            if (otherWeapon == null || side == otherWeapon.side) return; //preventing hitting same team
             // Prevent double trigger by comparing instance IDs
             if (GetInstanceID() > otherWeapon.GetInstanceID()) return;
 
