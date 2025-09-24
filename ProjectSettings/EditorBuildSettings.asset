@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ItemPick.unity
     guid: 9fc58076a41581e458dae72dcd8a7f76
   - enabled: 1
+    path: Assets/Scenes/ItemPickBoss.unity
+    guid: 8b08bc163626b6142944fd483eb8bf52
+  - enabled: 1
     path: Assets/Scenes/Campfire.unity
     guid: 4e996018475b8d2458ed7710a5eaae4a
   - enabled: 1

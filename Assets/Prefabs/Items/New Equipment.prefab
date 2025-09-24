@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 9150600533909196986}
   - component: {fileID: 3795829050365111028}
   m_Layer: 5
-  m_Name: NewEquipment
+  m_Name: New Equipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
