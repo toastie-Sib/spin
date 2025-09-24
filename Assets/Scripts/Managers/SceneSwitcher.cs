@@ -16,8 +16,9 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public GameObject otherAnimPrefab;
     [HideInInspector] public int fighterAmount = 0;
     [HideInInspector] public static SceneSwitcher Instance;
-    [HideInInspector] public int enemyHP;
+    [HideInInspector] public float enemyHP;
     [HideInInspector] public int chapter = 0;
+    [HideInInspector] public bool chapterEnd = false;
     [Header("Player Info")]
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
     [HideInInspector] public string currentNodeID; //Where on Map
@@ -145,7 +146,16 @@ public class SceneSwitcher : MonoBehaviour
 
                 playerMoney += rewardMoney;
 
-                SlowLoadSpecificSceneDelay("ItemPick");
+                if(chapterEnd == false)
+                {
+                    SlowLoadSpecificSceneDelay("ItemPick");
+                } else
+                {
+                    playerMoney += rewardMoney;
+                    SlowLoadSpecificSceneDelay("ItemPickBoss");
+                    chapterEnd = false;
+                }
+                
             }
         }
     }

@@ -12,7 +12,7 @@ public class MapNode : MonoBehaviour
     private Button button;
     public string nodeID;
     public bool startingNode = false;
-    public int enemyHP = 0;
+    public float enemyHPMult = 0;
     public bool isChapterFinal = false;
 
     [Header("Path Settings")]
@@ -59,10 +59,11 @@ public class MapNode : MonoBehaviour
             if (isChapterFinal == true)
             {
                 SceneSwitcher.Instance.chapter += 1;
+                SceneSwitcher.Instance.chapterEnd = true;
             }
-            if(enemyHP != 0)
+            if(enemyHPMult != 0)
             {
-                SceneSwitcher.Instance.enemyHP = enemyHP;
+                SceneSwitcher.Instance.enemyHP = enemyHPMult;
             }
 
             var current = SceneSwitcher.Instance.GetCurrentNode();

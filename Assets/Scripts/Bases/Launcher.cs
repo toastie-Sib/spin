@@ -113,8 +113,8 @@ public class Launcher : MonoBehaviour
 
 
                 //Set up enemy HP
-                fighter.maxHp = SceneSwitcher.Instance.enemyHP;
-                fighter.hp = SceneSwitcher.Instance.enemyHP;
+                fighter.maxHp *= SceneSwitcher.Instance.enemyHP;
+                fighter.hp *= SceneSwitcher.Instance.enemyHP;
             }
         }
     }
