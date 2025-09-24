@@ -21,6 +21,8 @@ public class Bow : Fighter //Inherit Fighter
     [HideInInspector] public List<Transform> extraFirepoints = new List<Transform>();
     [HideInInspector] public Weapon myWeapon;
 
+    private bool rubberArrows = false;
+
     public override void Start() //Make sure to update with Fighter
     {
         base.Start();
@@ -91,6 +93,7 @@ public class Bow : Fighter //Inherit Fighter
             arrow.shooter = this;
             arrow.side = isPlayer;
             arrow.damage += bonusDamage;
+            arrow.rubberArrows = rubberArrows;
         }
 
         //Item Blood of the Knight
@@ -114,11 +117,13 @@ public class Bow : Fighter //Inherit Fighter
                 // We apply the offset to the firePoint's original rotation
                 Quaternion projectileRotation = firePoint.rotation * Quaternion.Euler(0, 0, currentAngleOffset);
 
-                // Instantiate a new projectile
+                // Instantiate a new projectile COPY ABOVE SHIT EXTRA YEAH
                 GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, projectileRotation);
                 Projectile bloodArrow = projectileGO.GetComponent<Projectile>();
                 bloodArrow.shooter = this;
                 bloodArrow.side = isPlayer;
+                arrow.damage += bonusDamage;
+                arrow.rubberArrows = rubberArrows;
 
                 //Item BOTH HERE AGAIN COULD CONDENCE??
                 if (GetComponentInChildren<BloodoftheKnight>() != null)
@@ -181,5 +186,17 @@ public class Bow : Fighter //Inherit Fighter
     {
         yield return new WaitForSeconds(0.75f);
         Destroy(projectile);
+    }
+
+    public void RubberArrows()
+    {
+        rubberArrows = true;
+        StartCoroutine(RubberArrowsWait());
+    }
+
+    public IEnumerator RubberArrowsWait()
+    {
+        yield return new WaitForSeconds(5f);
+        rubberArrows = false;
     }
 }

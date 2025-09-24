@@ -17,6 +17,9 @@ public class Projectile : MonoBehaviour
     public float damage = 1.0f;
     public float speed = 10.0f;
 
+    [HideInInspector] public bool rubberArrows = false;
+    private bool hasBounced = false; // NEW: track if bounced already
+
     public virtual void Start()
     {
         if (shooter != null) { weapon = shooter.GetComponentInChildren<Weapon>(); }
@@ -137,29 +140,35 @@ public class Projectile : MonoBehaviour
             DestroySelf();
         }
 
-        // LEFT WALL
-        if (other.gameObject.CompareTag("LeftWall"))
+        // WALL collisions
+        if (other.gameObject.CompareTag("LeftWall") ||
+            other.gameObject.CompareTag("RightWall") ||
+            other.gameObject.CompareTag("BottomWall") ||
+            other.gameObject.CompareTag("Wall")) 
         {
-            DestroySelf();
+            if (rubberArrows && !hasBounced)
+            {
+                // Reflect direction based on which wall
+                Vector3 normal = Vector3.zero;
+
+                if (other.gameObject.CompareTag("LeftWall")) normal = Vector3.right;
+                if (other.gameObject.CompareTag("RightWall")) normal = Vector3.left;
+                if (other.gameObject.CompareTag("BottomWall")) normal = Vector3.up;
+                if (other.gameObject.CompareTag("Wall")) normal = Vector3.down; 
+
+                // Reflect movement
+                Vector3 incoming = transform.up;
+                Vector3 reflected = Vector3.Reflect(incoming, normal);
+                transform.up = reflected; // update direction
+
+                hasBounced = true; // mark bounce used
+            }
+            else
+            {
+                DestroySelf(); // normal behavior
+            }
         }
 
-        // RIGHT WALL
-        if (other.gameObject.CompareTag("RightWall"))
-        {
-            DestroySelf();
-        }
-
-        // Bottom WALL
-        if (other.gameObject.CompareTag("BottomWall"))
-        {
-            DestroySelf();
-        }
-
-        // Top WALL
-        if (other.gameObject.CompareTag("Wall"))
-        {
-            DestroySelf();
-        }
     }
 
     public virtual void BotbScale()

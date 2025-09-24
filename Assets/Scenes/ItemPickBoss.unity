@@ -524,6 +524,9 @@ MonoBehaviour:
   - fighterName: Spear
     items:
     - {fileID: 5148163468785629941, guid: 359bf345d4444a344b6ed23b712a5aa5, type: 3}
+  - fighterName: Bow
+    items:
+    - {fileID: 5148163468785629941, guid: de79609dff2031546b1094c93f5478e4, type: 3}
   foodPrefab: {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
   waitTime: 0
   num: 1
@@ -733,6 +736,7 @@ MonoBehaviour:
   fighterAmount: 0
   enemyHP: 0
   chapter: 0
+  chapterEnd: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -829,6 +833,7 @@ MonoBehaviour:
   fighterAmount: 0
   enemyHP: 0
   chapter: 0
+  chapterEnd: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -1886,6 +1891,7 @@ MonoBehaviour:
   fighterAmount: 0
   enemyHP: 0
   chapter: 0
+  chapterEnd: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -2337,6 +2343,9 @@ MonoBehaviour:
   - fighterName: Spear
     items:
     - {fileID: 5148163468785629941, guid: 359bf345d4444a344b6ed23b712a5aa5, type: 3}
+  - fighterName: Bow
+    items:
+    - {fileID: 5148163468785629941, guid: de79609dff2031546b1094c93f5478e4, type: 3}
   foodPrefab: {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
   waitTime: 0.01
   num: 2

@@ -26,8 +26,8 @@ public class BossItemManager : MonoBehaviour
 
         itemCooldownTimes = new Dictionary<string, float>()
         {
-            { "New Equipment", 10f },   // example cooldowns
-            { "Rubber Arrows", 8f },
+            { "New Equipment", 12f },   // based on secs
+            { "Rubber Arrows", 15f },
         };
 
         SetupBossButtons();
@@ -159,6 +159,13 @@ public class BossItemManager : MonoBehaviour
             {
                 if (spawner.isPlayer == true)
                     spawner.stashedProjectile.GetComponentInChildren<Spear>().NewEquipment();
+            }
+        } else if (itemName == "Rubber Arrows")
+        {
+            foreach (var spawner in FindObjectsOfType<Launcher>())
+            {
+                if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Bow>().RubberArrows();
             }
         }
     }
