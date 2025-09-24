@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_Scenes/ItemPickBoss.unity
+- path: Assets/_Scenes/ChooseFighter.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

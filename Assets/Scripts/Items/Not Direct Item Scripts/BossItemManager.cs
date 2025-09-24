@@ -28,6 +28,9 @@ public class BossItemManager : MonoBehaviour
         {
             { "New Equipment", 12f },   // based on secs
             { "Rubber Arrows", 15f },
+            { "Remote Detonation", 10f },
+            { "Blood Sacrifice", 2f },
+            { "HMIYC", 18f },
         };
 
         SetupBossButtons();
@@ -159,6 +162,10 @@ public class BossItemManager : MonoBehaviour
                     spawner.stashedProjectile.GetComponentInChildren<Bow>().RubberArrows(); }
         } else if (itemName == "Remote Detonation") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     foreach (var fireball in FindObjectsOfType<Fireball>()) { if (fireball.side == true) { fireball.damage *= 1.5f;  fireball.DestroySelf(); } } }
+        } else if (itemName == "HMIYC") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Dagger>().HMIYC(); }
+        } else if (itemName == "Blood Sacrifice") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Unarmed>().BloodSacrifice(); }
         }
     }
 

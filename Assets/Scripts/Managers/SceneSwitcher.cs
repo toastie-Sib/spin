@@ -217,19 +217,18 @@ public class SceneSwitcher : MonoBehaviour
     private Dictionary<string, string> itemRarities = new Dictionary<string, string>()
     {
         { "BloodoftheArcher", "Uncommon" }, { "BloodoftheBandit", "Common" }, { "BloodoftheKnight", "Common" }, { "BloodoftheSoldier", "Common" }, { "Food", "Common" }, { "RaiseTheRoof", "Common" }, { "Training", "Common" }, 
-        { "TriTippedDagger", "Common" }, { "GlassBall", "Rare" }, { "GatitoBlade", "Rare" }, { "New Equipment", "Boss" }, { "Rubber Arrows", "Boss" }, { "Remote Detonation", "Boss" },
+        { "TriTippedDagger", "Common" }, { "GlassBall", "Rare" }, { "GatitoBlade", "Rare" }, { "New Equipment", "Boss" }, { "Rubber Arrows", "Boss" }, { "Remote Detonation", "Boss" }, 
+        { "HMIYC", "Boss" }, { "Blood Sacrifice", "Boss" },
         //Not in yet
     { "Poison", "Common" },
     { "WindTurbine", "Rare" },
     { "Electricity", "Uncommon" },
     { "Bomb", "Uncommon" },
     { "Fission", "Rare" },
-    { "HMIYC", "Boss" },
     { "Skill Shot", "Boss" },
     { "BladeBeam", "Boss" },
     { "Perfect Dash", "Boss" },
     { "Shadow Step", "Boss" },
-    { "Blood Sacrifice", "Boss" },
     { "Reflect", "Uncommon" },
     { "TungstonSphere", "Uncommon" },
     { "Brimstone", "Rare" },

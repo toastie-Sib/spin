@@ -29,4 +29,9 @@ public class Dagger : Weapon
             myFighter.UpdateDynamicUI("Damage: ", damage, 2);
         }
     }
+
+    public void HMIYC()
+    {
+
+    }
 }

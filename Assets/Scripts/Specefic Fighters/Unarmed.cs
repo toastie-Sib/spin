@@ -141,6 +141,11 @@ public class Unarmed : Fighter
 
     }
 
+    public void BloodSacrifice()
+    {
+
+    }
+
     public void ItemCheck() // Update on Unarmed too since no weapon
     {
         if (SceneSwitcher.Instance.HasItem("BloodoftheArcher"))

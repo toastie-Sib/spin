@@ -531,6 +531,30 @@ MonoBehaviour:
     items:
     - {fileID: 5148163468785629941, guid: cebca052f5543f649a7626e6cef7e1dd, type: 3}
     - {fileID: 5148163468785629941, guid: de79609dff2031546b1094c93f5478e4, type: 3}
+  - fighterName: Dagger
+    items:
+    - {fileID: 5148163468785629941, guid: 7b842a225d9ed524b8a680c737d11672, type: 3}
+  - fighterName: Unarmed
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Sword
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Axe
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Shield
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Scythe
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Wrench
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Anchor
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
   foodPrefab: {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
   waitTime: 0
   num: 1
@@ -2354,6 +2378,30 @@ MonoBehaviour:
     items:
     - {fileID: 5148163468785629941, guid: cebca052f5543f649a7626e6cef7e1dd, type: 3}
     - {fileID: 5148163468785629941, guid: de79609dff2031546b1094c93f5478e4, type: 3}
+  - fighterName: Dagger
+    items:
+    - {fileID: 5148163468785629941, guid: 7b842a225d9ed524b8a680c737d11672, type: 3}
+  - fighterName: Unarmed
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Sword
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Axe
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Shield
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Scythe
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Wrench
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+  - fighterName: Anchor
+    items:
+    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
   foodPrefab: {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
   waitTime: 0.01
   num: 2
