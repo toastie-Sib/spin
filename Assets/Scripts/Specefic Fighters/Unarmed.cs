@@ -143,8 +143,26 @@ public class Unarmed : Fighter
 
     public void BloodSacrifice()
     {
+        if (rb == null) return;
 
+        // Sacrifice some HP first
+        hp -= 5;
+        UpdateUI();
+
+        // Use current velocity direction
+        Vector3 direction = rb.velocity.normalized;
+        if (direction == Vector3.zero)
+        {
+            // if not moving, just dash upward
+            direction = Vector3.up;
+        }
+
+        // Apply velocity boost
+        rb.velocity += direction * 6;
+
+       
     }
+
 
     public void ItemCheck() // Update on Unarmed too since no weapon
     {
