@@ -56,4 +56,9 @@ public class Sword : Weapon
         }
         
     }
+
+    public void BladeBeam()
+    {
+
+    }
 }

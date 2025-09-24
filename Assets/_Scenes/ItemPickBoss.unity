@@ -539,7 +539,7 @@ MonoBehaviour:
     - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
   - fighterName: Sword
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: 93bb1535580ecf24e9d3aaf7fac5e9c4, type: 3}
   - fighterName: Axe
     items:
     - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
@@ -2386,7 +2386,7 @@ MonoBehaviour:
     - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
   - fighterName: Sword
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: 93bb1535580ecf24e9d3aaf7fac5e9c4, type: 3}
   - fighterName: Axe
     items:
     - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}

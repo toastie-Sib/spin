@@ -137,7 +137,6 @@ public class Weapon : MonoBehaviour
             if (otherFighter.isInvincible == false && doNotHurt == false) {
                 myFighter.AttackAnimation();
 
-                Weapon otherWeapon = other.GetComponentInChildren<Weapon>();
                 otherFighter.HurtAnimation();
 
                 otherFighter.HitDetect(damage);

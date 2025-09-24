@@ -31,6 +31,7 @@ public class BossItemManager : MonoBehaviour
             { "Remote Detonation", 10f },
             { "Blood Sacrifice", 2f },
             { "HMIYC", 18f },
+            { "Blade Beam", 8f },
         };
 
         SetupBossButtons();
@@ -166,6 +167,8 @@ public class BossItemManager : MonoBehaviour
                     spawner.stashedProjectile.GetComponentInChildren<Dagger>().HMIYC(); }
         } else if (itemName == "Blood Sacrifice") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     spawner.stashedProjectile.GetComponentInChildren<Unarmed>().BloodSacrifice(); }
+        } else if (itemName == "Blade Beam") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Sword>().BladeBeam(); }
         }
     }
 
