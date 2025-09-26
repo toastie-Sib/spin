@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Managers\FighterScreenScroll.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Anchor.cs" />
+    <Compile Include="Assets\Scripts\Managers\MapNodeRandomization.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

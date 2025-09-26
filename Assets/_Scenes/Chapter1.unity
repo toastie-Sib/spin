@@ -182,7 +182,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -591,7 +591,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -763,7 +763,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -1423,7 +1423,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -2334,7 +2334,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -2506,7 +2506,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -3165,7 +3165,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -3337,7 +3337,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -3825,7 +3825,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -4606,7 +4606,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -4669,7 +4669,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -4966,7 +4966,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -5138,7 +5138,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -5787,7 +5787,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -5959,7 +5959,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -6131,7 +6131,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -6544,7 +6544,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -6795,7 +6795,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -7160,7 +7160,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -7411,7 +7411,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -7741,7 +7741,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -8071,7 +8071,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -8503,7 +8503,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -8675,7 +8675,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -9113,7 +9113,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -9285,7 +9285,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -9457,7 +9457,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -9708,7 +9708,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -10130,7 +10130,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -10302,7 +10302,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -10474,7 +10474,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -10646,7 +10646,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -11007,7 +11007,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -11179,7 +11179,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -11726,7 +11726,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -12056,7 +12056,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -12307,7 +12307,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -12479,7 +12479,7 @@ MonoBehaviour:
   - {fileID: 1477884353}
   isUnlocked: 0
   nodeID: 01
-  startingNode: 1
+  startingNode: 0
   enemyHPMult: 0.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -12838,6 +12838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2145518206}
+  - component: {fileID: 2145518207}
   m_Layer: 5
   m_Name: MapNodes
   m_TagString: Untagged
@@ -12911,3 +12912,70 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2145518207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145518205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943c799823a452b41acf6897c784f6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterNum: 1
+  shopMin: 2
+  shopMax: 4
+  campMin: 2
+  campMax: 4
+  elitesMin: 2
+  elitesMax: 4
+  eventMin: 2
+  eventMax: 4
