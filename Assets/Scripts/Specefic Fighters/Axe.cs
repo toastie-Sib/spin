@@ -11,13 +11,14 @@ public class Axe : Fighter
     public float returnDuration = 1.0f;
     public AnimationCurve returnSpeedCurve;
     private CapsuleCollider capscollider;
+    private bool axeSpin = true;
 
     public override void Update() //Make sure to update with Fighter
     {
         base.Update();
 
         //Timers for Refresh
-        if (Time.time >= nextRefreshTime && rb.useGravity == true) //Arrow Refresh
+        if (Time.time >= nextRefreshTime && rb.useGravity == true && axeSpin == true) //Arrow Refresh
         {
             if (direction == 0) return; // paused
             StartCoroutine(Spin());
@@ -55,6 +56,8 @@ public class Axe : Fighter
 
         while (timer < duration)
         {
+            if (axeSpin == false) break;
+
             timer += Time.deltaTime;
             float t = timer / duration;
 
@@ -73,5 +76,19 @@ public class Axe : Fighter
         transform.rotation = endRot;
         spinMult = 0;
         capscollider.enabled = false;
+    }
+
+    public void Berserker()
+    {
+        axeSpin = false;
+        spinMult = 1200;
+        StartCoroutine(BerserkerTimer());
+    }
+
+    private IEnumerator BerserkerTimer()
+    {
+        yield return new WaitForSeconds(5f);
+        spinMult = 0;
+        axeSpin = true;
     }
 }

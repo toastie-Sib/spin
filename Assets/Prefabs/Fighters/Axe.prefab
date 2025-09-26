@@ -216,7 +216,10 @@ MonoBehaviour:
   scythe: 0
   side: 0
   firePoint: {fileID: 0}
+  myFighter: {fileID: 0}
+  gatitoBlade: 0
   damageIncrease: 2
+  bladeBeam: {fileID: 8005193020781850033}
 --- !u!1 &8005193020900284720
 GameObject:
   m_ObjectHideFlags: 0

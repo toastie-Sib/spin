@@ -32,6 +32,7 @@ public class BossItemManager : MonoBehaviour
             { "Blood Sacrifice", 2f },
             { "HMIYC", 18f },
             { "Blade Beam", 8f },
+            { "Berserker", 18f },
         };
 
         SetupBossButtons();
@@ -169,6 +170,8 @@ public class BossItemManager : MonoBehaviour
                     spawner.stashedProjectile.GetComponentInChildren<Unarmed>().BloodSacrifice(); }
         } else if (itemName == "Blade Beam") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     spawner.stashedProjectile.GetComponentInChildren<Sword>().BladeBeam(); }
+        } else if (itemName == "Berserker") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Axe>().Berserker(); }
         }
     }
 
