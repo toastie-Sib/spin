@@ -82,13 +82,15 @@ public class Axe : Fighter
     {
         axeSpin = false;
         spinMult = 1200;
+        capscollider.enabled = true;
         StartCoroutine(BerserkerTimer());
     }
 
     private IEnumerator BerserkerTimer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(5.1f);
         spinMult = 0;
         axeSpin = true;
+        capscollider.enabled = false;
     }
 }
