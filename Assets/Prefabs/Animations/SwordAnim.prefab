@@ -190,7 +190,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ca7af4cab2c92714898edaf891f6acff, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   startingPoint: {fileID: 438807142912363458}
   attackPoint: {fileID: 3769616068829133956}
   parryPoint: {fileID: 1980097998151448916}
+  slideDuration: 0.01
 --- !u!1 &8184365644128338225
 GameObject:
   m_ObjectHideFlags: 0

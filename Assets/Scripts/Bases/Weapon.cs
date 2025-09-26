@@ -142,7 +142,7 @@ public class Weapon : MonoBehaviour
 
                 otherFighter.HitDetect(damage);
 
-                if (other.GetComponent<Turret>() == null)
+                if (other.GetComponent<Turret>() == null && GetComponentInParent<Anchor>() == null)
                 {
                     TriggerScaling();
                 }

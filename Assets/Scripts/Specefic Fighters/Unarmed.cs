@@ -35,7 +35,7 @@ public class Unarmed : Fighter
         UpdateDynamicUI("Damage: ", glassBallStacks*(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))))), 2); // Doesn't account Items (GB BotK)
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public override void OnCollisionEnter(Collision collision)
     {
         
         

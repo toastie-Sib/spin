@@ -440,7 +440,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -454,7 +454,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 55152204}
   m_OnClick:
     m_PersistentCalls:
@@ -1021,7 +1021,7 @@ GameObject:
   - component: {fileID: 172759126}
   - component: {fileID: 172759125}
   m_Layer: 5
-  m_Name: Archer (1)
+  m_Name: Captain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,7 +1096,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedPrefab1
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 315616872674102727, guid: 581b4c2255aad2e4482cb2e2789d99b8, type: 3}
+          m_ObjectArgument: {fileID: 4791055871911268477, guid: ab3681c6a14a6c04498fc371483ed405, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1108,7 +1108,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedPrefab2
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7677716545353770495, guid: cce476aba9e452b4c9f622aeb3b2354d, type: 3}
+          m_ObjectArgument: {fileID: 1525881795245886623, guid: 630bfc75bb2b5df40bffea642acfb1e2, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1e7a1f66fb18a214982537c026bcbe45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c27279d5027a99f439026c4d7967fc69, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1290,7 +1290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1272.75, y: 402}
+  m_AnchoredPosition: {x: 1215.58, y: 402}
   m_SizeDelta: {x: 416.6, y: 92.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181537095
@@ -1940,7 +1940,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1954,7 +1954,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 618042794}
   m_OnClick:
     m_PersistentCalls:
@@ -2298,7 +2298,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2312,7 +2312,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 716642264}
   m_OnClick:
     m_PersistentCalls:
@@ -2631,7 +2631,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Archer
+  m_Text: Captain
 --- !u!222 &776365009
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2998,7 +2998,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.62543684, g: 0.622241, b: 0.745283, a: 0.65882355}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3012,7 +3012,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 904303475}
   m_OnClick:
     m_PersistentCalls:
@@ -4391,7 +4391,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4405,7 +4405,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1196446435}
   m_OnClick:
     m_PersistentCalls:
@@ -5413,7 +5413,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -5427,7 +5427,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1387843660}
   m_OnClick:
     m_PersistentCalls:
@@ -5772,7 +5772,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -5786,7 +5786,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1448153870}
   m_OnClick:
     m_PersistentCalls:
@@ -7456,7 +7456,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -7470,7 +7470,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1809690094}
   m_OnClick:
     m_PersistentCalls:
@@ -7923,7 +7923,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Berserker
+          m_StringArgument: Training
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 803803648}
@@ -7935,7 +7935,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Blade Beam
+          m_StringArgument: GlassBall
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1900427828
@@ -8198,7 +8198,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.7848703, g: 0.71595764, b: 0.8773585, a: 1}
     m_PressedColor: {r: 0.34248558, g: 0.2951673, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5901345, g: 0.43173724, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.19679615, g: 0.18743324, b: 0.49056602, a: 0.5019608}
+    m_DisabledColor: {r: 0.37645936, g: 0.28114986, b: 0.735849, a: 0.83137256}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -8212,7 +8212,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1985802406}
   m_OnClick:
     m_PersistentCalls:

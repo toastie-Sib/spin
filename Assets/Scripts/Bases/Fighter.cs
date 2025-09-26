@@ -188,6 +188,7 @@ public class Fighter : MonoBehaviour
     {
         //Take Damage to HP
         hp -= amount;
+        hp = Mathf.Round(hp * 10.0f) * 0.1f;
         hp = Mathf.Max(hp, 0);
         UpdateUI();
 
@@ -203,7 +204,7 @@ public class Fighter : MonoBehaviour
     }
 
     //Keep bounce going
-    private void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         if (click != null) { AudioSource.PlayClipAtPoint(click, transform.position); } //bounce sound :D
         float horizontalSpeed = Mathf.Abs(rb.velocity.x);
@@ -304,8 +305,8 @@ public class Fighter : MonoBehaviour
     public void UpdateUI()
     {
         if (UI != null) { 
-            UI.hpText.text = Mathf.Round(hp).ToString();
-            UI.hpUIText.text = ("HP: " + (Mathf.Round(hp))).ToString();
+            if(hp <= 0.5){ UI.hpText.text = "1"; } else { UI.hpText.text = Mathf.Round(hp).ToString(); }
+            UI.hpUIText.text = ("HP: " + hp).ToString();
             UI.spinText.text = ("Spin: " + (Mathf.Round(spinMult))).ToString();
         }
     }

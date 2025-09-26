@@ -285,7 +285,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6da63a139fa71ee478c09c95b1295f7c, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -309,3 +309,4 @@ MonoBehaviour:
   startingPoint: {fileID: 5088951498337417110}
   attackPoint: {fileID: 8678576809899789439}
   parryPoint: {fileID: 4593804788351167598}
+  slideDuration: 0.01

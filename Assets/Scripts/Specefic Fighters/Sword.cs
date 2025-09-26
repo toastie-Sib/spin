@@ -17,7 +17,7 @@ public class Sword : Weapon
 
         if (gatitoBlade == false)
         {
-            myFighter.UpdateDynamicUI("Dmg Increase: ", stackIncreases, 1);
+            myFighter.UpdateDynamicUI("Dmg Increases: ", stackIncreases, 1);
             myFighter.UpdateDynamicUI("Damage: ", damage, 2);
         }
 
@@ -27,7 +27,8 @@ public class Sword : Weapon
     public override void IncreaseScaling()
     {
         base.IncreaseScaling();
-        damage += damageIncrease;
+        damage += Mathf.Round(damageIncrease * 10.0f) * 0.1f;
+        damage = Mathf.Round(damage * 10.0f) * 0.1f;
         stackIncreases += 1;
 
         if (GetComponentInParent<Axe>() != null)
@@ -45,8 +46,8 @@ public class Sword : Weapon
 
         if(gatitoBlade == false)
         {
-            myFighter.UpdateDynamicUI("Dmg Increase: ", stackIncreases, 1);
-            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+            myFighter.UpdateDynamicUI("Dmg Increases: ", stackIncreases, 1);
+            myFighter.UpdateDynamicUI("Damage: ", Mathf.Round(damage * 10.0f) * 0.1f, 2);
         }
     }
 
