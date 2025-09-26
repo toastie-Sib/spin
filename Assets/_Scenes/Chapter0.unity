@@ -2531,7 +2531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -661.33, y: 447.93707}
+  m_AnchoredPosition: {x: -630, y: 445.5}
   m_SizeDelta: {x: 554.82, y: 111.4607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969904044
@@ -2556,18 +2556,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 61cc63cc83c3094409e8db45118ac0b8, type: 3}
-    m_FontSize: 117
+    m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 291
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chapter 0
+  m_Text: 'Chapter 0: Dojo'
 --- !u!222 &1969904045
 CanvasRenderer:
   m_ObjectHideFlags: 0
