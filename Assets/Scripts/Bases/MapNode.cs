@@ -68,13 +68,12 @@ public class MapNode : MonoBehaviour
             }
 
             var current = SceneSwitcher.Instance.GetCurrentNode();
-            SphereCollider collider = current.GetComponentInChildren<SphereCollider>();
             GameObject startPoint = GameObject.Find("Start Point");
             AssignAnimation animMovement = GameObject.Find("PlayerAnim").GetComponent<AssignAnimation>();
             animMovement.stashedAnimation.GetComponent<AnimationMovement>().slideDuration = 1.5f;
             animMovement.stashedAnimation.GetComponent<AnimationMovement>().StartingPoint();        //This should be making the animation move immedietly but it stays still for a moment
 
-            startPoint.transform.position = collider.transform.position;
+            startPoint.transform.position = current.transform.position;
             startPoint.transform.position += new Vector3(0f, 1.4f, 0f);
 
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay(sceneName);
@@ -106,7 +105,7 @@ public class MapNode : MonoBehaviour
             SphereCollider collider = current.GetComponentInChildren<SphereCollider>();
             GameObject startPoint = GameObject.Find("Start Point");
 
-            startPoint.transform.position = collider.transform.position;
+            startPoint.transform.position = current.transform.position;
             startPoint.transform.position += new Vector3(0f, 1.4f, 0f);
 
             current.isUnlocked = false;
