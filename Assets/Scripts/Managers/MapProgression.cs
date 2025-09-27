@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Reflection;
 
 public class MapProgression : MonoBehaviour
 {
@@ -10,10 +11,21 @@ public class MapProgression : MonoBehaviour
 
     public int unlockThreshold = 7;      // How many nodes before final unlocks
     public bool trackVisitedNodes = false;
+    private bool hasCopied = false;
 
     private void Start()
     {
-        if (trackVisitedNodes == false) return;
+        if (hasCopied == false)
+        {
+            GameObject es = GameObject.Find("EventSystem");
+            if (es.GetComponent<MapProgression>() != null) return;
+            MapProgression newMapProgression = GetComponent<MapProgression>().GetCopyOf(es);
+            newMapProgression.hasCopied = true;
+            es.name = "EventSystem";
+
+        }
+
+        if (trackVisitedNodes == false || hasCopied == false) return;
         StartCoroutine(StartSetupChecks());
         
     }
@@ -97,5 +109,43 @@ public class MapProgression : MonoBehaviour
         }
 
         return available;
+    }
+
+
+
+    
+}
+
+public static class ComponentCopier
+{
+    public static T GetCopyOf<T>(this T originalComponent, GameObject destinationGameObject) where T : Component
+    {
+        // Add a new component of the same type to the destination GameObject
+        T newComponent = destinationGameObject.AddComponent<T>();
+
+        // Get the type of the component
+        System.Type type = originalComponent.GetType();
+
+        // Get all public and non-public fields
+        FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        foreach (FieldInfo field in fields)
+        {
+            // Copy the value of each field
+            field.SetValue(newComponent, field.GetValue(originalComponent));
+        }
+
+        // Get all public properties
+        PropertyInfo[] properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        foreach (PropertyInfo property in properties)
+        {
+            // Check if the property can be written to and read from
+            if (property.CanWrite && property.CanRead)
+            {
+                // Copy the value of each property
+                property.SetValue(newComponent, property.GetValue(originalComponent, null), null);
+            }
+        }
+
+        return newComponent;
     }
 }
