@@ -129,6 +129,12 @@ public class MapNode : MonoBehaviour
         button.interactable = isUnlocked;
     }
 
+    public void SetActive(bool active)
+    {
+        isUnlocked = active;
+        button.interactable = active;
+    }
+
     private void DrawPaths()
     {
         RectTransform canvasRect = GameObject.Find("MapLineContainer").GetComponent<RectTransform>();

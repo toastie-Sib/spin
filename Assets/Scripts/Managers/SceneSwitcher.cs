@@ -104,8 +104,10 @@ public class SceneSwitcher : MonoBehaviour
             SceneManager.LoadScene("Chapter1");
         } else if (chapter == 2) {
             SceneManager.LoadScene("Chapter2");
+            GetComponent<MapProgression>().trackVisitedNodes = true;
         } else if (chapter == 3) {
             SceneManager.LoadScene("Chapter3");
+            GetComponent<MapProgression>().trackVisitedNodes = false;
         } else if (chapter == 4)
         {
             SceneManager.LoadScene("Chapter4");

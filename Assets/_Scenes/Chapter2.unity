@@ -315,7 +315,7 @@ RectTransform:
   m_Children:
   - {fileID: 315471470}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -338,7 +338,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 25
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 2
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -397,18 +397,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 41912117}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 41912114}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -486,7 +486,7 @@ RectTransform:
   m_Children:
   - {fileID: 1088768124}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -509,7 +509,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 224
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 5.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -568,18 +568,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 93566711}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 93566708}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -736,7 +736,7 @@ RectTransform:
   m_Children:
   - {fileID: 288460606}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -759,7 +759,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 23
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 2
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -818,18 +818,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 194890003}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 194890000}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -975,7 +975,7 @@ RectTransform:
   m_Children:
   - {fileID: 2135174345}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -998,7 +998,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 226
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 6
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -1057,18 +1057,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 269583152}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 269583149}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1462,7 +1462,7 @@ RectTransform:
   m_Children:
   - {fileID: 1123167577}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1485,7 +1485,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 216
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -1544,18 +1544,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 388333950}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 388333947}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1633,7 +1633,7 @@ RectTransform:
   m_Children:
   - {fileID: 1394956932}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 221
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -1715,18 +1715,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 473175138}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 473175135}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1804,7 +1804,7 @@ RectTransform:
   m_Children:
   - {fileID: 509456114}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1827,7 +1827,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 220
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -1886,18 +1886,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 494022056}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 494022053}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2212,7 +2212,7 @@ RectTransform:
   m_Children:
   - {fileID: 513539021}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2235,7 +2235,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 28
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -2294,18 +2294,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 576465072}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 576465069}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2383,7 +2383,7 @@ RectTransform:
   m_Children:
   - {fileID: 1241740051}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2406,7 +2406,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 223
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -2465,18 +2465,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 585775574}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 585775571}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2791,7 +2791,7 @@ RectTransform:
   m_Children:
   - {fileID: 19168610}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2814,7 +2814,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 225
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 5.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -2873,18 +2873,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 627345687}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 627345684}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2962,7 +2962,7 @@ RectTransform:
   m_Children:
   - {fileID: 280502096}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3305,7 +3305,7 @@ RectTransform:
   m_Children:
   - {fileID: 1178427874}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3366,18 +3366,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 798406773}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 798406775}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3437,7 +3437,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 21
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 1.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -3476,7 +3476,7 @@ RectTransform:
   m_Children:
   - {fileID: 1058898026}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3499,7 +3499,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 214
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -3558,18 +3558,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 799875107}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 799875104}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3627,6 +3627,7 @@ GameObject:
   - component: {fileID: 803803648}
   - component: {fileID: 803803649}
   - component: {fileID: 803803650}
+  - component: {fileID: 803803651}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3738,6 +3739,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overridePuase: 0
   timeScale: 2
+--- !u!114 &803803651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803803644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae8f92729ea1643a2955e25b747313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allNodes:
+  - {fileID: 798406775}
+  - {fileID: 1157795014}
+  - {fileID: 194890000}
+  - {fileID: 2054252560}
+  - {fileID: 41912114}
+  - {fileID: 1957436722}
+  - {fileID: 1977645821}
+  - {fileID: 576465069}
+  - {fileID: 899574321}
+  - {fileID: 1335813602}
+  - {fileID: 1812816293}
+  - {fileID: 1286256398}
+  - {fileID: 839227115}
+  - {fileID: 799875104}
+  - {fileID: 929734958}
+  - {fileID: 388333947}
+  - {fileID: 1024067704}
+  - {fileID: 1615395595}
+  - {fileID: 1309597279}
+  - {fileID: 494022053}
+  - {fileID: 473175135}
+  - {fileID: 1364377568}
+  - {fileID: 585775571}
+  - {fileID: 93566708}
+  - {fileID: 627345684}
+  - {fileID: 269583149}
+  finalNode: {fileID: 677122238}
+  unlockThreshold: 7
+  trackVisitedNodes: 1
 --- !u!1 &839227113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,7 +3815,7 @@ RectTransform:
   m_Children:
   - {fileID: 1038351721}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3795,7 +3838,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 213
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -3854,18 +3897,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 839227118}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 839227115}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4022,7 +4065,7 @@ RectTransform:
   m_Children:
   - {fileID: 1921589702}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4045,7 +4088,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 29
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -4104,18 +4147,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 899574324}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 899574321}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4193,7 +4236,7 @@ RectTransform:
   m_Children:
   - {fileID: 1245730826}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4216,7 +4259,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 215
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -4275,18 +4318,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 929734961}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 929734958}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4548,7 +4591,7 @@ RectTransform:
   m_Children:
   - {fileID: 593187106}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4571,7 +4614,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 217
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -4630,18 +4673,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1024067707}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1024067704}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5070,7 +5113,7 @@ RectTransform:
   m_Children:
   - {fileID: 591658559}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5093,7 +5136,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 22
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 1.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -5152,18 +5195,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1157795017}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1157795014}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5444,41 +5487,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245730825}
   m_CullTransparentMesh: 1
---- !u!1 &1248179242
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1248179243}
-  m_Layer: 5
-  m_Name: For Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1248179243
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248179242}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2145518206}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 155}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1284192007
 GameObject:
   m_ObjectHideFlags: 0
@@ -5614,7 +5622,7 @@ RectTransform:
   m_Children:
   - {fileID: 597590533}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5637,7 +5645,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 212
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 3
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -5696,18 +5704,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1286256401}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1286256398}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5785,7 +5793,7 @@ RectTransform:
   m_Children:
   - {fileID: 557785742}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5808,7 +5816,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 219
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -5867,18 +5875,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1309597282}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1309597279}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6051,7 +6059,7 @@ RectTransform:
   m_Children:
   - {fileID: 846562469}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6074,7 +6082,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 210
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 3
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -6133,18 +6141,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1335813605}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1335813602}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6222,7 +6230,7 @@ RectTransform:
   m_Children:
   - {fileID: 700107603}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6245,7 +6253,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 222
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -6304,18 +6312,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1364377571}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1364377568}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6551,7 +6559,7 @@ RectTransform:
   m_Children:
   - {fileID: 1968759149}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6574,7 +6582,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 218
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -6633,18 +6641,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1615395598}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1615395595}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6754,11 +6762,11 @@ RectTransform:
   m_Children:
   - {fileID: 1906287355}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -450}
+  m_AnchoredPosition: {x: 0, y: -435}
   m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812816293
@@ -6777,7 +6785,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 211
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 3
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -6836,18 +6844,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1812816296}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1812816293}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7129,7 +7137,7 @@ RectTransform:
   m_Children:
   - {fileID: 102775418}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7152,7 +7160,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 26
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -7211,18 +7219,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1957436725}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1957436722}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7379,7 +7387,7 @@ RectTransform:
   m_Children:
   - {fileID: 2112655056}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7402,7 +7410,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 27
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -7461,18 +7469,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1977645824}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1977645821}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7550,7 +7558,7 @@ RectTransform:
   m_Children:
   - {fileID: 9735345}
   m_Father: {fileID: 2145518206}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7573,7 +7581,7 @@ MonoBehaviour:
   connectedNodes: []
   isUnlocked: 0
   nodeID: 24
-  startingNode: 0
+  startingNode: 1
   enemyHPMult: 2
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
@@ -7632,18 +7640,18 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 2054252563}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 803803651}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2054252560}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7952,7 +7960,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1248179243}
   - {fileID: 798406770}
   - {fileID: 1157795013}
   - {fileID: 194889999}
@@ -8026,23 +8033,8 @@ MonoBehaviour:
   - {fileID: 585775573}
   - {fileID: 93566710}
   - {fileID: 627345686}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 269583151}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  chapterNum: 1
+  chapterNum: 2
   shopMin: 2
   shopMax: 4
   campMin: 2

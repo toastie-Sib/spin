@@ -690,6 +690,7 @@ GameObject:
   - component: {fileID: 803803648}
   - component: {fileID: 803803649}
   - component: {fileID: 803803650}
+  - component: {fileID: 803803651}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -801,6 +802,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overridePuase: 0
   timeScale: 2
+--- !u!114 &803803651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803803644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae8f92729ea1643a2955e25b747313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allNodes: []
+  finalNode: {fileID: 0}
+  unlockThreshold: 7
+  trackVisitedNodes: 0
 --- !u!1 &895640517
 GameObject:
   m_ObjectHideFlags: 0
