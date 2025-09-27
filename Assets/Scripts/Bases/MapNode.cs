@@ -51,7 +51,7 @@ public class MapNode : MonoBehaviour
         
     }
 
-    void OnClick()
+    public void OnClick()
     {
         if (isUnlocked)
         {
@@ -74,11 +74,18 @@ public class MapNode : MonoBehaviour
             animMovement.stashedAnimation.GetComponent<AnimationMovement>().StartingPoint();        //This should be making the animation move immedietly but it stays still for a moment
 
             startPoint.transform.position = current.transform.position;
-            startPoint.transform.position += new Vector3(0f, 1.4f, 0f);
+            startPoint.transform.position += new Vector3(0f, 1.1f, 0f);
 
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay(sceneName);
-            isUnlocked = false;
-            UpdateVisual();
+            MapNode[] foundScripts = FindObjectsByType<MapNode>(FindObjectsSortMode.None);
+
+            // Iterate through the found scripts and access their game objects
+            foreach (MapNode script in foundScripts)
+            {
+                script.isUnlocked = false;
+                script.UpdateVisual();
+            }
+            
 
 
         }
@@ -106,7 +113,7 @@ public class MapNode : MonoBehaviour
             GameObject startPoint = GameObject.Find("Start Point");
 
             startPoint.transform.position = current.transform.position;
-            startPoint.transform.position += new Vector3(0f, 1.4f, 0f);
+            startPoint.transform.position += new Vector3(0f, 1.1f, 0f);
 
             current.isUnlocked = false;
             UpdateVisual();

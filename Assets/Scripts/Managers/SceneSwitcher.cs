@@ -19,6 +19,8 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public float enemyHP;
     [HideInInspector] public int chapter = 0;
     [HideInInspector] public bool chapterEnd = false;
+    [HideInInspector] public int chapter2UnlockThreshold = 7;
+    [HideInInspector] public HashSet<MapNode> chapter2VisitedNodes = new HashSet<MapNode>();
     [Header("Player Info")]
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
     [HideInInspector] public string currentNodeID; //Where on Map
@@ -104,10 +106,8 @@ public class SceneSwitcher : MonoBehaviour
             SceneManager.LoadScene("Chapter1");
         } else if (chapter == 2) {
             SceneManager.LoadScene("Chapter2");
-            GetComponent<MapProgression>().trackVisitedNodes = true;
         } else if (chapter == 3) {
             SceneManager.LoadScene("Chapter3");
-            GetComponent<MapProgression>().trackVisitedNodes = false;
         } else if (chapter == 4)
         {
             SceneManager.LoadScene("Chapter4");

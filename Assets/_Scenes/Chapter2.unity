@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 25
   startingNode: 1
   enemyHPMult: 2
@@ -402,13 +402,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 41912114}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -507,7 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 224
   startingNode: 1
   enemyHPMult: 5.5
@@ -573,13 +585,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 93566708}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -757,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 23
   startingNode: 1
   enemyHPMult: 2
@@ -823,13 +847,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 194890000}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -996,7 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 226
   startingNode: 1
   enemyHPMult: 6
@@ -1062,13 +1098,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 269583149}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1483,7 +1531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 216
   startingNode: 1
   enemyHPMult: 3.5
@@ -1549,13 +1597,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 388333947}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1654,7 +1714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 221
   startingNode: 1
   enemyHPMult: 5
@@ -1720,13 +1780,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 473175135}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1825,7 +1897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 220
   startingNode: 1
   enemyHPMult: 4.5
@@ -1891,13 +1963,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 494022053}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2233,7 +2317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 28
   startingNode: 1
   enemyHPMult: 2.5
@@ -2299,13 +2383,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 576465069}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2404,7 +2500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 223
   startingNode: 1
   enemyHPMult: 5
@@ -2470,13 +2566,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 585775571}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2812,7 +2920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 225
   startingNode: 1
   enemyHPMult: 5.5
@@ -2878,13 +2986,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 627345684}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3028,18 +3148,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
+      - m_Target: {fileID: 2145518208}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: VisitNode
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 677122238}
+          m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &677122236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3095,7 +3227,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 2Boss
   startingNode: 0
-  enemyHPMult: 10
+  enemyHPMult: 25
   isChapterFinal: 1
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 0
@@ -3371,13 +3503,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 798406775}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3435,7 +3579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 21
   startingNode: 1
   enemyHPMult: 1.5
@@ -3497,7 +3641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 214
   startingNode: 1
   enemyHPMult: 3.5
@@ -3563,13 +3707,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 799875104}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3627,6 +3783,7 @@ GameObject:
   - component: {fileID: 803803648}
   - component: {fileID: 803803649}
   - component: {fileID: 803803650}
+  - component: {fileID: 803803651}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3703,6 +3860,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -3738,6 +3896,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overridePuase: 0
   timeScale: 2
+--- !u!114 &803803651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803803644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae8f92729ea1643a2955e25b747313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allNodes: []
+  finalNode: {fileID: 0}
 --- !u!1 &839227113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3793,7 +3965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 213
   startingNode: 1
   enemyHPMult: 3.5
@@ -3859,13 +4031,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 839227115}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4043,7 +4227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 29
   startingNode: 1
   enemyHPMult: 2.5
@@ -4109,13 +4293,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 899574321}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4214,7 +4410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 215
   startingNode: 1
   enemyHPMult: 3.5
@@ -4280,13 +4476,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 929734958}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4569,7 +4777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 217
   startingNode: 1
   enemyHPMult: 4.5
@@ -4635,13 +4843,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1024067704}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5091,7 +5311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 22
   startingNode: 1
   enemyHPMult: 1.5
@@ -5157,13 +5377,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1157795014}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5600,7 +5832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 212
   startingNode: 1
   enemyHPMult: 3
@@ -5666,13 +5898,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1286256398}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5771,7 +6015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 219
   startingNode: 1
   enemyHPMult: 4.5
@@ -5837,13 +6081,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1309597279}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6037,7 +6293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 210
   startingNode: 1
   enemyHPMult: 3
@@ -6103,13 +6359,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1335813602}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6208,7 +6476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 222
   startingNode: 1
   enemyHPMult: 5
@@ -6274,13 +6542,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1364377568}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6537,7 +6817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 218
   startingNode: 1
   enemyHPMult: 4.5
@@ -6603,13 +6883,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1615395595}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6740,7 +7032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 211
   startingNode: 1
   enemyHPMult: 3
@@ -6806,13 +7098,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1812816293}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7115,7 +7419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 26
   startingNode: 1
   enemyHPMult: 2.5
@@ -7181,13 +7485,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1957436722}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7365,7 +7681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 27
   startingNode: 1
   enemyHPMult: 2.5
@@ -7431,13 +7747,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1977645821}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7536,7 +7864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: ArenaSmall
   connectedNodes: []
-  isUnlocked: 0
+  isUnlocked: 1
   nodeID: 24
   startingNode: 1
   enemyHPMult: 2
@@ -7602,13 +7930,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2145518208}
         m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
         m_MethodName: VisitNode
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2054252560}
           m_ObjectArgumentAssemblyTypeName: MapNode, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapProgression, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8041,5 +8381,3 @@ MonoBehaviour:
   - {fileID: 627345684}
   - {fileID: 269583149}
   finalNode: {fileID: 677122238}
-  unlockThreshold: 7
-  trackVisitedNodes: 1
