@@ -7364,6 +7364,7 @@ MonoBehaviour:
   es: {fileID: 0}
   stashedAnimation: {fileID: 0}
   isPlayer: 1
+  autoMove: 0
 --- !u!1 &1957436720
 GameObject:
   m_ObjectHideFlags: 0

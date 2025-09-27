@@ -69,12 +69,13 @@ public class MapNode : MonoBehaviour
 
             var current = SceneSwitcher.Instance.GetCurrentNode();
             GameObject startPoint = GameObject.Find("Start Point");
-            AssignAnimation animMovement = GameObject.Find("PlayerAnim").GetComponent<AssignAnimation>();
-            animMovement.stashedAnimation.GetComponent<AnimationMovement>().slideDuration = 1.5f;
-            animMovement.stashedAnimation.GetComponent<AnimationMovement>().StartingPoint();        //This should be making the animation move immedietly but it stays still for a moment
 
             startPoint.transform.position = current.transform.position;
             startPoint.transform.position += new Vector3(0f, 1.1f, 0f);
+
+            AssignAnimation animMovement = GameObject.Find("PlayerAnim").GetComponent<AssignAnimation>();
+            animMovement.stashedAnimation.GetComponent<AnimationMovement>().slideDuration = 1.5f;
+            animMovement.stashedAnimation.GetComponent<AnimationMovement>().StartingPointMap();
 
             SceneSwitcher.Instance.SlowLoadSpecificSceneDelay(sceneName);
             MapNode[] foundScripts = FindObjectsByType<MapNode>(FindObjectsSortMode.None);

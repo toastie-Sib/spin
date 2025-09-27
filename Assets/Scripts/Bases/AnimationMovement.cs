@@ -8,6 +8,7 @@ public class AnimationMovement : MonoBehaviour
     public Transform attackPoint;
     public Transform parryPoint;
     [HideInInspector] public float slideDuration = 0.01f;
+    public bool autoMove = true;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class AnimationMovement : MonoBehaviour
 
     public void StartingPoint()
     {
+        if (autoMove == false) return;
         StartCoroutine(SlideToPoint(startingPoint.position, slideDuration));
     }
 
@@ -45,5 +47,10 @@ public class AnimationMovement : MonoBehaviour
     public void ParryPoint()
     {
         StartCoroutine(SlideToPoint(parryPoint.position, slideDuration));
+    }
+
+    public void StartingPointMap()
+    {
+        StartCoroutine(SlideToPoint(startingPoint.position, slideDuration));
     }
 }

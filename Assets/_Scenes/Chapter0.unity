@@ -806,6 +806,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -2086,6 +2087,7 @@ MonoBehaviour:
   es: {fileID: 0}
   stashedAnimation: {fileID: 0}
   isPlayer: 1
+  autoMove: 0
 --- !u!1 &1969904041
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class AssignAnimation : Assign
 {
     public Animator stashedAnimation;
     public bool isPlayer = false;
+    public bool autoMove = true;
 
     // Start is called before the first frame update
     public override void Start()
@@ -39,5 +40,6 @@ public class AssignAnimation : Assign
         animation.transform.localScale = scale;
         Quaternion rotation = transform.localRotation;
         animation.transform.localRotation = rotation;
+        animation.GetComponent<AnimationMovement>().autoMove = autoMove; 
     }
 }
