@@ -40,6 +40,7 @@ public class MapNodeRandomization : MonoBehaviour
         foreach (int Index in chosenShops)
         {
             Text buttonText = nodeButtons[Index].GetComponentInChildren<Text>();
+            nodeButtons[Index].GetComponent<Image>().color = new Color32(0, 255, 15, 255);
             if (buttonText != null)
             {
                 buttonText.text = "Shop";
@@ -69,9 +70,10 @@ public class MapNodeRandomization : MonoBehaviour
         }
 
         // Update chosen buttons to say "Shop"
-        foreach (int Index in chosenShops)
+        foreach (int Index in chosenCamps)
         {
             Text buttonText = nodeButtons[Index].GetComponentInChildren<Text>();
+            nodeButtons[Index].GetComponent<Image>().color = new Color32(255, 98, 0, 255);
             if (buttonText != null)
             {
                 buttonText.text = "Camp";
@@ -103,6 +105,7 @@ public class MapNodeRandomization : MonoBehaviour
         foreach (int Index in chosenElites)
         {
             Text buttonText = nodeButtons[Index].GetComponentInChildren<Text>();
+            nodeButtons[Index].GetComponent<Image>().color = new Color32(171, 129, 233, 255);
             if (buttonText != null)
             {
                 buttonText.text = "Elite";
@@ -134,6 +137,7 @@ public class MapNodeRandomization : MonoBehaviour
         foreach (int Index in chosenEvents)
         {
             Text buttonText = nodeButtons[Index].GetComponentInChildren<Text>();
+            nodeButtons[Index].GetComponent<Image>().color = new Color32(81, 231, 255, 255);
             if (buttonText != null)
             {
                 buttonText.text = "Event";

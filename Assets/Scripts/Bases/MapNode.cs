@@ -17,7 +17,8 @@ public class MapNode : MonoBehaviour
 
     [Header("Path Settings")]
     public Material lineMaterial;   // Assign a simple UI/Unlit material
-    private List<LineRenderer> paths = new List<LineRenderer>();
+    private List<Image> paths = new List<Image>();
+    public float lineLength;
 
     void Awake()
     {
@@ -131,51 +132,68 @@ public class MapNode : MonoBehaviour
 
     private void DrawPaths()
     {
+        RectTransform canvasRect = GameObject.Find("MapLineContainer").GetComponent<RectTransform>();
+
         foreach (var target in connectedNodes)
         {
             if (target == null) continue;
 
-            GameObject lineObj = new GameObject("PathLine");
-            lineObj.transform.SetParent(GameObject.Find("MapLineContainer").transform, false); // put under root Canvas
+            // Create a UI line
+            GameObject lineObj = new GameObject("PathLine", typeof(Image));
+            lineObj.transform.SetParent(canvasRect, false);
 
-            LineRenderer lr = lineObj.AddComponent<LineRenderer>();
-            lr.material = lineMaterial;
-            lr.widthMultiplier = 0.15f; // adjust thickness
-            lr.positionCount = 2;
-            lr.sortingOrder = 200; // ensure above background
+            Image img = lineObj.GetComponent<Image>();
+            img.color = Color.black; // default color
 
-            // Use UI space conversion
-            Vector3 startPos = GetComponentInChildren<SphereCollider>().transform.position;
-            Vector3 endPos = target.GetComponentInChildren<SphereCollider>().transform.position;
+            RectTransform rt = lineObj.GetComponent<RectTransform>();
+            rt.pivot = new Vector2(0.5f, 0.5f); // center pivot
 
-            lr.useWorldSpace = true;
-            lr.SetPosition(0, startPos);
-            lr.SetPosition(1, endPos);
+            // Get positions in canvas space
+            Vector3 startPos = GetComponent<RectTransform>().position;
+            Vector3 endPos = target.GetComponent<RectTransform>().position;
 
-            // Start all inactive
-            lr.startColor = Color.black;
-            lr.endColor = Color.black;
+            // Direction and distance
+            Vector3 dir = endPos - startPos;
+            float dist = dir.magnitude;
 
-            paths.Add(lr);
+            // Base thickness
+            float baseThickness = 5f;
+
+            // Apply scaling (x length, y thickness)
+            float scaledLength = dist * lineLength;           // shrink horizontal scale
+            float scaledThickness = baseThickness * 2.5f; // increase vertical scale
+
+            // Set size
+            rt.sizeDelta = new Vector2(scaledLength, scaledThickness);
+
+            // Position at the midpoint
+            rt.position = (startPos + endPos) / 2f;
+
+            // Rotate so x-axis points toward target
+            rt.rotation = Quaternion.FromToRotation(Vector3.right, dir);
+
+            // Store reference
+            paths.Add(img);
         }
     }
+
+
+
+
 
     private void UpdatePathColors()
     {
-        foreach (var lr in paths)
+        foreach (var img in paths)
         {
             if (isUnlocked)
             {
-                lr.startColor = Color.red;
-                lr.endColor = Color.red;
-                lr.material.color = Color.red;
+                img.color = Color.red;
             }
             else
             {
-                lr.startColor = Color.black;
-                lr.endColor = Color.black;
-                lr.material.color = Color.black;
+                img.color = Color.black;
             }
         }
     }
+
 }
