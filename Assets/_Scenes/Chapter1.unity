@@ -183,7 +183,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 111A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 6.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -672,7 +672,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 12C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 2
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -845,7 +845,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 119A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 5.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -1312,7 +1312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1900, y: -325}
+  m_AnchoredPosition: {x: 1900, y: -315}
   m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &161744261
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 111D
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 6.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -1661,7 +1661,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 12A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 2
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -2131,7 +2131,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 110C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 6
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -2673,7 +2673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6000, y: 580}
+  m_AnchoredPosition: {x: 6000, y: 542}
   m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342345660
@@ -3021,7 +3021,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 15D
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -3269,7 +3269,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 118A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 117D
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -4257,7 +4257,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 13C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -4430,7 +4430,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 118C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 125
@@ -5070,7 +5070,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 119B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 5.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -5504,7 +5504,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 114Boss
   startingNode: 0
-  enemyHPMult: 1
+  enemyHPMult: 10
   isChapterFinal: 1
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -5999,7 +5999,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 11A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 1.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -6063,7 +6063,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 15B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -6361,7 +6361,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 112C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 7
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -6609,7 +6609,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 15A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -7215,7 +7215,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 10
   startingNode: 1
-  enemyHPMult: 0.5
+  enemyHPMult: 1
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -7467,7 +7467,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 13D
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -7715,7 +7715,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 15C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 3.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -7990,7 +7990,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 114B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 8
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -8275,6 +8275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDuration: 0
+  smoothTime: 0.25
   panSpeed: 7.5
   leftBounnds: 0
   rightBounnds: 14.5
@@ -8496,7 +8497,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 111B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 6.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -8823,7 +8824,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 17A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 125
@@ -9414,7 +9415,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 113C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 7.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -9741,7 +9742,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 112A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 7
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -10147,7 +10148,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 11B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 1.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -10624,7 +10625,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 113B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 7.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -11214,7 +11215,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 14C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 3
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -11462,7 +11463,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 117C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -11977,7 +11978,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 14A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 3
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -12224,7 +12225,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 114A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 8
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -12397,7 +12398,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 118B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -12799,7 +12800,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 111C
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 6.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -13374,7 +13375,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 110B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 6
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -13625,7 +13626,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 113D
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 7.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -13776,7 +13777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1650, y: 300}
+  m_AnchoredPosition: {x: 1650, y: 290}
   m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559151421
@@ -13798,7 +13799,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 110A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 6
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -14125,7 +14126,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 17B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 4.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -14383,7 +14384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7000, y: -1920}
+  m_AnchoredPosition: {x: 7000, y: -1886}
   m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665255197
@@ -14862,7 +14863,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 113A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 7.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -15035,7 +15036,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 14B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 3
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -15885,7 +15886,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 13A
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -16137,7 +16138,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 13B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 2.5
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -16539,7 +16540,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 12B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 2
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
@@ -17145,7 +17146,7 @@ MonoBehaviour:
   isUnlocked: 0
   nodeID: 112B
   startingNode: 0
-  enemyHPMult: 0.5
+  enemyHPMult: 7
   isChapterFinal: 0
   lineMaterial: {fileID: 2100000, guid: e53e029867ce10f4b959e19e1fb9d460, type: 2}
   lineLength: 100
