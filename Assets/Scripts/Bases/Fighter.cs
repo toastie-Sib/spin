@@ -90,12 +90,31 @@ public class Fighter : MonoBehaviour
             GameObject pA = GameObject.Find("PlayerAnim");
             AssignAnimation aA = pA.GetComponent<AssignAnimation>();
             animationRef = aA.stashedAnimation;
+
+            AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
+            Vector3 pos = anim.parryPoint.transform.position;
+            pos.x = 0;
+            anim.parryPoint.transform.position = pos;
+            anim.parryPoint.transform.position -= new Vector3(1f, 0, 0);
         }
         else
         {
-            GameObject pA = GameObject.Find("EnemyAnim");
-            AssignAnimation aA = pA.GetComponent<AssignAnimation>();
-            animationRef = aA.stashedAnimation;
+            if (UI.name == "Other Spawn")
+            {
+                GameObject pA = GameObject.Find("EnemyAnim");
+                AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+                animationRef = aA.stashedAnimation;
+            } else
+            {
+                GameObject pA = GameObject.Find("EnemyAnimSpare");
+                AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+                animationRef = aA.stashedAnimation;
+            }
+            AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
+            Vector3 pos = anim.parryPoint.transform.position;
+            pos.x = 0;
+            anim.parryPoint.transform.position = pos;
+            anim.parryPoint.transform.position += new Vector3(1f, 0, 0);
         }
     }
 
@@ -328,7 +347,11 @@ public class Fighter : MonoBehaviour
     public void ParryAnimation()
     {
         if (canPlayAnimation == false) return;
-        canPlayAnimation = false;
+        canPlayAnimation = false; 
+        AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
+        anim.autoMove = false;
+        if (isPlayer == true) { anim.parryPoint.transform.position -= new Vector3(1.5f, 0, 0); }
+        else { anim.parryPoint.transform.position += new Vector3(1.5f, 0, 0); }
         animationRef.GetComponent<AnimationMovement>().ParryPoint();
         animationRef.SetTrigger("Parry");
         StartCoroutine(AllowAnimationPlay());
@@ -337,18 +360,24 @@ public class Fighter : MonoBehaviour
     public void HurtAnimation()
     {
         if (canPlayAnimation == false) return;
-        canPlayAnimation = false;
+        canPlayAnimation = false; animationRef.GetComponent<AnimationMovement>().autoMove = false;
         animationRef.GetComponent<AnimationMovement>().StartingPoint();
         animationRef.SetTrigger("Pain");
         StartCoroutine(AllowAnimationPlay());
     }
 
-    public virtual void AttackAnimation()
+    public virtual void AttackAnimation(Fighter otherFighter)
     {
         UpdateUI();
         if (canPlayAnimation == false) return;
         canPlayAnimation = false;
-        animationRef.GetComponent<AnimationMovement>().AttackPoint();
+        AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
+        anim.autoMove = false;
+        anim.attackPoint.position = otherFighter.animationRef.GetComponent<AnimationMovement>().startingPoint.position;
+        if(isPlayer == true) {  anim.attackPoint.transform.position -= new Vector3(1.5f, 0, 0); }
+        else { anim.attackPoint.transform.position += new Vector3(1.5f, 0, 0); }
+
+        anim.AttackPoint();
         animationRef.SetTrigger("Attack");
         StartCoroutine(AllowAnimationPlay());
     }
@@ -356,7 +385,7 @@ public class Fighter : MonoBehaviour
     public virtual void AttackOnParryAnimation()
     {
         if (canPlayAnimation == false) return;
-        canPlayAnimation = false;
+        canPlayAnimation = false; animationRef.GetComponent<AnimationMovement>().autoMove = false;
         animationRef.GetComponent<AnimationMovement>().ParryPoint();
         animationRef.SetTrigger("Attack");
         StartCoroutine(AllowAnimationPlay());
@@ -365,7 +394,7 @@ public class Fighter : MonoBehaviour
     public void DelayedHurtAnimation(float amount)
     {
         if (canPlayAnimation == false) return;
-        canPlayAnimation = false;
+        canPlayAnimation = false; animationRef.GetComponent<AnimationMovement>().autoMove = false;
         animationRef.GetComponent<AnimationMovement>().StartingPoint();
         StartCoroutine(DelayedHurt(amount));
     }
@@ -381,6 +410,7 @@ public class Fighter : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         canPlayAnimation = true;
+        animationRef.GetComponent<AnimationMovement>().autoMove = true;
     }
 
 

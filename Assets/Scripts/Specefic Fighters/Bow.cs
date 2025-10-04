@@ -174,9 +174,9 @@ public class Bow : Fighter //Inherit Fighter
             extraFirepoints.Add(fp);
     }
 
-    public override void AttackAnimation()
+    public override void AttackAnimation(Fighter otherFighter)
     {
-        base.AttackAnimation();
+        base.AttackAnimation(otherFighter);
         GameObject projectile = Instantiate(animatedProjectilePrefab, animationRef.transform.position, animationRef.transform.rotation);
         projectile.transform.Rotate(0, 0, -90);
         StartCoroutine(AnimationProjectile(projectile));

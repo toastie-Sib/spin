@@ -136,7 +136,7 @@ public class Weapon : MonoBehaviour
                 }
             }
             if (otherFighter.isInvincible == false && doNotHurt == false) {
-                myFighter.AttackAnimation();
+                myFighter.AttackAnimation(otherFighter);
 
                 otherFighter.HurtAnimation();
 

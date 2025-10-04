@@ -72,7 +72,7 @@ public class Launcher : MonoBehaviour
             DrawOtherTrajectoryFromDirection(direction, aiLineRenderer);
 
             string name = "EnemySystem";
-            string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID);
+            string rngName = name.Replace("System", SceneSwitcher.Instance.currentNodeID + maxPredictionSteps);
             SeedManager.Instance.UseSubSeed(rngName); //generate random enemy
 
             int enemyTypeIndex = Random.Range(0, enemyPrefabs.Length);

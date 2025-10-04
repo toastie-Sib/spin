@@ -111,7 +111,13 @@ public class MapNodeRandomization : MonoBehaviour
                 buttonText.text = "Elite";
             }
 
-            nodeButtons[Index].GetComponent<MapNode>().sceneName = "Elite";
+            seedName = "EliteNodeNum";
+            seedName = seedName.Replace("Num", chapterNum + Index);
+            SeedManager.Instance.UseSubSeed(seedName);
+
+            int eliteChosen = Random.Range(1, 4);
+            string eliteScene = "EliteArena" + SceneSwitcher.Instance.chapter + eliteChosen;
+            nodeButtons[Index].GetComponent<MapNode>().sceneName = eliteScene;
         }
         SeedManager.Instance.RestoreMasterSeed();
 
@@ -147,4 +153,5 @@ public class MapNodeRandomization : MonoBehaviour
         }
         SeedManager.Instance.RestoreMasterSeed();
     }
+
 }

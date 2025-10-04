@@ -127,7 +127,7 @@ public class Unarmed : Fighter
     public void Damage(Fighter otherFighter)
     {
         otherFighter.HitDetect(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5)))));
-        AttackAnimation();
+        AttackAnimation(otherFighter);
         otherFighter.HurtAnimation();
 
         if (GetComponent<BloodoftheBandit>() != null)

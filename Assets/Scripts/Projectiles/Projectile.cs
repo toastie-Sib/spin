@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
             Fighter otherParentFighter = other.GetComponentInParent<Fighter>();
             
             otherParentFighter.ParryAnimation(); // Maybe should be delayed?
-            shooter.AttackAnimation();
+            shooter.AttackAnimation(otherFighter);
 
             //Destroy Game object if it isn't a shield or reflected
             if (otherWeapon.shield == false) {  if (reflected == false) { DestroySelf(); } } 
@@ -95,7 +95,7 @@ public class Projectile : MonoBehaviour
                 if (otherFighter == reflectorSheild) return;
             }
 
-            shooter.AttackAnimation();
+            shooter.AttackAnimation(otherFighter);
             otherFighter.HitDetect(damage);
             if (shooter.GetComponent<Staff>() != null)
             {

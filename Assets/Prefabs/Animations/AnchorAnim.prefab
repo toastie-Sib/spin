@@ -139,7 +139,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 441144595561891361, guid: d80432e7d8710d847bf6426d9057066d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 1}
@@ -185,6 +185,7 @@ MonoBehaviour:
   attackPoint: {fileID: 8838308189313135867}
   parryPoint: {fileID: 7685174220103522694}
   slideDuration: 0.01
+  autoMove: 1
 --- !u!1 &1776312273746626980
 GameObject:
   m_ObjectHideFlags: 0
