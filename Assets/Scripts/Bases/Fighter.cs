@@ -350,8 +350,6 @@ public class Fighter : MonoBehaviour
         canPlayAnimation = false; 
         AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
         anim.autoMove = false;
-        if (isPlayer == true) { anim.parryPoint.transform.position -= new Vector3(1.5f, 0, 0); }
-        else { anim.parryPoint.transform.position += new Vector3(1.5f, 0, 0); }
         animationRef.GetComponent<AnimationMovement>().ParryPoint();
         animationRef.SetTrigger("Parry");
         StartCoroutine(AllowAnimationPlay());
@@ -373,9 +371,12 @@ public class Fighter : MonoBehaviour
         canPlayAnimation = false;
         AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
         anim.autoMove = false;
-        anim.attackPoint.position = otherFighter.animationRef.GetComponent<AnimationMovement>().startingPoint.position;
-        if(isPlayer == true) {  anim.attackPoint.transform.position -= new Vector3(1.5f, 0, 0); }
-        else { anim.attackPoint.transform.position += new Vector3(1.5f, 0, 0); }
+        if(otherFighter != null)
+        {
+            anim.attackPoint.position = otherFighter.animationRef.GetComponent<AnimationMovement>().startingPoint.position;
+            if (isPlayer == true) { anim.attackPoint.transform.position -= new Vector3(1.5f, 0, 0); }
+            else { anim.attackPoint.transform.position += new Vector3(1.5f, 0, 0); }
+        }
 
         anim.AttackPoint();
         animationRef.SetTrigger("Attack");

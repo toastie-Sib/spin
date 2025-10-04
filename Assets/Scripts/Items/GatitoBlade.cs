@@ -23,7 +23,8 @@ public class GatitoBlade : ItemBase
             GameObject blade = Instantiate(myFighter.weapon.gameObject, myFighter.transform);
 
             // Put it just below fighter
-            blade.transform.localPosition = new Vector3(0, -.4f+(0.1f * stacks), 0);
+            if (myFighter.GetComponent<Anchor>() != null) { blade.transform.localPosition = new Vector3(-.4f + (0.1f * stacks), 0, 0); }
+            else { blade.transform.localPosition = new Vector3(0, -.4f + (0.1f * stacks), 0); }
 
             // Scale the blade based on stacks
             float sizeMultiplier = 0.2f + (0.2f * stacks); // each stack makes it 20% bigger

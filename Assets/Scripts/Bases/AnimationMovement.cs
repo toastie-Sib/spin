@@ -15,6 +15,7 @@ public class AnimationMovement : MonoBehaviour
         startingPoint.transform.parent = null;
         attackPoint.transform.parent = null;
         parryPoint.transform.parent = null;
+        StartCoroutine(SlideToPoint(startingPoint.position, 0.001f));
     }
 
     public void StartingPoint()
