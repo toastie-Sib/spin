@@ -33,6 +33,7 @@ public class BossItemManager : MonoBehaviour
             { "HMIYC", 18f },
             { "Blade Beam", 8f },
             { "Berserker", 18f },
+            { "Ocean's Floor", 15f },
         };
 
         SetupBossButtons();
@@ -172,6 +173,8 @@ public class BossItemManager : MonoBehaviour
                     spawner.stashedProjectile.GetComponentInChildren<Sword>().BladeBeam(); }
         } else if (itemName == "Berserker") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     spawner.stashedProjectile.GetComponentInChildren<Axe>().Berserker(); }
+        } else if (itemName == "Ocean's Floor") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Anchor>().OceansFloor(); }
         }
     }
 

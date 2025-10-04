@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Anchor : Fighter
 {
-
+    private bool oceansFloor = false;
 
     public override void Update()
     {
@@ -34,5 +34,24 @@ public class Anchor : Fighter
     {
         weapon.GetComponent<Sword>().damage += SceneSwitcher.Instance.playerBonusAtkSpd;
         UpdateDynamicUI("Damage: ", Mathf.Round(weapon.GetComponent<Sword>().damage * 10.0f) * 0.1f, 2);
+    }
+
+    //Boss Item
+    void FixedUpdate()
+    {
+        if (oceansFloor == false) return;
+        GetComponent<Rigidbody>().AddForce(Physics.gravity * 2, ForceMode.Acceleration);
+    }
+
+    public void OceansFloor()
+    {
+        oceansFloor = true;
+        StartCoroutine(BerserkerTimer());
+    }
+
+    private IEnumerator BerserkerTimer()
+    {
+        yield return new WaitForSeconds(5.0f);
+        oceansFloor = false;
     }
 }

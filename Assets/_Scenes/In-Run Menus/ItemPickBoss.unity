@@ -555,7 +555,8 @@ MonoBehaviour:
     - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
   - fighterName: Anchor
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: c1c6af7cfdce32b42a7261cdc9cf8e5e, type: 3}
+    - {fileID: 5148163468785629941, guid: 93bb1535580ecf24e9d3aaf7fac5e9c4, type: 3}
   foodPrefab: {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
   waitTime: 0
   num: 1
@@ -766,6 +767,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -863,6 +865,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -1921,6 +1924,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -2403,7 +2407,8 @@ MonoBehaviour:
     - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
   - fighterName: Anchor
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: c1c6af7cfdce32b42a7261cdc9cf8e5e, type: 3}
+    - {fileID: 5148163468785629941, guid: 93bb1535580ecf24e9d3aaf7fac5e9c4, type: 3}
   foodPrefab: {fileID: 5148163468785629941, guid: 5c273b8128c818a4da5d1a63ee3f8b9b, type: 3}
   waitTime: 0.01
   num: 2
