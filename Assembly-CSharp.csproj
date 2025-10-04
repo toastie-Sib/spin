@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Managers\SeedManager.cs" />
     <Compile Include="Assets\Scripts\Bases\MapNode.cs" />
     <Compile Include="Assets\Scripts\Bases\AnimationMovement.cs" />
+    <Compile Include="Assets\Scripts\Managers\MapProgression.cs" />
     <Compile Include="Assets\Scripts\Items\GlassBall.cs" />
     <Compile Include="Assets\Scripts\Managers\AssignAnimation.cs" />
     <Compile Include="Assets\Scripts\Bases\Weapon.cs" />
@@ -100,14 +101,13 @@
     <Compile Include="Assets\Scripts\Specefic Fighters\Sword.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Unarmed.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Shield.cs" />
+    <Compile Include="Assets\Scripts\Managers\MapCamera.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\DisplayItems.cs" />
     <Compile Include="Assets\Scripts\Items\TriTippedDagger.cs" />
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopTradeItems.cs" />
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\MapCamera.cs" />
-    <Compile Include="Assets\Scripts\Managers\MapProgression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
