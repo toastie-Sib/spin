@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/In-Run Menus/Event.unity
     guid: 1cc673ff5093744498caf3c619c88525
+  - enabled: 1
+    path: Assets/_Scenes/Arenas/EliteArena12.unity
+    guid: 7021244217e9bd74bbd2654145a9be05
   m_configObjects: {}
