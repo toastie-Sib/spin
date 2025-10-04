@@ -54,11 +54,11 @@ EditorBuildSettings:
     path: Assets/_Scenes/Arenas/EliteArena21.unity
     guid: 83b92d9fbd2d9a34bb1619d0b7c9c0ed
   - enabled: 1
-    path: Assets/_Scenes/Arenas/EliteArena22].unity
+    path: Assets/_Scenes/Arenas/EliteArena22.unity
     guid: 442d27e92335ebf458a1230750a94984
   - enabled: 1
-    path: Assets/_Scenes/Arenas/EliteArena23].unity
-    guid: 771f508fd49bde8469bf3daa03f9f651
+    path: Assets/_Scenes/Arenas/EliteArena23.unity
+    guid: 23433f4523ae4c642818d27376bafc59
   - enabled: 1
     path: Assets/_Scenes/Arenas/EliteArena24].unity
     guid: d4b7c30f9a701064589b43008d9a99cf

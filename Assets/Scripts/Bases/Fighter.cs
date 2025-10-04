@@ -99,14 +99,16 @@ public class Fighter : MonoBehaviour
         }
         else
         {
-            if (UI.name == "Other Spawn")
-            {
+            if (UI.name == "Other Spawn") {
                 GameObject pA = GameObject.Find("EnemyAnim");
                 AssignAnimation aA = pA.GetComponent<AssignAnimation>();
                 animationRef = aA.stashedAnimation;
-            } else
-            {
+            } else if (UI.name == "Other Spawn (1)") {
                 GameObject pA = GameObject.Find("EnemyAnimSpare");
+                AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+                animationRef = aA.stashedAnimation;
+            } else {
+                GameObject pA = GameObject.Find("EnemyAnimSpare (1)");
                 AssignAnimation aA = pA.GetComponent<AssignAnimation>();
                 animationRef = aA.stashedAnimation;
             }
