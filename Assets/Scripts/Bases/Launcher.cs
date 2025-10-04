@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Launcher : MonoBehaviour
 {
@@ -115,6 +116,12 @@ public class Launcher : MonoBehaviour
                 //Set up enemy HP
                 fighter.maxHp *= SceneSwitcher.Instance.enemyHP;
                 fighter.hp *= SceneSwitcher.Instance.enemyHP;
+                //Set up HP Healing if Elite
+                Scene activeScene = SceneManager.GetActiveScene();
+                if (activeScene.name == "EliteArena14")
+                {
+                    fighter.gameObject.AddComponent<EliteHealing>();
+                }
             }
         }
     }

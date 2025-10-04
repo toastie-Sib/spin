@@ -109,6 +109,7 @@
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Bases\ArenaSpin.cs" />
+    <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\EliteHealing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

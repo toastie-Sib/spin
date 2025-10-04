@@ -28,4 +28,11 @@ public class Anchor : Fighter
             weapon.damage = Mathf.Round(weapon.damage * 10.0f) * 0.1f;
         }
     }
+
+
+    public override void IncreaseBaseAtkSpeed()
+    {
+        weapon.GetComponent<Sword>().damage += SceneSwitcher.Instance.playerBonusAtkSpd;
+        UpdateDynamicUI("Damage: ", Mathf.Round(weapon.GetComponent<Sword>().damage * 10.0f) * 0.1f, 2);
+    }
 }
