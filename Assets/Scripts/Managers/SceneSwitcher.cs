@@ -56,6 +56,13 @@ public class SceneSwitcher : MonoBehaviour
     public void SetSelectedPrefab2(GameObject prefabToSet2)
     {
         animatorPrefab = prefabToSet2;
+
+        GameObject anim = GameObject.Find("SelectedAnimation");
+        if (anim != null)
+        {
+            anim.GetComponentInChildren<Animator>().runtimeAnimatorController = animatorPrefab.GetComponentInChildren<Animator>().runtimeAnimatorController;
+        }
+        
     }
 
     public void SetStartHP(float hp)
