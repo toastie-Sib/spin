@@ -150,7 +150,11 @@ public class SceneSwitcher : MonoBehaviour
 
                 if(chapterEnd == false)
                 {
-                    SlowLoadSpecificSceneDelay("ItemPick");
+                    if (SceneManager.GetActiveScene().name.Contains("EliteArena")) { 
+                        playerMoney += 0.5f * rewardMoney;
+                        SlowLoadSpecificSceneDelay("ItemPickElite");
+                    } else
+                        SlowLoadSpecificSceneDelay("ItemPick");
                 } else
                 {
                     playerMoney += rewardMoney;

@@ -118,6 +118,7 @@ public class Launcher : MonoBehaviour
                 fighter.hp *= SceneSwitcher.Instance.enemyHP;
                 //Set up HP Healing if Elite
                 Scene activeScene = SceneManager.GetActiveScene();
+                if (SceneManager.GetActiveScene().name.Contains("EliteArena")) { fighter.bonusDamage += SceneSwitcher.Instance.chapter; }
                 if (activeScene.name == "EliteArena14")
                 {
                     fighter.gameObject.AddComponent<GlassBall>();

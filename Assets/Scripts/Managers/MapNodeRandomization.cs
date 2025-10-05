@@ -118,6 +118,7 @@ public class MapNodeRandomization : MonoBehaviour
             int eliteChosen = Random.Range(1, 4);
             string eliteScene = "EliteArena" + SceneSwitcher.Instance.chapter + eliteChosen;
             nodeButtons[Index].GetComponent<MapNode>().sceneName = eliteScene;
+            nodeButtons[Index].GetComponent<MapNode>().enemyHPMult *= 1.25f;
         }
         SeedManager.Instance.RestoreMasterSeed();
 

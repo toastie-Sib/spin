@@ -10,6 +10,8 @@ public class ItemSpawner : Assign
     public GameObject[] rareItems;
     public float waitTime;
     public int num;
+    public int commonDropRate = 70;
+    public int uncommonDropRate = 90;
     private GameObject storedItemPrefab;
     private string objectName;
     private static HashSet<string> chosenNamesThisRound = new HashSet<string>();
@@ -105,7 +107,7 @@ public class ItemSpawner : Assign
         int roll = Random.Range(0, 100);
         // Your original split was 70/20/10 (common/uncommon/rare).
         // If you actually want 70/20/10, leave it as-is. If you want 70/20/10 -> 70/20/10.
-        GameObject[] result = (roll < 70) ? commonItems : (roll < 90) ? uncommonItems : rareItems;
+        GameObject[] result = (roll < commonDropRate) ? commonItems : (roll < uncommonDropRate) ? uncommonItems : rareItems;
 
         // Do NOT restore here; we restore once per RandomizeItem after picking the item
         return result;
