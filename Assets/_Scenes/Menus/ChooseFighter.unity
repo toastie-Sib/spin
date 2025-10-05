@@ -2730,6 +2730,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -6490,6 +6491,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -7935,9 +7937,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GlassBall
+          m_StringArgument: Ocean's Floor
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1900427828
 MonoBehaviour:
   m_ObjectHideFlags: 0

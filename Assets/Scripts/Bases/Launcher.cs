@@ -120,6 +120,13 @@ public class Launcher : MonoBehaviour
                 Scene activeScene = SceneManager.GetActiveScene();
                 if (activeScene.name == "EliteArena14")
                 {
+                    fighter.gameObject.AddComponent<GlassBall>();
+                    fighter.hp *= 2.5f;
+                    fighter.maxHp *= 2.5f;
+                    fighter.gameObject.transform.localScale *= 1.75f;
+
+                } else if (activeScene.name == "EliteArena24")
+                {
                     fighter.gameObject.AddComponent<EliteHealing>();
                 }
             }

@@ -220,7 +220,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         { "BloodoftheArcher", "Uncommon" }, { "BloodoftheBandit", "Common" }, { "BloodoftheKnight", "Common" }, { "BloodoftheSoldier", "Common" }, { "Food", "Common" }, { "RaiseTheRoof", "Common" }, 
         { "Training", "Common" }, { "TriTippedDagger", "Common" }, { "GlassBall", "Rare" }, { "GatitoBlade", "Rare" }, { "New Equipment", "Boss" }, { "Rubber Arrows", "Boss" }, { "Remote Detonation", "Boss" }, 
-        { "HMIYC", "Boss" }, { "Blood Sacrifice", "Boss" }, { "Blade Beam", "Boss" }, { "Berserker", "Boss" },
+        { "HMIYC", "Boss" }, { "Blood Sacrifice", "Boss" }, { "Blade Beam", "Boss" }, { "Berserker", "Boss" }, { "Ocean's Floor", "Boss" },
         //Not in yet
         { "Poison", "Common" },
         { "WindTurbine", "Rare" },
