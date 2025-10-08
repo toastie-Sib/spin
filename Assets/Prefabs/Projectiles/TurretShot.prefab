@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4082381714986595782}
   - component: {fileID: 1496808756212640737}
   - component: {fileID: 4147248743184631055}
-  - component: {fileID: 5879629663760058501}
+  - component: {fileID: 5272302813998708497}
   - component: {fileID: 7960625733866522401}
   - component: {fileID: 7062066353970945915}
   m_Layer: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5879629663760058501
+--- !u!114 &5272302813998708497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,16 +94,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4883005475974355221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb11e29d14ddf345866fe8f60f78209, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c136bcada5ebdd40b3c1c2118459a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
   reflector: {fileID: 0}
   reflected: 0
   explosionDone: 0
+  side: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   damage: 1
   speed: 8
+  rubberArrows: 0
+  cannon: {fileID: 0}
 --- !u!135 &7960625733866522401
 SphereCollider:
   m_ObjectHideFlags: 0

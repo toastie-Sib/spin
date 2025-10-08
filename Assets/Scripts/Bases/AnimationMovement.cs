@@ -9,6 +9,9 @@ public class AnimationMovement : MonoBehaviour
     public Transform parryPoint;
     [HideInInspector] public float slideDuration = 0.01f;
     public bool autoMove = true;
+    [Header("Extra stuff")]
+    public Animator extraAnim;
+    public GameObject extraAnimatedProjectilePrefab;
 
     void Start()
     {
@@ -53,5 +56,19 @@ public class AnimationMovement : MonoBehaviour
     public void StartingPointMap()
     {
         StartCoroutine(SlideToPoint(startingPoint.position, slideDuration));
+    }
+
+    public void SpareProjAttackAnimation()
+    {
+        GameObject projectile = Instantiate(extraAnimatedProjectilePrefab, extraAnim.transform.position, extraAnim.transform.rotation);
+        projectile.transform.Rotate(0, 0, -90);
+        extraAnim.SetTrigger("Attack");
+        StartCoroutine(AnimationProjectile(projectile));
+    }
+
+    public IEnumerator AnimationProjectile(GameObject projectile)
+    {
+        yield return new WaitForSeconds(0.75f);
+        Destroy(projectile);
     }
 }

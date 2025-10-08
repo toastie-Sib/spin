@@ -359,7 +359,7 @@ public class Fighter : MonoBehaviour
 
     public void HurtAnimation()
     {
-        if (canPlayAnimation == false) return;
+        if (canPlayAnimation == false || animationRef == null) return;
         canPlayAnimation = false; animationRef.GetComponent<AnimationMovement>().autoMove = false;
         animationRef.GetComponent<AnimationMovement>().StartingPoint();
         animationRef.SetTrigger("Pain");
@@ -369,11 +369,11 @@ public class Fighter : MonoBehaviour
     public virtual void AttackAnimation(Fighter otherFighter)
     {
         UpdateUI();
-        if (canPlayAnimation == false) return;
+        if (canPlayAnimation == false || animationRef == null) return;
         canPlayAnimation = false;
         AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
         anim.autoMove = false;
-        if(otherFighter != null)
+        if(otherFighter != null && otherFighter.animationRef != null)
         {
             anim.attackPoint.position = otherFighter.animationRef.GetComponent<AnimationMovement>().startingPoint.position;
             if (isPlayer == true) { anim.attackPoint.transform.position -= new Vector3(1.5f, 0, 0); }
@@ -446,11 +446,11 @@ public class Fighter : MonoBehaviour
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
 
         GetComponentInChildren<Renderer>().material.color = Color.magenta;
-        animationRef.GetComponent<SpriteRenderer>().color = Color.magenta;
+        if (animationRef != null) { animationRef.GetComponent<SpriteRenderer>().color = Color.magenta; }
 
         yield return new WaitForSeconds(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
-        animationRef.GetComponent<SpriteRenderer>().color = Color.white;
+        if (animationRef != null) { animationRef.GetComponent<SpriteRenderer>().color = Color.white; }
         yield return new WaitForSeconds(4.8f); // wait 5 seconds for this stack
         ApplyPoison();
     }

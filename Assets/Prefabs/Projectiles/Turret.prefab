@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8214782620636696799}
   - component: {fileID: 8214782620636696798}
   m_Layer: 0
-  m_Name: Spawn Point
+  m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,14 +259,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599168e5dadbe8c4b9f8542634cc735f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
   damage: 0
   doNotHurt: 1
   shield: 0
   axe: 0
   scythe: 0
   side: 0
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 8214782620636696799}
+  myFighter: {fileID: 0}
+  gatitoBlade: 0
 --- !u!1 &8214782621584023908
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,22 +403,28 @@ MonoBehaviour:
   invincibleUntil: 0
   direction: 1
   freezeFrame: 0
-  hpUI: {fileID: 0}
+  UI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
   isPlayer: 0
+  animationRef: {fileID: 0}
+  canPlayAnimation: 1
+  bleedStacks: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
   weapon: {fileID: 8214782621205854715}
+  Animation: {fileID: 0}
   invincibilityDuration: 0
   hp: 1
   maxHp: 100
   spinMult: 75
+  bonusDamage: 0
   velocityThreshold: 0
   nudgeForce: 0
   nudgeCooldown: 0
   projectilePrefab: {fileID: 4883005475974355221, guid: b7da917032ec0b24088dc134a248f8f2, type: 3}
+  animatedProjectilePrefab: {fileID: 8161753162604983713, guid: cf52f88416e3343459f5e5ac3820d90a, type: 3}
   firePoint: {fileID: 8214782620636696799}
   refreshInterval: 1
   fireInterval: 1
@@ -425,6 +432,8 @@ MonoBehaviour:
   maxArrowCount: 1
   nextFireTime: 0
   nextRefreshTime: 0.5
+  extraFirepoints: []
+  myWeapon: {fileID: 0}
   nose: {fileID: 8214782621205854715}
   owner: {fileID: 0}
   side: 0
