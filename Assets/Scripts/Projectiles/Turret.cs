@@ -9,6 +9,9 @@ public class Turret : Bow
     private Color color;
     [HideInInspector] public bool side;
 
+
+    public GameObject explosionEffectSDB;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -133,6 +136,99 @@ public class Turret : Bow
                 Physics.IgnoreCollision(weaponCol, projectileCollider);
             }
         }
+
+    }
+
+    public void SelfDestructButton()
+    {
+        if (explosionEffectSDB != null) //Visual Effect
+        {
+            GameObject explosion = Instantiate(explosionEffectSDB, transform.position, Quaternion.identity);
+            float scaleFactor = 2;
+            Vector3 Scale = explosion.transform.localScale;
+            Scale = Scale * scaleFactor;
+            explosion.transform.localScale = Scale;
+        }
+
+        Color finalColor = Color.red;
+        finalColor.a = 0.0f;
+        SpriteRenderer childSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        childSpriteRenderer.color = finalColor;
+        SphereCollider sphereCollider = GetComponent<SphereCollider>();
+        sphereCollider.center = new Vector3(0, 0, 0);
+        sphereCollider.radius = 2f * 2;
+        sphereCollider.isTrigger = true;
+
+        StartCoroutine(ActuallyDestroy());
+    }
+
+    private IEnumerator ActuallyDestroy()
+    {
+        yield return new WaitForSeconds(0.5f); //MAKE SURE THIS IS THE SAME AS THE EXPLOSION VALUE
+        Destroy(gameObject);
+    }
+    //mesh with turret and make sure on trigger doesn't happen if self destruct not active (is this optimal for resources?)
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        Fighter otherFighter = other.GetComponent<Fighter>();
+        
+        /*
+         
+        if (other.gameObject.CompareTag("Fighter"))
+        {
+
+            if (side == otherFighter.isPlayer) return;
+            if (otherFighter.isInvincible) return;
+
+            shooter.AttackAnimation(otherFighter);
+            otherFighter.HitDetect(damage);
+            if (shooter.GetComponent<Staff>() != null)
+            {
+                otherFighter.DelayedHurtAnimation(0.5f);
+            }
+            else { otherFighter.DelayedHurtAnimation(0.1f); }
+
+
+
+            if (reflected == false)
+            {
+                ScalingTrigger(); // Increase Whatever
+                //Items
+                if (shooter.GetComponentInChildren<TriTippedDagger>() != null)
+                {
+                    TriTippedDagger tTD = shooter.GetComponentInChildren<TriTippedDagger>();
+                    SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
+
+                    int randomInt = Random.Range(0, 100);
+                    if (randomInt <= 20 * tTD.stacks)
+                    {
+                        otherFighter.bleedStacks += 1;
+                    }
+
+                    SeedManager.Instance.RestoreMasterSeed();
+                }
+                //Item
+                if (shooter.GetComponentInChildren<BloodoftheBandit>() != null)
+                {
+                    for (int i = 0; i < shooter.GetComponentInChildren<BloodoftheBandit>().stacks; i++)
+                    {
+                        if (shooter.GetComponentInChildren<BloodoftheBandit>().applied < 25 * shooter.GetComponentInChildren<BloodoftheBandit>().stacks) { BotbScale(); }
+                    }
+
+                }
+            }
+            else // If it was reflected though
+            {
+                if (otherFighter == shooter)
+                {
+                    reflector.ShieldGrow(damage);
+                }
+            }
+
+            DestroySelf();
+        }
+
+        */
 
     }
 }

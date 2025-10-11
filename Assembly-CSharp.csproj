@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Projectiles\TurretProjectile.cs" />
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopItemSpawner.cs" />
     <Compile Include="Assets\Scripts\Bases\Fighter.cs" />
+    <Compile Include="Assets\Scripts\Specefic Fighters\ChargeRamFighter.cs" />
     <Compile Include="Assets\Scripts\Managers\Campfire.cs" />
     <Compile Include="Assets\Scripts\Managers\MapNodeRandomization.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheSoldier.cs" />

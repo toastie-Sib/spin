@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shield : Weapon
 {
     private int stacks = 0;
+    private float storedSpin;
+    private bool batteringRamActive = false;
 
     public override void Start()
     {
@@ -18,6 +20,16 @@ public class Shield : Weapon
     {
         Fighter otherFighter = other.gameObject.GetComponentInParent<Fighter>();
         Fighter myFighter = GetComponentInParent<Fighter>();
+
+
+        if (batteringRamActive == true)
+        {
+            batteringRamActive = false;
+            myFighter.spinMult = storedSpin;
+            myFighter.GetComponent<Rigidbody>().useGravity = true;
+        }
+
+
         if (other.gameObject.CompareTag("Weapon")) //Parry
         {
             base.OnTriggerEnter(other);
@@ -131,4 +143,6 @@ public class Shield : Weapon
         
         
     }
+
+    
 }

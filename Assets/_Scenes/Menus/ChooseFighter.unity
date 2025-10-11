@@ -4024,7 +4024,8 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Barbarian attacks on an interval, and only does damage
-            while swinging. Damage increases by 2 on hit.
+            while swinging. His axe cannot be parried, and increases damage by 2
+            on hit.
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1053188438
@@ -8087,7 +8088,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Rubber Arrows
+          m_StringArgument: Battering Ram
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 803803648}
@@ -8099,7 +8100,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BloodoftheArcher
+          m_StringArgument: Self Destruct Button
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1900427828
@@ -9036,6 +9037,8 @@ MonoBehaviour:
   parryPoint: {fileID: 7979473757542961470}
   slideDuration: 0.01
   autoMove: 1
+  extraAnim: {fileID: 0}
+  extraAnimatedProjectilePrefab: {fileID: 0}
 --- !u!1 &8538312289276337742
 GameObject:
   m_ObjectHideFlags: 0

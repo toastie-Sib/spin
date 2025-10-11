@@ -34,6 +34,10 @@ public class BossItemManager : MonoBehaviour
             { "Blade Beam", 8f },
             { "Berserker", 18f },
             { "Ocean's Floor", 15f },
+            { "Self Destruct Button", 13f },
+            { "Execute", 8f },
+            { "Penicillin", 20f },
+            { "Battering Ram", 8f },
         };
 
         SetupBossButtons();
@@ -175,7 +179,22 @@ public class BossItemManager : MonoBehaviour
                     spawner.stashedProjectile.GetComponentInChildren<Axe>().Berserker(); }
         } else if (itemName == "Ocean's Floor") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     spawner.stashedProjectile.GetComponentInChildren<Anchor>().OceansFloor(); }
+        } 
+        
+        else if (itemName == "Battering Ram") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponent<ChargeRamFighter>().ShieldCharge(); }
         }
+        else if (itemName == "Execute") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Axe>().Berserker(); }
+        } else if (itemName == "Penicillin") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    spawner.stashedProjectile.GetComponentInChildren<Anchor>().OceansFloor(); }
+        } 
+
+        else if (itemName == "Self Destruct Button") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    foreach (var turret in FindObjectsOfType<Turret>()) { if (turret.side == true) { turret.SelfDestructButton(); } } }
+        }
+        
+        
     }
 
     void Update()

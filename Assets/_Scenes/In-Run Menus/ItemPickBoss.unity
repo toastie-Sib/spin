@@ -546,13 +546,14 @@ MonoBehaviour:
     - {fileID: 5148163468785629941, guid: 93bb1535580ecf24e9d3aaf7fac5e9c4, type: 3}
   - fighterName: Shield
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: e27a9b1d3b3e246498d91ed5acd4d9d0, type: 3}
   - fighterName: Scythe
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: dc24c48025569544492909e1980d3dc7, type: 3}
+    - {fileID: 5148163468785629941, guid: fda4c39e0c309d74ca7083d9cf46cfbc, type: 3}
   - fighterName: Wrench
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: 79a2ecea466575a42890bfa8b4b089f7, type: 3}
   - fighterName: Anchor
     items:
     - {fileID: 5148163468785629941, guid: c1c6af7cfdce32b42a7261cdc9cf8e5e, type: 3}
@@ -2398,13 +2399,14 @@ MonoBehaviour:
     - {fileID: 5148163468785629941, guid: 93bb1535580ecf24e9d3aaf7fac5e9c4, type: 3}
   - fighterName: Shield
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: e27a9b1d3b3e246498d91ed5acd4d9d0, type: 3}
   - fighterName: Scythe
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: dc24c48025569544492909e1980d3dc7, type: 3}
+    - {fileID: 5148163468785629941, guid: fda4c39e0c309d74ca7083d9cf46cfbc, type: 3}
   - fighterName: Wrench
     items:
-    - {fileID: 5148163468785629941, guid: d50853e5ee344c84f9d91629257373c2, type: 3}
+    - {fileID: 5148163468785629941, guid: 79a2ecea466575a42890bfa8b4b089f7, type: 3}
   - fighterName: Anchor
     items:
     - {fileID: 5148163468785629941, guid: c1c6af7cfdce32b42a7261cdc9cf8e5e, type: 3}

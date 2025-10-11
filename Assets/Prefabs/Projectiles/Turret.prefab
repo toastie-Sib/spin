@@ -437,6 +437,7 @@ MonoBehaviour:
   nose: {fileID: 8214782621205854715}
   owner: {fileID: 0}
   side: 0
+  explosionEffectSDB: {fileID: 4852147107929324276, guid: 8bfbc6d772fbd644c966bb849bc7505b, type: 3}
 --- !u!1 &8214782621716139027
 GameObject:
   m_ObjectHideFlags: 0
