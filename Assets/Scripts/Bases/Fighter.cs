@@ -398,13 +398,14 @@ public class Fighter : MonoBehaviour
     {
         if (canPlayAnimation == false) return;
         canPlayAnimation = false; animationRef.GetComponent<AnimationMovement>().autoMove = false;
-        animationRef.GetComponent<AnimationMovement>().StartingPoint();
         StartCoroutine(DelayedHurt(amount));
     }
 
     public IEnumerator DelayedHurt(float amount)
     {
         yield return new WaitForSeconds(amount);
+
+        animationRef.GetComponent<AnimationMovement>().StartingPoint();
         animationRef.SetTrigger("Pain");
         StartCoroutine(AllowAnimationPlay());
     }

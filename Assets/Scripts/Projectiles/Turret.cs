@@ -144,7 +144,7 @@ public class Turret : Bow
         if (explosionEffectSDB != null) //Visual Effect
         {
             GameObject explosion = Instantiate(explosionEffectSDB, transform.position, Quaternion.identity);
-            float scaleFactor = 2;
+            float scaleFactor = 1.25f;
             Vector3 Scale = explosion.transform.localScale;
             Scale = Scale * scaleFactor;
             explosion.transform.localScale = Scale;
@@ -155,8 +155,7 @@ public class Turret : Bow
         SpriteRenderer childSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         childSpriteRenderer.color = finalColor;
         SphereCollider sphereCollider = GetComponent<SphereCollider>();
-        sphereCollider.center = new Vector3(0, 0, 0);
-        sphereCollider.radius = 2f * 2;
+        sphereCollider.radius = 2f * 2f;
         sphereCollider.isTrigger = true;
 
         StartCoroutine(ActuallyDestroy());
@@ -172,7 +171,7 @@ public class Turret : Bow
     {
         Fighter otherFighter = other.GetComponent<Fighter>();
         
-        /*
+        
          
         if (other.gameObject.CompareTag("Fighter"))
         {
@@ -180,55 +179,23 @@ public class Turret : Bow
             if (side == otherFighter.isPlayer) return;
             if (otherFighter.isInvincible) return;
 
-            shooter.AttackAnimation(otherFighter);
-            otherFighter.HitDetect(damage);
-            if (shooter.GetComponent<Staff>() != null)
+            owner.AttackAnimation(otherFighter);
+
+            float damage = bonusDamage + 1;
+
+            //item Blood of the Knight
+            if (owner.GetComponentInChildren<BloodoftheKnight>() != null)
             {
-                otherFighter.DelayedHurtAnimation(0.5f);
-            }
-            else { otherFighter.DelayedHurtAnimation(0.1f); }
-
-
-
-            if (reflected == false)
-            {
-                ScalingTrigger(); // Increase Whatever
-                //Items
-                if (shooter.GetComponentInChildren<TriTippedDagger>() != null)
-                {
-                    TriTippedDagger tTD = shooter.GetComponentInChildren<TriTippedDagger>();
-                    SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
-
-                    int randomInt = Random.Range(0, 100);
-                    if (randomInt <= 20 * tTD.stacks)
-                    {
-                        otherFighter.bleedStacks += 1;
-                    }
-
-                    SeedManager.Instance.RestoreMasterSeed();
-                }
-                //Item
-                if (shooter.GetComponentInChildren<BloodoftheBandit>() != null)
-                {
-                    for (int i = 0; i < shooter.GetComponentInChildren<BloodoftheBandit>().stacks; i++)
-                    {
-                        if (shooter.GetComponentInChildren<BloodoftheBandit>().applied < 25 * shooter.GetComponentInChildren<BloodoftheBandit>().stacks) { BotbScale(); }
-                    }
-
-                }
-            }
-            else // If it was reflected though
-            {
-                if (otherFighter == shooter)
-                {
-                    reflector.ShieldGrow(damage);
-                }
+                BloodoftheKnight BotK = owner.GetComponentInChildren<BloodoftheKnight>();
+                damage += (0.2f * BotK.stacks);
             }
 
-            DestroySelf();
+
+            otherFighter.HitDetect(damage * 5);
+            otherFighter.HurtAnimation();
         }
 
-        */
+        
 
     }
 }
