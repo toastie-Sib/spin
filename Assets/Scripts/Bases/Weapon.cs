@@ -100,6 +100,7 @@ public class Weapon : MonoBehaviour
                     for (int i = 0; i < training.stacks; i++)
                     {
                         otherFighter.ApplyPoison();
+                        otherFighter.poisonStacks += 1;
                         tracker += 1;
                         if (gatitoBlade == false)
                         {
@@ -116,6 +117,7 @@ public class Weapon : MonoBehaviour
                     for (int i = -1; i < glassBall.stacks; i++)
                     {
                         otherFighter.ApplyPoison(); // Call the actual scaling logic 'stacks' times
+                        otherFighter.poisonStacks += 1;
                         tracker += 1;
                         if (gatitoBlade == false)
                         {
@@ -127,6 +129,7 @@ public class Weapon : MonoBehaviour
                 else
                 {
                     otherFighter.ApplyPoison(); // Regular Sytche apply Poison Scaling Alternative
+                    otherFighter.poisonStacks += 1;
                     tracker += 1;
                     if (gatitoBlade == false)
                     {

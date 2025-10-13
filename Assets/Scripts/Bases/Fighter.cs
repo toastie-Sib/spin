@@ -26,7 +26,8 @@ public class Fighter : MonoBehaviour
     [HideInInspector] public bool canPlayAnimation = true;
 
     [HideInInspector] public int bleedStacks = 0;
-
+    [HideInInspector] public int poisonStacks = 0;
+    [HideInInspector] public bool poisonLeech = false;
 
     [Header("Set then Static Shouldnt need to touch")]
     public AudioClip parry;
@@ -446,6 +447,16 @@ public class Fighter : MonoBehaviour
 
         AudioSource.PlayClipAtPoint(hit, transform.position, 0.8f);
 
+        if (poisonLeech)
+        {
+            var player = FindObjectOfType<Fighter>();
+            if(player != null && player.isPlayer)
+            {
+                player.hp += 1;
+                player.UpdateUI();
+            }
+        }
+
         GetComponentInChildren<Renderer>().material.color = Color.magenta;
         if (animationRef != null) { animationRef.GetComponent<SpriteRenderer>().color = Color.magenta; }
 
@@ -454,6 +465,17 @@ public class Fighter : MonoBehaviour
         if (animationRef != null) { animationRef.GetComponent<SpriteRenderer>().color = Color.white; }
         yield return new WaitForSeconds(4.8f); // wait 5 seconds for this stack
         ApplyPoison();
+    }
+
+    public void PoisonExplosion()
+    {
+        if (poisonStacks > 0)
+        {
+            float totalDamage = poisonStacks * 5f;
+            HitDetect(totalDamage);
+            poisonStacks = 0; // remove poison stacks
+            StopCoroutine(PoisonTick());
+        }
     }
 
     public void BleedDamage(int amount)

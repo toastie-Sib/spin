@@ -179,22 +179,15 @@ public class BossItemManager : MonoBehaviour
                     spawner.stashedProjectile.GetComponentInChildren<Axe>().Berserker(); }
         } else if (itemName == "Ocean's Floor") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     spawner.stashedProjectile.GetComponentInChildren<Anchor>().OceansFloor(); }
-        } 
-        
-        else if (itemName == "Battering Ram") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+        } else if (itemName == "Battering Ram") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     spawner.stashedProjectile.GetComponent<ChargeRamFighter>().ShieldCharge(); }
-        }
-        else if (itemName == "Execute") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
-                    spawner.stashedProjectile.GetComponentInChildren<Axe>().Berserker(); }
-        } else if (itemName == "Penicillin") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
-                    spawner.stashedProjectile.GetComponentInChildren<Anchor>().OceansFloor(); }
-        } 
-
-        else if (itemName == "Self Destruct Button") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+        } else if (itemName == "Self Destruct Button") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
                     foreach (var turret in FindObjectsOfType<Turret>()) { if (turret.side == true) { turret.SelfDestructButton(); } } }
+        } else if (itemName == "Penicillin") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    foreach (var fighter in FindObjectsOfType<Fighter>()) { if (fighter.isPlayer == false) { fighter.poisonLeech = true; } } StartCoroutine(TurnOffPoisonLeech()); }
+        } else if (itemName == "Execute") { foreach (var spawner in FindObjectsOfType<Launcher>()) { if (spawner.isPlayer == true)
+                    foreach (var fighter in FindObjectsOfType<Fighter>()) { if (fighter.isPlayer == false) { fighter.PoisonExplosion(); } } }
         }
-        
-        
     }
 
     void Update()
@@ -208,5 +201,12 @@ public class BossItemManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && itemS != null) TryUseBossItem(itemS);
         if (Input.GetKeyDown(KeyCode.D) && itemD != null) TryUseBossItem(itemD);
         if (Input.GetKeyDown(KeyCode.F) && itemF != null) TryUseBossItem(itemF);
+    }
+
+
+    public IEnumerator TurnOffPoisonLeech()
+    {
+        yield return new WaitForSeconds(3f);
+        foreach (var fighter in FindObjectsOfType<Fighter>()) { if (fighter.isPlayer == false) { fighter.poisonLeech = false; } }
     }
 }
