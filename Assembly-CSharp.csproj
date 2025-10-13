@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopTradeItems.cs" />
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
+    <Compile Include="Assets\Scripts\Items\Defunded.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

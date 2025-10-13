@@ -156,6 +156,7 @@ MonoBehaviour:
   storedCard: {fileID: 0}
   cost: 0
   trading: 0
+  costObject: {fileID: 0}
 --- !u!1 &2232292702253834369
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,11 +335,14 @@ MonoBehaviour:
   - {fileID: 6523228037749239196, guid: 432b3c7423fe8b94b885f837ecd51bea, type: 3}
   uncommonItems:
   - {fileID: 810934615206871094, guid: 04c2d4adf89a08f49961b5024501f9a8, type: 3}
+  - {fileID: 810934615206871094, guid: 3d928ee6731c3124e9b2fcf253243ef6, type: 3}
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   waitTime: 0
   num: 1
+  commonDropRate: 70
+  uncommonDropRate: 90
 --- !u!1 &2232292702778906339
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,11 +442,14 @@ MonoBehaviour:
   - {fileID: 6523228037749239196, guid: 432b3c7423fe8b94b885f837ecd51bea, type: 3}
   uncommonItems:
   - {fileID: 810934615206871094, guid: 04c2d4adf89a08f49961b5024501f9a8, type: 3}
+  - {fileID: 810934615206871094, guid: 3d928ee6731c3124e9b2fcf253243ef6, type: 3}
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   waitTime: 0.02
   num: 3
+  commonDropRate: 70
+  uncommonDropRate: 90
 --- !u!1 &2232292702804915152
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,8 +583,11 @@ MonoBehaviour:
   - {fileID: 6523228037749239196, guid: 432b3c7423fe8b94b885f837ecd51bea, type: 3}
   uncommonItems:
   - {fileID: 810934615206871094, guid: 04c2d4adf89a08f49961b5024501f9a8, type: 3}
+  - {fileID: 810934615206871094, guid: 3d928ee6731c3124e9b2fcf253243ef6, type: 3}
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   waitTime: 0.01
   num: 2
+  commonDropRate: 70
+  uncommonDropRate: 90

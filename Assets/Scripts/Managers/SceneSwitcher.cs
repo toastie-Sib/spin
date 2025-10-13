@@ -233,6 +233,7 @@ public class SceneSwitcher : MonoBehaviour
         { "Training", "Common" }, { "TriTippedDagger", "Common" }, { "GlassBall", "Rare" }, { "GatitoBlade", "Rare" }, { "New Equipment", "Boss" }, { "Rubber Arrows", "Boss" }, { "Remote Detonation", "Boss" }, 
         { "HMIYC", "Boss" }, { "Blood Sacrifice", "Boss" }, { "Blade Beam", "Boss" }, { "Berserker", "Boss" }, { "Ocean's Floor", "Boss" }, { "Self Destruct Button", "Boss" }, { "Execute", "Boss" },
         { "Penicillin", "Boss" }, { "Battering Ram", "Boss" },
+        { "Defunded", "Uncommon" },
         //Not in yet
         { "Poison", "Common" },
         { "WindTurbine", "Rare" },
@@ -267,7 +268,6 @@ public class SceneSwitcher : MonoBehaviour
         { "Loop", "Uncommon" },
         { "MagicHat", "Common" },
         { "BouncyBall", "Uncommon" },
-        { "Defunded", "Uncommon" },
         { "Rob", "Boss" },
         { "VVVVVVV", "Uncommon" },
         { "MoneyPower", "Uncommon" },

@@ -36,11 +36,23 @@ public class Launcher : MonoBehaviour
     private LineRenderer aiLineRenderer;
     private Vector3 direction;
 
-    void Start()
+    void Awake()
     {
+
         GameObject esObject = GameObject.Find("EventSystem");
         es = esObject.GetComponent<SceneSwitcher>();
         cam = Camera.main;
+    }
+
+    void Start()
+    {
+        StartCoroutine(Initialize());
+    }
+
+    private IEnumerator Initialize()
+    {
+        yield return null;
+
 
         es.fighterAmount += 1; // Count the amount of Fighters spawned
 
@@ -136,6 +148,8 @@ public class Launcher : MonoBehaviour
 
     void Update()
     {
+        if (cam == null || lineRenderer == null) return;
+
         if (Input.GetMouseButtonDown(0)) // Check for Left click to start
         {
             if (shotDone == true) return;
