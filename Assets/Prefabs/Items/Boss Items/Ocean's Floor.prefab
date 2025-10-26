@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Activate to Cause Axe to Constantly Spin for 5 seconds
+  m_Text: Activate to Cause Anchor's gravity to dramatically increase for 5 secs
 --- !u!1 &4949430165359834550
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   es: {fileID: 0}
   blockedFighters: []
+  maxAllowed: -1
 --- !u!1 &7657081944023063303
 GameObject:
   m_ObjectHideFlags: 0

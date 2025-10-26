@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemBans : Assign
 {
     public string[] blockedFighters; // names of fighters who CANNOT use this item
+    public int maxAllowed = -1;
 
     public bool CannotBeUsedBy(GameObject fighterPrefab)
     {

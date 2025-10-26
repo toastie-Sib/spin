@@ -195,6 +195,7 @@ MonoBehaviour:
   trading: 0
   costPrefab: {fileID: 6065622970528916193, guid: 2d43d4f9d4e6e744caeb9c5fe78fe45d, type: 3}
   costPlacement: {fileID: 736668047}
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!114 &77786286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,6 +1355,7 @@ MonoBehaviour:
   trading: 0
   costPrefab: {fileID: 6065622970528916193, guid: 2d43d4f9d4e6e744caeb9c5fe78fe45d, type: 3}
   costPlacement: {fileID: 817292314}
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!114 &727389806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,6 +1598,7 @@ MonoBehaviour:
   enemyHP: 0
   chapter: 0
   chapterEnd: 0
+  chapter2UnlockThreshold: 7
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -1738,6 +1741,7 @@ MonoBehaviour:
   trading: 1
   costPrefab: {fileID: 0}
   costPlacement: {fileID: 0}
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!114 &844863746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,8 +1862,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2145603345}
   m_HandleRect: {fileID: 2145603344}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.5
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2898,6 +2902,7 @@ MonoBehaviour:
   trading: 1
   costPrefab: {fileID: 0}
   costPlacement: {fileID: 0}
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!114 &1166047405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3844,6 +3849,7 @@ MonoBehaviour:
   trading: 0
   costPrefab: {fileID: 6065622970528916193, guid: 2d43d4f9d4e6e744caeb9c5fe78fe45d, type: 3}
   costPlacement: {fileID: 391137986}
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!114 &1420316483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4100,6 +4106,7 @@ MonoBehaviour:
   trading: 0
   costPrefab: {fileID: 6065622970528916193, guid: 2d43d4f9d4e6e744caeb9c5fe78fe45d, type: 3}
   costPlacement: {fileID: 1515955605}
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!114 &1547425849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5212,6 +5219,7 @@ MonoBehaviour:
   trading: 0
   costPrefab: {fileID: 6065622970528916193, guid: 2d43d4f9d4e6e744caeb9c5fe78fe45d, type: 3}
   costPlacement: {fileID: 220148933}
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!114 &2035655226
 MonoBehaviour:
   m_ObjectHideFlags: 0

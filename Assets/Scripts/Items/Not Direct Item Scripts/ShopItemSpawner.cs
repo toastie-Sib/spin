@@ -21,6 +21,7 @@ public class ShopItemSpawner : Assign
     private static string lastRoundKey = null; // e.g., node ID or scene key
     private GameObject[] pool;
     private GameObject cost;
+    public GameObject junkPrefab;
 
     // Start is called before the first frame update
     public override void Start()
@@ -83,15 +84,15 @@ public class ShopItemSpawner : Assign
         }
 
         // 4) If that emptied the pool (e.g., bans + uniqueness), relax the uniqueness rule as a fallback
-        if (validItems.Count == 0)
-        {
-            foreach (var item in pool)
-            {
-                var bans = item.GetComponent<ItemBans>();
-                if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
-                    validItems.Add(item);
-            }
-        }
+        //if (validItems.Count == 0)
+        //{
+        //    foreach (var item in pool)
+        //    {
+        //        var bans = item.GetComponent<ItemBans>();
+        //        if (bans == null || !bans.CannotBeUsedBy(es.fighterPrefab))
+        //            validItems.Add(item);
+        //    }
+        //} i just commented this out does this break?
 
         if (validItems.Count == 0)
         {
@@ -102,9 +103,20 @@ public class ShopItemSpawner : Assign
 
         // 5) Pick one from the remaining list
         GameObject chosen = validItems[Random.Range(0, validItems.Count)];
-        chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
+        string chosenName = chosen.name.Replace("(Clone)", "");
 
+        // check if player already has too many of this item ---
+        int itemCount = SceneSwitcher.Instance.GetItemCount(chosenName);
 
+        var limit = chosen.GetComponent<ItemBans>();
+        int maxAllowed = limit.maxAllowed;
+        if (maxAllowed > 0 && itemCount >= maxAllowed)
+        {
+            chosen = junkPrefab;
+        }
+
+        // Now mark and restore RNG as before
+        chosenNamesThisRound.Add(chosenName);
         SeedManager.Instance.RestoreMasterSeed();
 
         if (costPrefab != null)
@@ -151,8 +163,18 @@ public class ShopItemSpawner : Assign
     private void HoldOntoName()
     {
         ItemChoose itemChoose = GameObject.Find("Purchase")?.GetComponent<ItemChoose>();
-        if (itemChoose != null) itemChoose.itemString = objectName;
-        itemChoose.storedCard = storedItemPrefab;
+        if(storedItemPrefab.GetComponent<ItemBans>().maxAllowed > 0 && storedItemPrefab.GetComponent<ItemBans>().maxAllowed <= SceneSwitcher.Instance.GetItemCount(objectName))
+        {
+            if (itemChoose != null) itemChoose.itemString = "Junk";
+            itemChoose.storedCard = junkPrefab;
+        }
+        else
+        {
+            if (itemChoose != null) itemChoose.itemString = objectName;
+            itemChoose.storedCard = storedItemPrefab;
+        }
+
+        
         itemChoose.trading = trading;
         itemChoose.cost = itemcost;
         if (costPrefab != null)

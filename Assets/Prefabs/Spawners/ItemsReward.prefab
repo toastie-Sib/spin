@@ -343,6 +343,7 @@ MonoBehaviour:
   num: 1
   commonDropRate: 70
   uncommonDropRate: 90
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!1 &2232292702778906339
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +451,7 @@ MonoBehaviour:
   num: 3
   commonDropRate: 70
   uncommonDropRate: 90
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}
 --- !u!1 &2232292702804915152
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,3 +593,4 @@ MonoBehaviour:
   num: 2
   commonDropRate: 70
   uncommonDropRate: 90
+  junkPrefab: {fileID: 810934615206871094, guid: e0b75a7bf73762043a4f9a91abf9413b, type: 3}

@@ -16,6 +16,7 @@ public class ItemSpawner : Assign
     private string objectName;
     private static HashSet<string> chosenNamesThisRound = new HashSet<string>();
     private static string lastRoundKey = null; // e.g., node ID or scene key
+    public GameObject junkPrefab;
 
     // Start is called before the first frame update
     public override void Start()
@@ -77,9 +78,22 @@ public class ItemSpawner : Assign
 
         // 5) Pick one from the remaining list
         GameObject chosen = validItems[Random.Range(0, validItems.Count)];
-        chosenNamesThisRound.Add(chosen.name); // prevent duplicates across the three spawners this round
+        string chosenName = chosen.name.Replace("(Clone)", "");
 
+        // check if player already has too many of this item ---
+        int itemCount = SceneSwitcher.Instance.GetItemCount(chosenName);
+
+        var limit = chosen.GetComponent<ItemBans>();
+        int maxAllowed = limit.maxAllowed;
+        if (maxAllowed > 0 && itemCount >= maxAllowed)
+        {
+            chosen = junkPrefab;
+        }
+
+        // Now mark and restore RNG as before
+        chosenNamesThisRound.Add(chosenName);
         SeedManager.Instance.RestoreMasterSeed();
+
 
         // 6) Spawn the UI card
         GameObject itemCard = Instantiate(chosen, transform);
