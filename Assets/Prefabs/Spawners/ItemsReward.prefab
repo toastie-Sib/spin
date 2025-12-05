@@ -339,6 +339,7 @@ MonoBehaviour:
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
+  - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
   waitTime: 0
   num: 1
   commonDropRate: 70
@@ -447,6 +448,7 @@ MonoBehaviour:
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
+  - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
   waitTime: 0.02
   num: 3
   commonDropRate: 70
@@ -589,6 +591,7 @@ MonoBehaviour:
   rareItems:
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
+  - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
   waitTime: 0.01
   num: 2
   commonDropRate: 70

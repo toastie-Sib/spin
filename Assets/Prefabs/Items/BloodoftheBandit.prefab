@@ -231,6 +231,7 @@ MonoBehaviour:
   es: {fileID: 0}
   blockedFighters:
   - Anchor
+  maxAllowed: -1
 --- !u!1 &2805811855023019479
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +310,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.75
-  m_Text: Blood Of The Bandit
+  m_Text: Blood of the Bandit
 --- !u!1 &2805811855429174021
 GameObject:
   m_ObjectHideFlags: 0

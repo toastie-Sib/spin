@@ -341,6 +341,7 @@ public class Fighter : MonoBehaviour
                 UI.stacksText.text = (str + (Mathf.Round(num))).ToString();
             } else if (text == 2) {
                 UI.damageText.text = (str + num).ToString();
+                UI.damageText.text = string.Format("{0}{1:F1}", str, num);
             } else if (text == 3) {
                 UI.extraText.text = (str + num).ToString();
             }

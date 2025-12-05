@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.75
-  m_Text: Blood Of The Soldier
+  m_Text: Blood of the Soldier
 --- !u!1 &6523228037749239196
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   - Bow
   - Staff
   - Unarmed
-  rarity: 1
+  maxAllowed: -1
 --- !u!1 &6523228038530437865
 GameObject:
   m_ObjectHideFlags: 0

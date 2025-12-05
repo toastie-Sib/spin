@@ -137,7 +137,7 @@ public class Weapon : MonoBehaviour
                         myFighter.UpdateDynamicUI("Damage: ", damage, 2);
                     }
                 }
-            }
+            } // End Scythe BullShit that I should really get rid of and move
             if (otherFighter.isInvincible == false && doNotHurt == false) {
                 myFighter.AttackAnimation(otherFighter);
 
@@ -262,6 +262,12 @@ public class Weapon : MonoBehaviour
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();
             gatitoBlade.stacks = SceneSwitcher.Instance.GetItemCount("GatitoBlade");
+        }
+
+        if (SceneSwitcher.Instance.HasItem("BloodoftheMage"))
+        {
+            var bloodoftheMage = gameObject.AddComponent<BloodoftheMage>();
+            bloodoftheMage.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheMage");
         }
     }
 }

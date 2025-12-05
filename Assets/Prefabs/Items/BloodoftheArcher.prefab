@@ -234,7 +234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.75
-  m_Text: Blood Of The Archer
+  m_Text: Blood of the Archer
 --- !u!1 &810934615206871094
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   - Sword
   - Unarmed
   - Anchor
-  rarity: 2
+  maxAllowed: -1
 --- !u!1 &3785985001397632381
 GameObject:
   m_ObjectHideFlags: 0
