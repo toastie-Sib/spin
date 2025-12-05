@@ -29,7 +29,7 @@ public class Campfire : MonoBehaviour
     private float spinMult;
     private float refreshInterval;
 
-    void Start()
+    public void Start()
     {
         if (UItextInit == true) {
             if (MapUIInit == true) {
@@ -66,7 +66,18 @@ public class Campfire : MonoBehaviour
         }
     }
 
-    void OnClick()
+    public void UpdateCostUI()
+    {
+        StartCoroutine(UpdateUI());
+    }
+
+    public IEnumerator UpdateUI()
+    {
+        yield return null;
+        Start();
+    }
+
+        void OnClick()
     {
         //Campfire UI Navigation
         if (restoreHP == true)
