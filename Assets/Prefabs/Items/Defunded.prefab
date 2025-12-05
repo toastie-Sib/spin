@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   es: {fileID: 0}
   blockedFighters: []
-  maxAllowed: 3
+  maxAllowed: 4
 --- !u!1 &3785985001397632381
 GameObject:
   m_ObjectHideFlags: 0

@@ -2263,6 +2263,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3677358063678739195, guid: 351131726ace2e445baf43b93f3a0b6f, type: 3}
+      propertyPath: sceneName
+      value: ArenaSmall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677358063678739195, guid: 351131726ace2e445baf43b93f3a0b6f, type: 3}
       propertyPath: connectedNodes.Array.data[0]
       value: 
       objectReference: {fileID: 2063480756}

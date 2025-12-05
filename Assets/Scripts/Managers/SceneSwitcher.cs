@@ -167,6 +167,7 @@ public class SceneSwitcher : MonoBehaviour
                     playerMoney += rewardMoney;
                     SlowLoadSpecificSceneDelay("ItemPickBoss");
                     chapterEnd = false;
+                    playerCurrentHP = playerMaxHP;
                 }
                 
             }
