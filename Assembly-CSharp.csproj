@@ -53,7 +53,7 @@
     <UnityVersion>2020.3.48f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Projectiles\Fireball.cs" />
@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ItemChoose.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Scripts\Items\Training.cs" />
+    <Compile Include="Assets\Scripts\Items\BloodoftheMage.cs" />
     <Compile Include="Assets\Scripts\Items\Food.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheBandit.cs" />
     <Compile Include="Assets\Scripts\Managers\AssignSeedInputField.cs" />
@@ -113,7 +114,6 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopTradeItems.cs" />
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Items\BloodoftheMage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

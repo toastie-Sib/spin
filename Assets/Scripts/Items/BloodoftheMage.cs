@@ -5,7 +5,7 @@ using UnityEngine;
 public class BloodoftheMage : ItemBase
 {
     private int hitsDone = 0;
-
+    [HideInInspector] public bool readyToExplode = false;
     public GameObject explosionEffect;
 
     public override void Start()
@@ -26,7 +26,7 @@ public class BloodoftheMage : ItemBase
             if (otherFighter.isInvincible == false && myWeapon.doNotHurt == false)
             {
                 hitsDone += 1;
-                if (hitsDone == 6 - stacks)
+                if (hitsDone >= 6 - stacks)
                 {
                     hitsDone = 0;
                     GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
@@ -55,5 +55,35 @@ public class BloodoftheMage : ItemBase
                 }
             }
         }
+    }
+
+    public void remoteTrigger()
+    {
+        hitsDone += 1;
+        if (hitsDone >= 6 - stacks)
+        {
+            hitsDone = 0;
+            
+            readyToExplode = true;
+        }
+    }
+
+    public void RemoteExplode(Fighter otherFighter)
+    {
+        GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
+
+        //Knockback
+        //Apply Force away when shot
+        float zRot = transform.eulerAngles.z;
+
+        // Convert to radians for Mathf trig functions
+        float radians = zRot * Mathf.Deg2Rad;
+
+        // Calculate direction based on rotation
+        // This makes 0° = down, 180° = up
+        Vector3 fireBoost = new Vector3(Mathf.Sin(radians), -Mathf.Cos(radians), 0f);
+
+        Rigidbody otherRb = otherFighter.GetComponent<Rigidbody>();
+        otherRb.AddForce(-fireBoost * stacks * 20, ForceMode.Impulse);
     }
 }

@@ -128,6 +128,15 @@ public class Projectile : MonoBehaviour
                     }
                     
                 }
+                if (shooter.GetComponentInChildren<BloodoftheMage>() != null)
+                {
+                    if (shooter.GetComponentInChildren<BloodoftheMage>().readyToExplode == true)
+                    {
+                        otherFighter.HitDetect(damage);
+                        shooter.GetComponentInChildren<BloodoftheMage>().RemoteExplode(otherFighter);
+                    }
+
+                }
             } 
             else // If it was reflected though
             {
@@ -200,6 +209,11 @@ public class Projectile : MonoBehaviour
         { //Item
             BloodoftheKnight BotK = shooter.GetComponentInChildren<BloodoftheKnight>();
             BotK.IncreaseScaling();
+        }
+        if (shooter.GetComponentInChildren<BloodoftheMage>() != null)
+        { //Item
+            BloodoftheMage BotM = shooter.GetComponentInChildren<BloodoftheMage>();
+            BotM.remoteTrigger();
         }
     }
 
