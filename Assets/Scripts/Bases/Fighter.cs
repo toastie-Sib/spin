@@ -204,6 +204,14 @@ public class Fighter : MonoBehaviour
     public void HitDetect(float amount)
     {
         if (isInvincible) return; // Don't get hurt
+
+        if(GetComponentInChildren<TungstonSphere>() != null && amount > 1)
+        {
+            TungstonSphere ts = GetComponentInChildren<TungstonSphere>();
+            amount -= ts.stacks;
+            if (amount < 1) { amount = 1; }
+        }
+            
         StartCoroutine(GetHit(amount));
     }
     private IEnumerator GetHit(float amount)

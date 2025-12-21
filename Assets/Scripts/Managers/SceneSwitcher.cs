@@ -233,8 +233,8 @@ public class SceneSwitcher : MonoBehaviour
         { "Garbage", "Common" }, { "Junk", "Uncommon" }, { "Scrap", "Rare" }, { "BloodoftheArcher", "Uncommon" }, { "BloodoftheBandit", "Common" }, { "BloodoftheKnight", "Common" }, { "BloodoftheSoldier", "Common" }, { "Food", "Common" }, { "RaiseTheRoof", "Common" }, 
         { "Training", "Common" }, { "TriTippedDagger", "Common" }, { "GlassBall", "Rare" }, { "GatitoBlade", "Rare" }, { "New Equipment", "Boss" }, { "Rubber Arrows", "Boss" }, { "Remote Detonation", "Boss" }, 
         { "HMIYC", "Boss" }, { "Blood Sacrifice", "Boss" }, { "Blade Beam", "Boss" }, { "Berserker", "Boss" }, { "Ocean's Floor", "Boss" }, { "Self Destruct Button", "Boss" }, { "Execute", "Boss" },
-        { "Penicillin", "Boss" }, { "Battering Ram", "Boss" }, { "Defunded", "Uncommon" }, { "BloodoftheMage", "Rare" },
-        { "WindTurbine", "Rare" },
+        { "Penicillin", "Boss" }, { "Battering Ram", "Boss" }, { "Defunded", "Uncommon" }, { "BloodoftheMage", "Rare" }, { "WindTurbine", "Rare" }, 
+        { "TungstonSphere", "Uncommon" },
         //Not in yet
         { "Poison", "Common" },
         { "Electricity", "Uncommon" },
@@ -244,7 +244,6 @@ public class SceneSwitcher : MonoBehaviour
         { "Perfect Dash", "Boss" },
         { "Shadow Step", "Boss" },
         { "Reflect", "Uncommon" },
-        { "TungstonSphere", "Uncommon" },
         { "Brimstone", "Rare" },
         { "Flashback", "Rare" },
         { "228000LeafClover", "Rare" },
