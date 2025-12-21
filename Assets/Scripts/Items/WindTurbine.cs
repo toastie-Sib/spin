@@ -4,51 +4,91 @@ using UnityEngine;
 
 public class WindTurbine : ItemBase
 {
-    private float previousAngle;
+    private int startSegment = -1;
+    private int currentSegment = -1;
+    private int segmentsPassed = 0;
 
-    private bool passedUp = false;
-    private bool passedDown = false;
+    private float lastAngle;
+    private int rotationDir = 0; // 1 = CW, -1 = CCW
 
     public override void Start()
     {
         base.Start();
-        if (transform.parent == null)
-        {
-            Debug.LogError("RotationPassDetector requires a parent object.");
-            enabled = false;
-            return;
-        }
-
-        previousAngle = GetParentAngle();
+        lastAngle = GetParentAngle();
     }
 
     void Update()
     {
-        float currentAngle = GetParentAngle();
+        float angle = GetParentAngle();
+        float delta = Mathf.DeltaAngle(lastAngle, angle);
 
-        // Check UP (90°)
-        if (!passedUp && PassedAngle(previousAngle, currentAngle, 90f))
+        // No movement
+        if (Mathf.Abs(delta) < 0.01f)
+            return;
+
+        int newDir = delta > 0 ? 1 : -1;
+
+        // Direction changed → RESET and start fresh
+        if (rotationDir != 0 && newDir != rotationDir)
         {
-            passedUp = true;
-            Debug.Log("Passed facing UP");
+            ResetTracking();
         }
 
-        // Check DOWN (270°)
-        if (!passedDown && PassedAngle(previousAngle, currentAngle, 270f))
+        rotationDir = newDir;
+
+        int seg = GetSegment(angle);
+
+        // First segment
+        if (startSegment == -1)
         {
-            passedDown = true;
-            Debug.Log("Passed facing DOWN");
+            startSegment = seg;
+            currentSegment = seg;
+            segmentsPassed = 0;
+        }
+        else if (seg != currentSegment)
+        {
+            int expected = (currentSegment + rotationDir + 4) % 4;
+
+            // Skipped or reversed → reset
+            if (seg != expected)
+            {
+                ResetTracking();
+                startSegment = seg;
+                currentSegment = seg;
+                segmentsPassed = 0;
+            }
+            else
+            {
+                currentSegment = seg;
+                segmentsPassed++;
+
+                // Completed full loop
+                if (currentSegment == startSegment && segmentsPassed >= 4)
+                {
+                    OnRotationComplete();
+                    ResetTracking();
+                }
+            }
         }
 
-        // When both have been passed
-        if (passedUp && passedDown)
-        {
-            Debug.Log("Passed BOTH up and down!");
-            passedUp = false;
-            passedDown = false;
-        }
+        lastAngle = angle;
+    }
 
-        previousAngle = currentAngle;
+    void ResetTracking()
+    {
+        startSegment = -1;
+        currentSegment = -1;
+        segmentsPassed = 0;
+        rotationDir = 0;
+    }
+
+
+    int GetSegment(float angle)
+    {
+        if (angle >= 315f || angle < 45f) return 0;     // Up
+        if (angle >= 45f && angle < 135f) return 1;     // Right
+        if (angle >= 135f && angle < 225f) return 2;    // Down
+        return 3;                                       // Left
     }
 
     float GetParentAngle()
@@ -61,13 +101,10 @@ public class WindTurbine : ItemBase
         return (angle + 360f) % 360f;
     }
 
-    bool PassedAngle(float from, float to, float target)
-    {
-        // Normal case
-        if (from < to)
-            return from < target && target <= to;
 
-        // Wrapped case (e.g. 350 → 10)
-        return from < target || target <= to;
+    //final effect when rotation is complete
+    void OnRotationComplete()
+    {
+        GetComponent<Weapon>().TriggerScaling();
     }
 }
