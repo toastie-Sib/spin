@@ -99,15 +99,7 @@ public class Weapon : MonoBehaviour
                     Training training = GetComponent<Training>();
                     for (int i = 0; i < training.stacks; i++)
                     {
-                        otherFighter.ApplyPoison();
-                        otherFighter.poisonStacks += 1;
-                        tracker += 1;
-                        if (gatitoBlade == false)
-                        {
-                            myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
-                            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
-                        }
-                        
+                        ScytheApply(otherFighter);
                     }
                     firstHitDone = true;
                 }
@@ -116,26 +108,12 @@ public class Weapon : MonoBehaviour
                     GlassBall glassBall = GetComponent<GlassBall>();
                     for (int i = -1; i < glassBall.stacks; i++)
                     {
-                        otherFighter.ApplyPoison(); // Call the actual scaling logic 'stacks' times
-                        otherFighter.poisonStacks += 1;
-                        tracker += 1;
-                        if (gatitoBlade == false)
-                        {
-                            myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
-                            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
-                        }
+                        ScytheApply(otherFighter);
                     }
                 }
                 else
                 {
-                    otherFighter.ApplyPoison(); // Regular Sytche apply Poison Scaling Alternative
-                    otherFighter.poisonStacks += 1;
-                    tracker += 1;
-                    if (gatitoBlade == false)
-                    {
-                        myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
-                        myFighter.UpdateDynamicUI("Damage: ", damage, 2);
-                    }
+                    ScytheApply(otherFighter);
                 }
             } // End Scythe BullShit that I should really get rid of and move
             if (otherFighter.isInvincible == false && doNotHurt == false) {
@@ -202,6 +180,18 @@ public class Weapon : MonoBehaviour
         transform.localScale = scale;
     }
 
+    public void ScytheApply(Fighter otherFighter)
+    {
+        otherFighter.ApplyPoison();
+        otherFighter.poisonStacks += 1;
+        tracker += 1;
+        if (gatitoBlade == false)
+        {
+            myFighter.UpdateDynamicUI("Poison: ", tracker, 1);
+            myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+        }
+    }
+
     public void ItemCheck() // Update on Unarmed too since no weapon
     {
         if (SceneSwitcher.Instance.HasItem("BloodoftheArcher"))
@@ -257,6 +247,11 @@ public class Weapon : MonoBehaviour
             var ttD = gameObject.AddComponent<TriTippedDagger>();
             ttD.stacks = SceneSwitcher.Instance.GetItemCount("TriTippedDagger");
         }
+        if (SceneSwitcher.Instance.HasItem("BloodoftheMage"))
+        {
+            var bloodoftheMage = gameObject.AddComponent<BloodoftheMage>();
+            bloodoftheMage.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheMage");
+        }
 
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
@@ -264,10 +259,6 @@ public class Weapon : MonoBehaviour
             gatitoBlade.stacks = SceneSwitcher.Instance.GetItemCount("GatitoBlade");
         }
 
-        if (SceneSwitcher.Instance.HasItem("BloodoftheMage"))
-        {
-            var bloodoftheMage = gameObject.AddComponent<BloodoftheMage>();
-            bloodoftheMage.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheMage");
-        }
+        
     }
 }

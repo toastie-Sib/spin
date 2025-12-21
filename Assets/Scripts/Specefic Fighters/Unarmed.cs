@@ -138,6 +138,11 @@ public class Unarmed : Fighter
                 if (botB.applied < 25* botB.stacks) { bounceBonus += 0.15f; }
             }
         }
+        if (GetComponent<BloodoftheMage>() != null)
+        {
+            BloodoftheMage botM = GetComponent<BloodoftheMage>();
+            botM.hitsDone += 1; 
+        }
 
     }
 
@@ -219,11 +224,12 @@ public class Unarmed : Fighter
             var ttD = gameObject.AddComponent<TriTippedDagger>();
             ttD.stacks = SceneSwitcher.Instance.GetItemCount("TriTippedDagger");
         }
+        if (SceneSwitcher.Instance.HasItem("BloodoftheMage"))
+        {
+            var bloodoftheMage = gameObject.AddComponent<BloodoftheMage>();
+            bloodoftheMage.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheMage");
+        }
 
-
-
-
-        //Make sure to be last
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();

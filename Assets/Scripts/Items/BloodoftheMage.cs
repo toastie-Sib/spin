@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BloodoftheMage : ItemBase
 {
-    private int hitsDone = 0;
+    [HideInInspector] public int hitsDone = 0;
     [HideInInspector] public bool readyToExplode = false;
     public GameObject explosionEffect;
 
@@ -26,35 +26,51 @@ public class BloodoftheMage : ItemBase
             if (otherFighter.isInvincible == false && myWeapon.doNotHurt == false)
             {
                 hitsDone += 1;
-                if (hitsDone >= 6 - stacks)
-                {
-                    hitsDone = 0;
-                    GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
+                
+            }
+            
+            if (hitsDone >= 6 - stacks && myWeapon.scythe == true)
+            {
+                hitsDone = 0;
+                GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
 
 
-                    float damage = myWeapon.damage + myFighter.bonusDamage;
-                    otherFighter.HitDetect(damage);
+                myWeapon.ScytheApply(otherFighter);
 
-                    //Knockback
-                    //Apply Force away when shot
-                    float zRot = transform.eulerAngles.z;
+                ExplosionKnockback(otherFighter, myFighter);
+            }
+            else if (hitsDone >= 6 - stacks)
+            {
+                hitsDone = 0;
+                GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
 
-                    // Convert to radians for Mathf trig functions
-                    float radians = zRot * Mathf.Deg2Rad;
 
-                    // Calculate direction based on rotation
-                    // This makes 0° = down, 180° = up
-                    Vector3 fireBoost = new Vector3(Mathf.Sin(radians), -Mathf.Cos(radians), 0f);
+                float damage = myWeapon.damage + myFighter.bonusDamage;
+                otherFighter.HitDetect(damage);
 
-                    // Apply the force
-                    Rigidbody rb = myFighter.GetComponent<Rigidbody>();
-                    rb.AddForce(fireBoost * stacks * 20, ForceMode.Impulse);
-
-                    Rigidbody otherRb = otherFighter.GetComponent<Rigidbody>();
-                    otherRb.AddForce(-fireBoost * stacks * 20, ForceMode.Impulse);
-                }
+                ExplosionKnockback(otherFighter, myFighter);
             }
         }
+    }
+
+    public void ExplosionKnockback(Fighter otherFighter, Fighter myFighter)
+    {
+        //Apply Force away when shot
+        float zRot = transform.eulerAngles.z;
+
+        // Convert to radians for Mathf trig functions
+        float radians = zRot * Mathf.Deg2Rad;
+
+        // Calculate direction based on rotation
+        // This makes 0° = down, 180° = up
+        Vector3 fireBoost = new Vector3(Mathf.Sin(radians), -Mathf.Cos(radians), 0f);
+
+        // Apply the force
+        Rigidbody rb = myFighter.GetComponent<Rigidbody>();
+        rb.AddForce(fireBoost * stacks * 20, ForceMode.Impulse);
+
+        Rigidbody otherRb = otherFighter.GetComponent<Rigidbody>();
+        otherRb.AddForce(-fireBoost * stacks * 20, ForceMode.Impulse);
     }
 
     public void remoteTrigger()
