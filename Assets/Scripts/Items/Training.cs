@@ -9,6 +9,8 @@ public class Training : ItemBase
     // Start is called before the first frame update
     public override void Start()
     {
+        base.Start();
+
         Weapon myWeapon = GetComponent<Weapon>();
         if(myWeapon.gatitoBlade == false)
         {

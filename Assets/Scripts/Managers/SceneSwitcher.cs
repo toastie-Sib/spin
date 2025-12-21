@@ -230,14 +230,13 @@ public class SceneSwitcher : MonoBehaviour
 
     private Dictionary<string, string> itemRarities = new Dictionary<string, string>()
     {
-        { "BloodoftheArcher", "Uncommon" }, { "BloodoftheBandit", "Common" }, { "BloodoftheKnight", "Common" }, { "BloodoftheSoldier", "Common" }, { "Food", "Common" }, { "RaiseTheRoof", "Common" }, 
+        { "Garbage", "Common" }, { "Junk", "Uncommon" }, { "Scrap", "Rare" }, { "BloodoftheArcher", "Uncommon" }, { "BloodoftheBandit", "Common" }, { "BloodoftheKnight", "Common" }, { "BloodoftheSoldier", "Common" }, { "Food", "Common" }, { "RaiseTheRoof", "Common" }, 
         { "Training", "Common" }, { "TriTippedDagger", "Common" }, { "GlassBall", "Rare" }, { "GatitoBlade", "Rare" }, { "New Equipment", "Boss" }, { "Rubber Arrows", "Boss" }, { "Remote Detonation", "Boss" }, 
         { "HMIYC", "Boss" }, { "Blood Sacrifice", "Boss" }, { "Blade Beam", "Boss" }, { "Berserker", "Boss" }, { "Ocean's Floor", "Boss" }, { "Self Destruct Button", "Boss" }, { "Execute", "Boss" },
-        { "Penicillin", "Boss" }, { "Battering Ram", "Boss" }, { "Defunded", "Uncommon" },
-        { "BloodoftheMage", "Rare" },
+        { "Penicillin", "Boss" }, { "Battering Ram", "Boss" }, { "Defunded", "Uncommon" }, { "BloodoftheMage", "Rare" },
+        { "WindTurbine", "Rare" },
         //Not in yet
         { "Poison", "Common" },
-        { "WindTurbine", "Rare" },
         { "Electricity", "Uncommon" },
         { "Bomb", "Uncommon" },
         { "Fission", "Rare" },

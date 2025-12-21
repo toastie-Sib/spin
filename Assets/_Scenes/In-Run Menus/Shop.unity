@@ -190,6 +190,7 @@ MonoBehaviour:
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
+  - {fileID: 5543377922700409565, guid: d165e3ebd76936b47a737d8423eee226, type: 3}
   waitTime: 0.001
   num: 5
   rarity: 3
@@ -1354,6 +1355,7 @@ MonoBehaviour:
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
+  - {fileID: 5543377922700409565, guid: d165e3ebd76936b47a737d8423eee226, type: 3}
   waitTime: 0
   num: 1
   rarity: 1
@@ -1744,6 +1746,7 @@ MonoBehaviour:
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
+  - {fileID: 5543377922700409565, guid: d165e3ebd76936b47a737d8423eee226, type: 3}
   waitTime: 0.001
   num: 6
   rarity: 2
@@ -1874,8 +1877,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2145603345}
   m_HandleRect: {fileID: 2145603344}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.5
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2921,6 +2924,7 @@ MonoBehaviour:
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
+  - {fileID: 5543377922700409565, guid: d165e3ebd76936b47a737d8423eee226, type: 3}
   waitTime: 0.001
   num: 7
   rarity: 3
@@ -3872,6 +3876,7 @@ MonoBehaviour:
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
+  - {fileID: 5543377922700409565, guid: d165e3ebd76936b47a737d8423eee226, type: 3}
   waitTime: 0
   num: 4
   rarity: 2
@@ -4133,6 +4138,7 @@ MonoBehaviour:
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
+  - {fileID: 5543377922700409565, guid: d165e3ebd76936b47a737d8423eee226, type: 3}
   waitTime: 0.002
   num: 3
   rarity: 1
@@ -5250,6 +5256,7 @@ MonoBehaviour:
   - {fileID: 5543377922700409565, guid: 4a820a23ce45f9a4c9cc5f61cfeb3098, type: 3}
   - {fileID: 8705406917324456739, guid: 2c8d67aaf64995f4cb319a58dcd8f787, type: 3}
   - {fileID: 5543377922700409565, guid: 25a3702ba0424684098a5b8748d461a5, type: 3}
+  - {fileID: 5543377922700409565, guid: d165e3ebd76936b47a737d8423eee226, type: 3}
   waitTime: 0.001
   num: 2
   rarity: 1

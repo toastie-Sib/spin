@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopItemSpawner.cs" />
     <Compile Include="Assets\Scripts\Bases\Fighter.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\ChargeRamFighter.cs" />
+    <Compile Include="Assets\Scripts\Items\WindTurbine.cs" />
     <Compile Include="Assets\Scripts\Managers\Campfire.cs" />
     <Compile Include="Assets\Scripts\Managers\MapNodeRandomization.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheSoldier.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Scripts\Specefic Fighters\Sword.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Unarmed.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Shield.cs" />
+    <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\PlayerGiveItems.cs" />
     <Compile Include="Assets\Scripts\Managers\MapCamera.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\DisplayItems.cs" />
@@ -114,7 +116,6 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopTradeItems.cs" />
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\PlayerGiveItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

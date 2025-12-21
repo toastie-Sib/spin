@@ -128,6 +128,15 @@ public class Unarmed : Fighter
         otherFighter.HurtAnimation();
 
         // Item Effects on Hit
+        if (GetComponent<BloodoftheKnight>() != null)
+        {
+            BloodoftheKnight BotK = GetComponent<BloodoftheKnight>();
+            for (int i = 0; i < BotK.stacks; i++)
+            {
+                BotK.increase += 1;
+                if (BotK.increase < (15 * BotK.stacks)) { bonusDamage += (0.2f * BotK.stacks); }
+            }
+        }
         if (GetComponent<BloodoftheBandit>() != null)
         {
             BloodoftheBandit botB = GetComponent<BloodoftheBandit>();

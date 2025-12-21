@@ -72,6 +72,11 @@ public class PlayerGiveItems : MonoBehaviour
             var bloodoftheMage = gameObject.AddComponent<BloodoftheMage>();
             bloodoftheMage.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheMage");
         }
+        if (SceneSwitcher.Instance.HasItem("WindTurbine"))
+        {
+            var windTurbine = gameObject.AddComponent<WindTurbine>();
+            windTurbine.stacks = SceneSwitcher.Instance.GetItemCount("WindTurbine");
+        }
 
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {

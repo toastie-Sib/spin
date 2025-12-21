@@ -16,17 +16,9 @@ public class BloodoftheKnight : ItemBase
         {
             if (otherFighter.isInvincible == false)
             {
-                if (myFighter.GetComponent<Unarmed>() == null)
-                {
-                    IncreaseScaling();
-                    increase += 1;
+                IncreaseScaling();
+                increase += 1;
 
-                }else
-                {
-                    increase += 1;
-                    if (increase < (15 * stacks)) { myFighter.bonusDamage += (0.2f * stacks); }
-                }
-                
             }
 
         }
