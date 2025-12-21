@@ -21,7 +21,9 @@ public class ShopItemSpawner : Assign
     private static string lastRoundKey = null; // e.g., node ID or scene key
     private GameObject[] pool;
     private GameObject cost;
+    public GameObject garbagePrefab;
     public GameObject junkPrefab;
+    public GameObject scrapPrefab;
 
     // Start is called before the first frame update
     public override void Start()
@@ -110,9 +112,23 @@ public class ShopItemSpawner : Assign
 
         var limit = chosen.GetComponent<ItemBans>();
         int maxAllowed = limit.maxAllowed;
+
         if (maxAllowed > 0 && itemCount >= maxAllowed)
         {
-            chosen = junkPrefab;
+            switch (rarity)
+            {
+                case 1: // Common
+                    chosen = garbagePrefab;
+                    break;
+
+                case 2: // Uncommon
+                    chosen = junkPrefab;
+                    break;
+
+                case 3: // Rare
+                    chosen = scrapPrefab;
+                    break;
+            }
         }
 
         // Now mark and restore RNG as before
@@ -163,10 +179,25 @@ public class ShopItemSpawner : Assign
     private void HoldOntoName()
     {
         ItemChoose itemChoose = GameObject.Find("Purchase")?.GetComponent<ItemChoose>();
-        if(storedItemPrefab.GetComponent<ItemBans>().maxAllowed > 0 && storedItemPrefab.GetComponent<ItemBans>().maxAllowed <= SceneSwitcher.Instance.GetItemCount(objectName))
+        if (storedItemPrefab.GetComponent<ItemBans>().maxAllowed > 0 && storedItemPrefab.GetComponent<ItemBans>().maxAllowed <= SceneSwitcher.Instance.GetItemCount(objectName))
         {
-            if (itemChoose != null) itemChoose.itemString = "Junk";
-            itemChoose.storedCard = junkPrefab;
+            switch (rarity)
+            {
+                case 1:
+                    itemChoose.itemString = "Garbage";
+                    itemChoose.storedCard = garbagePrefab;
+                    break;
+
+                case 2:
+                    itemChoose.itemString = "Junk";
+                    itemChoose.storedCard = junkPrefab;
+                    break;
+
+                case 3:
+                    itemChoose.itemString = "Scrap";
+                    itemChoose.storedCard = scrapPrefab;
+                    break;
+            }
         }
         else
         {
