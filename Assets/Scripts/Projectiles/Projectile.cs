@@ -213,7 +213,7 @@ public class Projectile : MonoBehaviour
         if (shooter.GetComponentInChildren<BloodoftheMage>() != null)
         { //Item
             BloodoftheMage BotM = shooter.GetComponentInChildren<BloodoftheMage>();
-            BotM.remoteTrigger();
+            BotM.RemoteTrigger();
         }
     }
 

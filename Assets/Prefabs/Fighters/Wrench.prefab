@@ -217,10 +217,15 @@ MonoBehaviour:
   invincibleUntil: 0
   direction: 1
   freezeFrame: 0
-  hpUI: {fileID: 0}
+  UI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
   isPlayer: 0
+  animationRef: {fileID: 0}
+  canPlayAnimation: 1
+  bleedStacks: 0
+  poisonStacks: 0
+  poisonLeech: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
@@ -230,6 +235,7 @@ MonoBehaviour:
   hp: 100
   maxHp: 100
   spinMult: 250
+  bonusDamage: 0
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
@@ -247,6 +253,7 @@ GameObject:
   - component: {fileID: 5199228310101962176}
   - component: {fileID: 5199228310101962190}
   - component: {fileID: 5199228310101962161}
+  - component: {fileID: 5049772429571710559}
   m_Layer: 8
   m_Name: Wrench
   m_TagString: Weapon
@@ -361,7 +368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d12bc0d85c97d46822c41ffc3cbdc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationRef: {fileID: 0}
   damage: 1
   doNotHurt: 0
   shield: 0
@@ -369,8 +375,23 @@ MonoBehaviour:
   scythe: 0
   side: 0
   firePoint: {fileID: 0}
+  myFighter: {fileID: 0}
+  gatitoBlade: 0
   turretPrefab: {fileID: 8214782621584023908, guid: 8472fa22f9751d2408623be1bd5a6d9c, type: 3}
   spawnPoint: {fileID: 4006982673203306454}
+  turrets: 0
+--- !u!114 &5049772429571710559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199228310101962188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19a22240e3a94d4386a23a82af8b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5199228310223956726
 GameObject:
   m_ObjectHideFlags: 0

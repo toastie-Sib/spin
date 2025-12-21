@@ -282,10 +282,15 @@ MonoBehaviour:
   invincibleUntil: 0
   direction: 1
   freezeFrame: 0
-  hpUI: {fileID: 0}
+  UI: {fileID: 0}
   isActive: 0
   isUnarmed: 0
   isPlayer: 0
+  animationRef: {fileID: 0}
+  canPlayAnimation: 1
+  bleedStacks: 0
+  poisonStacks: 0
+  poisonLeech: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
@@ -295,6 +300,7 @@ MonoBehaviour:
   hp: 100
   maxHp: 100
   spinMult: 150
+  bonusDamage: 0
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
@@ -328,6 +334,7 @@ GameObject:
   - component: {fileID: 1701393399788561025}
   - component: {fileID: 1701393399788561031}
   - component: {fileID: 7636428229436780417}
+  - component: {fileID: 3510070431062816326}
   m_Layer: 8
   m_Name: Scythe
   m_TagString: Weapon
@@ -441,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5f0eee278e3da4eb6bc091315e39fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationRef: {fileID: 0}
   damage: 0
   doNotHurt: 0
   shield: 0
@@ -449,4 +455,18 @@ MonoBehaviour:
   scythe: 1
   side: 0
   firePoint: {fileID: 0}
+  myFighter: {fileID: 0}
+  gatitoBlade: 0
   GBScythe: {fileID: 0}
+--- !u!114 &3510070431062816326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701393399788561029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19a22240e3a94d4386a23a82af8b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

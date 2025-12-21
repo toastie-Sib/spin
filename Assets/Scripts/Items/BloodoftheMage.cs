@@ -32,9 +32,7 @@ public class BloodoftheMage : ItemBase
             if (hitsDone >= 6 - stacks && myWeapon.scythe == true)
             {
                 hitsDone = 0;
-                GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
-
-
+                
                 myWeapon.ScytheApply(otherFighter);
 
                 ExplosionKnockback(otherFighter, myFighter);
@@ -42,8 +40,6 @@ public class BloodoftheMage : ItemBase
             else if (hitsDone >= 6 - stacks)
             {
                 hitsDone = 0;
-                GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
-
 
                 float damage = myWeapon.damage + myFighter.bonusDamage;
                 otherFighter.HitDetect(damage);
@@ -55,6 +51,8 @@ public class BloodoftheMage : ItemBase
 
     public void ExplosionKnockback(Fighter otherFighter, Fighter myFighter)
     {
+        ExplosionEffect(otherFighter);
+
         //Apply Force away when shot
         float zRot = transform.eulerAngles.z;
 
@@ -73,7 +71,12 @@ public class BloodoftheMage : ItemBase
         otherRb.AddForce(-fireBoost * stacks * 20, ForceMode.Impulse);
     }
 
-    public void remoteTrigger()
+    public void ExplosionEffect(Fighter otherFighter)
+    {
+        GameObject explosion = Instantiate(explosionEffect, otherFighter.transform.position, Quaternion.identity);
+    }
+
+    public void RemoteTrigger()
     {
         hitsDone += 1;
         if (hitsDone >= 6 - stacks)

@@ -11,9 +11,6 @@ public class Unarmed : Fighter
         base.Start();
         isUnarmed = true;
         if (isPlayer == true)
-        {
-            ItemCheck();
-        }
 
         UpdateDynamicUI("Speed: ", 0, 1);
         UpdateDynamicUI("Damage: ", 0, 2);
@@ -130,6 +127,7 @@ public class Unarmed : Fighter
         AttackAnimation(otherFighter);
         otherFighter.HurtAnimation();
 
+        // Item Effects on Hit
         if (GetComponent<BloodoftheBandit>() != null)
         {
             BloodoftheBandit botB = GetComponent<BloodoftheBandit>();
@@ -138,10 +136,29 @@ public class Unarmed : Fighter
                 if (botB.applied < 25* botB.stacks) { bounceBonus += 0.15f; }
             }
         }
+        if (GetComponent<TriTippedDagger>() != null)
+        {
+            TriTippedDagger ttD = GetComponent<TriTippedDagger>();
+            ttD.Effect(otherFighter);
+        }
         if (GetComponent<BloodoftheMage>() != null)
         {
             BloodoftheMage botM = GetComponent<BloodoftheMage>();
-            botM.hitsDone += 1; 
+            botM.hitsDone += 1;
+            if (botM.hitsDone >= 6 - botM.stacks)
+            {
+                botM.hitsDone = 0;
+                otherFighter.HitDetect(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5)))));
+                botM.ExplosionEffect(otherFighter);
+                // Direction AWAY from explosion
+                Vector3 center = (transform.position + otherFighter.transform.position) * 0.5f;
+                Vector3 otherDir = (otherFighter.transform.position - center).normalized;
+                Vector3 myDir = (transform.position - center).normalized;
+                Rigidbody myRb = GetComponent<Rigidbody>();
+                Rigidbody otherRb = otherFighter.GetComponent<Rigidbody>();
+                otherRb.AddForce(otherDir * botM.stacks * 20, ForceMode.Impulse);
+                myRb.AddForce(myDir * botM.stacks * 20 * 0.75f, ForceMode.Impulse);
+            }
         }
 
     }
@@ -169,71 +186,4 @@ public class Unarmed : Fighter
     }
 
 
-    public void ItemCheck() // Update on Unarmed too since no weapon
-    {
-        if (SceneSwitcher.Instance.HasItem("BloodoftheArcher"))
-        {
-            var botA = gameObject.AddComponent<BloodoftheArcher>();
-            botA.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheArcher");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("BloodoftheBandit"))
-        {
-            var botB = gameObject.AddComponent<BloodoftheBandit>();
-            botB.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheBandit");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("BloodoftheKnight"))
-        {
-            var botK = gameObject.AddComponent<BloodoftheKnight>();
-            botK.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheKnight");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("BloodoftheSoldier"))
-        {
-            var botS = gameObject.AddComponent<BloodoftheSoldier>();
-            botS.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheSoldier");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("Food"))
-        {
-            var food = gameObject.AddComponent<Food>();
-            food.stacks = SceneSwitcher.Instance.GetItemCount("Food");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("GlassBall"))
-        {
-            var glassBall = gameObject.AddComponent<GlassBall>();
-            glassBall.stacks = SceneSwitcher.Instance.GetItemCount("GlassBall");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("RaiseTheRoof"))
-        {
-            var raisetheRoof = gameObject.AddComponent<RaiseTheRoof>();
-            raisetheRoof.stacks = SceneSwitcher.Instance.GetItemCount("RaiseTheRoof");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("Training"))
-        {
-            var training = gameObject.AddComponent<Training>();
-            training.stacks = SceneSwitcher.Instance.GetItemCount("Training");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("TriTippedDagger"))
-        {
-            var ttD = gameObject.AddComponent<TriTippedDagger>();
-            ttD.stacks = SceneSwitcher.Instance.GetItemCount("TriTippedDagger");
-        }
-        if (SceneSwitcher.Instance.HasItem("BloodoftheMage"))
-        {
-            var bloodoftheMage = gameObject.AddComponent<BloodoftheMage>();
-            bloodoftheMage.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheMage");
-        }
-
-        if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
-        {
-            var gatitoBlade = gameObject.AddComponent<GatitoBlade>();
-            gatitoBlade.stacks = SceneSwitcher.Instance.GetItemCount("GatitoBlade");
-        }
-    }
 }

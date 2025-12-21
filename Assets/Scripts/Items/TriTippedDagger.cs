@@ -15,15 +15,7 @@ public class TriTippedDagger : ItemBase
         {
             if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Shield>() == null)
             {
-                SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
-
-                int randomInt = Random.Range(0, 100);
-                if (randomInt <= 20*stacks)
-                {
-                    otherFighter.bleedStacks += 1;
-                }
-
-                SeedManager.Instance.RestoreMasterSeed();
+                Effect(otherFighter);
 
             }
 
@@ -38,5 +30,18 @@ public class TriTippedDagger : ItemBase
     private void OnTriggerExit(Collider other)
     {
         alreadyTriggered.Remove(other.gameObject);
+    }
+
+    public void Effect(Fighter otherFighter)
+    {
+        SeedManager.Instance.UseSubSeed("TriTippedDagger"); //generate random 
+
+        int randomInt = Random.Range(0, 100);
+        if (randomInt <= 20 * stacks)
+        {
+            otherFighter.bleedStacks += 1;
+        }
+
+        SeedManager.Instance.RestoreMasterSeed();
     }
 }
