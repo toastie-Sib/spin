@@ -126,8 +126,15 @@ public class Fighter : MonoBehaviour
         
         for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
         {
-            spinMult += (spinMult * 0.5f);
+            spinMult += (spinMult * 0.25f);
         }
+        UpdateUI();
+    }
+
+    public virtual void IncreaseAtkSpd()
+    {
+        spinMult += (spinMult * 0.1f);
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -308,7 +315,6 @@ public class Fighter : MonoBehaviour
             }
         }
     }
-
 
 
     //private IEnumerator ImpactFrames(float freezeDuration)

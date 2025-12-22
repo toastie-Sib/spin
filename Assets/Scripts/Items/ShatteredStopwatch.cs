@@ -35,7 +35,10 @@ public class ShatteredStopwatch : ItemBase
 
     void OnTimerFinished()
     {
-        GetComponent<Weapon>().TriggerScaling();
+        for (int i = 0; i < stacks; i++)
+        {
+            GetComponent<Weapon>().TriggerScaling();
+        }
         StartTimer();
     }
 }

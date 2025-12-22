@@ -87,6 +87,11 @@ public class PlayerGiveItems : MonoBehaviour
             var shatteredStopwatch = gameObject.AddComponent<ShatteredStopwatch>();
             shatteredStopwatch.stacks = SceneSwitcher.Instance.GetItemCount("ShatteredStopwatch");
         }
+        if (SceneSwitcher.Instance.HasItem("StandStrong"))
+        {
+            var standStrong = gameObject.AddComponent<StandStrong>();
+            standStrong.stacks = SceneSwitcher.Instance.GetItemCount("StandStrong");
+        }
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();

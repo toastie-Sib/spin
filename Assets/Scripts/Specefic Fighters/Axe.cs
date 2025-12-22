@@ -45,6 +45,12 @@ public class Axe : Fighter
         UpdateDynamicUI("Attack Rate: ", refreshInterval, 3);
     }
 
+    public override void IncreaseAtkSpd()
+    {
+        refreshInterval *= 0.95f;
+        UpdateDynamicUI("Attack Rate: ", refreshInterval, 3);
+    }
+
     private IEnumerator Spin()
     {
         capscollider.enabled = true;

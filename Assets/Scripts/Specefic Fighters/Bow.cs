@@ -49,13 +49,19 @@ public class Bow : Fighter //Inherit Fighter
 
     public override void IncreaseBaseAtkSpeed()
     {
-
+        base.IncreaseBaseAtkSpeed();
         for (int i = 0; i < SceneSwitcher.Instance.playerBonusAtkSpd; i++)
         {
-            spinMult += (spinMult * 0.25f);
             refreshInterval *= 0.90f;
         }
+        UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
+    }
 
+    public override void IncreaseAtkSpd()
+    {
+        base.IncreaseAtkSpd();
+        refreshInterval *= 0.95f;
+        UpdateDynamicUI("Fire Rate: ", refreshInterval, 3);
     }
 
     // Update is called once per frame

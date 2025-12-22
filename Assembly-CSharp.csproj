@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Items\ShatteredStopwatch.cs" />
+    <Compile Include="Assets\Scripts\Items\StandStrong.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
