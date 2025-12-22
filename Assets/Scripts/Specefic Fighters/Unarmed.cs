@@ -169,6 +169,11 @@ public class Unarmed : Fighter
                 myRb.AddForce(myDir * botM.stacks * 20 * 0.75f, ForceMode.Impulse);
             }
         }
+        if (GetComponent<ShatteredStopwatch>() != null)
+        {
+            ShatteredStopwatch ss = GetComponent<ShatteredStopwatch>();
+            ss.StartTimer();
+        }
 
     }
 

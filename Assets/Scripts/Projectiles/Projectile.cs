@@ -137,6 +137,11 @@ public class Projectile : MonoBehaviour
                     }
 
                 }
+                if (shooter.GetComponentInChildren<ShatteredStopwatch>() != null)
+                {
+                    ShatteredStopwatch ss = shooter.GetComponentInChildren<ShatteredStopwatch>();
+                    ss.StartTimer();
+                }
             } 
             else // If it was reflected though
             {

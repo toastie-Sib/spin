@@ -211,7 +211,12 @@ public class Fighter : MonoBehaviour
             amount -= ts.stacks;
             if (amount < 1) { amount = 1; }
         }
-            
+        if (GetComponentInChildren<ShatteredStopwatch>() != null)
+        {
+            ShatteredStopwatch ss = GetComponentInChildren<ShatteredStopwatch>();
+            ss.StartTimer();
+        }
+
         StartCoroutine(GetHit(amount));
     }
     private IEnumerator GetHit(float amount)

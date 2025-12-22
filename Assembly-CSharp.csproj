@@ -109,6 +109,7 @@
     <Compile Include="Assets\Scripts\Specefic Fighters\Unarmed.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Shield.cs" />
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\PlayerGiveItems.cs" />
+    <Compile Include="Assets\Scripts\Items\TungstonSphere.cs" />
     <Compile Include="Assets\Scripts\Managers\MapCamera.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Staff.cs" />
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\DisplayItems.cs" />
@@ -116,7 +117,7 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopTradeItems.cs" />
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Items\TungstonSphere.cs" />
+    <Compile Include="Assets\Scripts\Items\ShatteredStopwatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

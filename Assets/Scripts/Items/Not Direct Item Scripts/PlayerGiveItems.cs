@@ -82,6 +82,11 @@ public class PlayerGiveItems : MonoBehaviour
             var tungstonSphere = gameObject.AddComponent<TungstonSphere>();
             tungstonSphere.stacks = SceneSwitcher.Instance.GetItemCount("TungstonSphere");
         }
+        if (SceneSwitcher.Instance.HasItem("ShatteredStopwatch"))
+        {
+            var shatteredStopwatch = gameObject.AddComponent<ShatteredStopwatch>();
+            shatteredStopwatch.stacks = SceneSwitcher.Instance.GetItemCount("ShatteredStopwatch");
+        }
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();

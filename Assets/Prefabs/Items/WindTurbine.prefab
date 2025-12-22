@@ -386,6 +386,7 @@ MonoBehaviour:
   blockedFighters:
   - Unarmed
   - Anchor
+  - Scythe
   maxAllowed: -1
 --- !u!1 &5543377923288679777
 GameObject:

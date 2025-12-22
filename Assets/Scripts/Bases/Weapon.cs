@@ -121,6 +121,12 @@ public class Weapon : MonoBehaviour
                 {
                     TriggerScaling();
                 }
+
+                if (GetComponent<ShatteredStopwatch>() != null)
+                {
+                    ShatteredStopwatch ss = GetComponent<ShatteredStopwatch>();
+                    ss.StartTimer();
+                }
             }
             
         }

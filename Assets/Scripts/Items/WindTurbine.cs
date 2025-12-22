@@ -105,6 +105,9 @@ public class WindTurbine : ItemBase
     //final effect when rotation is complete
     void OnRotationComplete()
     {
-        GetComponent<Weapon>().TriggerScaling();
+        for (int i = 0; i < stacks; i++)
+        {
+            GetComponent<Weapon>().TriggerScaling();
+        }
     }
 }
