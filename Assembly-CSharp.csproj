@@ -122,6 +122,7 @@
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
     <Compile Include="Assets\Scripts\Items\TrainingDummy.cs" />
+    <Compile Include="Assets\Scripts\Items\PaintedParry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -464,5 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   es: {fileID: 0}
   blockedFighters:
-  - Reaper
+  - Scythe
+  - Shield
+  - Fighter
   maxAllowed: -1

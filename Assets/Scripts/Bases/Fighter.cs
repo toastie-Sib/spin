@@ -35,7 +35,7 @@ public class Fighter : MonoBehaviour
     public AudioClip click;
     public GameObject weapon;
     public GameObject Animation;
-    [HideInInspector] public float invincibilityDuration = 0.2f;
+     public float invincibilityDuration = 0.2f;
 
     [Header("Modifyable")]
     public float hp = 100;
