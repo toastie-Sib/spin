@@ -153,7 +153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Damage done to you is applied over time rather than instantly
+  m_Text: Damage done to you is applied over 3 seconds rather than instantly
 --- !u!1 &810934615121157482
 GameObject:
   m_ObjectHideFlags: 0

@@ -236,7 +236,8 @@ public class SceneSwitcher : MonoBehaviour
         { "Blade Beam", "Boss" }, { "Berserker", "Boss" }, { "Ocean's Floor", "Boss" }, { "Self Destruct Button", "Boss" }, { "Execute", "Boss" }, { "Penicillin", "Boss" }, { "Battering Ram", "Boss" }, 
         { "Defunded", "Uncommon" }, { "BloodoftheMage", "Rare" }, { "WindTurbine", "Rare" }, { "TungstonSphere", "Uncommon" }, { "ShatteredStopwatch", "Rare" }, { "Stand Strong", "Uncommon" },
         { "BloodofthePhalanx", "Uncommon" },
-        { "BloodoftheReaper", "Uncommon" },
+        { "BloodoftheReaper", "Rare" },
+        { "TrainingDummy", "Rare" },
         //Not in yet
         { "Poison", "Common" },
         { "Electricity", "Uncommon" },
@@ -251,7 +252,6 @@ public class SceneSwitcher : MonoBehaviour
         { "228000LeafClover", "Rare" },
         { "TinyPlanet", "Uncommon" },
         { "TripleA", "Uncommon" },
-        { "TrainingDummy", "Rare" },
         { "Candy", "Common" },
         { "MiniMushroom", "Uncommon" },
         { "Statue", "Rare" },

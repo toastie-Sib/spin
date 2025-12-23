@@ -97,6 +97,16 @@ public class PlayerGiveItems : MonoBehaviour
             var bloodofthePhalanx = gameObject.AddComponent<BloodofthePhalanx>();
             bloodofthePhalanx.stacks = SceneSwitcher.Instance.GetItemCount("BloodofthePhalanx");
         }
+        if (SceneSwitcher.Instance.HasItem("BloodoftheReaper"))
+        {
+            var bloodoftheReaper = gameObject.AddComponent<BloodoftheReaper>();
+            bloodoftheReaper.stacks = SceneSwitcher.Instance.GetItemCount("BloodoftheReaper");
+        }
+        if (SceneSwitcher.Instance.HasItem("TrainingDummy"))
+        {
+            var trainingDummy = gameObject.AddComponent<TrainingDummy>();
+            trainingDummy.stacks = SceneSwitcher.Instance.GetItemCount("TrainingDummy");
+        }
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();

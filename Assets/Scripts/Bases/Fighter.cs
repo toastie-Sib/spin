@@ -224,7 +224,18 @@ public class Fighter : MonoBehaviour
             ss.StartTimer();
         }
 
-        StartCoroutine(GetHit(amount));
+
+
+        if (GetComponentInChildren<BloodofthePhalanx>() != null)
+        {
+            BloodofthePhalanx bp = GetComponentInChildren<BloodofthePhalanx>();
+            bp.StartDamage(amount);
+            StartCoroutine(GetHit(0));
+        }
+        else
+        {
+            StartCoroutine(GetHit(amount));
+        }
     }
     private IEnumerator GetHit(float amount)
     {
