@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Items\Food.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheBandit.cs" />
     <Compile Include="Assets\Scripts\Managers\AssignSeedInputField.cs" />
+    <Compile Include="Assets\Scripts\Items\ShatteredStopwatch.cs" />
     <Compile Include="Assets\Scripts\Projectiles\Arrow.cs" />
     <Compile Include="Assets\Scripts\Bases\ArenaSpin.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Bow.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\Scripts\Items\Defunded.cs" />
     <Compile Include="Assets\Scripts\Items\RaiseTheRoof.cs" />
     <Compile Include="Assets\Scripts\Specefic Fighters\Axe.cs" />
+    <Compile Include="Assets\Scripts\Items\StandStrong.cs" />
     <Compile Include="Assets\Scripts\Items\GatitoBlade.cs" />
     <Compile Include="Assets\Scripts\Items\BloodoftheKnight.cs" />
     <Compile Include="Assets\Scripts\Bases\Spikes.cs" />
@@ -117,8 +119,7 @@
     <Compile Include="Assets\Scripts\Items\Not Direct Item Scripts\ShopTradeItems.cs" />
     <Compile Include="Assets\Scripts\Bases\Assign.cs" />
     <Compile Include="Assets\Scripts\Managers\GameSpeedManager.cs" />
-    <Compile Include="Assets\Scripts\Items\ShatteredStopwatch.cs" />
-    <Compile Include="Assets\Scripts\Items\StandStrong.cs" />
+    <Compile Include="Assets\Scripts\Items\BloodofthePhalanx.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -92,6 +92,11 @@ public class PlayerGiveItems : MonoBehaviour
             var standStrong = gameObject.AddComponent<StandStrong>();
             standStrong.stacks = SceneSwitcher.Instance.GetItemCount("StandStrong");
         }
+        if (SceneSwitcher.Instance.HasItem("BloodofthePhalanx"))
+        {
+            var bloodofthePhalanx = gameObject.AddComponent<BloodofthePhalanx>();
+            bloodofthePhalanx.stacks = SceneSwitcher.Instance.GetItemCount("BloodofthePhalanx");
+        }
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();
