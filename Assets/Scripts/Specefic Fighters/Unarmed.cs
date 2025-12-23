@@ -29,7 +29,8 @@ public class Unarmed : Fighter
     {
         base.Update();
         UpdateDynamicUI("Speed: ", Mathf.Abs((rb.velocity.magnitude)), 1);
-        UpdateDynamicUI("Damage: ", glassBallStacks*(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))))), 2); // Doesn't account Items (GB BotK)
+        float damage = DamageCalc();
+        UpdateDynamicUI("Damage: ", glassBallStacks*(damage), 2); // Doesn't account Items (GB BotK)
     }
 
     public override void OnCollisionEnter(Collision collision)
@@ -121,9 +122,17 @@ public class Unarmed : Fighter
         
     }
 
+    public float DamageCalc()
+    {
+        float damage = (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5))));
+        damage += bonusDamage;
+        return damage;
+    }
+
     public void Damage(Fighter otherFighter)
     {
-        otherFighter.HitDetect(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5)))));
+        DealingDamage(DamageCalc(), otherFighter);
+
         AttackAnimation(otherFighter);
         otherFighter.HurtAnimation();
 
@@ -157,7 +166,7 @@ public class Unarmed : Fighter
             if (botM.hitsDone >= 6 - botM.stacks)
             {
                 botM.hitsDone = 0;
-                otherFighter.HitDetect(bonusDamage + (Mathf.RoundToInt(Mathf.Abs((rb.velocity.magnitude / 5)))));
+                DealingDamage(DamageCalc(), otherFighter);
                 botM.ExplosionEffect(otherFighter);
                 // Direction AWAY from explosion
                 Vector3 center = (transform.position + otherFighter.transform.position) * 0.5f;

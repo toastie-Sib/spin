@@ -42,7 +42,7 @@ public class BloodoftheMage : ItemBase
                 hitsDone = 0;
 
                 float damage = myWeapon.damage + myFighter.bonusDamage;
-                otherFighter.HitDetect(damage);
+                myFighter.DealingDamage(damage, otherFighter);
 
                 ExplosionKnockback(otherFighter, myFighter);
             }

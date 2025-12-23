@@ -34,21 +34,23 @@ public class Dagger : Weapon
         }
     }
 
+
+
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
 
+        //HMIYC Parry Mechanic
         if (other.gameObject.CompareTag("Weapon") && hmiyc == true) //Parry
         {
             parries += 1;
         }
-
         if (other.gameObject.CompareTag("Fighter") && parries != 0) //Damage
         {
             Fighter otherFighter = other.GetComponent<Fighter>();
             if (side == otherFighter.isPlayer || otherFighter.isInvincible == true) return;
-                otherFighter.HitDetect(parries);
-                parries = 0;
+            myFighter.DealingDamage(parries, otherFighter);
+            parries = 0;
             
         }
     }

@@ -4,51 +4,33 @@ using UnityEngine;
 
 public class BloodoftheReaper : ItemBase
 {
-    private float timer = 0f;
-    private bool running = false;
-    private float damageTotal = 0f;
-    private float tickDamage = 0f;
-    private int ticks = 0;
 
 
-    public void StartDamage(float damage)
+    public void StartAttack(float damage, Fighter target)
     {
-        running = true;
-        damageTotal += damage;
-        ticks = (stacks) + 2;
 
-        tickDamage = damageTotal / (2 + (stacks));
+        StartCoroutine(DamageTick(damage, target));
     }
 
-    void Update()
+    public IEnumerator DamageTick(float damage, Fighter target)
     {
-        if (!running) return;
+        float tickDamage = damage / (2);
 
-        timer += Time.deltaTime;
+        ApplyDamage(tickDamage, target);
 
-        if (timer >= 0.5f && ticks >= 0)
+        for (int i = -1; i < stacks; i++)
         {
-            ticks--;
-            timer = 0f;
-
-            DamageTick();
+            yield return new WaitForSeconds(1.0f);
+            ApplyDamage(tickDamage, target);
         }
     }
 
-
-    void DamageTick()
+    public void ApplyDamage(float damage, Fighter target)
     {
-        damageTotal -= tickDamage;
-        Fighter myFighter = GetComponentInParent<Fighter>();
-        //Take Damage to HP
-        myFighter.hp -= tickDamage;
-        myFighter.hp = Mathf.Round(myFighter.hp * 10.0f) * 0.1f;
-        myFighter.hp = Mathf.Max(myFighter.hp, 0);
-        myFighter.UpdateUI();
 
-        if (damageTotal <= 0 || ticks <= 0)
-        {
-            running = false;
-        }
+        target.hp -= damage;
+        target.hp = Mathf.Round(target.hp * 10.0f) * 0.1f;
+        target.hp = Mathf.Max(target.hp, 0);
+        target.UpdateUI();
     }
 }

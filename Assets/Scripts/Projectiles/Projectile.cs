@@ -96,7 +96,7 @@ public class Projectile : MonoBehaviour
             }
 
             shooter.AttackAnimation(otherFighter);
-            otherFighter.HitDetect(damage);
+            shooter.DealingDamage(damage, otherFighter);
             if (shooter.GetComponent<Staff>() != null)
             {
                 otherFighter.DelayedHurtAnimation(0.5f);
@@ -132,7 +132,7 @@ public class Projectile : MonoBehaviour
                 {
                     if (shooter.GetComponentInChildren<BloodoftheMage>().readyToExplode == true)
                     {
-                        otherFighter.HitDetect(damage);
+                        shooter.DealingDamage(damage, otherFighter);
                         shooter.GetComponentInChildren<BloodoftheMage>().RemoteExplode(otherFighter);
                     }
 

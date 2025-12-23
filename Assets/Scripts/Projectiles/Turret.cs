@@ -191,7 +191,7 @@ public class Turret : Bow
             }
 
 
-            otherFighter.HitDetect(damage * 5);
+            owner.DealingDamage(damage * 5, otherFighter);
             otherFighter.HurtAnimation();
         }
 

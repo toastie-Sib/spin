@@ -115,17 +115,7 @@ public class Weapon : MonoBehaviour
 
                 otherFighter.HurtAnimation();
 
-                if (GetComponent<BloodoftheReaper>() != null)
-                {
-                    BloodoftheReaper br = GetComponent<BloodoftheReaper>();
-                    br.StartAttack(damage);
-                    otherFighter.HitDetect(0);
-                }
-                else
-                {
-
-                    otherFighter.HitDetect(damage);
-                }
+                myFighter.DealingDamage(damage, otherFighter);
 
 
                 if (other.GetComponent<Turret>() == null && GetComponentInParent<Anchor>() == null)

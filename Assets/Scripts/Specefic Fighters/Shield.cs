@@ -51,7 +51,7 @@ public class Shield : Weapon
                 otherFighter.DelayedHurtAnimation(0.5f);
 
                 myFighter.UpdateDynamicUI("Damage: ", totalDamage, 2);
-                otherFighter.HitDetect(totalDamage); //Damage Fighter and Grow Shield
+                myFighter.DealingDamage(totalDamage, otherFighter); //Damage Fighter and Grow Shield
                 ShieldGrow(otherWeapon.damage);
                 if (otherWeapon is Wrench) { Wrench wrench = other.gameObject.GetComponentInParent<Wrench>();    wrench.ShieldTurret(myFighter); } // Wrench
 
@@ -95,7 +95,7 @@ public class Shield : Weapon
                     BotK.IncreaseScaling();
                 }
                 damage += myFighter.bonusDamage;
-                otherFighter.HitDetect(damage);
+                myFighter.DealingDamage(damage, otherFighter);
                 myFighter.UpdateDynamicUI("Damage: ", damage, 2);
 
                 ShieldGrow(damage);

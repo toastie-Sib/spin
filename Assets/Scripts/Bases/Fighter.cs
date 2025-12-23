@@ -256,6 +256,21 @@ public class Fighter : MonoBehaviour
         GetComponentInChildren<Renderer>().material.color = originalColor;
     }
 
+    public void DealingDamage(float damage, Fighter otherFighter)
+    {
+        if (GetComponentInChildren<BloodoftheReaper>() != null)
+        {
+            BloodoftheReaper br = GetComponentInChildren<BloodoftheReaper>();
+            br.StartAttack(damage, otherFighter);
+            otherFighter.HitDetect(0);
+        }
+        else
+        {
+
+            otherFighter.HitDetect(damage);
+        }
+    }
+
     //Keep bounce going
     public virtual void OnCollisionEnter(Collision collision)
     {
