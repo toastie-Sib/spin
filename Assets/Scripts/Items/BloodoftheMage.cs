@@ -6,12 +6,12 @@ public class BloodoftheMage : ItemBase
 {
     [HideInInspector] public int hitsDone = 0;
     [HideInInspector] public bool readyToExplode = false;
-    public GameObject explosionEffect;
+    [HideInInspector] public GameObject explosionEffect;
 
     public override void Start()
     {
         base.Start();
-        explosionEffect = Resources.Load<GameObject>("Effects/Explosion");
+        explosionEffect = Resources.Load<GameObject>("Spawns/Explosion");
     }
 
     public void OnTriggerEnter(Collider other)

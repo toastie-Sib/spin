@@ -35,7 +35,7 @@ public class Fighter : MonoBehaviour
     public AudioClip click;
     public GameObject weapon;
     public GameObject Animation;
-     public float invincibilityDuration = 0.2f;
+    [HideInInspector] public float invincibilityDuration = 0.2f;
 
     [Header("Modifyable")]
     public float hp = 100;
@@ -109,9 +109,10 @@ public class Fighter : MonoBehaviour
                 AssignAnimation aA = pA.GetComponent<AssignAnimation>();
                 animationRef = aA.stashedAnimation;
             } else {
-                GameObject pA = GameObject.Find("EnemyAnimSpare (1)");
-                AssignAnimation aA = pA.GetComponent<AssignAnimation>();
-                animationRef = aA.stashedAnimation;
+                    GameObject pA = GameObject.Find("EnemyAnimSpare (1)");
+                    AssignAnimation aA = pA.GetComponent<AssignAnimation>();
+                    animationRef = aA.stashedAnimation;
+                
             }
             AnimationMovement anim = animationRef.GetComponent<AnimationMovement>();
             Vector3 pos = anim.parryPoint.transform.position;
@@ -208,7 +209,7 @@ public class Fighter : MonoBehaviour
     }
 
     //Ouchy
-    public void HitDetect(float amount)
+    public virtual void HitDetect(float amount)
     {
         if (isInvincible) return; // Don't get hurt
 
@@ -276,7 +277,7 @@ public class Fighter : MonoBehaviour
     {
         if (click != null) { AudioSource.PlayClipAtPoint(click, transform.position); } //bounce sound :D
         float horizontalSpeed = Mathf.Abs(rb.velocity.x);
-        //float verticalSpeed = Mathf.Abs(rb.velocity.y);
+        float verticalSpeed = Mathf.Abs(rb.velocity.y);
 
         // LEFT WALL
         if (collision.gameObject.CompareTag("LeftWall"))
@@ -285,7 +286,7 @@ public class Fighter : MonoBehaviour
             // If moving toward the wall (x is negative) and slow
             if (horizontalSpeed < 1f)
             {
-                Vector3 wallBoost = new Vector3(Random.Range(4f, 7f), Random.Range(-2f, 2f), 0f);
+                Vector3 wallBoost = new Vector3(Random.Range(3f, 5f), Random.Range(-2f, 2f), 0f);
                 rb.velocity += wallBoost;
             }
 
@@ -302,7 +303,7 @@ public class Fighter : MonoBehaviour
             // If moving toward the wall (x is positive) and slow
             if (horizontalSpeed < 1f)
             {
-                Vector3 wallBoost = new Vector3(Random.Range(4f, 7f), Random.Range(-2f, 2f), 0f);
+                Vector3 wallBoost = new Vector3(Random.Range(3f, 5f), Random.Range(-2f, 2f), 0f);
                 rb.velocity -= wallBoost;
             }
 
@@ -315,7 +316,11 @@ public class Fighter : MonoBehaviour
          //Bottom WALL
         if (collision.gameObject.CompareTag("BottomWall"))
         {
-
+            if (verticalSpeed < 1f)
+            {
+                Vector3 wallBoost = new Vector3(Random.Range(-2f, 2f), Random.Range(3f, 5f), 0f);
+                rb.velocity += wallBoost;
+            }
             if (bleedStacks > 0)
             {
                 BleedDamage(bleedStacks);

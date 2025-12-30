@@ -216,7 +216,7 @@ MonoBehaviour:
   axe: 1
   scythe: 0
   side: 0
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 8005193020781850032}
   myFighter: {fileID: 0}
   gatitoBlade: 0
   damageIncrease: 2
