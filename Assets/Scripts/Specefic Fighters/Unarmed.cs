@@ -10,7 +10,6 @@ public class Unarmed : Fighter
     {
         base.Start();
         isUnarmed = true;
-        if (isPlayer == true)
 
         UpdateDynamicUI("Speed: ", 0, 1);
         UpdateDynamicUI("Damage: ", 0, 2);

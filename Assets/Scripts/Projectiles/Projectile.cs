@@ -86,7 +86,7 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Fighter"))
         {
 
-            if (side == otherFighter.isPlayer) return;
+            if (side == otherFighter.isPlayer || other.GetComponent<Turret>() == null) return;
             if (otherFighter.isInvincible) return;
             if (otherFighter == shooter && reflected == false) return;
             if (reflected == true)

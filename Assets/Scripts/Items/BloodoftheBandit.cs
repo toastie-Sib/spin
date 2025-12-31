@@ -16,7 +16,8 @@ public class BloodoftheBandit : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Unarmed>() == null && myFighter.GetComponent<Axe>() == null)
+            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Unarmed>() == null
+                && myFighter.GetComponent<Axe>() == null && myFighter.isPlayer != otherFighter.isPlayer && other.GetComponent<Turret>() == null)
             {
                 for (int i = 0; i < stacks; i++)
                 {

@@ -23,13 +23,13 @@ public class BloodoftheMage : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myWeapon.doNotHurt == false)
+            if (otherFighter.isInvincible == false && myWeapon.doNotHurt == false && myFighter.isPlayer != otherFighter.isPlayer && other.GetComponent<Turret>() == null)
             {
                 hitsDone += 1;
                 
             }
-            
-            if (hitsDone >= 6 - stacks && myWeapon.scythe == true)
+
+            if (hitsDone >= 6 - stacks && myWeapon.scythe == true && myFighter.isPlayer != otherFighter.isPlayer)
             {
                 hitsDone = 0;
                 
@@ -37,7 +37,7 @@ public class BloodoftheMage : ItemBase
 
                 ExplosionKnockback(otherFighter, myFighter);
             }
-            else if (hitsDone >= 6 - stacks)
+            else if (hitsDone >= 6 - stacks && myFighter.isPlayer != otherFighter.isPlayer)
             {
                 hitsDone = 0;
 

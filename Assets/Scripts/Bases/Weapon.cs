@@ -87,7 +87,7 @@ public class Weapon : MonoBehaviour
         {
             if (side == otherFighter.isPlayer) return;
 
-            if (scythe == true) { // Scythe stuff
+            if (scythe == true) { // Start Scythe BullShit stuff
                 if (GetComponent<Training>() != null && firstHitDone == false)
                 {
                     Training training = GetComponent<Training>();

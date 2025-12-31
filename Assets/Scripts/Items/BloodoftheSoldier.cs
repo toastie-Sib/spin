@@ -20,7 +20,7 @@ public class BloodoftheSoldier : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null)
+            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.isPlayer != otherFighter.isPlayer && other.GetComponent<Turret>() == null)
             {
                 for (int i = 0; i < stacks; i++)
                 {

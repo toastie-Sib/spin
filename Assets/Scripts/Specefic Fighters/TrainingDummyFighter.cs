@@ -11,7 +11,6 @@ public class TrainingDummyFighter : Fighter
     //[HideInInspector] public Fighter player;
     //public AudioClip hit;
     //public AudioClip click;
-    public bool hitable = true;
 
 
     //all references of isPlayer to change to allow hit from player and enemy
@@ -23,7 +22,6 @@ public class TrainingDummyFighter : Fighter
         objectRenderer = GetComponentInParent<Renderer>();
         originalColor = objectRenderer.material.color;
 
-        isPlayer = hitable;
     }
 
     public override void HitDetect(float amount)

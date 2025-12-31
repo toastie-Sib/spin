@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
+using UnityEditor;
 
 public class Fighter : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Fighter : MonoBehaviour
     [HideInInspector] public float maxHp = 100;
     public float spinMult = 100f;
     public float bonusDamage = 0.0f;
+    public bool neutralParty = false;
     //Nudge shit
     [HideInInspector] public float velocityThreshold = 1f;
     [HideInInspector] public float nudgeForce = 3f;
@@ -409,7 +411,7 @@ public class Fighter : MonoBehaviour
         StartCoroutine(AllowAnimationPlay());
     }
 
-    public void HurtAnimation()
+    public virtual void HurtAnimation()
     {
         if (canPlayAnimation == false || animationRef == null) return;
         canPlayAnimation = false; animationRef.GetComponent<AnimationMovement>().autoMove = false;
@@ -446,7 +448,7 @@ public class Fighter : MonoBehaviour
         StartCoroutine(AllowAnimationPlay());
     }
 
-    public void DelayedHurtAnimation(float amount)
+    public virtual void DelayedHurtAnimation(float amount)
     {
         if (canPlayAnimation == false) return;
         canPlayAnimation = false; animationRef.GetComponent<AnimationMovement>().autoMove = false;

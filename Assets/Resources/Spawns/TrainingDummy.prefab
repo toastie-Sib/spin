@@ -154,10 +154,10 @@ MonoBehaviour:
   maxHp: 100
   spinMult: 0
   bonusDamage: 0
+  neutralParty: 1
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
-  objectRenderer1: {fileID: 0}
   hitable: 0
 --- !u!1 &6145632201232636541
 GameObject:
@@ -324,8 +324,8 @@ MonoBehaviour:
   maxHp: 100
   spinMult: 0
   bonusDamage: 0
+  neutralParty: 0
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
-  objectRenderer1: {fileID: 6145632201079234291}
   hitable: 1

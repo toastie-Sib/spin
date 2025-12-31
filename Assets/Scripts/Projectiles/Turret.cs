@@ -166,8 +166,7 @@ public class Turret : Bow
         yield return new WaitForSeconds(0.5f); //MAKE SURE THIS IS THE SAME AS THE EXPLOSION VALUE
         Destroy(gameObject);
     }
-    //mesh with turret and make sure on trigger doesn't happen if self destruct not active (is this optimal for resources?)
-    public virtual void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other) //Also for Self Destruct
     {
         Fighter otherFighter = other.GetComponent<Fighter>();
         
@@ -197,5 +196,12 @@ public class Turret : Bow
 
         
 
+    }
+
+    public override void HurtAnimation()
+    {
+    }
+    public override void DelayedHurtAnimation(float amount)
+    {
     }
 }
