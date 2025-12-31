@@ -13,7 +13,8 @@ public class TriTippedDagger : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Shield>() == null && myFighter.isPlayer != otherFighter.isPlayer)
+            if (otherFighter.isInvincible == false && myFighter.GetComponent<Bow>() == null && myFighter.GetComponentInChildren<Shield>() == null 
+                && (myFighter.isPlayer != otherFighter.isPlayer || otherFighter.neutralParty == true) && myFighter.GetComponentInChildren<Weapon>().doNotHurt == false)
             {
                 Effect(otherFighter);
 

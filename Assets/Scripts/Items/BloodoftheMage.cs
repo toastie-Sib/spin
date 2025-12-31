@@ -23,13 +23,14 @@ public class BloodoftheMage : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myWeapon.doNotHurt == false && myFighter.isPlayer != otherFighter.isPlayer && other.GetComponent<Turret>() == null)
+            if (otherFighter.isInvincible == false && myWeapon.doNotHurt == false && (myFighter.isPlayer != otherFighter.isPlayer || otherFighter.neutralParty == true) 
+                && other.GetComponent<Turret>() == null && myFighter.GetComponentInChildren<Weapon>().doNotHurt == false)
             {
                 hitsDone += 1;
                 
             }
 
-            if (hitsDone >= 6 - stacks && myWeapon.scythe == true && myFighter.isPlayer != otherFighter.isPlayer)
+            if (hitsDone >= 6 - stacks && myWeapon.scythe == true && (myFighter.isPlayer != otherFighter.isPlayer || otherFighter.neutralParty == true) && myFighter.GetComponentInChildren<Weapon>().doNotHurt == false)
             {
                 hitsDone = 0;
                 
@@ -37,7 +38,7 @@ public class BloodoftheMage : ItemBase
 
                 ExplosionKnockback(otherFighter, myFighter);
             }
-            else if (hitsDone >= 6 - stacks && myFighter.isPlayer != otherFighter.isPlayer)
+            else if (hitsDone >= 6 - stacks && (myFighter.isPlayer != otherFighter.isPlayer || otherFighter.neutralParty == true) && myFighter.GetComponentInChildren<Weapon>().doNotHurt == false)
             {
                 hitsDone = 0;
 

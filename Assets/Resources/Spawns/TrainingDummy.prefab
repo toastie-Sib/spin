@@ -32,7 +32,6 @@ Transform:
   m_LocalPosition: {x: 0.52, y: 2.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_Children:
-  - {fileID: 7492021186483021770}
   - {fileID: 6145632201232636538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -158,7 +157,6 @@ MonoBehaviour:
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
-  hitable: 0
 --- !u!1 &6145632201232636541
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +187,7 @@ Transform:
   m_LocalScale: {x: 1.075, y: 1.075, z: 0.10000001}
   m_Children: []
   m_Father: {fileID: 6145632202544940775}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -109.505}
 --- !u!33 &6145632201232636536
 MeshFilter:
@@ -240,92 +238,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8768064803128958337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7492021186483021770}
-  - component: {fileID: 7396402783582519564}
-  - component: {fileID: 6511760629329341548}
-  m_Layer: 7
-  m_Name: TrainingDummy
-  m_TagString: Fighter
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7492021186483021770
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8768064803128958337}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6145632202544940775}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7396402783582519564
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8768064803128958337}
-  m_Material: {fileID: 13400000, guid: 7da2f71c8bcedb84a92741727c7e36e9, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6511760629329341548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8768064803128958337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5487976ec2c86f4db93397421ba9985, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
-  objectRenderer: {fileID: 0}
-  lastNudgeTime: -Infinity
-  isInvincible: 0
-  invincibleUntil: 0
-  direction: 1
-  freezeFrame: 0
-  UI: {fileID: 0}
-  isActive: 0
-  isUnarmed: 0
-  isPlayer: 0
-  animationRef: {fileID: 0}
-  canPlayAnimation: 1
-  bleedStacks: 0
-  poisonStacks: 0
-  poisonLeech: 0
-  parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
-  hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
-  click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
-  weapon: {fileID: 6145632201232636541}
-  Animation: {fileID: 0}
-  invincibilityDuration: 0.2
-  hp: -1
-  maxHp: 100
-  spinMult: 0
-  bonusDamage: 0
-  neutralParty: 0
-  velocityThreshold: 1
-  nudgeForce: 3
-  nudgeCooldown: 3
-  hitable: 1

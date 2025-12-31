@@ -14,11 +14,11 @@ public class BloodoftheKnight : ItemBase
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (otherFighter.isInvincible == false && myFighter.isPlayer != otherFighter.isPlayer && other.GetComponent<Turret>() == null)
+            if (otherFighter.isInvincible == false && (myFighter.isPlayer != otherFighter.isPlayer || otherFighter.neutralParty == true) 
+                && other.GetComponent<Turret>() == null && myFighter.GetComponentInChildren<Weapon>().doNotHurt == false)
             {
                 IncreaseScaling();
                 increase += 1;
-
             }
 
         }

@@ -85,7 +85,7 @@ public class Weapon : MonoBehaviour
 
         if (other.gameObject.CompareTag("Fighter")) //Damage
         {
-            if (side == otherFighter.isPlayer) return;
+            if (side == otherFighter.isPlayer && otherFighter.neutralParty == false) return;
 
             if (scythe == true) { // Start Scythe BullShit stuff
                 if (GetComponent<Training>() != null && firstHitDone == false)
