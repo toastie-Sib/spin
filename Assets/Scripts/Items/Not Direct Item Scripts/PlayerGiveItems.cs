@@ -112,6 +112,11 @@ public class PlayerGiveItems : MonoBehaviour
             var paintedParry = gameObject.AddComponent<PaintedParry>();
             paintedParry.stacks = SceneSwitcher.Instance.GetItemCount("PaintedParry");
         }
+        if (SceneSwitcher.Instance.HasItem("BouncyBall"))
+        {
+            var bouncyBall = gameObject.AddComponent<BouncyBall>();
+            bouncyBall.stacks = SceneSwitcher.Instance.GetItemCount("BouncyBall");
+        }
         if (SceneSwitcher.Instance.HasItem("GatitoBlade"))
         {
             var gatitoBlade = gameObject.AddComponent<GatitoBlade>();

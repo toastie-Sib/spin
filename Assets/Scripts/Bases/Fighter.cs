@@ -307,7 +307,7 @@ public class Fighter : MonoBehaviour
             if (horizontalSpeed < 1f)
             {
                 Vector3 wallBoost = new Vector3(Random.Range(3f, 5f), Random.Range(-2f, 2f), 0f);
-                rb.velocity -= wallBoost;
+                rb.velocity += wallBoost;
             }
 
             if (bleedStacks > 0)
@@ -319,9 +319,9 @@ public class Fighter : MonoBehaviour
          //Bottom WALL
         if (collision.gameObject.CompareTag("BottomWall"))
         {
-            if (verticalSpeed < 1f)
+            if (verticalSpeed < 1.5f)
             {
-                Vector3 wallBoost = new Vector3(Random.Range(-2f, 2f), Random.Range(3f, 5f), 0f);
+                Vector3 wallBoost = new Vector3(Random.Range(-2f, 2f), Random.Range(4f, 6f), 0f);
                 rb.velocity += wallBoost;
             }
             if (bleedStacks > 0)

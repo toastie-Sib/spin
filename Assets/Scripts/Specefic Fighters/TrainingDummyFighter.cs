@@ -5,26 +5,18 @@ using UnityEngine;
 
 public class TrainingDummyFighter : Fighter
 {
-    //[HideInInspector] public Rigidbody rb;
-    //[HideInInspector] public Color originalColor;
-    //[HideInInspector] public Renderer objectRenderer;
-    //[HideInInspector] public Fighter player;
-    //public AudioClip hit;
-    //public AudioClip click;
-
-
-    //all references of isPlayer to change to allow hit from player and enemy
 
     public void Awake()
     {
         isInvincible = true;
+
+        rb = GetComponentInParent<Rigidbody>();
+        objectRenderer = GetComponentInParent<Renderer>();
+        originalColor = objectRenderer.material.color;
     }
 
     public override void Start()
     {
-        rb = GetComponentInParent<Rigidbody>();
-        objectRenderer = GetComponentInParent<Renderer>();
-        originalColor = objectRenderer.material.color;
 
     }
 

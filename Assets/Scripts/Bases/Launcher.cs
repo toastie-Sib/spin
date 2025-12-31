@@ -287,6 +287,15 @@ public class Launcher : MonoBehaviour
 
             dummyFighter.isInvincible = false;
             dummyFighterRb.useGravity = true;
+            dummyFighterRb.isKinematic = false;
+        }
+        foreach (var bouncyBall in FindObjectsOfType<BouncyBallFighter>())
+        {
+            Rigidbody bouncyBallRb = bouncyBall.GetComponent<Rigidbody>();
+
+            bouncyBall.isInvincible = true;
+            bouncyBallRb.useGravity = true;
+            bouncyBallRb.isKinematic = false;
         }
     }
 
