@@ -15,6 +15,10 @@ public class TrainingDummyFighter : Fighter
 
     //all references of isPlayer to change to allow hit from player and enemy
 
+    public void Awake()
+    {
+        isInvincible = true;
+    }
 
     public override void Start()
     {
@@ -45,6 +49,16 @@ public class TrainingDummyFighter : Fighter
 
         yield return new WaitForSeconds(0.2f);
         GetComponentInChildren<Renderer>().material.color = originalColor;
+    }
+
+    public override void HurtAnimation()
+    {
+    }
+    public override void DelayedHurtAnimation(float amount)
+    {
+    }
+    public override void ApplyPoison()
+    {
     }
 
     //public override void OnCollisionEnter(Collision collision)

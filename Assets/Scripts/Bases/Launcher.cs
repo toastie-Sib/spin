@@ -280,6 +280,14 @@ public class Launcher : MonoBehaviour
         shotDone = true;
         
         transform.position = new Vector3(50, 0, 0);
+
+        foreach (var dummyFighter in FindObjectsOfType<TrainingDummyFighter>())
+        {
+            Rigidbody dummyFighterRb = dummyFighter.GetComponent<Rigidbody>();
+
+            dummyFighter.isInvincible = false;
+            dummyFighterRb.useGravity = true;
+        }
     }
 
     void Spawn() //For Other Spawner

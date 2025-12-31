@@ -277,6 +277,7 @@ public class Fighter : MonoBehaviour
     //Keep bounce going
     public virtual void OnCollisionEnter(Collision collision)
     {
+        if (rb == null) return;
         if (click != null) { AudioSource.PlayClipAtPoint(click, transform.position); } //bounce sound :D
         float horizontalSpeed = Mathf.Abs(rb.velocity.x);
         float verticalSpeed = Mathf.Abs(rb.velocity.y);
@@ -486,7 +487,7 @@ public class Fighter : MonoBehaviour
     }
 
     //Scythe only and Poison
-    public void ApplyPoison()
+    public virtual void ApplyPoison()
     {
         StartCoroutine(PoisonTick());
     }

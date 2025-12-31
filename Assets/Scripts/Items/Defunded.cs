@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Defunded : MonoBehaviour
+public class Defunded : ItemBase
 {
-    private int stacks;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (SceneSwitcher.Instance.HasItem("Defunded"))
         {
