@@ -288,6 +288,10 @@ public class Launcher : MonoBehaviour
             dummyFighter.isInvincible = false;
             dummyFighterRb.useGravity = true;
             dummyFighterRb.isKinematic = false;
+
+            Vector2 randomDir2D = Random.insideUnitCircle.normalized;
+            Vector3 dummyDirection = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
+            dummyFighterRb.velocity = dummyDirection * (launchSpeed / 2);
         }
         foreach (var bouncyBall in FindObjectsOfType<BouncyBallFighter>())
         {
@@ -296,6 +300,10 @@ public class Launcher : MonoBehaviour
             bouncyBall.isInvincible = true;
             bouncyBallRb.useGravity = true;
             bouncyBallRb.isKinematic = false;
+
+            Vector2 randomDir2D = Random.insideUnitCircle.normalized;
+            Vector3 ballDirection = new Vector3(randomDir2D.x, randomDir2D.y, 0f);
+            bouncyBallRb.velocity = ballDirection * launchSpeed;
         }
     }
 

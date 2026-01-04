@@ -6,6 +6,7 @@ public class GameSpeedManager : MonoBehaviour
 {
     private bool speedUp = false;
     public bool overridePuase = false;
+    public bool stopImpactFrames = false;
     public float timeScale = 2.0f;
     public static GameSpeedManager Instance;
 
@@ -23,6 +24,7 @@ public class GameSpeedManager : MonoBehaviour
 
     private IEnumerator DoImpactPause(float duration)
     {
+        if (stopImpactFrames == true) yield break;
         Time.timeScale = 0f;
         overridePuase = true;
         yield return new WaitForSecondsRealtime(duration);
@@ -41,6 +43,17 @@ public class GameSpeedManager : MonoBehaviour
                 speedUp = true;
             } else {
                 speedUp = false;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (stopImpactFrames == false)
+            {
+                stopImpactFrames = true;
+            }
+            else
+            {
+                stopImpactFrames = false;
             }
         }
 

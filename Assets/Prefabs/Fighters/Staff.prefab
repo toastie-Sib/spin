@@ -318,6 +318,7 @@ MonoBehaviour:
   maxHp: 100
   spinMult: 100
   bonusDamage: 0
+  neutralParty: 0
   velocityThreshold: 1
   nudgeForce: 3
   nudgeCooldown: 3
@@ -332,7 +333,7 @@ MonoBehaviour:
   nextRefreshTime: 0.5
   extraFirepoints: []
   myWeapon: {fileID: 0}
-  fireBoostStrength: 2
+  fireBoostStrength: 15
   explosionRadius: 1
   damageIncrease: 0
 --- !u!1 &7811194644152359871

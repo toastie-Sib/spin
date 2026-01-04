@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BouncyBallFighter : Fighter
 {
-    private float bounceBonus = 1.5f;
+    private float bounceBonus = 1.0f;
 
     public void Awake()
     {

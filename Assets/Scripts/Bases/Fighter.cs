@@ -46,8 +46,8 @@ public class Fighter : MonoBehaviour
     public bool neutralParty = false;
     //Nudge shit
     [HideInInspector] public float velocityThreshold = 1f;
-    [HideInInspector] public float nudgeForce = 3f;
-    [HideInInspector] public float nudgeCooldown = 3f;
+    [HideInInspector] public float nudgeForce = 5f;
+    [HideInInspector] public float nudgeCooldown = 1.5f;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -171,9 +171,9 @@ public class Fighter : MonoBehaviour
         }
 
         //Nudge
-        bool isMovingSlow = Mathf.Abs(velocity.magnitude) < velocityThreshold;
+        bool isMovingSlow = velocity.magnitude < velocityThreshold;
         bool cooldownPassed = Time.time - lastNudgeTime >= nudgeCooldown;
-        if (isMovingSlow && cooldownPassed && (transform.position.x < -5.1f || transform.position.x > 5.1f))
+        if (isMovingSlow && cooldownPassed)
         {
             float xNudge = 0f;
 
