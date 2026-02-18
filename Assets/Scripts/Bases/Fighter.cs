@@ -45,9 +45,8 @@ public class Fighter : MonoBehaviour
     public float bonusDamage = 0.0f;
     public bool neutralParty = false;
     //Nudge shit
-    [HideInInspector] public float velocityThreshold = 1f;
-    [HideInInspector] public float nudgeForce = 5f;
-    [HideInInspector] public float nudgeCooldown = 1.5f;
+    [HideInInspector] public float velocityThreshold = 0.1f;
+    [HideInInspector] public float nudgeCooldown = 0.5f;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -171,25 +170,16 @@ public class Fighter : MonoBehaviour
         }
 
         //Nudge
-        bool isMovingSlow = velocity.magnitude < velocityThreshold;
-        bool cooldownPassed = Time.time - lastNudgeTime >= nudgeCooldown;
-        if (isMovingSlow && cooldownPassed)
-        {
-            float xNudge = 0f;
-
-            if (velocity.x > 0)
-                xNudge = -nudgeForce;
-            else if (velocity.x < 0)
-                xNudge = nudgeForce;
-            else
-                xNudge = (Random.value > 0.5f) ? nudgeForce : -nudgeForce; // Random left/right if stuck
-
-            Vector3 nudge = new Vector3(xNudge, 0f, 0f);
-
-            rb.AddForce(nudge, ForceMode.Impulse);
-            lastNudgeTime = Time.time; // Important: Reset cooldown
-            Debug.Log("Poke Poke :)");
-        }
+        //bool isMovingSlow = velocity.magnitude < velocityThreshold;
+        //bool cooldownPassed = Time.time - lastNudgeTime >= nudgeCooldown;
+        //if (isMovingSlow && cooldownPassed)
+        //{
+        //    Vector3 wallBoost = new Vector3(Random.Range(-2f, 2f), Random.Range(4f, 6f), 0f);
+        //    rb.velocity += wallBoost;
+        //
+        //    lastNudgeTime = Time.time; // Important: Reset cooldown
+        //    Debug.Log("Poke Poke :)");
+        //}
     }
 
     //Parry
@@ -289,7 +279,7 @@ public class Fighter : MonoBehaviour
             // If moving toward the wall (x is negative) and slow
             if (horizontalSpeed < 1f)
             {
-                Vector3 wallBoost = new Vector3(Random.Range(3f, 5f), Random.Range(-2f, 2f), 0f);
+                Vector3 wallBoost = new Vector3(Random.Range(3f, 5f), Random.Range(-1f, 1f), 0f);
                 rb.velocity += wallBoost;
             }
 
@@ -306,7 +296,7 @@ public class Fighter : MonoBehaviour
             // If moving toward the wall (x is positive) and slow
             if (horizontalSpeed < 1f)
             {
-                Vector3 wallBoost = new Vector3(Random.Range(3f, 5f), Random.Range(-2f, 2f), 0f);
+                Vector3 wallBoost = new Vector3(Random.Range(3f, 5f), Random.Range(-1f, 1f), 0f);
                 rb.velocity += wallBoost;
             }
 
@@ -347,6 +337,17 @@ public class Fighter : MonoBehaviour
             {
                 BleedDamage(bleedStacks);
             }
+        }
+        if (collision.gameObject.CompareTag("Fighter"))
+        {
+
+            // If moving toward the wall (x is negative) and slow
+            if (verticalSpeed < 1f)
+            {
+                Vector3 wallBoost = new Vector3(Random.Range(-2f, 2f), Random.Range(2f, 4f), 0f);
+                rb.velocity += wallBoost;
+            }
+
         }
     }
 

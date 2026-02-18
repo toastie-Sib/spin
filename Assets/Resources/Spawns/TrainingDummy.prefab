@@ -106,7 +106,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6145632201079234295}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 15
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -155,7 +155,6 @@ MonoBehaviour:
   bonusDamage: 0
   neutralParty: 1
   velocityThreshold: 1
-  nudgeForce: 3
   nudgeCooldown: 3
 --- !u!1 &6145632201232636541
 GameObject:

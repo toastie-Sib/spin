@@ -37,6 +37,12 @@ public class Shield : Weapon
 
             otherFighter.isInvincible = false;
             if (otherWeapon.scythe == true) { otherFighter.ApplyPoison(); } //Scythe
+            if (otherWeapon.GetComponent<Shield>() != null) {
+                damage = myFighter.bonusDamage + 1;
+                myFighter.DealingDamage(damage, otherFighter);
+                myFighter.UpdateDynamicUI("Damage: ", damage, 2);
+                ShieldGrow(damage);
+            } //Shield
             if (otherWeapon.doNotHurt == false)
             {
                 float totalDamage = otherWeapon.damage;

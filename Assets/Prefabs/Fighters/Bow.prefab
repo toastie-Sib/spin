@@ -261,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 315616872674102727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.09, y: 0.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.1}
+  m_LocalScale: {x: 1.175, y: 1.175, z: 0.1}
   m_Children:
   - {fileID: 315616872297222191}
   - {fileID: 315616872435341065}
@@ -385,8 +385,8 @@ MonoBehaviour:
   maxHp: 100
   spinMult: 400
   bonusDamage: 0
+  neutralParty: 0
   velocityThreshold: 1
-  nudgeForce: 3
   nudgeCooldown: 3
   projectilePrefab: {fileID: 171728331832174311, guid: a86cc25577a91a641a7f351846a74ddd, type: 3}
   animatedProjectilePrefab: {fileID: 8161753162604983713, guid: 21ab85dcdeccb5540a8335f02aab6a6c, type: 3}

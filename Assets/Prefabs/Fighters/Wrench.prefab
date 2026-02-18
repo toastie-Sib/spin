@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 5199228309865821953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.02, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.1}
+  m_LocalScale: {x: 1.175, y: 1.175, z: 0.1}
   m_Children:
   - {fileID: 5199228310223956713}
   - {fileID: 5199228310101962191}
@@ -236,8 +236,8 @@ MonoBehaviour:
   maxHp: 100
   spinMult: 250
   bonusDamage: 0
+  neutralParty: 0
   velocityThreshold: 1
-  nudgeForce: 3
   nudgeCooldown: 3
 --- !u!1 &5199228310101962188
 GameObject:

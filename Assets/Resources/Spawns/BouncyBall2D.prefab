@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7893799763607869330}
   - component: {fileID: 1684399918282408217}
   m_Layer: 7
-  m_Name: BouncyBall 2d
+  m_Name: BouncyBall2D
   m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

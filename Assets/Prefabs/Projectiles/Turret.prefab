@@ -298,7 +298,7 @@ Transform:
   m_GameObject: {fileID: 8214782621584023908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.597, y: 1.672, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.1}
+  m_LocalScale: {x: 0.333, y: 0.333, z: 0.1}
   m_Children:
   - {fileID: 8214782621716139026}
   - {fileID: 8214782621205854714}
@@ -375,7 +375,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8214782621584023908}
   serializedVersion: 2
-  m_Mass: 125.39
+  m_Mass: 125
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -410,6 +410,8 @@ MonoBehaviour:
   animationRef: {fileID: 0}
   canPlayAnimation: 1
   bleedStacks: 0
+  poisonStacks: 0
+  poisonLeech: 0
   parry: {fileID: 8300000, guid: 9716d513e5c2e31439de8503eaab1dfd, type: 3}
   hit: {fileID: 8300000, guid: d2476edf381b66349985a27866d8587f, type: 3}
   click: {fileID: 8300000, guid: 25f815f405624734abd37321ed9e36e9, type: 3}
@@ -420,8 +422,8 @@ MonoBehaviour:
   maxHp: 100
   spinMult: 75
   bonusDamage: 0
+  neutralParty: 0
   velocityThreshold: 0
-  nudgeForce: 0
   nudgeCooldown: 0
   projectilePrefab: {fileID: 4883005475974355221, guid: b7da917032ec0b24088dc134a248f8f2, type: 3}
   animatedProjectilePrefab: {fileID: 8161753162604983713, guid: cf52f88416e3343459f5e5ac3820d90a, type: 3}
