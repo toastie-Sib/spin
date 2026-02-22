@@ -122,7 +122,10 @@ public class Weapon : MonoBehaviour
                 {
                     TriggerScaling();
                 }
-
+                if (other.GetComponentInChildren<Shield>() != null)
+                {
+                    myFighter.ReverseDirection();
+                } //Shield
                 if (GetComponent<ShatteredStopwatch>() != null)
                 {
                     ShatteredStopwatch ss = GetComponent<ShatteredStopwatch>();
