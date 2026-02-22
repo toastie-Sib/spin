@@ -42,12 +42,10 @@ public class Launcher : MonoBehaviour
         GameObject esObject = GameObject.Find("EventSystem");
         es = esObject.GetComponent<SceneSwitcher>();
         cam = Camera.main;
-    }
 
-    void Start()
-    {
         StartCoroutine(Initialize());
     }
+
 
     private IEnumerator Initialize()
     {
@@ -128,6 +126,111 @@ public class Launcher : MonoBehaviour
                 //Set up enemy HP
                 fighter.maxHp *= SceneSwitcher.Instance.enemyHP;
                 fighter.hp *= SceneSwitcher.Instance.enemyHP;
+
+                // Give enemy random items based on how many enemy nodes the player has completed.
+                // Enemy receives 1 item for every 5 completed enemy nodes (integer division).
+                // Use SeedManager sub-seed so choice is deterministic per node/seed.
+                int itemsToGive = SceneSwitcher.Instance.enemyNodesCompleted / 5;
+                if (itemsToGive > 0)
+                {
+                    // Get candidate item names from SceneSwitcher (dictionary of known items)
+                    List<string> candidateItems = SceneSwitcher.Instance.GetAllItemNames();
+
+                    string seedNameBase = "EnemyItemSystem";
+
+                    // Aggregate chosen items into stacks so duplicates become stacks on the same item
+                    Dictionary<string, int> enemyItemStacks = new Dictionary<string, int>();
+
+                    var asmCheck = System.Reflection.Assembly.GetExecutingAssembly();
+
+                    for (int i = 0; i < itemsToGive; i++)
+                    {
+                        string rngName = seedNameBase.Replace("System", SceneSwitcher.Instance.currentNodeID + (SceneSwitcher.Instance.enemyNodesCompleted + i));
+                        SeedManager.Instance.UseSubSeed(rngName);
+
+                        if (candidateItems == null || candidateItems.Count == 0)
+                        {
+                            SeedManager.Instance.RestoreMasterSeed();
+                            break;
+                        }
+
+                        // Try multiple attempts to pick a valid item (script exists and not banned if prefab available)
+                        string chosen = null;
+                        int attempts = 0;
+                        while (attempts < 15 && chosen == null)
+                        {
+                            string candidate = candidateItems[Random.Range(0, candidateItems.Count)];
+
+                            bool blocked = false;
+                            // Optional: if a prefab exists in Resources, check ItemBans
+                            GameObject prefab = Resources.Load<GameObject>(candidate);
+                            if (prefab != null)
+                            {
+                                var bans = prefab.GetComponent<ItemBans>();
+                                if (bans != null && bans.CannotBeUsedBy(es.fighterPrefab))
+                                {
+                                    blocked = true;
+                                }
+                            }
+
+                            // Check that a matching item script/type exists and derives from ItemBase
+                            System.Type itemTypeCheck = null;
+                            foreach (var t in asmCheck.GetTypes())
+                            {
+                                if (t.Name == candidate)
+                                {
+                                    itemTypeCheck = t;
+                                    break;
+                                }
+                            }
+
+                            if (!blocked && itemTypeCheck != null && itemTypeCheck.IsSubclassOf(typeof(ItemBase)))
+                            {
+                                chosen = candidate;
+                                break;
+                            }
+
+                            attempts++;
+                        }
+
+                        SeedManager.Instance.RestoreMasterSeed();
+
+                        if (string.IsNullOrEmpty(chosen))
+                            continue;
+
+                        // increment stack count for the chosen item
+                        if (!enemyItemStacks.ContainsKey(chosen)) enemyItemStacks[chosen] = 0;
+                        enemyItemStacks[chosen]++;
+                    }
+
+                    // Apply stacks by adding the item component to the stashed projectile
+                    var asm = System.Reflection.Assembly.GetExecutingAssembly();
+                    foreach (var kvp in enemyItemStacks)
+                    {
+                        string itemName = kvp.Key;
+                        int stacks = kvp.Value;
+
+                        System.Type itemType = null;
+                        foreach (var t in asm.GetTypes())
+                        {
+                            if (t.Name == itemName)
+                            {
+                                itemType = t;
+                                break;
+                            }
+                        }
+
+                        if (itemType != null && itemType.IsSubclassOf(typeof(ItemBase)))
+                        {
+                            var comp = stashedProjectile.GetComponent<Fighter>().weapon.AddComponent(itemType) as ItemBase;
+                            if (comp != null) comp.stacks = stacks;
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"Launcher: could not give enemy item '{itemName}' (type not found or not an ItemBase)");
+                        }
+                    }
+                }
                 //Set up HP Healing if Elite
                 Scene activeScene = SceneManager.GetActiveScene();
                 if (SceneManager.GetActiveScene().name.Contains("EliteArena")) { fighter.bonusDamage += SceneSwitcher.Instance.chapter; }

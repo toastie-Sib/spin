@@ -2726,6 +2726,7 @@ MonoBehaviour:
   chapter: 0
   chapterEnd: 0
   chapter2UnlockThreshold: 7
+  enemyNodesCompleted: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -2760,6 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overridePuase: 0
+  stopImpactFrames: 0
   timeScale: 2
 --- !u!1 &867129973
 GameObject:
@@ -6591,6 +6593,7 @@ MonoBehaviour:
   chapter: 0
   chapterEnd: 0
   chapter2UnlockThreshold: 7
+  enemyNodesCompleted: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -8088,7 +8091,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BouncyBall
+          m_StringArgument: GatitoBlade
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 803803648}
@@ -8100,7 +8103,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TrainingDummy
+          m_StringArgument: WindTurbine
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &1900427828

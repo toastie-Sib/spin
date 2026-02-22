@@ -21,6 +21,7 @@ public class SceneSwitcher : MonoBehaviour
     [HideInInspector] public bool chapterEnd = false;
     [HideInInspector] public int chapter2UnlockThreshold = 7;
     [HideInInspector] public HashSet<MapNode> chapter2VisitedNodes = new HashSet<MapNode>();
+    public int enemyNodesCompleted = 0;
     [Header("Player Info")]
     private Dictionary<string, int> collectedItems = new Dictionary<string, int>();
     [HideInInspector] public string currentNodeID; //Where on Map
@@ -155,6 +156,8 @@ public class SceneSwitcher : MonoBehaviour
 
                 playerMoney += rewardMoney;
 
+                enemyNodesCompleted += 1;
+
                 if(chapterEnd == false)
                 {
                     if (SceneManager.GetActiveScene().name.Contains("EliteArena")) { 
@@ -269,6 +272,12 @@ public class SceneSwitcher : MonoBehaviour
     public string GetItemRarity(string itemName)
     {
         return itemRarities.ContainsKey(itemName) ? itemRarities[itemName] : "Common";
+    }
+
+    // Return list of all known item names (from internal rarity dictionary)
+    public List<string> GetAllItemNames()
+    {
+        return new List<string>(itemRarities.Keys);
     }
 
     public void SetCurrentNode(string id)

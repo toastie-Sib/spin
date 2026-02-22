@@ -97,9 +97,3 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
-UserSettings/EditorUserSettings.asset
-UserSettings/EditorUserSettings.asset
-/UserSettings
-/Library/StateCache
-/Library/ScriptAssemblies
-/Library/ScriptAssemblies
