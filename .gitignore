@@ -100,3 +100,4 @@ InitTestScene*.unity*
 Library/ScriptAssemblies/Assembly-CSharp.dll
 Library/ScriptAssemblies/Assembly-CSharp.pdb
 /Library/ScriptAssemblies
+/Library

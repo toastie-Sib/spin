@@ -48,6 +48,10 @@ public class Fighter : MonoBehaviour
     [HideInInspector] public float velocityThreshold = 0.1f;
     [HideInInspector] public float nudgeCooldown = 0.5f;
 
+    public virtual void Awake()
+    {
+    }
+
     // Start is called before the first frame update
     public virtual void Start()
     {

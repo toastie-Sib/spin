@@ -150,7 +150,7 @@ public class MapNodeRandomization : MonoBehaviour
                 buttonText.text = "Event";
             }
 
-            nodeButtons[Index].GetComponent<MapNode>().sceneName = "Event";
+            nodeButtons[Index].GetComponent<MapNode>().sceneName = "EventTrainingDummy";
         }
         SeedManager.Instance.RestoreMasterSeed();
     }

@@ -39,9 +39,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/In-Run Menus/Shop.unity
     guid: ce50835f9a318f64caf8894ad2986ce5
   - enabled: 1
-    path: Assets/_Scenes/In-Run Menus/Event.unity
-    guid: 1cc673ff5093744498caf3c619c88525
-  - enabled: 1
     path: Assets/_Scenes/Arenas/EliteArena11.unity
     guid: 01707373098c7fa4b8b9edb27633ba43
   - enabled: 1
@@ -65,4 +62,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Arenas/EliteArena24.unity
     guid: d4b7c30f9a701064589b43008d9a99cf
+  - enabled: 1
+    path: Assets/_Scenes/Arenas/EventTrainingDummy.unity
+    guid: d4f236aa84a503740b18151273fe245d
+  - enabled: 1
+    path: Assets/_Scenes/In-Run Menus/EventItemCommon.unity
+    guid: 1cc673ff5093744498caf3c619c88525
+  - enabled: 1
+    path: Assets/_Scenes/In-Run Menus/EventItemUncommon.unity
+    guid: 9bbf024605ca97e438bbae257a8661d4
+  - enabled: 1
+    path: Assets/_Scenes/In-Run Menus/EventItemRare.unity
+    guid: 3efbeec6ae0860747ae0774388dc3f2e
+  - enabled: 1
+    path: Assets/_Scenes/In-Run Menus/EventItemNone.unity
+    guid: 3ebfa9b210f90274c9c99f62e5dd9afa
   m_configObjects: {}

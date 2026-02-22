@@ -6,8 +6,10 @@ using UnityEngine;
 public class TrainingDummyFighter : Fighter
 {
 
-    public void Awake()
+    public override void Awake()
     {
+        base.Awake();
+
         isInvincible = true;
 
         rb = GetComponentInParent<Rigidbody>();
