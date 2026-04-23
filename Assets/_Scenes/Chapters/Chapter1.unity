@@ -1957,9 +1957,9 @@ RectTransform:
   m_Father: {fileID: 941024319}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -700, y: 550}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1660, y: 10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241107476
@@ -6267,6 +6267,7 @@ MonoBehaviour:
   chapter: 0
   chapterEnd: 0
   chapter2UnlockThreshold: 7
+  enemyNodesCompleted: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -6301,6 +6302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overridePuase: 0
+  stopImpactFrames: 0
   timeScale: 2
 --- !u!1 &805656235
 GameObject:
@@ -6914,9 +6916,9 @@ RectTransform:
   m_Father: {fileID: 941024319}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 880, y: -475}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -80, y: 65}
   m_SizeDelta: {x: 550, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868122881
@@ -13559,7 +13561,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Currancy: '
+  m_Text: 'Currency: '
 --- !u!222 &1539500134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16762,10 +16764,10 @@ RectTransform:
   m_Father: {fileID: 941024319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -628, y: 447.93707}
-  m_SizeDelta: {x: 554.82, y: 111.4607}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 332, y: -92.06293}
+  m_SizeDelta: {x: 554.82, y: 111.46069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057404024
 MonoBehaviour:
@@ -16800,7 +16802,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Chapter 1: Forest'
+  m_Text: 'Chapter 1: Arena'
 --- !u!222 &2057404025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16925,9 +16927,9 @@ RectTransform:
   m_Father: {fileID: 941024319}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -475}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 80, y: 65}
   m_SizeDelta: {x: 550, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084120615

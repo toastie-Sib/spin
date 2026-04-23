@@ -807,6 +807,7 @@ MonoBehaviour:
   chapter: 0
   chapterEnd: 0
   chapter2UnlockThreshold: 7
+  enemyNodesCompleted: 0
   currentNodeID: 
   playerMaxHP: 0
   playerCurrentHP: 0
@@ -841,6 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overridePuase: 0
+  stopImpactFrames: 0
   timeScale: 2
 --- !u!1 &885681454
 GameObject:
@@ -1348,7 +1350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Currancy: '
+  m_Text: 'Currency: '
 --- !u!222 &1177278247
 CanvasRenderer:
   m_ObjectHideFlags: 0

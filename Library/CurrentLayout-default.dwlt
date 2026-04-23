@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 14042}
   vertical: 0
-  controlID: 181
+  controlID: 178
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 392}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 60
+  controlID: 19
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 61
+  controlID: 20
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 135
+  controlID: 132
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -350,8 +350,8 @@ MonoBehaviour:
     y: 0
     width: 492
     height: 957
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -484,7 +484,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/Items/Boss Items
+    - Assets/Resources/Sprites/Backgrounds
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -523,24 +523,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 240}
+    scrollPos: {x: 0, y: 2640}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000484700004a4700004c4700004e47000050470000524700005447000056470000584700005a4700005c4700005e47000060470000624700006447000066470000684700006a4700006c4700006e47000070470000724700007447000076470000784700007a4700007c4700007e470000
+    m_ExpandedIDs: ffffffff00000000484700004a4700004c4700004e47000050470000524700005447000056470000584700005a4700005c4700005e47000060470000624700006447000066470000684700006a4700006c4700006e47000070470000724700007447000076470000784700007a4700007c4700007e470000c6470000aa480000b2480000e8700000ea700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: ItemPickBoss
+      m_OriginalName: ItemPickBoss
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 18364
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -612,21 +612,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6cfbffff
+      m_ExpandedIDs: 5677fbffd67ffbff2480fbff3c80fbff6e80fbff2881fbff4081fbff8e81fbffdc81fbfff481fbff4282fbfffc82fbff1483fbff6283fbffb083fbffc883fbff8284fbff9a84fbffb284fbffca84fbffe284fbfffa84fbff1c85fbff3485fbff6085fbff9085fbff0673fcfff476fcfffe9efcff04a3fcfff0a8fcff4aaefcff4ebffcffce77fdff3c80fdff4a87fdff1488fdffde88fdff1e8afdff6c8afdffba8afdff088bfdff568bfdff6e8bfdffbc8bfdff768cfdffc48cfdff7e8dfdffb08dfdffc88dfdfffa8dfdff128efdffeaaafeff46abfeff48abfeffcaabfeff58c3feffc0c3feffd8c3feff26c4feff3ec4feff8cc4feffdac4feff28c5feff76c5feff8ec5feffdcc5feff94c6feff20ddffff72ddffff8cddffffe2ddfffffaddffff8ef9ffffbef9ffff52faffff76faffff6cfbffff3e4b0000264c0000664c00006c500000b0550000f05500000c5600002656000038560000ba560000e65600000e5700002257000064570000c8570000e8570000ec570000f657000000580000145800005a580000745800008a5800009ca4000024a6000078a60000faa900000cac00005cac0000a6ac000010c0000066c0000086c1000070c400009ac5000036c60000c8c6000016c70000bcc800000ec90000aeca0000f6ca00006ecc0000b6cc00002ece000076ce000006d000004ed00000eed1000036d2000050d3000062d30000a8d30000d8d3000018d400002cd400004cd4000050d4000066d4000074d4000082d4000096d40000c4d4000020060100bc0601004a070100c0070100d4070100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Background (1)
+        m_OriginalName: Background (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -81292
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -697,9 +697,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.390035, y: 1.5445306, z: -52.26046}
+    m_Target: {x: 1238.1569, y: 154.41481, z: -49.98811}
     speed: 2
-    m_Value: {x: 4.390035, y: 1.5445306, z: -52.26046}
+    m_Value: {x: 1238.1569, y: 154.41481, z: -49.98811}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -750,9 +750,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.2553835
+    m_Target: 446.92636
     speed: 2
-    m_Value: 9.2553835
+    m_Value: 446.92636
   m_Ortho:
     m_Target: 1
     speed: 2

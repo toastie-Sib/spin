@@ -117,7 +117,7 @@ Material:
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
     - _ScaleRatioB: 0.8520834
-    - _ScaleRatioC: 0.74875516
+    - _ScaleRatioC: 0.6274546
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -133,7 +133,7 @@ Material:
     - _UnderlayDilate: 0.04
     - _UnderlayOffsetX: -0.87
     - _UnderlayOffsetY: -0.31
-    - _UnderlaySoftness: 0.228
+    - _UnderlaySoftness: 0.448
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     - _WeightBold: 0.75
@@ -141,14 +141,14 @@ Material:
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 0.78102535, g: 0.40792987, b: 0.8396226, a: 1}
-    - _GlowColor: {r: 0.002501011, g: 0, b: 1, a: 0.5}
+    - _FaceColor: {r: 0.51243645, g: 0.24154504, b: 0.8679245, a: 1}
+    - _GlowColor: {r: 0.06085968, g: 0, b: 1, a: 0.078431375}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 0.34901965, g: 0.8666667, b: 0.8176425, a: 1}
+    - _OutlineColor: {r: 0.40503737, g: 0.6448266, b: 0.6981132, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0.25490195, g: 0.8862745, b: 0.46477082, a: 0.5}
+    - _UnderlayColor: {r: 0.6427082, g: 0.25490195, b: 0.8862745, a: 0.2784314}
   m_BuildTextureStacks: []
 --- !u!114 &11400000
 MonoBehaviour:
